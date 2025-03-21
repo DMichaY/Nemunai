@@ -6,7 +6,8 @@ public class KaitoFight : MonoBehaviour
 {
     public float speed = 4.0f;
     private Animator kaitoAnimator;
-    private Vector2 movimiento;
+    private Vector2 movement;
+    private static bool canMove = true;
 
     void Start()
     {
@@ -21,18 +22,18 @@ public class KaitoFight : MonoBehaviour
 
     void Update()
     {
-        if (!kaitoAnimator.GetBool("crouch")) transform.position = transform.position + new Vector3(0, 0, movimiento.x * Time.deltaTime * speed);
+        if (!kaitoAnimator.GetBool("crouch") && canMove) transform.position = transform.position + new Vector3(0, 0, movement.x * Time.deltaTime * speed);
     }
 
     public void OnMovimiento(InputValue value)
     {
-        movimiento = value.Get<Vector2>();
+        movement = value.Get<Vector2>();
 
-        if (movimiento.x > 0) kaitoAnimator.SetBool("goRight", true);
+        if (movement.x > 0) kaitoAnimator.SetBool("goRight", true);
         else kaitoAnimator.SetBool("goRight", false);
-        if (movimiento.x < 0) kaitoAnimator.SetBool("goLeft", true);
+        if (movement.x < 0) kaitoAnimator.SetBool("goLeft", true);
         else kaitoAnimator.SetBool("goLeft", false);
-        if (movimiento.y < 0) kaitoAnimator.SetBool("crouch", true);
+        if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
         else kaitoAnimator.SetBool("crouch", false);
 
     }
@@ -69,5 +70,11 @@ public class KaitoFight : MonoBehaviour
             kaitoAnimator.ResetTrigger("punchLeft");
             kaitoAnimator.ResetTrigger("punchRight");
         }
+        canMove = false;
+    }
+
+    public static void ActivateMovement()
+    {
+        canMove = true;
     }
 }
