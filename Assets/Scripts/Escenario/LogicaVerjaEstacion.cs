@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class LogicaVerjaEstacion : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Variables
+    Animator animacionPuertaVerja;
+
+    public bool tieneLlave;
+
     void Start()
     {
-        
+        animacionPuertaVerja = this.GetComponent<Animator>();
+        tieneLlave = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision jugador)
     {
-        
+        if (jugador.gameObject.name == "Kaito")
+        {
+            if (tieneLlave)
+            {
+                GetComponent<Renderer>().material.color = Color.green;
+                animacionPuertaVerja.SetBool("usaLlave", true);
+            }
+        }
     }
+
 }

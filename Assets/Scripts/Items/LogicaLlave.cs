@@ -5,18 +5,18 @@ using UnityEngine;
 public class LogicaLlave : MonoBehaviour
 {
     // Variables
-    bool tieneLlave;
+    public LogicaVerjaEstacion puertaEstacion;
 
     void Start()
     {
-        tieneLlave = false;
+        puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
     }
 
     void OnTriggerEnter(Collider jugador)
     {
         if (jugador.gameObject.name == "Kaito")
         {
-            tieneLlave = true;
+            puertaEstacion.tieneLlave = true;
             Destroy(this.gameObject);
         }
     }
