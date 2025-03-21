@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class KaitoFight : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class KaitoFight : MonoBehaviour
     private Animator kaitoAnimator;
     private Transform kaitoTransform;
     private bool isActionInProgress = false;
+    private Vector2 movimiento;
 
     void Start()
     {
@@ -22,6 +24,10 @@ public class KaitoFight : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
+        if (!kaitoAnimator.GetBool("crouch")) transform.position = transform.position + new Vector3(0, 0, movimiento.x * Time.deltaTime * 2);
+=======
+        /*
         if (isActionInProgress)
         {
             // Si una animación está en progreso, no se permite otra acción
@@ -62,36 +68,51 @@ public class KaitoFight : MonoBehaviour
             // Si no se pulsa nada, ejecutar la animación de idleFight
             kaitoAnimator.SetTrigger("idleFight");
         }
+        */
+        AplicarMovimiento();
     }
 
-    // Corrutina para manejar las acciones
-    private IEnumerator PerformAction(string animationTrigger, float movementZ = 0)
+    public void OnMovimiento(InputValue value)
     {
-        // Activar el trigger de la animación
-        kaitoAnimator.SetTrigger(animationTrigger);
+        movimiento = value.Get<Vector2>();
 
-        // Si hay movimiento, ajustar la posición en Z
-        if (movementZ != 0)
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.z += movementZ;
-            transform.position = newPosition;
-        }
+        if (movimiento.x > 0) kaitoAnimator.SetBool("goRight", true);
+        else kaitoAnimator.SetBool("goRight", false);
+        if (movimiento.x < 0) kaitoAnimator.SetBool("goLeft", true);
+        kaitoAnimator.SetBool("goLeft", false);
 
-        // Marcar que una acción está en progreso
-        isActionInProgress = true;
-
-        // Esperar hasta que termine la animación antes de permitir otra acción
-        yield return new WaitForSeconds(GetCurrentAnimationLength());
-
-        // Desbloquear las acciones
-        isActionInProgress = false;
     }
 
-    // Obtener la duración de la animación actual
-    private float GetCurrentAnimationLength()
+    void AplicarMovimiento()
     {
-        AnimatorStateInfo stateInfo = kaitoAnimator.GetCurrentAnimatorStateInfo(0);
-        return stateInfo.length;
+        
+
+        transform.position = transform.position + new Vector3(0, 0, -movimiento.x * Time.deltaTime * 2);
+>>>>>>> Stashed changes
+    }
+
+    public void OnMovimiento(InputValue value)
+    {
+        movimiento = value.Get<Vector2>();
+
+        if (movimiento.x > 0) kaitoAnimator.SetBool("goRight", true);
+        else kaitoAnimator.SetBool("goRight", false);
+        if (movimiento.x < 0) kaitoAnimator.SetBool("goLeft", true);
+        else kaitoAnimator.SetBool("goLeft", false);
+        if (movimiento.y < 0) kaitoAnimator.SetBool("crouch", true);
+        else kaitoAnimator.SetBool("crouch", false);
+
+        if (movimiento.magnitude == 0) kaitoAnimator.SetTrigger("idle");
+
+    }
+
+    public void OnAtacar(InputValue value)
+    {
+        Vector2 vectorAtaque = value.Get<Vector2>();
+
+        if (vectorAtaque.x > 0) kaitoAnimator.SetTrigger("kickRight");
+        else if (vectorAtaque.x < 0) kaitoAnimator.SetTrigger("punchLeft");
+        else if (vectorAtaque.y > 0) kaitoAnimator.SetTrigger("punchRight");
+        else if (vectorAtaque.y < 0) kaitoAnimator.SetTrigger("kickLeft");
     }
 }
