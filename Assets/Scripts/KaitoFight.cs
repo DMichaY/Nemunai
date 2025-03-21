@@ -78,5 +78,11 @@ public class KaitoFight : MonoBehaviour
     public void ActivateMovement()
     {
         canMove = true;
+        if (movement.x > 0) kaitoAnimator.SetBool("goRight", true);
+        else kaitoAnimator.SetBool("goRight", false);
+        if (movement.x < 0) kaitoAnimator.SetBool("goLeft", true);
+        else kaitoAnimator.SetBool("goLeft", false);
+        if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
+        else kaitoAnimator.SetBool("crouch", false);
     }
 }
