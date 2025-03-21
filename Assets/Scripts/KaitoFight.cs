@@ -7,7 +7,7 @@ public class KaitoFight : MonoBehaviour
     public float speed = 4.0f;
     private Animator kaitoAnimator;
     private Vector2 movement;
-    private static bool canMove = true;
+    private bool canMove = true;
 
     void Start()
     {
@@ -35,7 +35,6 @@ public class KaitoFight : MonoBehaviour
         else kaitoAnimator.SetBool("goLeft", false);
         if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
         else kaitoAnimator.SetBool("crouch", false);
-
     }
 
     public void OnAtacar(InputValue value)
@@ -71,9 +70,12 @@ public class KaitoFight : MonoBehaviour
             kaitoAnimator.ResetTrigger("punchRight");
         }
         canMove = false;
+        kaitoAnimator.SetBool("goRight", false);
+        kaitoAnimator.SetBool("goLeft", false);
+        kaitoAnimator.SetBool("crouch", false);
     }
 
-    public static void ActivateMovement()
+    public void ActivateMovement()
     {
         canMove = true;
     }
