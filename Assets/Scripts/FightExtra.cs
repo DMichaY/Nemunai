@@ -15,4 +15,14 @@ public class FightExtra : MonoBehaviour
     {
         kaitoScript.ActivateMovement();
     }
+
+    public void ActivateHurtbox (string hbName)
+    {
+        GameObject.Find(hbName).gameObject.GetComponent<Collider>().enabled = true;
+    }
+
+    public void DeactivateHurtbox(string hbName)
+    {
+        GameObject.Find(hbName).gameObject.GetComponent<Collider>().enabled = false;
+    }
 }
