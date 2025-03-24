@@ -2,17 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class KaitoFight : MonoBehaviour
+public class KaitoFight : FighterClass
 {
-    public float speed = 4.0f;
+    public float speed = 3.0f;
     private Animator kaitoAnimator;
     private Vector2 movement;
     private bool canMove = true;
+    private Rigidbody rb;
 
     void Start()
     {
-        // Buscar el Animator en el hijo Kaito
+        // Buscar los componentes
         kaitoAnimator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         if (kaitoAnimator == null)
         {
@@ -20,11 +22,14 @@ public class KaitoFight : MonoBehaviour
         }
     }
 
+    //Movimiento por rigidbody
     void Update()
     {
-        if (!kaitoAnimator.GetBool("crouch") && canMove) transform.position = transform.position + new Vector3(0, 0, movement.x * Time.deltaTime * speed);
+        if (!kaitoAnimator.GetBool("crouch") && canMove) rb.velocity = new Vector3(0, 0, movement.x * speed);
+        else rb.velocity = Vector3.zero;
     }
 
+    //Animaciones y dirección de movimiento
     public void OnMovimiento(InputValue value)
     {
         movement = value.Get<Vector2>();
@@ -37,6 +42,7 @@ public class KaitoFight : MonoBehaviour
         else kaitoAnimator.SetBool("crouch", false);
     }
 
+    //Animaciones de ataque
     public void OnAtacar(InputValue value)
     {
         Vector2 vectorAtaque = value.Get<Vector2>();
@@ -69,12 +75,9 @@ public class KaitoFight : MonoBehaviour
             kaitoAnimator.ResetTrigger("punchLeft");
             kaitoAnimator.ResetTrigger("punchRight");
         }
-        canMove = false;
-        kaitoAnimator.SetBool("goRight", false);
-        kaitoAnimator.SetBool("goLeft", false);
-        kaitoAnimator.SetBool("crouch", false);
     }
 
+    //Activar movimiento después de atacar
     public void ActivateMovement()
     {
         canMove = true;
@@ -84,5 +87,21 @@ public class KaitoFight : MonoBehaviour
         else kaitoAnimator.SetBool("goLeft", false);
         if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
         else kaitoAnimator.SetBool("crouch", false);
+    }
+
+    //Desactivar movimiento durante ataques
+    public void DeactivateMovement()
+    {
+        canMove = false;
+        kaitoAnimator.SetBool("goRight", false);
+        kaitoAnimator.SetBool("goLeft", false);
+        kaitoAnimator.SetBool("crouch", false);
+    }
+
+    //Perder vida y activar animación de recibir golpe
+    public override void GetHit(float damage)
+    {
+        if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
+        else kaitoAnimator.SetTrigger("damage2");
     }
 }
