@@ -1,20 +1,26 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class KaitoFight : FighterClass
 {
     public float speed = 3.0f;
+    public Slider lifeBar;
+
     private Animator kaitoAnimator;
     private Vector2 movement;
     private bool canMove = true;
     private Rigidbody rb;
+    private float life = 100;
 
     void Start()
     {
         // Buscar los componentes
         kaitoAnimator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
+        lifeBar.maxValue = life;
+        lifeBar.value = life;
 
         if (kaitoAnimator == null)
         {
@@ -101,6 +107,8 @@ public class KaitoFight : FighterClass
     //Perder vida y activar animación de recibir golpe
     public override void GetHit(float damage)
     {
+        life -= damage;
+        lifeBar.value = life;
         if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
         else kaitoAnimator.SetTrigger("damage2");
     }
