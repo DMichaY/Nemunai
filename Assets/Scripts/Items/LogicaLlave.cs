@@ -7,6 +7,8 @@ public class LogicaLlave : MonoBehaviour
     // Variables
     public LogicaVerjaEstacion puertaEstacion;
 
+    public GameObject imagenLlave;
+
     void Start()
     {
         puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
@@ -17,6 +19,9 @@ public class LogicaLlave : MonoBehaviour
         if (jugador.gameObject.name == "Kaito")
         {
             puertaEstacion.tieneLlave = true;
+
+            imagenLlave.SetActive(true);
+
             Destroy(this.gameObject);
         }
     }

@@ -9,6 +9,8 @@ public class LogicaVerjaEstacion : MonoBehaviour
 
     public bool tieneLlave;
 
+    public GameObject imagenLlave;
+
     void Start()
     {
         animacionPuertaVerja = this.GetComponent<Animator>();
@@ -23,6 +25,8 @@ public class LogicaVerjaEstacion : MonoBehaviour
             {
                 GetComponent<Renderer>().material.color = Color.green;
                 animacionPuertaVerja.SetBool("usaLlave", true);
+
+                imagenLlave.SetActive(false);
             }
         }
     }
