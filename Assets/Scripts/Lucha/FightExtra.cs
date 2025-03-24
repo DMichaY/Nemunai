@@ -31,6 +31,7 @@ public class FightExtra : MonoBehaviour
 
     public void DeactivateMovement()
     {
+        print("PRUEBA");
         kaitoScript.DeactivateMovement();
     }
 
