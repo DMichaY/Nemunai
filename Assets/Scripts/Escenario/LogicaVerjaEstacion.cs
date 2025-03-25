@@ -25,10 +25,17 @@ public class LogicaVerjaEstacion : MonoBehaviour
             {
                 GetComponent<Renderer>().material.color = Color.green;
                 animacionPuertaVerja.SetBool("usaLlave", true);
+                StartCoroutine(borrarPuerta());
 
                 imagenLlave.SetActive(false);
             }
         }
     }
 
+    IEnumerator borrarPuerta()
+    {
+        yield return new WaitForSeconds(3f);
+
+        Destroy(this.gameObject);
+    }
 }
