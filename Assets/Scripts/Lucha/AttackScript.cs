@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AttackScript : MonoBehaviour
 {
+    public float damage = 5;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Fighter") other.GetComponent<FighterClass>().GetHit(5f);
-        print("GOLPE");
+        if (other.tag == "Fighter") other.GetComponent<FighterClass>().GetHit(damage);
     }
 }

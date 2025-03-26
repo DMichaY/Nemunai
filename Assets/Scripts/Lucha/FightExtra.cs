@@ -9,6 +9,8 @@ public class FightExtra : MonoBehaviour
     private List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
 
+    private string lastActivatedHB;
+
     private void Awake()
     {
         kaitoScript= FindObjectOfType<KaitoFight>();
@@ -36,11 +38,14 @@ public class FightExtra : MonoBehaviour
 
     public void ActivateHurtbox (string hbName)
     {
+        if (lastActivatedHB != hbName) HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage += 5;
         HBs[HBNames.IndexOf(hbName)].SetActive(true);
     }
 
     public void DeactivateHurtbox(string hbName)
     {
         HBs[HBNames.IndexOf(hbName)].SetActive(false);
+        if (lastActivatedHB != hbName) HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage -= 5;
+        lastActivatedHB = hbName;
     }
 }

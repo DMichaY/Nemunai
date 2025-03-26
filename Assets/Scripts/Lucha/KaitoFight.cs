@@ -111,5 +111,18 @@ public class KaitoFight : FighterClass
         lifeBar.value = life;
         if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
         else kaitoAnimator.SetTrigger("damage2");
+
+        if (life <= 0) StartCoroutine(Death());
+    }
+
+    private IEnumerator Death()
+    {
+        kaitoAnimator.SetBool("death", true);
+        yield return null;
+        kaitoAnimator.SetBool("hasDied", true);
+        //GetComponent<PlayerInput>().DeactivateInput();
+
+        //Sólo para el release 1
+        FindObjectOfType<CambiarEscena>().ForceLoadScene();
     }
 }
