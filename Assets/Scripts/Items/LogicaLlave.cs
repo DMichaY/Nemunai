@@ -12,6 +12,7 @@ public class LogicaLlave : MonoBehaviour
     void Start()
     {
         puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
+        gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider jugador)
