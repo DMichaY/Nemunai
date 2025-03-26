@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -60,8 +61,8 @@ public class MenuPausa : MonoBehaviour
     //volver al menu
     public void VolverMenu()
     {
-        //menu
-        //SceneManager.LoadScene(escena menu inicio);
+        
+        SceneManager.LoadScene("MenuPrincipal");
 
     }
 
