@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FightExtra : MonoBehaviour
+public class KaitoFightExtra : MonoBehaviour
 {
     private KaitoFight kaitoScript;
 
