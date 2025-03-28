@@ -1156,6 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524590144}
   - component: {fileID: 524590145}
+  - component: {fileID: 524590146}
   m_Layer: 0
   m_Name: HB_LA
   m_TagString: HurtBox
@@ -1187,11 +1188,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 524590143}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: -1.19, z: 0}
+--- !u!114 &524590146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524590143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb85aef5ff83e14785445e8f7070c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &529156489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546914908}
   - component: {fileID: 546914909}
+  - component: {fileID: 546914910}
   m_Layer: 0
   m_Name: HB_RL
   m_TagString: HurtBox
@@ -1370,11 +1385,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 546914907}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: -1.19, z: 0}
+--- !u!114 &546914910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546914907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb85aef5ff83e14785445e8f7070c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &585093683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1647,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1313662285}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &743254456
+--- !u!114 &743254458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1628,7 +1656,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 743254454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64274c722eb70d4ba382ce9c5a25656, type: 3}
+  m_Script: {fileID: 11500000, guid: 93dfd365f887ff74e92ca65ec2bf43c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HBNames: []
@@ -2380,9 +2408,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1877805650}
   player: {fileID: 0}
-  speed: 3
   animator: {fileID: 0}
   rb: {fileID: 0}
+  speed: 6
+  waitTime: 3
+  attackTime: 1
   life: 100
 --- !u!1 &1119639529
 GameObject:
@@ -2394,6 +2424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1119639530}
   - component: {fileID: 1119639531}
+  - component: {fileID: 1119639532}
   m_Layer: 0
   m_Name: HB_RA
   m_TagString: HurtBox
@@ -2425,11 +2456,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 1119639529}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: -1.19, z: 0}
+--- !u!114 &1119639532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119639529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb85aef5ff83e14785445e8f7070c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!4 &1128692717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2563496969622287784, guid: ffa2b6525a7ef1844bed5a2ed7061f17,
@@ -2873,7 +2917,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 3ca3e5cac63d57f4f877be2f4c3a8214, type: 2}
+      objectReference: {fileID: 9100000, guid: d01f902ca586e9846847c69f86a95216, type: 2}
     - target: {fileID: 5866666021909216657, guid: ffa2b6525a7ef1844bed5a2ed7061f17,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -3107,6 +3151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378807484}
   - component: {fileID: 1378807485}
+  - component: {fileID: 1378807486}
   m_Layer: 0
   m_Name: HB_LL
   m_TagString: HurtBox
@@ -3138,11 +3183,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 1378807483}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 1
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: -1.19, z: 0}
+--- !u!114 &1378807486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378807483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb85aef5ff83e14785445e8f7070c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1411096386
 GameObject:
   m_ObjectHideFlags: 0

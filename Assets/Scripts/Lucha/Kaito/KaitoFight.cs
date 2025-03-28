@@ -104,15 +104,18 @@ public class KaitoFight : FighterClass
         kaitoAnimator.SetBool("crouch", false);
     }
 
-    //Perder vida y activar animación de recibir golpe
+    //Perder vida y activar animación de recibir golpe o muerte
     public override void GetHit(float damage)
     {
         life -= damage;
         lifeBar.value = life;
-        if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
-        else kaitoAnimator.SetTrigger("damage2");
 
         if (life <= 0) StartCoroutine(Death());
+        else
+        {
+            if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
+            else kaitoAnimator.SetTrigger("damage2");
+        }
     }
 
     private IEnumerator Death()
@@ -120,9 +123,6 @@ public class KaitoFight : FighterClass
         kaitoAnimator.SetBool("death", true);
         yield return new WaitForSeconds(.1f);
         kaitoAnimator.SetBool("hasDied", true);
-        //GetComponent<PlayerInput>().DeactivateInput();
-
-        //Sólo para el release 1
-        FindObjectOfType<CambiarEscena>().ForceLoadScene();
+        GetComponent<PlayerInput>().DeactivateInput();
     }
 }

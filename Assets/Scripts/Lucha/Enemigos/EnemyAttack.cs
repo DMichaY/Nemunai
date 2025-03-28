@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAttack : EnemyState
 {
+    private float attackTimer;
+
     public EnemyAttack() : base()
     {
         name = States.ATTACK;
@@ -12,21 +14,30 @@ public class EnemyAttack : EnemyState
     public override void Start()
     {
         Debug.Log("ATACAR");
+        actionTimer = 0;
         base.Start();
     }
 
     public override void Update()
     {
-        if (!IsPlayerClose())
+        if (!IsPlayerClose() || actionTimer >= enemyAI.waitTime)
         {
-            nextState = new EnemyMove();
+            enemyAI.animator.ResetTrigger("attack1");
+            enemyAI.animator.ResetTrigger("attack2");
+            nextState = new EnemyWait();
             nextState.Initialize(enemyAI);
             currPhase = Events.END;
         }
-        else
+        else if (attackTimer > enemyAI.attackTime)
         {
-            //enemyAI.animator.SetBool("", true);
+            attackTimer = 0;
+
+            if(Random.Range(0, 2) == 0) enemyAI.animator.SetTrigger("attack1");
+            else enemyAI.animator.SetTrigger("attack2");
         }
+
+        attackTimer += Time.deltaTime;
+        actionTimer += Time.deltaTime;
     }
 
     public override void End()

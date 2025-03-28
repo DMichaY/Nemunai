@@ -12,6 +12,7 @@ public class EnemyMove : EnemyState
     public override void Start()
     {
         Debug.Log("MOVERSE");
+        actionTimer = 0;
         base.Start();
     }
 
@@ -19,18 +20,31 @@ public class EnemyMove : EnemyState
     {
         if (IsPlayerClose())
         {
+            enemyAI.rb.velocity = Vector3.zero;
             nextState = new EnemyAttack();
             nextState.Initialize(enemyAI);
             currPhase = Events.END;
         }
         else
         {
-            //enemyAI.animator.SetBool("", true);
+            enemyAI.animator.SetBool("goRight", true);
+            enemyAI.rb.velocity = new Vector3(0, 0, -enemyAI.speed);
         }
+
+        if (actionTimer >= enemyAI.waitTime)
+        {
+            enemyAI.rb.velocity = Vector3.zero;
+
+            nextState = new EnemyWait();
+            nextState.Initialize(enemyAI);
+            currPhase = Events.END;
+        }
+        actionTimer += Time.deltaTime;
     }
 
     public override void End()
     {
+        enemyAI.animator.SetBool("goRight", false);
         base.End();
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyState
 {
     protected EnemyFightAI enemyAI;
+    protected float actionTimer;
 
     public void Initialize(EnemyFightAI _enemyAI) { enemyAI = _enemyAI; }
 

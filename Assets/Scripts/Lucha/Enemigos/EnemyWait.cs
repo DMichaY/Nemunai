@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyWait : EnemyState
 {
-    private float timer;
 
     public EnemyWait() : base()
     {
@@ -13,13 +12,14 @@ public class EnemyWait : EnemyState
 
     public override void Start()
     {
-        Debug.Log("ATACAR");
+        Debug.Log("ESPERAR");
+        actionTimer = 0;
         base.Start();
     }
 
     public override void Update()
     {
-        if (timer >= enemyAI.waitTime)
+        if (actionTimer >= enemyAI.waitTime)
         {
             if (!IsPlayerClose()) nextState = new EnemyMove();
             else nextState = new EnemyAttack();
@@ -27,7 +27,7 @@ public class EnemyWait : EnemyState
             nextState.Initialize(enemyAI);
             currPhase = Events.END;
         }
-        timer += Time.deltaTime;
+        actionTimer += Time.deltaTime;
     }
 
     public override void End()
