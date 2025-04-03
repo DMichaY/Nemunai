@@ -12,7 +12,6 @@ public class EnemyWait : EnemyState
 
     public override void Start()
     {
-        Debug.Log("ESPERAR");
         actionTimer = 0;
         base.Start();
     }

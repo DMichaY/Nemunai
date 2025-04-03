@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMove : EnemyState
 {
+    private bool moveForward;
+
     public EnemyMove() : base()
     {
         name = States.MOVE;
@@ -11,8 +13,9 @@ public class EnemyMove : EnemyState
 
     public override void Start()
     {
-        Debug.Log("MOVERSE");
         actionTimer = 0;
+        if (Random.Range(0, 2) == 0) moveForward = true;
+        else moveForward = false;
         base.Start();
     }
 
@@ -27,8 +30,16 @@ public class EnemyMove : EnemyState
         }
         else
         {
-            enemyAI.animator.SetBool("goRight", true);
-            enemyAI.rb.velocity = new Vector3(0, 0, -enemyAI.speed);
+            if(moveForward)
+            {
+                enemyAI.animator.SetBool("goRight", true);
+                enemyAI.rb.velocity = new Vector3(0, 0, -enemyAI.speed);
+            }
+            else
+            {
+                enemyAI.animator.SetBool("goLeft", true);
+                enemyAI.rb.velocity = new Vector3(0, 0, enemyAI.speed);
+            }
         }
 
         if (actionTimer >= enemyAI.waitTime)
@@ -45,6 +56,7 @@ public class EnemyMove : EnemyState
     public override void End()
     {
         enemyAI.animator.SetBool("goRight", false);
+        enemyAI.animator.SetBool("goLeft", false);
         base.End();
     }
 

@@ -25,7 +25,7 @@ public class EnemyFightAI : FighterClass
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
-        FSM = new EnemyMove();
+        FSM = new EnemyWait();
         FSM.Initialize(this);
     }
 
@@ -59,5 +59,10 @@ public class EnemyFightAI : FighterClass
 
         //Sólo para el release 1
         FindObjectOfType<CambiarEscena>().ForceLoadScene();
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        rb.velocity = Vector3.zero;
     }
 }
