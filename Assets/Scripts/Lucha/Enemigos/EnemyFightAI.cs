@@ -25,7 +25,7 @@ public class EnemyFightAI : FighterClass
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
-        FSM = new EnemyMove();
+        FSM = new EnemyWait();
         FSM.Initialize(this);
     }
 
@@ -42,11 +42,21 @@ public class EnemyFightAI : FighterClass
         if (life <= 0 && !animator.GetBool("death"))
         {
             StartCoroutine("Death");
+
+            foreach (GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
         }
         else
         {
             if (Random.Range(0, 2) == 0) animator.SetTrigger("damage1");
             else animator.SetTrigger("damage2");
+
+            foreach(GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
         }
     }
 
@@ -59,5 +69,10 @@ public class EnemyFightAI : FighterClass
 
         //Sólo para el release 1
         FindObjectOfType<CambiarEscena>().ForceLoadScene();
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        rb.velocity = Vector3.zero;
     }
 }

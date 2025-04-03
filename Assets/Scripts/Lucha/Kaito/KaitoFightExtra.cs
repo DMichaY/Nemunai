@@ -6,7 +6,7 @@ public class KaitoFightExtra : MonoBehaviour
 {
     private KaitoFight kaitoScript;
 
-    private List<GameObject> HBs = new List<GameObject>();
+    public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
 
     private string lastActivatedHB;
