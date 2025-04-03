@@ -33,8 +33,8 @@ public class EnemyAttack : EnemyState
             attackTimer = 0;
             enemyAI.animator.SetBool("isAttacking", true);
 
-            /*if(Random.Range(0, 2) == 0) enemyAI.animator.SetTrigger("attack1");
-            else*/ enemyAI.animator.SetTrigger("attack2");
+            if(Random.Range(0, 2) == 0) enemyAI.animator.SetTrigger("attack1");
+            else enemyAI.animator.SetTrigger("attack2");
         }
 
         attackTimer += Time.deltaTime;

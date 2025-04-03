@@ -110,11 +110,24 @@ public class KaitoFight : FighterClass
         life -= damage;
         lifeBar.value = life;
 
-        if (life <= 0) StartCoroutine(Death());
+        if (life <= 0)
+        {
+            StartCoroutine(Death());
+
+            foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
+        }
         else
         {
             if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
             else kaitoAnimator.SetTrigger("damage2");
+
+            foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
         }
     }
 

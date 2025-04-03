@@ -42,11 +42,21 @@ public class EnemyFightAI : FighterClass
         if (life <= 0 && !animator.GetBool("death"))
         {
             StartCoroutine("Death");
+
+            foreach (GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
         }
         else
         {
             if (Random.Range(0, 2) == 0) animator.SetTrigger("damage1");
             else animator.SetTrigger("damage2");
+
+            foreach(GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            {
+                HB.SetActive(false);
+            }
         }
     }
 

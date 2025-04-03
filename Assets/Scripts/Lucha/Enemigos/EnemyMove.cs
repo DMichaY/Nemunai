@@ -14,7 +14,7 @@ public class EnemyMove : EnemyState
     public override void Start()
     {
         actionTimer = 0;
-        if (Random.Range(0, 2) == 0) moveForward = true;
+        if (Random.Range(0, 3) != 2) moveForward = true;
         else moveForward = false;
         base.Start();
     }
