@@ -3,7 +3,192 @@ guid: 8021c9e159b244542ba9a22b511704e1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Alfombra
+    second: {fileID: 2100000, guid: f1f6937de34d6ac4aa7a1a81fa78f0d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banco
+    second: {fileID: 2100000, guid: aa84ed4f50f5515448d355a6be9f5327, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CartelControles
+    second: {fileID: 2100000, guid: 326a9b9c0ba3bb6479bd6f25f281a9db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CartelExterior
+    second: {fileID: 2100000, guid: 61a59b9d3e0fd00409a2213d29520699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EntradaTunel
+    second: {fileID: 2100000, guid: fe43efc09f22b0e42aab9973f7c9668d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Estacion
+    second: {fileID: 2100000, guid: cf2476bf29025ae43a6f4708dab13f72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LuzEstacion
+    second: {fileID: 2100000, guid: 1a52bc2e1e8384a48ab17b17f8fb8a11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaquinaTickets
+    second: {fileID: 2100000, guid: e3737dbbb1096b646814b4c308f1a11c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 3f2687ee24040fd40801062fde3fcaca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalVigas
+    second: {fileID: 2100000, guid: 1424d17703f6cee418afda46d9b6c010, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Papelera
+    second: {fileID: 2100000, guid: affe84906aa5e8a4480ca15460e12a94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PuertaCerrada
+    second: {fileID: 2100000, guid: ec31ba98817e4884d936c974f28dd079, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tierra
+    second: {fileID: 2100000, guid: f2ce7ca8392768e4da1455b39beeae4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TierraMontanya
+    second: {fileID: 2100000, guid: 12a66e90299cd9c489c7b1f75d239852, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Verja
+    second: {fileID: 2100000, guid: 5de73fb4d471e6c4592a555c27cd08c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VigasMadera
+    second: {fileID: 2100000, guid: 3e0568434e5633842988fd5819e20573, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_Banco
+    second: {fileID: 2800000, guid: dc50f98ec5c42c84eab7b8650869a65e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_CartelControles
+    second: {fileID: 2800000, guid: 0939326bafcc50147b5dcd67263e5a4b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_CartelEstacionPueblo
+    second: {fileID: 2800000, guid: 51588ad92f0297a4190e329a6530f78f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_CartelSecundario
+    second: {fileID: 2800000, guid: f0e80e69de4c8bd4e874db4773cfe1ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_EntradaTren
+    second: {fileID: 2800000, guid: c8fb11b3533ea7548a921c03be8f8e66, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_Estacion
+    second: {fileID: 2800000, guid: e59c093a188de66469984a6baabcd866, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_LucesEstacion
+    second: {fileID: 2800000, guid: f3a078d53166e474e825e1acd1c150e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_MaquinaTiquets
+    second: {fileID: 2800000, guid: abbb24fd6c55e8149a5eea08c93b7b3c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_Papelera
+    second: {fileID: 2800000, guid: 340e330a3d7ba1a4fa1c8f2a7df5e9fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_PuertaInaccesible
+    second: {fileID: 2800000, guid: 09b0a705c5f7e6147aa0c2520cab834e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_Verja
+    second: {fileID: 2800000, guid: e147bbf291a833d40a210116d579846f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Albedo_VigasMadera
+    second: {fileID: 2800000, guid: 3bf1355cceee151479a816671f6afec1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AlfombraTextura
+    second: {fileID: 2800000, guid: d0f86e004601969449998544c3a8e66e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metallic_LucesEstacion
+    second: {fileID: 2800000, guid: 7e2c7f9f0549a7b418b6a20992071746, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness_LucesEstacion
+    second: {fileID: 2800000, guid: b77b1742a93d7314980fce13786b8b11, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness_Papelera
+    second: {fileID: 2800000, guid: 2e3bf4996cb37f846a7b457f2679e08d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dirt_diff_4k
+    second: {fileID: 2800000, guid: c069c97b2ad22ac4b80d24d13d23f725, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dirt_nor_gl_4k
+    second: {fileID: 2800000, guid: 6e214a6e3b1ef1746bb97c1868350bdb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dirt_rough_4k
+    second: {fileID: 2800000, guid: f2d47977757b3ac4f83b059a07958208, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet_nor_gl_4k
+    second: {fileID: 2800000, guid: cc485f3afc322db44af0e0ee4a513800, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_sheet_rough_4k
+    second: {fileID: 2800000, guid: a6903cf3ffbb565478b7fdabb1db2f54, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
