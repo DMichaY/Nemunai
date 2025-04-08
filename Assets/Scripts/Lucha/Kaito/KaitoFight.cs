@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class KaitoFight : FighterClass
 {
-    public float speed = 3.0f;
+    public float speed = 3.0f, startWaitTime = 0;
     public Slider lifeBar;
 
     private Animator kaitoAnimator;
+    private PlayerInput input;
     private Vector2 movement;
     private bool canMove = true;
     private Rigidbody rb;
@@ -18,7 +19,12 @@ public class KaitoFight : FighterClass
     {
         // Buscar los componentes
         kaitoAnimator = GetComponentInChildren<Animator>();
+        kaitoAnimator.StartPlayback();
+        input = GetComponent<PlayerInput>();
+        input.DeactivateInput();
         rb = GetComponent<Rigidbody>();
+
+
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
@@ -26,6 +32,15 @@ public class KaitoFight : FighterClass
         {
             Debug.LogError("No se encontró un Animator en el hijo Kaito.");
         }
+
+        StartCoroutine(StartWait());
+    }
+
+    private IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(startWaitTime);
+        kaitoAnimator.StopPlayback();
+        input.ActivateInput();
     }
 
     //Movimiento por rigidbody

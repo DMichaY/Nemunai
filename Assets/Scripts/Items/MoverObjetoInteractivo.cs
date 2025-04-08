@@ -9,9 +9,15 @@ public class MoverObjetoInteractivo : MonoBehaviour
 
     public Vector3 posicionFinal;
     public Vector3 rotacionFinal; // en grados (Euler)
+
+    public Vector3 rotacionInicial; // en grados (Euler)
     public float duracionMovimiento = 0f;
 
+    public GameObject texto;
+
     private bool enMovimiento = false;
+
+    private bool abierto = false;
 
     void Update()
     {
@@ -19,12 +25,45 @@ public class MoverObjetoInteractivo : MonoBehaviour
 
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
+/*Mostrar texto "Pulsa E para abrir"
+        if (distancia <= distanciaMinima)
+        {
+
+            texto.SetActive(true);
+
+        }
+
+        else
+        {
+            texto.SetActive(false);
+        }
+*/
         if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
         {
-            StartCoroutine(MoverYRotar());
-        }
-    }
 
+            
+            //StartCoroutine(MoverYRotar());
+
+            if (abierto)
+            {
+               StartCoroutine(Cerrar());
+
+               abierto = false;
+            }
+
+            else
+            {
+                StartCoroutine(Abrir());
+
+                abierto = true;
+            }
+
+                  
+        }
+
+        
+    }
+/*
     IEnumerator MoverYRotar()
     {
         enMovimiento = true;
@@ -53,4 +92,65 @@ public class MoverObjetoInteractivo : MonoBehaviour
 
         enMovimiento = false;
     }
+*/
+
+     IEnumerator Abrir()
+     {
+        enMovimiento = true;
+        
+        Quaternion inicio = Quaternion.Euler(rotacionInicial);
+        
+        Quaternion fin = Quaternion.Euler(rotacionFinal);
+        
+        float tiempo = 0f;
+
+        while (tiempo < duracionMovimiento)
+        {
+            tiempo += Time.deltaTime;
+            float t = Mathf.Clamp01(tiempo / duracionMovimiento);
+
+            
+            transform.rotation = Quaternion.Lerp(inicio, fin, t);
+
+
+            yield return null;
+        }
+
+        // Asegura que queda exactamente en el destino
+        //transform.rotation = rotacionObjetivo;
+
+        enMovimiento = false;
+
+        
+     }
+
+     IEnumerator Cerrar()
+     {
+        enMovimiento = true;
+        
+        Quaternion inicio = Quaternion.Euler(rotacionInicial);
+        
+        Quaternion fin = Quaternion.Euler(rotacionFinal);
+        
+        float tiempo = 0f;
+
+        while (tiempo < duracionMovimiento)
+        {
+            tiempo += Time.deltaTime;
+            float t = Mathf.Clamp01(tiempo / duracionMovimiento);
+
+            
+            transform.rotation = Quaternion.Lerp(fin, inicio, t);
+
+
+            yield return null;
+        }
+
+        // Asegura que queda exactamente en el destino
+        //transform.rotation = rotacionObjetivo;
+
+        enMovimiento = false;
+
+        
+     }
 }

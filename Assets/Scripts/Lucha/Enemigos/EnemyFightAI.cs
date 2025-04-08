@@ -13,18 +13,25 @@ public class EnemyFightAI : FighterClass
     public Rigidbody rb;
 
     //Estadísticas
-    public float speed = 6, waitTime = 3, attackTime = 1;
-    public float life = 100;
+    public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
 
-    void Start()
+    void Awake()
     {
         player = FindObjectOfType<KaitoFight>();
         animator = GetComponentInChildren<Animator>();
+        animator.StartPlayback();
         rb = GetComponent<Rigidbody>();
 
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
+        StartCoroutine(StartWait());
+    }
+
+    private IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(startWaitTime);
+        animator.StopPlayback();
         FSM = new EnemyWait();
         FSM.Initialize(this);
     }
