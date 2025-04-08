@@ -1,83 +1,184 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogoManager : MonoBehaviour
 {
-    public GameObject cuadroDialogo;
-    public TMP_Text texto1;
-    public TMP_Text texto;
-    public string nombreHablante;
-    [TextArea(3, 10)] public string dialogo;
-    public float velocidadTexto = 0.05f;
-    public float rangoInteraccion = 3f;
+    [Header("Referencias del diálogo")]
+    public CanvasGroup canvasGroup;
+    public Image imagenBocadillo;
+    public TMP_Text textoNombre;
+    public TMP_Text textoDialogo;
     public Transform jugador;
+
+    [Header("Movimiento del personaje")]
+    public MonoBehaviour scriptMovimientoKaito;
+
+    [Header("Parámetros")]
+    public float distanciaInteraccion = 3f;
+    public float duracionFade = 0.5f;
+    public float velocidadTexto = 0.05f;
 
     private bool enRango = false;
     private bool dialogoActivo = false;
-    private Coroutine escribirTexto;
+    private bool puedeCerrar = false;
+    private bool textoEscribiendose = false;
+    private bool dialogoOcultoPorPause = false;
+    private Coroutine escribiendoTexto;
+
+    private string textoCompleto;
+    private string nombreCompleto;
+
+    void Start()
+    {
+        canvasGroup.alpha = 0f;
+        canvasGroup.gameObject.SetActive(false);
+        textoNombre.gameObject.SetActive(false);
+        textoDialogo.gameObject.SetActive(false);
+
+        textoCompleto = textoDialogo.text;
+        nombreCompleto = textoNombre.text;
+
+        textoNombre.text = "";
+        textoDialogo.text = "";
+    }
 
     void Update()
     {
-        // Comprobar distancia con el jugador
-        enRango = Vector3.Distance(transform.position, jugador.position) <= rangoInteraccion;
+        enRango = Vector3.Distance(transform.position, jugador.position) <= distanciaInteraccion;
 
+        // Activar diálogo
         if (enRango && Input.GetKeyDown(KeyCode.E))
         {
             if (!dialogoActivo)
                 IniciarDialogo();
-            else
+            else if (textoEscribiendose)
+                MostrarTextoInmediatamente();
+            else if (puedeCerrar)
                 CerrarDialogo();
+        }
+
+        // Pausar juego con ESC
+        if (Input.GetKeyDown(KeyCode.Escape) && dialogoActivo)
+        {
+            if (!dialogoOcultoPorPause)
+            {
+                OcultarPorPausa();
+            }
+            else
+            {
+                ReanudarTrasPausa();
+            }
         }
     }
 
     void IniciarDialogo()
     {
         dialogoActivo = true;
-        cuadroDialogo.SetActive(true);
-        StartCoroutine(AnimacionAparicion());
-        // Bloquear movimiento del jugador
+        puedeCerrar = false;
+        dialogoOcultoPorPause = false;
+
+        canvasGroup.alpha = 0f;
+        canvasGroup.gameObject.SetActive(true);
+        textoNombre.gameObject.SetActive(false);
+        textoDialogo.gameObject.SetActive(false);
+
+        textoNombre.text = "";
+        textoDialogo.text = "";
+
+        if (scriptMovimientoKaito != null)
+            scriptMovimientoKaito.enabled = false;
+
         Time.timeScale = 0f;
+        StartCoroutine(AnimarDialogo());
     }
 
-    IEnumerator AnimacionAparicion()
+    IEnumerator AnimarDialogo()
     {
-        cuadroDialogo.transform.localScale = Vector3.zero;
-        float tiempo = 0f;
-        Vector3 escalaFinal = Vector3.one;
-        while (tiempo < 0.3f)
+        float t = 0f;
+        while (t < duracionFade)
         {
-            cuadroDialogo.transform.localScale = Vector3.Lerp(Vector3.zero, escalaFinal, tiempo / 0.3f);
-            tiempo += Time.unscaledDeltaTime;
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, t / duracionFade);
+            t += Time.unscaledDeltaTime;
             yield return null;
         }
-        cuadroDialogo.transform.localScale = escalaFinal;
+        canvasGroup.alpha = 1f;
 
-        yield return new WaitForSecondsRealtime(1f);
-        texto1.text = nombreHablante;
-        texto1.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);
-        escribirTexto = StartCoroutine(EfectoMaquinaDeEscribir(dialogo));
+        textoNombre.text = nombreCompleto;
+        textoNombre.gameObject.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(0.3f);
+        textoDialogo.gameObject.SetActive(true);
+        escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoCompleto));
     }
 
-    IEnumerator EfectoMaquinaDeEscribir(string dialogoCompleto)
+    IEnumerator EscribirTextoMaquina(string texto)
     {
-        texto.text = "";
-        texto.gameObject.SetActive(true);
-        foreach (char letra in dialogoCompleto)
+        textoDialogo.text = "";
+        textoEscribiendose = true;
+        foreach (char letra in texto)
         {
-            texto.text += letra;
+            textoDialogo.text += letra;
             yield return new WaitForSecondsRealtime(velocidadTexto);
         }
+
+        textoEscribiendose = false;
+        puedeCerrar = true;
+    }
+
+    void MostrarTextoInmediatamente()
+    {
+        if (escribiendoTexto != null)
+            StopCoroutine(escribiendoTexto);
+
+        textoDialogo.text = textoCompleto;
+        textoEscribiendose = false;
+        puedeCerrar = true;
     }
 
     void CerrarDialogo()
     {
-        if (escribirTexto != null) StopCoroutine(escribirTexto);
-        cuadroDialogo.SetActive(false);
+        if (escribiendoTexto != null)
+            StopCoroutine(escribiendoTexto);
+        StartCoroutine(FadeOut());
+    }
+
+    IEnumerator FadeOut()
+    {
+        float t = 0f;
+        while (t < duracionFade)
+        {
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, t / duracionFade);
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+        canvasGroup.alpha = 0f;
+        canvasGroup.gameObject.SetActive(false);
+
+        textoNombre.text = "";
+        textoDialogo.text = "";
+        textoNombre.gameObject.SetActive(false);
+        textoDialogo.gameObject.SetActive(false);
+
+        if (scriptMovimientoKaito != null)
+            scriptMovimientoKaito.enabled = true;
+
+        Time.timeScale = 1f;
         dialogoActivo = false;
-        Time.timeScale = 1f; // Restaurar el movimiento del jugador
+        puedeCerrar = false;
+    }
+
+    void OcultarPorPausa()
+    {
+        canvasGroup.gameObject.SetActive(false);
+        dialogoOcultoPorPause = true;
+    }
+
+    void ReanudarTrasPausa()
+    {
+        canvasGroup.gameObject.SetActive(true);
+        dialogoOcultoPorPause = false;
     }
 }
