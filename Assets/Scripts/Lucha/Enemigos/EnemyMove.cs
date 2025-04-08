@@ -32,12 +32,12 @@ public class EnemyMove : EnemyState
         {
             if(moveForward)
             {
-                enemyAI.animator.SetBool("goRight", true);
+                enemyAI.animator.SetBool("goForward", true);
                 enemyAI.rb.velocity = new Vector3(0, 0, -enemyAI.speed);
             }
             else
             {
-                enemyAI.animator.SetBool("goLeft", true);
+                enemyAI.animator.SetBool("goBackward", true);
                 enemyAI.rb.velocity = new Vector3(0, 0, enemyAI.speed);
             }
         }
@@ -55,8 +55,8 @@ public class EnemyMove : EnemyState
 
     public override void End()
     {
-        enemyAI.animator.SetBool("goRight", false);
-        enemyAI.animator.SetBool("goLeft", false);
+        enemyAI.animator.SetBool("goForward", false);
+        enemyAI.animator.SetBool("goBackward", false);
         base.End();
     }
 
