@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using TMPro;
 
@@ -20,12 +19,15 @@ public class KaitoDialogo : MonoBehaviour
     private Coroutine escribirCoroutine;
     private Coroutine desvanecerCoroutine;
     private bool jugadorDentro = false;
+    private bool estaEscribiendo = false;
+    private bool esperandoSiguiente = false;
+    private bool salirDetectadoMientrasEscribe = false;
 
     void Start()
     {
         foreach (var texto in textos)
         {
-            texto.gameObject.SetActive(false); // Ocultamos todos al inicio
+            texto.gameObject.SetActive(false);
         }
     }
 
@@ -35,11 +37,38 @@ public class KaitoDialogo : MonoBehaviour
 
         jugadorDentro = true;
 
-        if (desvanecerCoroutine != null)
-            StopCoroutine(desvanecerCoroutine);
+        if (estaEscribiendo)
+        {
+            esperandoSiguiente = true;
+            salirDetectadoMientrasEscribe = false; // Cancelamos posible salida
+            return;
+        }
 
+        MostrarSiguienteTexto();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        jugadorDentro = false;
+
+        if (estaEscribiendo)
+        {
+            salirDetectadoMientrasEscribe = true;
+        }
+        else if (textoActual != null)
+        {
+            desvanecerCoroutine = StartCoroutine(DesvanecerTexto(textoActual));
+        }
+    }
+
+    void MostrarSiguienteTexto()
+    {
         if (textoActual != null)
+        {
             textoActual.gameObject.SetActive(false);
+        }
 
         textoActual = textos[indiceTextoActual];
         textoActual.gameObject.SetActive(true);
@@ -52,21 +81,11 @@ public class KaitoDialogo : MonoBehaviour
         indiceTextoActual = (indiceTextoActual + 1) % textos.Count;
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag("Player")) return;
-
-        jugadorDentro = false;
-
-        if (escribirCoroutine != null)
-            StopCoroutine(escribirCoroutine);
-
-        if (textoActual != null)
-            desvanecerCoroutine = StartCoroutine(DesvanecerTexto(textoActual));
-    }
-
     IEnumerator EscribirConEfecto(TextMeshProUGUI textoUI)
     {
+        estaEscribiendo = true;
+        esperandoSiguiente = false;
+
         string textoCompleto = textoUI.text;
         textoUI.text = "";
 
@@ -75,7 +94,7 @@ public class KaitoDialogo : MonoBehaviour
             textoUI.text += textoCompleto[i];
             textoUI.ForceMeshUpdate();
 
-            // Temblor leve al texto (moviendo vértices un poco)
+            // Efecto temblor
             TMP_TextInfo textInfo = textoUI.textInfo;
             int charIndex = textoUI.text.Length - 1;
             if (charIndex < textInfo.characterCount)
@@ -99,6 +118,17 @@ public class KaitoDialogo : MonoBehaviour
             }
 
             yield return new WaitForSeconds(velocidadEscritura);
+        }
+
+        estaEscribiendo = false;
+
+        if (jugadorDentro && esperandoSiguiente)
+        {
+            MostrarSiguienteTexto();
+        }
+        else if (!jugadorDentro || salirDetectadoMientrasEscribe)
+        {
+            desvanecerCoroutine = StartCoroutine(DesvanecerTexto(textoUI));
         }
     }
 
