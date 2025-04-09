@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialCameraScript : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     float minZ = -80, maxZ = -12;
     GameObject player;
