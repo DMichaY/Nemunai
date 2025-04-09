@@ -57,9 +57,6 @@ public class EnemyFightAI : FighterClass
         }
         else
         {
-            if (Random.Range(0, 2) == 0) animator.SetTrigger("damage1");
-            else animator.SetTrigger("damage2");
-
             foreach(GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
             {
                 HB.SetActive(false);

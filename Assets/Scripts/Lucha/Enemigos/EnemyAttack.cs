@@ -20,7 +20,7 @@ public class EnemyAttack : EnemyState
 
     public override void Update()
     {
-        if (!IsPlayerClose() || actionTimer >= enemyAI.waitTime)
+        if (actionTimer >= enemyAI.waitTime && !enemyAI.animator.GetBool("isAttacking"))
         {
             enemyAI.animator.ResetTrigger("attack1");
             enemyAI.animator.ResetTrigger("attack2");
