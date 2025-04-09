@@ -31,7 +31,6 @@ public class LogicaVerjaEstacion : MonoBehaviour
         {
             if (tieneLlave)
             {
-                GetComponent<Renderer>().material.color = Color.green;
                 animacionPuertaVerja.SetBool("usaLlave", true);
                 StartCoroutine(BorrarPuerta());
 
