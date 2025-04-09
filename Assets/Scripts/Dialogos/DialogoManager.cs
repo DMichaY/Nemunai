@@ -5,33 +5,37 @@ using TMPro;
 
 public class DialogoManager : MonoBehaviour
 {
-    [Header("Referencias del diálogo")]
     public CanvasGroup canvasGroup;
     public Image imagenBocadillo;
     public TMP_Text textoNombre;
     public TMP_Text textoDialogo;
     public Transform jugador;
-
-    [Header("Movimiento del personaje")]
     public MonoBehaviour scriptMovimientoKaito;
 
-    [Header("Parámetros")]
     public float distanciaInteraccion = 3f;
     public float duracionFade = 0.5f;
     public float velocidadTexto = 0.05f;
+    public float velocidadRotacion = 5f;
 
     private bool enRango = false;
     private bool dialogoActivo = false;
     private bool puedeCerrar = false;
     private bool textoEscribiendose = false;
     private bool dialogoOcultoPorPause = false;
+    private bool estaPausado = false;
+
     private Coroutine escribiendoTexto;
+    private Coroutine rotacionCoroutine;
 
     private string textoCompleto;
     private string nombreCompleto;
 
+    private Vector3 rotacionInicial;
+
     void Start()
     {
+        rotacionInicial = transform.eulerAngles;
+
         canvasGroup.alpha = 0f;
         canvasGroup.gameObject.SetActive(false);
         textoNombre.gameObject.SetActive(false);
@@ -48,50 +52,63 @@ public class DialogoManager : MonoBehaviour
     {
         enRango = Vector3.Distance(transform.position, jugador.position) <= distanciaInteraccion;
 
-        // Activar diálogo
         if (enRango && Input.GetKeyDown(KeyCode.E))
         {
-            if (!dialogoActivo)
-                IniciarDialogo();
-            else if (textoEscribiendose)
+            if (!dialogoActivo && !dialogoOcultoPorPause)
+                StartCoroutine(IniciarDialogo());
+            else if (dialogoActivo && textoEscribiendose)
                 MostrarTextoInmediatamente();
-            else if (puedeCerrar)
+            else if (dialogoActivo && puedeCerrar)
                 CerrarDialogo();
         }
 
-        // Pausar juego con ESC
         if (Input.GetKeyDown(KeyCode.Escape) && dialogoActivo)
         {
             if (!dialogoOcultoPorPause)
-            {
                 OcultarPorPausa();
-            }
             else
-            {
                 ReanudarTrasPausa();
-            }
         }
     }
 
-    void IniciarDialogo()
+    IEnumerator IniciarDialogo()
     {
         dialogoActivo = true;
         puedeCerrar = false;
         dialogoOcultoPorPause = false;
+        estaPausado = false;
 
         canvasGroup.alpha = 0f;
         canvasGroup.gameObject.SetActive(true);
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
-
         textoNombre.text = "";
         textoDialogo.text = "";
 
         if (scriptMovimientoKaito != null)
             scriptMovimientoKaito.enabled = false;
 
+        // Cancelar rotaciones previas si existÃ­an
+        if (rotacionCoroutine != null)
+            StopCoroutine(rotacionCoroutine);
+        rotacionCoroutine = StartCoroutine(RotarHaciaJugador());
+
         Time.timeScale = 0f;
         StartCoroutine(AnimarDialogo());
+        yield return null;
+    }
+
+    IEnumerator RotarHaciaJugador()
+    {
+        Vector3 direccion = (jugador.position - transform.position).normalized;
+        direccion.y = 0f;
+        Quaternion rotObjetivo = Quaternion.LookRotation(direccion);
+        while (Quaternion.Angle(transform.rotation, rotObjetivo) > 0.5f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotObjetivo, Time.unscaledDeltaTime * velocidadRotacion);
+            yield return null;
+        }
+        transform.rotation = rotObjetivo;
     }
 
     IEnumerator AnimarDialogo()
@@ -111,6 +128,7 @@ public class DialogoManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.3f);
         textoDialogo.gameObject.SetActive(true);
+
         escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoCompleto));
     }
 
@@ -120,10 +138,10 @@ public class DialogoManager : MonoBehaviour
         textoEscribiendose = true;
         foreach (char letra in texto)
         {
+            if (dialogoOcultoPorPause) yield break; // no seguir escribiendo si se ha pausado
             textoDialogo.text += letra;
             yield return new WaitForSecondsRealtime(velocidadTexto);
         }
-
         textoEscribiendose = false;
         puedeCerrar = true;
     }
@@ -154,9 +172,9 @@ public class DialogoManager : MonoBehaviour
             t += Time.unscaledDeltaTime;
             yield return null;
         }
+
         canvasGroup.alpha = 0f;
         canvasGroup.gameObject.SetActive(false);
-
         textoNombre.text = "";
         textoDialogo.text = "";
         textoNombre.gameObject.SetActive(false);
@@ -168,17 +186,47 @@ public class DialogoManager : MonoBehaviour
         Time.timeScale = 1f;
         dialogoActivo = false;
         puedeCerrar = false;
+
+        // Cancelar rotaciones previas si habÃ­a alguna
+        if (rotacionCoroutine != null)
+            StopCoroutine(rotacionCoroutine);
+        StartCoroutine(RotarAHaciaInicial());
     }
 
     void OcultarPorPausa()
     {
-        canvasGroup.gameObject.SetActive(false);
-        dialogoOcultoPorPause = true;
+        if (dialogoActivo)
+        {
+            canvasGroup.gameObject.SetActive(false);
+            dialogoOcultoPorPause = true;
+            estaPausado = true;
+        }
     }
 
     void ReanudarTrasPausa()
     {
-        canvasGroup.gameObject.SetActive(true);
-        dialogoOcultoPorPause = false;
+        if (dialogoActivo && estaPausado)
+        {
+            canvasGroup.gameObject.SetActive(true);
+            dialogoOcultoPorPause = false;
+            estaPausado = false;
+
+            if (textoEscribiendose)
+            {
+                // continuar escribiendo el texto
+                escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoCompleto.Substring(textoDialogo.text.Length)));
+            }
+        }
+    }
+
+    IEnumerator RotarAHaciaInicial()
+    {
+        Quaternion rotObjetivo = Quaternion.Euler(rotacionInicial);
+        while (Quaternion.Angle(transform.rotation, rotObjetivo) > 0.5f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotObjetivo, Time.unscaledDeltaTime * velocidadRotacion);
+            yield return null;
+        }
+        transform.rotation = rotObjetivo;
     }
 }
