@@ -8,12 +8,17 @@ public class LogicaLlave : MonoBehaviour
     public LogicaVerjaEstacion puertaEstacion;
 
     public GameObject imagenLlave;
+    public GameObject brillitoLlave;
     GameObject llaveObtenidaUI;
+
+    bool antiSpam;
 
     void Start()
     {
         puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
         llaveObtenidaUI = GameObject.Find("LlaveObtenida");
+
+        antiSpam = false;
 
         gameObject.SetActive(false);
         llaveObtenidaUI.SetActive(false);
@@ -24,13 +29,13 @@ public class LogicaLlave : MonoBehaviour
         // Al entrar en contacto con el trigger, si se pulsa E se obtendrá la llave, avisandose por la UI
         if (jugador.gameObject.name == "Kaito")
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) && !antiSpam)
             {
-                Debug.Log("AY");
                 puertaEstacion.tieneLlave = true;
 
                 imagenLlave.SetActive(true);
                 StartCoroutine(LlaveObtenida());
+                StartCoroutine(noSpamInteractuar());
             }
         }
     }
@@ -39,10 +44,20 @@ public class LogicaLlave : MonoBehaviour
     IEnumerator LlaveObtenida()
     {
         llaveObtenidaUI.SetActive(true);
+        Destroy(brillitoLlave);
 
         yield return new WaitForSeconds(3f);
         
         llaveObtenidaUI.SetActive(false);
         Destroy(this.gameObject);
+    }
+
+    IEnumerator noSpamInteractuar()
+    {
+        antiSpam = true;
+
+        yield return new WaitForSeconds (3f);
+
+        antiSpam = false;
     }
 }
