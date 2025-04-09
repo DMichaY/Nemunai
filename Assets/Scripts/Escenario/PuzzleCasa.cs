@@ -1,26 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleCasa : MonoBehaviour
 {
 
     public GameObject[]listaNotas = new GameObject[8];
 
+    public GameObject libro;
+
+    public GameObject libroInventario;
+
+    public GameObject llave;
+
     public int contador = 0;
 
     public bool puertasAbren = false;
 
-    public GameObject libro;
-
     public bool leyendo = false;
+
+    public bool llaveRecogida = false;
+
+    public Image pantallaNegra;
 
 
     void Start()
     {
 
-       
-
+       if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
+        else Debug.LogWarning("No hay pantalla negra!");
 
 
     }
@@ -44,13 +53,7 @@ public class PuzzleCasa : MonoBehaviour
                 leyendo = false;
 
             }
-
-           
-
-           
         }
-
-
 
     }
 
@@ -59,6 +62,8 @@ public class PuzzleCasa : MonoBehaviour
         puertasAbren = true;
 
         leyendo = true;
+
+        libroInventario.SetActive(true);
         
         //mostrar pista
         
@@ -68,6 +73,42 @@ public class PuzzleCasa : MonoBehaviour
 
         //aumenta el contador para mostrar la siguiente pista la proxima vez
         contador++;
+
+        //todas las pistas recogidas
+        if (contador == 8)
+        {
+            llave.SetActive(true);
+        }
+
+
+    }
+
+    //mostrar diario en el menu de pausa
+    public void MostrarDiario()
+    {
+
+        if (leyendo)
+        {
+            libro.SetActive(false); 
+
+            listaNotas[contador-1].SetActive(false);
+
+            leyendo = false;
+
+
+        }
+
+        else
+        {
+            libro.SetActive(true); 
+
+            listaNotas[contador-1].SetActive(true);
+
+            leyendo = true;
+        }
+
+
+
 
 
     }
