@@ -8,11 +8,13 @@ public class LogicaVerjaEstacion : MonoBehaviour
     Animator animacionPuertaVerja;
     public GameObject llaveVerja;
 
+    public int interacciones = 0;
+
     public bool tieneLlave;
     public bool interaccionUno;
 
     public GameObject imagenLlave;
-    public GameObject recordarLlave;
+    GameObject recordarLlave;
 
     void Start()
     {
@@ -25,26 +27,32 @@ public class LogicaVerjaEstacion : MonoBehaviour
         interaccionUno = true;
     }
 
-    void OnCollisionEnter(Collision jugador)
+    void OnCollisionStay(Collision jugador)
     {
+        // Si se acerca Kaito a la puerta, al pulsar E interactuará con ella
+        // Sin llave: Aviso buscar llave (si se hace 3 veces se le mostrará un brillo guía)
+        // Con llave: Abre la puerta
         if (jugador.gameObject.name == "Kaito")
         {
-            if (tieneLlave)
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                GetComponent<Renderer>().material.color = Color.green;
-                animacionPuertaVerja.SetBool("usaLlave", true);
-                StartCoroutine(BorrarPuerta());
-
-                imagenLlave.SetActive(false);
-            }
-            else
-            {
-                if (interaccionUno)
+                if (tieneLlave)
                 {
-                    llaveVerja.SetActive(true);
-                    interaccionUno = false;
+                    animacionPuertaVerja.SetBool("usaLlave", true);
+                    StartCoroutine(BorrarPuerta());
+
+                    imagenLlave.SetActive(false);
                 }
-                StartCoroutine(Recordatorio());
+                else
+                {
+                    if (interaccionUno)
+                    {
+                        llaveVerja.SetActive(true);
+                        interaccionUno = false;
+                        interacciones++;
+                    }
+                    StartCoroutine(Recordatorio());
+                }
             }
         }
     }
@@ -65,3 +73,4 @@ public class LogicaVerjaEstacion : MonoBehaviour
         recordarLlave.SetActive(false);
     }
 }
+

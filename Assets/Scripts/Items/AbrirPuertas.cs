@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class MoverObjetoInteractivo : MonoBehaviour
+public class AbrirPuertas : MonoBehaviour
 {
     public Transform jugador; // Referencia al jugador
     public float distanciaMinima = 0f; // Distancia minima para activar
@@ -24,18 +25,17 @@ public class MoverObjetoInteractivo : MonoBehaviour
 
         if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
         {
-            StartCoroutine(MoverYRotar());
-        
+            StartCoroutine(Abrir());
+
         }
 
-        
+
     }
 
-    IEnumerator MoverYRotar()
+    IEnumerator Abrir()
     {
         enMovimiento = true;
 
-        //Vector3 posicionInicial = transform.position;
         Quaternion rotacionInicial = transform.rotation;
 
         Quaternion rotacionObjetivo = Quaternion.Euler(rotacionFinal);
@@ -47,18 +47,15 @@ public class MoverObjetoInteractivo : MonoBehaviour
             tiempo += Time.deltaTime;
             float t = Mathf.Clamp01(tiempo / duracionMovimiento);
 
-           // transform.position = Vector3.Lerp(posicionInicial, posicionFinal, t);
             transform.rotation = Quaternion.Lerp(rotacionInicial, rotacionObjetivo, t);
 
             yield return null;
         }
 
         // Asegura que queda exactamente en el destino
-        //transform.position = posicionFinal;
         transform.rotation = rotacionObjetivo;
 
         enMovimiento = false;
     }
 
-    
 }

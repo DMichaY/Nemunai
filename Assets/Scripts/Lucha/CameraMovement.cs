@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TutorialCameraScript : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     float minZ = -80, maxZ = -12;
     GameObject player;
+    public GameObject playerHealth, enemyHealth;
 
     void Start()
     {
@@ -16,6 +18,8 @@ public class TutorialCameraScript : MonoBehaviour
 
     private IEnumerator CinematicCamera()
     {
+        playerHealth.SetActive(false);
+        enemyHealth.SetActive(false);
         float t = 0;
         while(t < 1)
         {
@@ -34,6 +38,8 @@ public class TutorialCameraScript : MonoBehaviour
             yield return null;
         }
 
+        playerHealth.SetActive(true);
+        enemyHealth.SetActive(true);
         StartCoroutine(DynamicCamera());
     }
 
