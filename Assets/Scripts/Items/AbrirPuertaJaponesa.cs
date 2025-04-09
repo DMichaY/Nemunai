@@ -18,6 +18,16 @@ public class AbrirPuertaJaponesa : MonoBehaviour
 
     private bool enMovimiento = false;
 
+    GameObject manager;
+
+    void Start()
+    {
+
+        manager = GameObject.Find("GameManager");
+
+
+    }
+
 
     void Update()
     {
@@ -26,12 +36,9 @@ public class AbrirPuertaJaponesa : MonoBehaviour
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
 
-        if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento && manager.GetComponent<PuzzleCasa>().puertasAbren)
         {
             StartCoroutine(Mover());
-
-            //StartCoroutine(Correr());
-
 
 
         }
@@ -65,33 +72,7 @@ public class AbrirPuertaJaponesa : MonoBehaviour
         enMovimiento = false;
     }
 
-    /*
-    IEnumerator Correr()
-    {
-        enMovimiento = true;
-
-        Vector3 posicionInicial = transform.position;
-
-
-        float tiempo = 0f;
-
-        while (tiempo < duracionMovimiento)
-        {
-            tiempo += Time.deltaTime;
-            float t = Mathf.Clamp01(tiempo / duracionMovimiento);
-
-            transform.position = Vector3.Lerp(posicionInicial, posicionFinal, t);
-
-
-            yield return null;
-        }
-
-        transform.position = posicionFinal;
-
-
-        enMovimiento = false;
-    }
-    */
+   
 
 
     

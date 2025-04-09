@@ -16,6 +16,16 @@ public class AbrirPuertas : MonoBehaviour
     private bool enMovimiento = false;
 
 
+    GameObject manager;
+
+    void Start()
+    {
+
+        manager = GameObject.Find("GameManager");
+
+
+    }
+
     void Update()
     {
         if (jugador == null) return;
@@ -23,7 +33,7 @@ public class AbrirPuertas : MonoBehaviour
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
 
-        if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento && manager.GetComponent<PuzzleCasa>().puertasAbren)
         {
             StartCoroutine(Abrir());
 
