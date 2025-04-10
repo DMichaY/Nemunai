@@ -25,15 +25,6 @@ public class PuzzleCasa : MonoBehaviour
     public Image pantallaNegra;
 
 
-    void Start()
-    {
-
-       if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
-        else Debug.LogWarning("No hay pantalla negra!");
-
-
-    }
-
     // Start is called before the first frame update
     void Update()
     {
