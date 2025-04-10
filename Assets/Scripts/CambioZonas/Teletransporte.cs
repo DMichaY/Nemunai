@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 
 public class Teletransporte : MonoBehaviour
@@ -16,35 +17,53 @@ public class Teletransporte : MonoBehaviour
             if (destino != null)
             {
 
-                if (pantallaNegra != null)
-                {
-                    pantallaNegra.CrossFadeAlpha(1, 2, false);
 
-                }
-
-                else
-                {
-                    Debug.LogWarning("No hay pantalla negra!");
-                }
-                
-                
+                //StartCoroutine(CambioPiso());
 
                 otro.transform.position = destino.position;
                 otro.transform.rotation = destino.rotation;
 
-                
-                if (pantallaNegra != null)
-                {
-                    pantallaNegra.CrossFadeAlpha(0, 2, false);
-
-                }
-
-                else
-                {
-                    Debug.LogWarning("No hay pantalla negra!");
-                }
             }
         }
+
+        /*
+        IEnumerator CambioPiso()
+        {
+
+            if (pantallaNegra != null)
+            {
+                pantallaNegra.CrossFadeAlpha(1, 2, false);
+
+            }
+
+            else
+            {
+                Debug.LogWarning("No hay pantalla negra!");
+            }
+
+            yield return new WaitForSeconds(2f);
+
+
+            otro.transform.position = destino.position;
+            otro.transform.rotation = destino.rotation;
+
+            yield return new WaitForSeconds(2f);
+
+
+            if (pantallaNegra != null)
+            {
+                pantallaNegra.CrossFadeAlpha(0, 2, false);
+
+            }
+
+            else
+            {
+                Debug.LogWarning("No hay pantalla negra!");
+            }
+
+        }
+
+        */
     }
 
 

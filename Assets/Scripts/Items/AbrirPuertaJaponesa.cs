@@ -43,6 +43,16 @@ public class AbrirPuertaJaponesa : MonoBehaviour
 
         }
 
+        else if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        {
+            if (manager.GetComponent<KaitoDialogo>().textoVisible == false)
+            {
+                manager.GetComponent<KaitoDialogo>().MostrarSiguienteTexto();
+            }
+
+
+        }
+
 
     }
 

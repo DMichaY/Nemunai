@@ -28,7 +28,8 @@ public class AbrirPuertas : MonoBehaviour
 
     void Update()
     {
-        if (jugador == null) return;
+        
+        //if (jugador == null) return;
 
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
@@ -37,6 +38,16 @@ public class AbrirPuertas : MonoBehaviour
         {
             StartCoroutine(Abrir());
 
+        }
+
+        else if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        {
+            if (manager.GetComponent<KaitoDialogo>().textoVisible == false)
+            {
+                manager.GetComponent<KaitoDialogo>().MostrarSiguienteTexto();
+            }
+
+            
         }
 
 
