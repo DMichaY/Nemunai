@@ -12,8 +12,10 @@ public class KaitoMovimiento : MonoBehaviour
 
     public AudioClip andarTierra;
     public AudioClip andarPiedra;
+    public AudioClip andarMadera;
     public AudioClip correrTierra;
     public AudioClip correrPiedra;
+    public AudioClip correrMadera;
     public AudioSource audioFuente;
     
     private string sueloActualTag = null;
@@ -131,6 +133,10 @@ public class KaitoMovimiento : MonoBehaviour
         {
             clipActual = animador.GetBool("estaCorriendo") ? correrPiedra : andarPiedra;
         }
+        else if (sueloActualTag == "Madera")
+        {
+            clipActual = animador.GetBool("estaCorriendo") ? correrMadera : andarMadera;
+        }
 
         if (enMovimiento)
         {
@@ -152,7 +158,7 @@ public class KaitoMovimiento : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if (collision.collider.CompareTag("Tierra") || collision.collider.CompareTag("Piedra"))
+        if (collision.collider.CompareTag("Tierra") || collision.collider.CompareTag("Piedra") || collision.collider.CompareTag("Madera"))
         {
             sueloActualTag = collision.collider.tag;
             enContactoConSuelo = true;
