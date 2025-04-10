@@ -10,9 +10,22 @@ public class KaitoMovimiento : MonoBehaviour
     private bool estaCaminando = false;
     private bool puedeCorrer = false;
 
+    public AudioClip andarTierra;
+    public AudioClip andarPiedra;
+    public AudioClip correrTierra;
+    public AudioClip correrPiedra;
+    public AudioSource audioFuente;
+    
+    private string sueloActualTag = null;
+    private bool enContactoConSuelo = false;
+
     void Start()
     {
         animador = GetComponent<Animator>();
+
+        // IMPORTANTE: Validamos que haya AudioSource antes de acceder a él
+        if (audioFuente != null)
+            audioFuente.loop = true;
     }
 
     void Update()
@@ -92,6 +105,66 @@ public class KaitoMovimiento : MonoBehaviour
             animador.SetBool("estaCorriendo", false);
             animador.SetBool("estaRetrocediendo", false);
             puedeCorrer = false;
+        }
+
+        SonidosPisadas(presionandoW || presionandoS);
+    }
+
+    // LÓGICA AUDIO PISADAS
+    void SonidosPisadas(bool enMovimiento)
+    {
+        // Si no está en contacto con el suelo o no hay audioFuente, detenemos cualquier sonido
+        if (!enContactoConSuelo || audioFuente == null)
+        {
+            if (audioFuente != null)
+                audioFuente.Stop();
+            return;
+        }
+
+        AudioClip clipActual = null;
+
+        if (sueloActualTag == "Tierra")
+        {
+            clipActual = animador.GetBool("estaCorriendo") ? correrTierra : andarTierra;
+        }
+        else if (sueloActualTag == "Piedra")
+        {
+            clipActual = animador.GetBool("estaCorriendo") ? correrPiedra : andarPiedra;
+        }
+
+        if (enMovimiento)
+        {
+            if (audioFuente.clip != clipActual)
+            {
+                audioFuente.clip = clipActual;
+                audioFuente.Play();
+            }
+            else if (!audioFuente.isPlaying)
+            {
+                audioFuente.Play();
+            }
+        }
+        else
+        {
+            audioFuente.Stop();
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Tierra") || collision.collider.CompareTag("Piedra"))
+        {
+            sueloActualTag = collision.collider.tag;
+            enContactoConSuelo = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == sueloActualTag)
+        {
+            sueloActualTag = null;
+            enContactoConSuelo = false;
         }
     }
 }
