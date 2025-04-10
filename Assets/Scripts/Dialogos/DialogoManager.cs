@@ -38,8 +38,8 @@ public class DialogoManager : MonoBehaviour
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
 
-        textoNombre.text = "";
-        textoDialogo.text = "";
+        //textoNombre.text = "";
+        //textoDialogo.text = "";
     }
 
     void Update()
@@ -76,8 +76,6 @@ public class DialogoManager : MonoBehaviour
         canvasGroup.gameObject.SetActive(true);
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
-        textoNombre.text = "";
-        textoDialogo.text = "";
 
         if (scriptMovimientoKaito != null)
             scriptMovimientoKaito.enabled = false;
@@ -115,24 +113,25 @@ public class DialogoManager : MonoBehaviour
         }
         canvasGroup.alpha = 1f;
 
-        yield return new WaitForSecondsRealtime(0.5f);
 
         // Obtener texto actualizado
         string nombreCompleto = textoNombre.text;
-        string textoCompleto = textoDialogo.text;
 
+        textoNombre.text = "";
+        yield return new WaitForSecondsRealtime(0.5f);
         textoNombre.text = nombreCompleto;
         textoNombre.gameObject.SetActive(true);
 
         yield return new WaitForSecondsRealtime(0.3f);
         textoDialogo.gameObject.SetActive(true);
 
+        string textoCompleto = textoDialogo.text;
+        textoDialogo.text = "";
         escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoCompleto));
     }
 
     IEnumerator EscribirTextoMaquina(string texto)
     {
-        textoDialogo.text = "";
         textoEscribiendose = true;
         foreach (char letra in texto)
         {
@@ -173,8 +172,6 @@ public class DialogoManager : MonoBehaviour
 
         canvasGroup.alpha = 0f;
         canvasGroup.gameObject.SetActive(false);
-        textoNombre.text = "";
-        textoDialogo.text = "";
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
 
