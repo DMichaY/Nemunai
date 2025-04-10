@@ -23,6 +23,8 @@ public class KaitoDialogo : MonoBehaviour
     private bool esperandoSiguiente = false;
     private bool salirDetectadoMientrasEscribe = false;
 
+    public bool textoVisible = false;
+
     void Start()
     {
         foreach (var texto in textos)
@@ -63,8 +65,10 @@ public class KaitoDialogo : MonoBehaviour
         }
     }
 
-    void MostrarSiguienteTexto()
+    public void MostrarSiguienteTexto()
     {
+        textoVisible = true;
+
         if (textoActual != null)
         {
             textoActual.gameObject.SetActive(false);
@@ -137,13 +141,20 @@ public class KaitoDialogo : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaDesvanecer);
 
         string texto = textoUI.text;
+
+        string textoRestaurar = textoUI.text;
+
         for (int i = texto.Length - 1; i >= 0; i--)
         {
             texto = texto.Remove(i, 1);
             textoUI.text = texto;
             yield return new WaitForSeconds(tiempoEntreDesvanecimientos);
         }
+        textoUI.text = textoRestaurar;
 
         textoUI.gameObject.SetActive(false);
+
+        textoVisible = false;
+
     }
 }
