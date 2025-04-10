@@ -42,7 +42,7 @@ public class KaitoDialogo : MonoBehaviour
         if (estaEscribiendo)
         {
             esperandoSiguiente = true;
-            salirDetectadoMientrasEscribe = false; // Cancelamos posible salida
+            salirDetectadoMientrasEscribe = false;
             return;
         }
 
@@ -98,9 +98,9 @@ public class KaitoDialogo : MonoBehaviour
             textoUI.text += textoCompleto[i];
             textoUI.ForceMeshUpdate();
 
-            // Efecto temblor
             TMP_TextInfo textInfo = textoUI.textInfo;
             int charIndex = textoUI.text.Length - 1;
+
             if (charIndex < textInfo.characterCount)
             {
                 var charInfo = textInfo.characterInfo[charIndex];
@@ -141,7 +141,6 @@ public class KaitoDialogo : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaDesvanecer);
 
         string texto = textoUI.text;
-
         string textoRestaurar = textoUI.text;
 
         for (int i = texto.Length - 1; i >= 0; i--)
@@ -150,11 +149,10 @@ public class KaitoDialogo : MonoBehaviour
             textoUI.text = texto;
             yield return new WaitForSeconds(tiempoEntreDesvanecimientos);
         }
-        textoUI.text = textoRestaurar;
 
+        textoUI.text = textoRestaurar;
         textoUI.gameObject.SetActive(false);
 
         textoVisible = false;
-
     }
 }

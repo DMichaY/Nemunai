@@ -27,9 +27,6 @@ public class DialogoManager : MonoBehaviour
     private Coroutine escribiendoTexto;
     private Coroutine rotacionCoroutine;
 
-    private string textoCompleto;
-    private string nombreCompleto;
-
     private Vector3 rotacionInicial;
 
     void Start()
@@ -40,9 +37,6 @@ public class DialogoManager : MonoBehaviour
         canvasGroup.gameObject.SetActive(false);
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
-
-        textoCompleto = textoDialogo.text;
-        nombreCompleto = textoNombre.text;
 
         textoNombre.text = "";
         textoDialogo.text = "";
@@ -88,7 +82,6 @@ public class DialogoManager : MonoBehaviour
         if (scriptMovimientoKaito != null)
             scriptMovimientoKaito.enabled = false;
 
-        // Cancelar rotaciones previas si existían
         if (rotacionCoroutine != null)
             StopCoroutine(rotacionCoroutine);
         rotacionCoroutine = StartCoroutine(RotarHaciaJugador());
@@ -123,6 +116,11 @@ public class DialogoManager : MonoBehaviour
         canvasGroup.alpha = 1f;
 
         yield return new WaitForSecondsRealtime(0.5f);
+
+        // Obtener texto actualizado
+        string nombreCompleto = textoNombre.text;
+        string textoCompleto = textoDialogo.text;
+
         textoNombre.text = nombreCompleto;
         textoNombre.gameObject.SetActive(true);
 
@@ -138,7 +136,7 @@ public class DialogoManager : MonoBehaviour
         textoEscribiendose = true;
         foreach (char letra in texto)
         {
-            if (dialogoOcultoPorPause) yield break; // no seguir escribiendo si se ha pausado
+            if (dialogoOcultoPorPause) yield break;
             textoDialogo.text += letra;
             yield return new WaitForSecondsRealtime(velocidadTexto);
         }
@@ -151,7 +149,7 @@ public class DialogoManager : MonoBehaviour
         if (escribiendoTexto != null)
             StopCoroutine(escribiendoTexto);
 
-        textoDialogo.text = textoCompleto;
+        textoDialogo.text = textoDialogo.text; // ya actualizado
         textoEscribiendose = false;
         puedeCerrar = true;
     }
@@ -187,7 +185,6 @@ public class DialogoManager : MonoBehaviour
         dialogoActivo = false;
         puedeCerrar = false;
 
-        // Cancelar rotaciones previas si había alguna
         if (rotacionCoroutine != null)
             StopCoroutine(rotacionCoroutine);
         StartCoroutine(RotarAHaciaInicial());
@@ -213,8 +210,8 @@ public class DialogoManager : MonoBehaviour
 
             if (textoEscribiendose)
             {
-                // continuar escribiendo el texto
-                escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoCompleto.Substring(textoDialogo.text.Length)));
+                string textoRestante = textoDialogo.text;
+                escribiendoTexto = StartCoroutine(EscribirTextoMaquina(textoRestante.Substring(textoDialogo.text.Length)));
             }
         }
     }
