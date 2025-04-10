@@ -21,14 +21,14 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.944
+    value: 1
   size:
     overrideState: 1
-    value: 1.57
+    value: 0.3
   lumContrib:
     overrideState: 1
-    value: 1
---- !u!114 &-348507353184217178
+    value: 0
+--- !u!114 &-2205764979899990331
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,25 +46,25 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 5.2
+    value: 14.94
   threshold:
     overrideState: 1
-    value: 0.3
-  softKnee:
-    overrideState: 0
     value: 0.5
+  softKnee:
+    overrideState: 1
+    value: 0
   clamp:
-    overrideState: 0
-    value: 65423.16
+    overrideState: 1
+    value: 1
   diffusion:
     overrideState: 1
-    value: 6.25
+    value: 7
   anamorphicRatio:
-    overrideState: 0
-    value: 0
-  color:
     overrideState: 1
-    value: {r: 1, g: 0.9986953, b: 0.9386792, a: 1}
+    value: -1
+  color:
+    overrideState: 0
+    value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 31
+    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   settings:
   - {fileID: -5683275245969318840}
   - {fileID: 1832074952503519537}
-  - {fileID: -348507353184217178}
+  - {fileID: -2205764979899990331}
 --- !u!114 &1832074952503519537
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -17,7 +17,7 @@ public class MenuInicio : MonoBehaviour
     public void Jugar()
     {
         //estacion
-        SceneManager.LoadScene("Blockout Estacion");
+        SceneManager.LoadScene("Estacion");
 
     }
 
