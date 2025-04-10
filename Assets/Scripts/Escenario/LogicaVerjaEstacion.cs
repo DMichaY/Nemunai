@@ -21,6 +21,9 @@ public class LogicaVerjaEstacion : MonoBehaviour
     GameObject recordarLlave;
     GameObject pistaLlave;
 
+    bool enTrigger = false;
+    Collider jugadorEnTrigger;
+
     void Start()
     {
         animacionPuertaVerja = verja.GetComponent<Animator>();
@@ -37,31 +40,46 @@ public class LogicaVerjaEstacion : MonoBehaviour
         brillitoLlave.SetActive(false);
     }
 
-    void OnTriggerStay(Collider jugador)
+    void Update()
     {
         // Si se acerca Kaito a la puerta, al pulsar E interactuará con ella
         // Sin llave: Aviso buscar llave (si se hace 3 veces se le mostrará un brillo guía)
         // Con llave: Abre la puerta
+        if (enTrigger && Input.GetKeyDown(KeyCode.E) && !llaveUsada && !antiSpam)
+        {
+            if (tieneLlave)
+            {
+                animacionPuertaVerja.SetBool("usaLlave", true);
+                StartCoroutine(BorrarPuerta());
+
+                imagenLlave.SetActive(false);
+                llaveUsada = true;
+            }
+            else
+            {
+                llaveVerja.SetActive(true);
+                interacciones++;
+
+                StartCoroutine(Recordatorio());
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider jugador)
+    {
         if (jugador.gameObject.name == "Kaito")
         {
-            if (Input.GetKeyUp(KeyCode.E) && !llaveUsada && !antiSpam)
-            {
-                if (tieneLlave)
-                {
-                    animacionPuertaVerja.SetBool("usaLlave", true);
-                    StartCoroutine(BorrarPuerta());
+            enTrigger = true;
+            jugadorEnTrigger = jugador;
+        }
+    }
 
-                    imagenLlave.SetActive(false);
-                    llaveUsada = true;
-                }
-                else
-                {
-                    llaveVerja.SetActive(true);
-                    interacciones++;
-
-                    StartCoroutine(Recordatorio());
-                }
-            }
+    void OnTriggerExit(Collider jugador)
+    {
+        if (jugador.gameObject.name == "Kaito")
+        {
+            enTrigger = false;
+            jugadorEnTrigger = null;
         }
     }
 

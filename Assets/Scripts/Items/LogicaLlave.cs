@@ -12,6 +12,8 @@ public class LogicaLlave : MonoBehaviour
     GameObject llaveObtenidaUI;
 
     bool antiSpam;
+    bool enTrigger = false;
+    Collider jugadorEnTrigger;
 
     void Start()
     {
@@ -24,19 +26,34 @@ public class LogicaLlave : MonoBehaviour
         llaveObtenidaUI.SetActive(false);
     }
 
-    void OnTriggerStay(Collider jugador)
+    void Update()
     {
         // Al entrar en contacto con el trigger, si se pulsa E se obtendrá la llave, avisandose por la UI
+        if (enTrigger && Input.GetKeyDown(KeyCode.E) && !antiSpam)
+        {
+            puertaEstacion.tieneLlave = true;
+
+            imagenLlave.SetActive(true);
+            StartCoroutine(LlaveObtenida());
+            StartCoroutine(noSpamInteractuar());
+        }
+    }
+
+    void OnTriggerEnter(Collider jugador)
+    {
         if (jugador.gameObject.name == "Kaito")
         {
-            if (Input.GetKeyUp(KeyCode.E) && !antiSpam)
-            {
-                puertaEstacion.tieneLlave = true;
+            enTrigger = true;
+            jugadorEnTrigger = jugador;
+        }
+    }
 
-                imagenLlave.SetActive(true);
-                StartCoroutine(LlaveObtenida());
-                StartCoroutine(noSpamInteractuar());
-            }
+    void OnTriggerExit(Collider jugador)
+    {
+        if (jugador.gameObject.name == "Kaito")
+        {
+            enTrigger = false;
+            jugadorEnTrigger = null;
         }
     }
 
