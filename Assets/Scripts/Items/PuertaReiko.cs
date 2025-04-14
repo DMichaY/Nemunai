@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PuertaReiko : MonoBehaviour
 {
     public Transform jugador; // Referencia al jugador
     public float distanciaMinima = 0f; // Distancia minima para activar
     public KeyCode teclaActivar = KeyCode.E; // Tecla para activar
-
-    //public Vector3 posicionPrimera;
-
 
     public Vector3 posicionFinal;
     
@@ -20,11 +18,11 @@ public class PuertaReiko : MonoBehaviour
 
     GameObject manager;
 
+
     void Start()
     {
 
         manager = GameObject.Find("GameManager");
-
 
     }
 
@@ -34,12 +32,40 @@ public class PuertaReiko : MonoBehaviour
 
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
-
+        //llave recogida
         if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento && manager.GetComponent<PuzzleCasa>().llaveRecogida)
         {
             StartCoroutine(Mover());
 
         }
+
+        // diraio recogido
+        else if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento && manager.GetComponent<PuzzleCasa>().puertasAbren)
+        {
+            if (manager.GetComponent<KaitoDialogo>().textoVisible == false)
+            {
+           
+              manager.GetComponent<KaitoDialogo>().TextoPuertaDiario();
+
+            }
+
+        }
+
+        //diario sin recoger
+        else if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        {
+            if (manager.GetComponent<KaitoDialogo>().textoVisible == false)
+            {
+
+
+                manager.GetComponent<KaitoDialogo>().TextoPuertaReiko();
+
+
+            }
+
+
+        }
+
 
 
     }

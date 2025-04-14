@@ -25,12 +25,23 @@ public class KaitoDialogo : MonoBehaviour
 
     public bool textoVisible = false;
 
+    //Reiko
+    public TextMeshProUGUI textoReiko;
+
+    public TextMeshProUGUI textoDiario;
+
+
     void Start()
     {
         foreach (var texto in textos)
         {
             texto.gameObject.SetActive(false);
         }
+
+        textoReiko.gameObject.SetActive(false);
+
+        textoDiario.gameObject.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -81,11 +92,11 @@ public class KaitoDialogo : MonoBehaviour
             StopCoroutine(escribirCoroutine);
 
         escribirCoroutine = StartCoroutine(EscribirConEfecto(textoActual));
-
+       
         indiceTextoActual = (indiceTextoActual + 1) % textos.Count;
     }
 
-    IEnumerator EscribirConEfecto(TextMeshProUGUI textoUI)
+    public IEnumerator EscribirConEfecto(TextMeshProUGUI textoUI)
     {
         estaEscribiendo = true;
         esperandoSiguiente = false;
@@ -154,5 +165,47 @@ public class KaitoDialogo : MonoBehaviour
         textoUI.gameObject.SetActive(false);
 
         textoVisible = false;
+    }
+
+
+
+
+    public void TextoPuertaReiko()
+    {
+        
+        textoVisible = true;
+
+        if (textoActual != null)
+        {
+            textoActual.gameObject.SetActive(false);
+        }
+
+        textoActual = textoReiko;
+        textoActual.gameObject.SetActive(true);
+
+        if (escribirCoroutine != null)
+            StopCoroutine(escribirCoroutine);
+
+        escribirCoroutine = StartCoroutine(EscribirConEfecto(textoActual));
+    }
+
+
+    public void TextoPuertaDiario()
+    {
+
+        textoVisible = true;
+
+        if (textoActual != null)
+        {
+            textoActual.gameObject.SetActive(false);
+        }
+
+        textoActual = textoDiario;
+        textoActual.gameObject.SetActive(true);
+
+        if (escribirCoroutine != null)
+            StopCoroutine(escribirCoroutine);
+
+        escribirCoroutine = StartCoroutine(EscribirConEfecto(textoActual));
     }
 }

@@ -8,7 +8,6 @@ public class AbrirPuertas : MonoBehaviour
     public float distanciaMinima = 0f; // Distancia minima para activar
     public KeyCode teclaActivar = KeyCode.E; // Tecla para activar
 
-    //public Vector3 posicionFinal;
     public Vector3 rotacionFinal; // en grados (Euler)
 
     public float duracionMovimiento = 0f;
@@ -28,8 +27,6 @@ public class AbrirPuertas : MonoBehaviour
 
     void Update()
     {
-        
-        //if (jugador == null) return;
 
         float distancia = Vector3.Distance(jugador.position, transform.position);
 

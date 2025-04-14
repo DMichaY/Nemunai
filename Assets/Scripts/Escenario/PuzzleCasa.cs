@@ -14,6 +14,8 @@ public class PuzzleCasa : MonoBehaviour
 
     public GameObject llave;
 
+    public GameObject mensajeESC;
+
     public int contador = 0;
 
     public bool puertasAbren = false;
@@ -35,6 +37,8 @@ public class PuzzleCasa : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 libro.SetActive(false);
+
+                mensajeESC.SetActive(false);
 
                 for (int i = 0; i < listaNotas.Length; i++)
                 {
@@ -59,7 +63,9 @@ public class PuzzleCasa : MonoBehaviour
         //mostrar pista
         
         libro.SetActive(true);
-        
+
+        mensajeESC.SetActive(true);
+
         listaNotas[contador].SetActive(true);
 
         //aumenta el contador para mostrar la siguiente pista la proxima vez
@@ -80,7 +86,9 @@ public class PuzzleCasa : MonoBehaviour
 
         if (leyendo)
         {
-            libro.SetActive(false); 
+            libro.SetActive(false);
+
+            mensajeESC.SetActive(false);
 
             listaNotas[contador-1].SetActive(false);
 
@@ -91,7 +99,9 @@ public class PuzzleCasa : MonoBehaviour
 
         else
         {
-            libro.SetActive(true); 
+            libro.SetActive(true);
+
+            mensajeESC.SetActive(true);
 
             listaNotas[contador-1].SetActive(true);
 
