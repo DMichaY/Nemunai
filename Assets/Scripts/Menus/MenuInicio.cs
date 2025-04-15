@@ -43,7 +43,7 @@ public class MenuInicio : MonoBehaviour
     //boton ITCH.IO
     public void Itch()
     {
-        Application.OpenURL("https://itch.io/");
+        Application.OpenURL("https://dmichay.itch.io/");
     }
 
     //---MENU OPCIONES---

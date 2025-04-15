@@ -8742,6 +8742,7 @@ GameObject:
   - component: {fileID: 802715443}
   - component: {fileID: 802715445}
   - component: {fileID: 802715444}
+  - component: {fileID: 802715446}
   m_Layer: 6
   m_Name: Libro (8)
   m_TagString: Untagged
@@ -8815,6 +8816,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802715442}
   m_Mesh: {fileID: -8095773581171604454, guid: 6967e3ea15d481a4280a082a2a44cd39, type: 3}
+--- !u!114 &802715446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802715442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3040a769ab2c9c54b9f989eb1b22497c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadRotacion: 90
 --- !u!1 &813885421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7993728238422981840, guid: 6967e3ea15d481a4280a082a2a44cd39,
@@ -18073,6 +18087,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1669688362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 12852b88fe29faf4885e5c882120cf0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 434618867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1669688365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669688362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3040a769ab2c9c54b9f989eb1b22497c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadRotacion: 90
 --- !u!1 &1688702977
 GameObject:
   m_ObjectHideFlags: 0
