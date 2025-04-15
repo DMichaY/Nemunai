@@ -5196,6 +5196,7 @@ GameObject:
   - component: {fileID: 1351131441}
   - component: {fileID: 1351131443}
   - component: {fileID: 1351131442}
+  - component: {fileID: 1351131444}
   m_Layer: 0
   m_Name: KaitoPivot
   m_TagString: Fighter
@@ -5295,6 +5296,14 @@ CapsuleCollider:
   m_Height: 12
   m_Direction: 1
   m_Center: {x: 0, y: 6.8, z: 0}
+--- !u!81 &1351131444
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351131437}
+  m_Enabled: 1
 --- !u!1 &1374046651
 GameObject:
   m_ObjectHideFlags: 0
@@ -8223,7 +8232,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2135664751}
   - component: {fileID: 2135664750}
-  - component: {fileID: 2135664749}
   - component: {fileID: 2135664748}
   - component: {fileID: 2135664747}
   - component: {fileID: 2135664746}
@@ -8373,14 +8381,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &2135664749
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135664743}
-  m_Enabled: 1
 --- !u!20 &2135664750
 Camera:
   m_ObjectHideFlags: 0
