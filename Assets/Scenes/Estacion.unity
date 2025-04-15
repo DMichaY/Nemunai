@@ -1251,7 +1251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 86431636}
   - component: {fileID: 86431643}
-  - component: {fileID: 86431642}
   - component: {fileID: 86431641}
   - component: {fileID: 86431640}
   - component: {fileID: 86431639}
@@ -1416,14 +1415,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &86431642
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86431635}
-  m_Enabled: 1
 --- !u!20 &86431643
 Camera:
   m_ObjectHideFlags: 0
@@ -8630,7 +8621,6 @@ GameObject:
   m_Component:
   - component: {fileID: 786667270}
   - component: {fileID: 786667277}
-  - component: {fileID: 786667276}
   - component: {fileID: 786667275}
   - component: {fileID: 786667274}
   - component: {fileID: 786667273}
@@ -8795,14 +8785,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &786667276
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786667269}
-  m_Enabled: 1
 --- !u!20 &786667277
 Camera:
   m_ObjectHideFlags: 0
@@ -12073,7 +12055,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1133467437}
   - component: {fileID: 1133467444}
-  - component: {fileID: 1133467443}
   - component: {fileID: 1133467442}
   - component: {fileID: 1133467441}
   - component: {fileID: 1133467440}
@@ -12238,14 +12219,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1133467443
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133467436}
-  m_Enabled: 1
 --- !u!20 &1133467444
 Camera:
   m_ObjectHideFlags: 0
@@ -12395,7 +12368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1149799549}
   - component: {fileID: 1149799556}
-  - component: {fileID: 1149799555}
   - component: {fileID: 1149799554}
   - component: {fileID: 1149799553}
   - component: {fileID: 1149799552}
@@ -12560,14 +12532,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1149799555
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149799548}
-  m_Enabled: 1
 --- !u!20 &1149799556
 Camera:
   m_ObjectHideFlags: 0
@@ -17426,7 +17390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1684156836}
   - component: {fileID: 1684156843}
-  - component: {fileID: 1684156842}
   - component: {fileID: 1684156841}
   - component: {fileID: 1684156840}
   - component: {fileID: 1684156839}
@@ -17591,14 +17554,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1684156842
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684156835}
-  m_Enabled: 1
 --- !u!20 &1684156843
 Camera:
   m_ObjectHideFlags: 0
@@ -18454,7 +18409,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1837686007}
   - component: {fileID: 1837686014}
-  - component: {fileID: 1837686013}
   - component: {fileID: 1837686012}
   - component: {fileID: 1837686011}
   - component: {fileID: 1837686010}
@@ -18619,14 +18573,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1837686013
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837686006}
-  m_Enabled: 1
 --- !u!20 &1837686014
 Camera:
   m_ObjectHideFlags: 0
@@ -20446,6 +20392,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!81 &1997331750
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997331745}
+  m_Enabled: 1
 --- !u!1 &2035781073
 GameObject:
   m_ObjectHideFlags: 0

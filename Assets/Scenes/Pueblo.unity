@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1545364}
   - component: {fileID: 1545371}
-  - component: {fileID: 1545370}
   - component: {fileID: 1545369}
   - component: {fileID: 1545368}
   - component: {fileID: 1545367}
@@ -298,14 +297,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1545370
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545363}
-  m_Enabled: 1
 --- !u!20 &1545371
 Camera:
   m_ObjectHideFlags: 0
@@ -8283,6 +8274,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &165492579
 GameObject:
   m_ObjectHideFlags: 0
@@ -9059,6 +9052,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &173454572
 GameObject:
   m_ObjectHideFlags: 0
@@ -10910,6 +10905,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &218034957
 GameObject:
   m_ObjectHideFlags: 0
@@ -15730,6 +15727,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &301095645
 GameObject:
   m_ObjectHideFlags: 0
@@ -18112,7 +18111,6 @@ GameObject:
   m_Component:
   - component: {fileID: 349948649}
   - component: {fileID: 349948656}
-  - component: {fileID: 349948655}
   - component: {fileID: 349948654}
   - component: {fileID: 349948653}
   - component: {fileID: 349948652}
@@ -18277,14 +18275,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &349948655
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349948648}
-  m_Enabled: 1
 --- !u!20 &349948656
 Camera:
   m_ObjectHideFlags: 0
@@ -18822,6 +18812,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &357148243
 GameObject:
   m_ObjectHideFlags: 0
@@ -20624,7 +20616,6 @@ GameObject:
   m_Component:
   - component: {fileID: 390484916}
   - component: {fileID: 390484923}
-  - component: {fileID: 390484922}
   - component: {fileID: 390484921}
   - component: {fileID: 390484920}
   - component: {fileID: 390484919}
@@ -20789,14 +20780,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &390484922
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390484915}
-  m_Enabled: 1
 --- !u!20 &390484923
 Camera:
   m_ObjectHideFlags: 0
@@ -31161,6 +31144,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &597676093
 GameObject:
   m_ObjectHideFlags: 0
@@ -32977,7 +32962,6 @@ GameObject:
   m_Component:
   - component: {fileID: 634954425}
   - component: {fileID: 634954432}
-  - component: {fileID: 634954431}
   - component: {fileID: 634954430}
   - component: {fileID: 634954429}
   - component: {fileID: 634954428}
@@ -33142,14 +33126,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &634954431
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634954424}
-  m_Enabled: 1
 --- !u!20 &634954432
 Camera:
   m_ObjectHideFlags: 0
@@ -33997,7 +33973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 659793730}
   - component: {fileID: 659793737}
-  - component: {fileID: 659793736}
   - component: {fileID: 659793735}
   - component: {fileID: 659793734}
   - component: {fileID: 659793733}
@@ -34162,14 +34137,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &659793736
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659793729}
-  m_Enabled: 1
 --- !u!20 &659793737
 Camera:
   m_ObjectHideFlags: 0
@@ -35272,7 +35239,6 @@ GameObject:
   m_Component:
   - component: {fileID: 676773626}
   - component: {fileID: 676773633}
-  - component: {fileID: 676773632}
   - component: {fileID: 676773631}
   - component: {fileID: 676773630}
   - component: {fileID: 676773629}
@@ -35437,14 +35403,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &676773632
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676773625}
-  m_Enabled: 1
 --- !u!20 &676773633
 Camera:
   m_ObjectHideFlags: 0
@@ -37254,6 +37212,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &712686025
 GameObject:
   m_ObjectHideFlags: 0
@@ -40415,7 +40375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 778259192}
   - component: {fileID: 778259199}
-  - component: {fileID: 778259198}
   - component: {fileID: 778259197}
   - component: {fileID: 778259196}
   - component: {fileID: 778259195}
@@ -40580,14 +40539,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &778259198
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778259191}
-  m_Enabled: 1
 --- !u!20 &778259199
 Camera:
   m_ObjectHideFlags: 0
@@ -49449,7 +49400,6 @@ GameObject:
   m_Component:
   - component: {fileID: 935432964}
   - component: {fileID: 935432971}
-  - component: {fileID: 935432970}
   - component: {fileID: 935432969}
   - component: {fileID: 935432968}
   - component: {fileID: 935432967}
@@ -49614,14 +49564,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &935432970
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935432963}
-  m_Enabled: 1
 --- !u!20 &935432971
 Camera:
   m_ObjectHideFlags: 0
@@ -60791,6 +60733,14 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1185810960}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &1185810976
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759415810}
+  m_Enabled: 1
 --- !u!1 &1188615654
 GameObject:
   m_ObjectHideFlags: 0
@@ -61511,6 +61461,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1199502241
 GameObject:
   m_ObjectHideFlags: 0
@@ -62405,6 +62357,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1215456298
 GameObject:
   m_ObjectHideFlags: 0
@@ -64516,7 +64470,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1254221326}
   - component: {fileID: 1254221333}
-  - component: {fileID: 1254221332}
   - component: {fileID: 1254221331}
   - component: {fileID: 1254221330}
   - component: {fileID: 1254221329}
@@ -64681,14 +64634,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1254221332
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254221325}
-  m_Enabled: 1
 --- !u!20 &1254221333
 Camera:
   m_ObjectHideFlags: 0
@@ -65664,7 +65609,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1264812094}
   - component: {fileID: 1264812097}
-  - component: {fileID: 1264812096}
   - component: {fileID: 1264812099}
   - component: {fileID: 1264812098}
   - component: {fileID: 1264812101}
@@ -65693,14 +65637,6 @@ Transform:
   m_Father: {fileID: 1123605688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.071, y: -68.54, z: 0.059}
---- !u!81 &1264812096
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264812093}
-  m_Enabled: 1
 --- !u!20 &1264812097
 Camera:
   m_ObjectHideFlags: 0
@@ -71785,7 +71721,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1376838728}
   - component: {fileID: 1376838735}
-  - component: {fileID: 1376838734}
   - component: {fileID: 1376838733}
   - component: {fileID: 1376838732}
   - component: {fileID: 1376838731}
@@ -71950,14 +71885,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1376838734
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376838727}
-  m_Enabled: 1
 --- !u!20 &1376838735
 Camera:
   m_ObjectHideFlags: 0
@@ -75297,6 +75224,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1446063388
 GameObject:
   m_ObjectHideFlags: 0
@@ -76714,6 +76643,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1456155892
 GameObject:
   m_ObjectHideFlags: 0
@@ -78370,6 +78301,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1485545547
 GameObject:
   m_ObjectHideFlags: 0
@@ -79583,6 +79516,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1507634458
 GameObject:
   m_ObjectHideFlags: 0
@@ -79704,7 +79639,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1508930827}
   - component: {fileID: 1508930834}
-  - component: {fileID: 1508930833}
   - component: {fileID: 1508930832}
   - component: {fileID: 1508930831}
   - component: {fileID: 1508930830}
@@ -79869,14 +79803,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1508930833
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508930826}
-  m_Enabled: 1
 --- !u!20 &1508930834
 Camera:
   m_ObjectHideFlags: 0
@@ -86045,6 +85971,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1631593471
 GameObject:
   m_ObjectHideFlags: 0
@@ -86279,6 +86207,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1642152182
 GameObject:
   m_ObjectHideFlags: 0
@@ -89024,7 +88954,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1699361619}
   - component: {fileID: 1699361626}
-  - component: {fileID: 1699361625}
   - component: {fileID: 1699361624}
   - component: {fileID: 1699361623}
   - component: {fileID: 1699361622}
@@ -89189,14 +89118,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1699361625
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699361618}
-  m_Enabled: 1
 --- !u!20 &1699361626
 Camera:
   m_ObjectHideFlags: 0
@@ -92957,7 +92878,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1813539851}
   - component: {fileID: 1813539858}
-  - component: {fileID: 1813539857}
   - component: {fileID: 1813539856}
   - component: {fileID: 1813539855}
   - component: {fileID: 1813539854}
@@ -93122,14 +93042,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1813539857
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813539850}
-  m_Enabled: 1
 --- !u!20 &1813539858
 Camera:
   m_ObjectHideFlags: 0
@@ -98139,7 +98051,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1921413684}
   - component: {fileID: 1921413691}
-  - component: {fileID: 1921413690}
   - component: {fileID: 1921413689}
   - component: {fileID: 1921413688}
   - component: {fileID: 1921413687}
@@ -98304,14 +98215,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1921413690
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921413683}
-  m_Enabled: 1
 --- !u!20 &1921413691
 Camera:
   m_ObjectHideFlags: 0
@@ -99507,6 +99410,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1 &1941837380
 GameObject:
   m_ObjectHideFlags: 0
@@ -100423,7 +100328,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1956394259}
   - component: {fileID: 1956394266}
-  - component: {fileID: 1956394265}
   - component: {fileID: 1956394264}
   - component: {fileID: 1956394263}
   - component: {fileID: 1956394262}
@@ -100588,14 +100492,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1956394265
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956394258}
-  m_Enabled: 1
 --- !u!20 &1956394266
 Camera:
   m_ObjectHideFlags: 0
@@ -102450,7 +102346,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1981216236}
   - component: {fileID: 1981216243}
-  - component: {fileID: 1981216242}
   - component: {fileID: 1981216241}
   - component: {fileID: 1981216240}
   - component: {fileID: 1981216239}
@@ -102615,14 +102510,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &1981216242
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981216235}
-  m_Enabled: 1
 --- !u!20 &1981216243
 Camera:
   m_ObjectHideFlags: 0
@@ -106873,7 +106760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2081186533}
   - component: {fileID: 2081186540}
-  - component: {fileID: 2081186539}
   - component: {fileID: 2081186538}
   - component: {fileID: 2081186537}
   - component: {fileID: 2081186536}
@@ -107038,14 +106924,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!81 &2081186539
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081186532}
-  m_Enabled: 1
 --- !u!20 &2081186540
 Camera:
   m_ObjectHideFlags: 0
@@ -109718,6 +109596,8 @@ MonoBehaviour:
   tiempoEntreDesvanecimientos: 0.03
   intensidadTemblor: 5
   textoVisible: 0
+  textoReiko: {fileID: 0}
+  textoDiario: {fileID: 0}
 --- !u!1001 &2143846928
 PrefabInstance:
   m_ObjectHideFlags: 0
