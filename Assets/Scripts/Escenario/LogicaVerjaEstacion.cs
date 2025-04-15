@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogicaVerjaEstacion : MonoBehaviour
+public class LogicaVerjaEstacion : Interactable
 {
     // Variables
     Animator animacionPuertaVerja;
@@ -35,12 +35,12 @@ public class LogicaVerjaEstacion : MonoBehaviour
         brillitoLlave.SetActive(false);
     }
 
-    void Update()
+    public override void Interact()
     {
         // Si se acerca Kaito a la puerta, al pulsar E interactuará con ella
         // Sin llave: Aviso buscar llave (si se hace 3 veces se le mostrará un brillo guía)
         // Con llave: Abre la puerta
-        if (enTrigger && Input.GetKeyDown(KeyCode.E) && !llaveUsada && !antiSpam)
+        if (!llaveUsada && !antiSpam)
         {
             if (tieneLlave)
             {

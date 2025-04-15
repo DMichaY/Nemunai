@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LlaveReiko : MonoBehaviour
+public class LlaveReiko : Interactable
 {
         GameObject manager;
 
@@ -16,24 +16,14 @@ public class LlaveReiko : MonoBehaviour
 
     }
 
-    
 
-    void OnTriggerStay(Collider jugador)
+
+    public override void Interact()
     {
-       
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+        manager.GetComponent<PuzzleCasa>().llaveRecogida = true; 
 
-            manager.GetComponent<PuzzleCasa>().llaveRecogida = true; 
-
-            llaveInventario.SetActive(true);
+        llaveInventario.SetActive(true);
             
-            Destroy(this.gameObject);
-
-         
-            }
-
-
-        
+        Destroy(this.gameObject);
     }
 }

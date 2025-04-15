@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class KaitoMovimiento : MonoBehaviour
 {
     public float velocidadCaminata = 2f;
     public float velocidadCarrera = 5f;
-    public float velocidadRotacion = 100f;
+    public float velocidadRotacion = 5f;
+
 
     private Animator animador;
+    private Rigidbody rb;
+    private Vector3 movimiento;
     private bool estaCaminando = false;
     private bool puedeCorrer = false;
 
@@ -24,35 +28,53 @@ public class KaitoMovimiento : MonoBehaviour
     void Start()
     {
         animador = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         // IMPORTANTE: Validamos que haya AudioSource antes de acceder a él
         if (audioFuente != null)
             audioFuente.loop = true;
     }
 
+    //Recibir movimiento por Input System
+    public void OnMovimiento(InputValue value)
+    {
+        movimiento = new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y);
+    }
+
+    //Interacción
+    public void OnInteractuar()
+    {
+        if(Physics.SphereCast(transform.position, 1, transform.forward, out RaycastHit hitData, 1f))
+        {
+            if (hitData.collider.CompareTag("Interactable"))
+            {
+                hitData.collider.GetComponent<Interactable>().Interact();
+            }
+        }
+    }
+
     void Update()
     {
-        float movimientoVertical = Input.GetAxisRaw("Vertical");
-        float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
-        bool presionandoW = movimientoVertical > 0;
-        bool presionandoS = movimientoVertical < 0;
+        bool presionandoW = movimiento.z > 0;
+        bool presionandoS = movimiento.z < 0;
         bool shiftPresionado = Input.GetKey(KeyCode.LeftShift);
 
         // ROTACIÓN (siempre puede girar)
-        if (movimientoHorizontal > 0)
+        if (movimiento.x > 0)
         {
-            transform.Rotate(Vector3.up * velocidadRotacion * Time.deltaTime);
+            rb.angularVelocity = Vector3.up * velocidadRotacion;
             animador.SetBool("girandoDerecha", true);
             animador.SetBool("girandoIzquierda", false);
         }
-        else if (movimientoHorizontal < 0)
+        else if (movimiento.x < 0)
         {
-            transform.Rotate(Vector3.up * -velocidadRotacion * Time.deltaTime);
+            rb.angularVelocity = Vector3.up * -velocidadRotacion;
             animador.SetBool("girandoIzquierda", true);
             animador.SetBool("girandoDerecha", false);
         }
         else
         {
+            rb.angularVelocity = Vector3.zero;
             animador.SetBool("girandoIzquierda", false);
             animador.SetBool("girandoDerecha", false);
         }
@@ -63,7 +85,7 @@ public class KaitoMovimiento : MonoBehaviour
             // Si Shift aún no está permitido, caminamos
             if (!puedeCorrer)
             {
-                transform.Translate(Vector3.forward * velocidadCaminata * Time.deltaTime);
+                rb.velocity = transform.forward * velocidadCaminata;
                 animador.SetBool("estaCaminando", true);
                 animador.SetBool("estaCorriendo", false);
                 animador.SetBool("estaRetrocediendo", false);
@@ -77,7 +99,7 @@ public class KaitoMovimiento : MonoBehaviour
             // Si ya caminó y luego presiona Shift
             else if (shiftPresionado)
             {
-                transform.Translate(Vector3.forward * velocidadCarrera * Time.deltaTime);
+                rb.velocity = transform.forward * velocidadCarrera;
                 animador.SetBool("estaCaminando", false);
                 animador.SetBool("estaCorriendo", true);
                 animador.SetBool("estaRetrocediendo", false);
@@ -85,7 +107,7 @@ public class KaitoMovimiento : MonoBehaviour
             else
             {
                 // Si suelta Shift pero sigue caminando
-                transform.Translate(Vector3.forward * velocidadCaminata * Time.deltaTime);
+                rb.velocity = transform.forward * velocidadCaminata;
                 animador.SetBool("estaCaminando", true);
                 animador.SetBool("estaCorriendo", false);
                 animador.SetBool("estaRetrocediendo", false);
@@ -94,7 +116,7 @@ public class KaitoMovimiento : MonoBehaviour
         // MOVIMIENTO HACIA ATRÁS
         else if (presionandoS)
         {
-            transform.Translate(Vector3.back * velocidadCaminata * Time.deltaTime);
+            rb.velocity = -transform.forward * velocidadCarrera / 2;
             animador.SetBool("estaCaminando", false);
             animador.SetBool("estaCorriendo", false);
             animador.SetBool("estaRetrocediendo", true);
@@ -103,6 +125,7 @@ public class KaitoMovimiento : MonoBehaviour
         else
         {
             // IDLE
+            rb.velocity = Vector3.zero;
             animador.SetBool("estaCaminando", false);
             animador.SetBool("estaCorriendo", false);
             animador.SetBool("estaRetrocediendo", false);

@@ -38,9 +38,9 @@ public class KaitoDialogo : MonoBehaviour
             texto.gameObject.SetActive(false);
         }
 
-        textoReiko.gameObject.SetActive(false);
+        textoReiko?.gameObject.SetActive(false);
 
-        textoDiario.gameObject.SetActive(false);
+        textoDiario?.gameObject.SetActive(false);
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Notas : MonoBehaviour
+public class Notas : Interactable
 {
 
   
@@ -18,28 +18,19 @@ public class Notas : MonoBehaviour
 
     }
 
-    
 
-    void OnTriggerStay(Collider jugador)
+
+    public override void Interact()
     {
        
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
-            manager.GetComponent<PuzzleCasa>().LeerNota(); 
+        manager.GetComponent<PuzzleCasa>().LeerNota(); 
             
-            Destroy(this.gameObject);
+        Destroy(this.gameObject);
 
 
-            //Pausar
-            Time.timeScale = 0f;
+        //Pausar
+        Time.timeScale = 0f;
 
-            manager.GetComponent<MenuPausa>().pausado = true;
-
-         
-            }
-
-
-        
+        manager.GetComponent<MenuPausa>().pausado = true;
     }
 }

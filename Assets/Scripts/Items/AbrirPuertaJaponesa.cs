@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbrirPuertaJaponesa : MonoBehaviour
+public class AbrirPuertaJaponesa : Interactable
 {
     public Transform jugador; // Referencia al jugador
     public float distanciaMinima = 0f; // Distancia minima para activar
@@ -25,20 +25,20 @@ public class AbrirPuertaJaponesa : MonoBehaviour
     }
 
 
-    void Update()
+    public override void Interact()
     {
 
         float distancia = Vector3.Distance(jugador.position, transform.position);
 
 
-        if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento && manager.GetComponent<PuzzleCasa>().puertasAbren)
+        if (!enMovimiento && manager.GetComponent<PuzzleCasa>().puertasAbren)
         {
             StartCoroutine(Mover());
 
 
         }
 
-        else if (distancia <= distanciaMinima && Input.GetKeyDown(teclaActivar) && !enMovimiento)
+        else if (!enMovimiento)
         {
             if (manager.GetComponent<KaitoDialogo>().textoVisible == false)
             {

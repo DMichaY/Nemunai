@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LogicaLlave : MonoBehaviour
+public class LogicaLlave : Interactable
 {
     // Variables
     public LogicaVerjaEstacion puertaEstacion;
@@ -26,10 +26,10 @@ public class LogicaLlave : MonoBehaviour
         llaveObtenidaUI.SetActive(false);
     }
 
-    void Update()
+    public override void Interact()
     {
         // Al entrar en contacto con el trigger, si se pulsa E se obtendrá la llave, avisandose por la UI
-        if (enTrigger && Input.GetKeyDown(KeyCode.E) && !antiSpam)
+        if (!antiSpam)
         {
             puertaEstacion.tieneLlave = true;
 

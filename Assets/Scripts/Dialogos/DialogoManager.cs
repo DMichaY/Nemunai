@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogoManager : MonoBehaviour
+public class DialogoManager : Interactable
 {
     public CanvasGroup canvasGroup;
     public Image imagenBocadillo;
@@ -42,19 +42,14 @@ public class DialogoManager : MonoBehaviour
         //textoDialogo.text = "";
     }
 
-    void Update()
+    public override void Interact()
     {
-        enRango = Vector3.Distance(transform.position, jugador.position) <= distanciaInteraccion;
-
-        if (enRango && Input.GetKeyDown(KeyCode.E))
-        {
-            if (!dialogoActivo && !dialogoOcultoPorPause)
-                StartCoroutine(IniciarDialogo());
-            else if (dialogoActivo && textoEscribiendose)
-                MostrarTextoInmediatamente();
-            else if (dialogoActivo && puedeCerrar)
-                CerrarDialogo();
-        }
+        if (!dialogoActivo && !dialogoOcultoPorPause)
+            StartCoroutine(IniciarDialogo());
+        else if (dialogoActivo && textoEscribiendose)
+            MostrarTextoInmediatamente();
+        else if (dialogoActivo && puedeCerrar)
+            CerrarDialogo();
 
         if (Input.GetKeyDown(KeyCode.Escape) && dialogoActivo)
         {
