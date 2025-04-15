@@ -11,15 +11,12 @@ public class LogicaVerjaEstacion : MonoBehaviour
     public GameObject muroVerja;
     public GameObject brillitoLlave;
 
-    public int interacciones = 0;
-
     public bool tieneLlave;
     public bool llaveUsada;
     public bool antiSpam;
 
     public GameObject imagenLlave;
     GameObject recordarLlave;
-    GameObject pistaLlave;
 
     bool enTrigger = false;
     Collider jugadorEnTrigger;
@@ -28,10 +25,8 @@ public class LogicaVerjaEstacion : MonoBehaviour
     {
         animacionPuertaVerja = verja.GetComponent<Animator>();
         recordarLlave = GameObject.Find("RecordatorioLlave");
-        pistaLlave = GameObject.Find("ObservacionLlave");
 
         recordarLlave.SetActive(false);
-        pistaLlave.SetActive(false);
 
         tieneLlave = false;
         llaveUsada = false;
@@ -58,7 +53,6 @@ public class LogicaVerjaEstacion : MonoBehaviour
             else
             {
                 llaveVerja.SetActive(true);
-                interacciones++;
 
                 StartCoroutine(Recordatorio());
             }
@@ -96,24 +90,13 @@ public class LogicaVerjaEstacion : MonoBehaviour
     {
         antiSpam = true;
 
-        if (interacciones < 3)
-        {
-            recordarLlave.SetActive(true);
+        recordarLlave.SetActive(true);
 
-            yield return new WaitForSeconds(3f);
-            
-            recordarLlave.SetActive(false);
-        }
-        else
-        {
-            pistaLlave.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        
+        recordarLlave.SetActive(false);
 
-            yield return new WaitForSeconds(3f);
-
-            pistaLlave.SetActive(false);
-            
-            brillitoLlave.SetActive(true);
-        }
+        brillitoLlave.SetActive(true);
 
         antiSpam = false;
     }
