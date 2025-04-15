@@ -1953,8 +1953,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5824432, y: 1, z: 1}
+  m_Center: {x: 0.7912216, y: 0, z: 0}
 --- !u!23 &112815121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2049,6 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 860998868}
   camaraDesactivar: {fileID: 11996648}
+  esperarCrossFade: 1
 --- !u!1 &115162976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7119444168037462311, guid: 6967e3ea15d481a4280a082a2a44cd39,
@@ -2902,6 +2903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 418839118}
   camaraDesactivar: {fileID: 860998868}
+  esperarCrossFade: 0
 --- !u!65 &221709891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3546,6 +3548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 0}
   camaraDesactivar: {fileID: 0}
+  esperarCrossFade: 0
 --- !u!1 &403160964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,6 +4106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 860998868}
   camaraDesactivar: {fileID: 153829459}
+  esperarCrossFade: 0
 --- !u!65 &429656010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5534,6 +5538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 153829459}
   camaraDesactivar: {fileID: 437664110}
+  esperarCrossFade: 0
 --- !u!65 &522215063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7299,6 +7304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 11996648}
   camaraDesactivar: {fileID: 563553442}
+  esperarCrossFade: 0
 --- !u!65 &644064229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7718,7 +7724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &691540924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7920,6 +7926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 860998868}
   camaraDesactivar: {fileID: 418839118}
+  esperarCrossFade: 0
 --- !u!65 &704822259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8203,6 +8210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 11996648}
   camaraDesactivar: {fileID: 1669313545}
+  esperarCrossFade: 0
 --- !u!65 &756973438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9013,6 +9021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 72899965}
   camaraDesactivar: {fileID: 153829459}
+  esperarCrossFade: 0
 --- !u!65 &838583598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11017,6 +11026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1814816437}
   camaraDesactivar: {fileID: 1203788100}
+  esperarCrossFade: 0
 --- !u!65 &1043233640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11242,6 +11252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 437664110}
   camaraDesactivar: {fileID: 153829459}
+  esperarCrossFade: 0
 --- !u!65 &1052982897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11808,6 +11819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 153829459}
   camaraDesactivar: {fileID: 499135752}
+  esperarCrossFade: 0
 --- !u!1 &1074234570
 GameObject:
   m_ObjectHideFlags: 0
@@ -13980,6 +13992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1203788100}
   camaraDesactivar: {fileID: 860998868}
+  esperarCrossFade: 0
 --- !u!65 &1281929952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15857,6 +15870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 860998868}
   camaraDesactivar: {fileID: 1203788100}
+  esperarCrossFade: 0
 --- !u!65 &1440370854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16032,6 +16046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 499135752}
   camaraDesactivar: {fileID: 153829459}
+  esperarCrossFade: 0
 --- !u!1 &1443140052
 GameObject:
   m_ObjectHideFlags: 0
@@ -16164,6 +16179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 44999147}
   camaraDesactivar: {fileID: 1203788100}
+  esperarCrossFade: 0
 --- !u!65 &1443310643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16494,6 +16510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 153829459}
   camaraDesactivar: {fileID: 1898266756}
+  esperarCrossFade: 0
 --- !u!65 &1471005583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17051,6 +17068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 153829459}
   camaraDesactivar: {fileID: 72899965}
+  esperarCrossFade: 0
 --- !u!65 &1530323595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17261,6 +17279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1203788100}
   camaraDesactivar: {fileID: 1814816437}
+  esperarCrossFade: 0
 --- !u!65 &1557701284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18366,6 +18385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1203788100}
   camaraDesactivar: {fileID: 44999147}
+  esperarCrossFade: 0
 --- !u!65 &1723383977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19912,6 +19932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 563553442}
   camaraDesactivar: {fileID: 11996648}
+  esperarCrossFade: 0
 --- !u!65 &1863462853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20879,6 +20900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 153829459}
   camaraDesactivar: {fileID: 860998868}
+  esperarCrossFade: 0
 --- !u!65 &1975433258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21010,6 +21032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1898266756}
   camaraDesactivar: {fileID: 153829459}
+  esperarCrossFade: 0
 --- !u!65 &2002847061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21201,6 +21224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 11996648}
   camaraDesactivar: {fileID: 860998868}
+  esperarCrossFade: 1
 --- !u!1 &2015378578
 GameObject:
   m_ObjectHideFlags: 0
@@ -21250,6 +21274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camaraActivar: {fileID: 1669313545}
   camaraDesactivar: {fileID: 11996648}
+  esperarCrossFade: 0
 --- !u!65 &2015378581
 BoxCollider:
   m_ObjectHideFlags: 0

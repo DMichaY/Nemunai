@@ -12,8 +12,6 @@ public class LogicaLlave : Interactable
     GameObject llaveObtenidaUI;
 
     bool antiSpam;
-    bool enTrigger = false;
-    Collider jugadorEnTrigger;
 
     void Start()
     {
@@ -36,24 +34,6 @@ public class LogicaLlave : Interactable
             imagenLlave.SetActive(true);
             StartCoroutine(LlaveObtenida());
             StartCoroutine(noSpamInteractuar());
-        }
-    }
-
-    void OnTriggerEnter(Collider jugador)
-    {
-        if (jugador.gameObject.name == "Kaito")
-        {
-            enTrigger = true;
-            jugadorEnTrigger = jugador;
-        }
-    }
-
-    void OnTriggerExit(Collider jugador)
-    {
-        if (jugador.gameObject.name == "Kaito")
-        {
-            enTrigger = false;
-            jugadorEnTrigger = null;
         }
     }
 

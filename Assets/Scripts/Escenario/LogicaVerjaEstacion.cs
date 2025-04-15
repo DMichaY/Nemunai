@@ -18,9 +18,6 @@ public class LogicaVerjaEstacion : Interactable
     public GameObject imagenLlave;
     GameObject recordarLlave;
 
-    bool enTrigger = false;
-    Collider jugadorEnTrigger;
-
     void Start()
     {
         animacionPuertaVerja = verja.GetComponent<Animator>();
@@ -56,24 +53,6 @@ public class LogicaVerjaEstacion : Interactable
 
                 StartCoroutine(Recordatorio());
             }
-        }
-    }
-
-    void OnTriggerEnter(Collider jugador)
-    {
-        if (jugador.gameObject.name == "Kaito")
-        {
-            enTrigger = true;
-            jugadorEnTrigger = jugador;
-        }
-    }
-
-    void OnTriggerExit(Collider jugador)
-    {
-        if (jugador.gameObject.name == "Kaito")
-        {
-            enTrigger = false;
-            jugadorEnTrigger = null;
         }
     }
 

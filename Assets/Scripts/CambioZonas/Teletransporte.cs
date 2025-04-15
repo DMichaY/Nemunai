@@ -18,15 +18,13 @@ public class Teletransporte : MonoBehaviour
             {
 
 
-                //StartCoroutine(CambioPiso());
+                StartCoroutine(CambioPiso());
 
-                otro.transform.position = destino.position;
-                otro.transform.rotation = destino.rotation;
 
             }
         }
 
-        /*
+        
         IEnumerator CambioPiso()
         {
 
@@ -43,12 +41,10 @@ public class Teletransporte : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-
             otro.transform.position = destino.position;
             otro.transform.rotation = destino.rotation;
 
-            yield return new WaitForSeconds(2f);
-
+            yield return new WaitForSeconds(0.2f);
 
             if (pantallaNegra != null)
             {
@@ -63,7 +59,7 @@ public class Teletransporte : MonoBehaviour
 
         }
 
-        */
+        
     }
 
 

@@ -17,7 +17,6 @@ public class DialogoManager : Interactable
     public float velocidadTexto = 0.05f;
     public float velocidadRotacion = 5f;
 
-    private bool enRango = false;
     private bool dialogoActivo = false;
     private bool puedeCerrar = false;
     private bool textoEscribiendose = false;
@@ -37,9 +36,6 @@ public class DialogoManager : Interactable
         canvasGroup.gameObject.SetActive(false);
         textoNombre.gameObject.SetActive(false);
         textoDialogo.gameObject.SetActive(false);
-
-        //textoNombre.text = "";
-        //textoDialogo.text = "";
     }
 
     public override void Interact()
