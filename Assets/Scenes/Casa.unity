@@ -6671,7 +6671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadCaminata: 2
   velocidadCarrera: 4
-  velocidadRotacion: 2
+  velocidadRotacion: 120
   andarTierra: {fileID: 8300000, guid: 5dc7bff4d66d38b46acbdfc3db544d26, type: 3}
   andarPiedra: {fileID: 8300000, guid: 8b8e673f1f7b4b941bc8773b1c7a6762, type: 3}
   andarMadera: {fileID: 8300000, guid: 7df7c9407d4f1e745b470fc66e8387f8, type: 3}
@@ -8045,8 +8045,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.010000006, z: 0.14}
-  m_Center: {x: -0.05, y: -0.0049999966, z: 0.07}
+  m_Size: {x: 0.20276439, y: 0.010000004, z: 0.14}
+  m_Center: {x: 0.0013822556, y: -0.004999996, z: 0.07}
 --- !u!114 &735482367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10240,8 +10240,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.099999994, y: 0.009999998, z: 0.13999997}
-  m_Center: {x: -0.049999997, y: -0.004999999, z: 0.069999956}
+  m_Size: {x: 0.2029718, y: 0.009999998, z: 0.13999999}
+  m_Center: {x: -0.1014859, y: -0.0049999994, z: 0.06999996}
 --- !u!114 &941043393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11917,8 +11917,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.010000006, z: 0.14}
-  m_Center: {x: -0.049999762, y: -0.0049999966, z: 0.07}
+  m_Size: {x: 0.19980602, y: 0.010000004, z: 0.14}
+  m_Center: {x: -0.00009662628, y: -0.004999996, z: 0.07}
 --- !u!114 &1128735035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13362,8 +13362,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.099999994, y: 0.009999998, z: 0.13999997}
-  m_Center: {x: -0.050000474, y: -0.004999999, z: 0.069999956}
+  m_Size: {x: 0.20196636, y: 0.009999998, z: 0.13999999}
+  m_Center: {x: 0.0009827614, y: -0.0049999994, z: 0.06999996}
 --- !u!114 &1216444213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14666,6 +14666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9041991248741500267, guid: 6967e3ea15d481a4280a082a2a44cd39,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -9041991248741500267, guid: 6967e3ea15d481a4280a082a2a44cd39,
+        type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -15186,8 +15191,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3689304750838328343, guid: 6967e3ea15d481a4280a082a2a44cd39,
         type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689304750838328343, guid: 6967e3ea15d481a4280a082a2a44cd39,
+        type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4463843493551046201, guid: 6967e3ea15d481a4280a082a2a44cd39,
         type: 3}
@@ -15263,6 +15273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445239233220839972, guid: 6967e3ea15d481a4280a082a2a44cd39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5445239233220839972, guid: 6967e3ea15d481a4280a082a2a44cd39,
         type: 3}
@@ -15378,6 +15393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Madera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974333879003517502, guid: 6967e3ea15d481a4280a082a2a44cd39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6974333879003517502, guid: 6967e3ea15d481a4280a082a2a44cd39,
         type: 3}
