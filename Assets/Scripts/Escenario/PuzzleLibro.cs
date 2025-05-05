@@ -21,14 +21,15 @@ public class PuzzleLibro : MonoBehaviour
 
         sigBoton.SetActive(true);
 
-        listaNotas[contador].SetActive(true);    
+        listaNotas[contador].SetActive(true);
 
 
     }
 
     public void BotonSiguiente()
     {
-        if (contador <= 6)
+        
+        if (contador <= 4)
         {
             listaNotas[contador].SetActive(false);
 
@@ -38,7 +39,7 @@ public class PuzzleLibro : MonoBehaviour
         }
 
 
-        else if (contador >= 7)
+        else if (contador >= 5)
         {
             Debug.Log("pelea reiko");
         }
