@@ -98,6 +98,7 @@ public class MenuManager : MonoBehaviour
     public float duracionEscrituraCreditos = 0.05f;
     private string textoCreditosCompleto = "Créditos del Juego: Desarrollador: [Nombre]. Música por: [Músico].";
 
+
     private void Start()
     {
         ConfigurarBotones(botonesMenu);
@@ -133,6 +134,23 @@ public class MenuManager : MonoBehaviour
         sliderGeneral.value = PlayerPrefs.GetFloat("VolumenGeneral", 1);
         sliderMusica.value = PlayerPrefs.GetFloat("VolumenMusica", 1);
         sliderSFX.value = PlayerPrefs.GetFloat("VolumenSFX", 1);
+
+        botonTeclado.onClick.AddListener(() =>
+        {
+            if (imagenTeclado != null) imagenTeclado.SetActive(true);
+            if (imagenMando != null) imagenMando.SetActive(false);
+        });
+
+        botonMando.onClick.AddListener(() =>
+        {
+            if (imagenTeclado != null) imagenTeclado.SetActive(false);
+            if (imagenMando != null) imagenMando.SetActive(true);
+        });
+
+        // Opcional: Efecto de hover para desactivar temporalmente imagen asociada
+        ConfigurarHover(botonTeclado, imagenTeclado);
+        ConfigurarHover(botonMando, imagenMando);
+
     }
 
     void ConfigurarBoton(BotonConfiguracion config)
@@ -215,6 +233,22 @@ public class MenuManager : MonoBehaviour
         boton.onClick.AddListener(() => CambiarIdioma(imagen));
     }
 
+    void ConfigurarHover(Button boton, GameObject imagen)
+    {
+        if (boton == null || imagen == null) return;
+
+        EventTrigger trigger = boton.GetComponent<EventTrigger>() ?? boton.gameObject.AddComponent<EventTrigger>();
+
+        var enter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
+        enter.callback.AddListener((eventData) => imagen.SetActive(false));
+        trigger.triggers.Add(enter);
+
+        var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
+        exit.callback.AddListener((eventData) => imagen.SetActive(true));
+        trigger.triggers.Add(exit);
+    }
+
+
     void CambiarIdioma(GameObject imagen)
     {
         if (imagen == null) return;
@@ -250,12 +284,15 @@ public class MenuManager : MonoBehaviour
     IEnumerator MoverCamara(Vector3 destino)
     {
         Vector3 origen = camara.position;
+        float duracion = velocidadMovimiento;
         float tiempo = 0f;
 
-        while (tiempo < 1f)
+        while (tiempo < duracion)
         {
-            tiempo += Time.deltaTime / velocidadMovimiento;
-            camara.position = Vector3.Lerp(origen, destino, tiempo);
+            tiempo += Time.deltaTime;
+            float t = tiempo / duracion;
+            t = Mathf.SmoothStep(0f, 1f, t); // aceleración–desaceleración suave
+            camara.position = Vector3.Lerp(origen, destino, t);
             yield return null;
         }
 
