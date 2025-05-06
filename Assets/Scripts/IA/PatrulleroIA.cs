@@ -20,7 +20,9 @@ public class PatrulleroIA : MonoBehaviour
 
     void Start()
     {
-        
+        jugador = GameObject.FindWithTag("Player");
+
+
         FSM = new PatrulleroVigilar(); 
 
         FSM.inicializarVariables(this);

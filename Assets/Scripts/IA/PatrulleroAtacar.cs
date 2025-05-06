@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PatrulleroAtacar : PatrulleroEstado
 {
-    //float totalSegundos;
+    
 
     public PatrulleroAtacar() : base()
     {
@@ -18,28 +18,20 @@ public class PatrulleroAtacar : PatrulleroEstado
 
     public override void Entrar()
     {
-        //totalSegundos = 2;
-        patrulleroIA.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        
+        patrulleroIA.gameObject.GetComponent<NavMeshAgent>().isStopped = false;
         base.Entrar();
     }
 
 
     public override void Actualizar()
     {
-        /* totalSegundos = totalSegundos - Time.deltaTime;
-
-         if (totalSegundos <= 0)
-         {
-
-             Disparar();
 
 
-             totalSegundos = 2;
 
+        
 
-         }
-  */
-        Disparar();
+        
 
 
         if (!PuedeVerJugador())
@@ -51,9 +43,17 @@ public class PatrulleroAtacar : PatrulleroEstado
             faseActual = EVENTO.SALIR;
         }
 
-      
+        else
+        {
+            Debug.Log("KAITO KAITO");
+            patrulleroIA.gameObject.GetComponent<NavMeshAgent>().SetDestination(patrulleroIA.jugador.transform.position);
+
+            
+        }
+
         
-       
+        
+        
 
     }
 

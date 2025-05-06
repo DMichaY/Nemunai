@@ -21,8 +21,6 @@ public class LibroPueblo : Interactable
        
         manager.GetComponent<PuzzleLibro>().LeerLibro(); 
             
-        Destroy(this.gameObject);
-
 
         //Pausar
         Time.timeScale = 0f;

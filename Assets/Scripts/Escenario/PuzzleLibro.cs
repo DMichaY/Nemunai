@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PuzzleLibro : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class PuzzleLibro : MonoBehaviour
 
     
     public int contador = 0;
+
+
+    public Image pantallaNegra;
+
+    public string nombreEscena;
+
 
 
     public void LeerLibro()
@@ -28,6 +36,7 @@ public class PuzzleLibro : MonoBehaviour
 
     public void BotonSiguiente()
     {
+
         
         if (contador <= 4)
         {
@@ -41,11 +50,35 @@ public class PuzzleLibro : MonoBehaviour
 
         else if (contador >= 5)
         {
-            Debug.Log("pelea reiko");
+
+            Time.timeScale = 1f;
+
+            this.GetComponent<MenuPausa>().pausado = false;
+
+
+            StartCoroutine("SceneLoaderCoroutine");
+
+            libro.SetActive(false);
+
+            listaNotas[contador].SetActive(false);
+
+
         }
 
 
     }
+
+
+    private IEnumerator SceneLoaderCoroutine()
+    {
+        if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(1, 2, false);
+        else Debug.LogWarning("No hay pantalla negra!");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(nombreEscena);
+    }
+
+
+
 
 
 

@@ -91,7 +91,7 @@ public class PatrulleroEstado
         // mirar
         if (Physics.Raycast(patrulleroIA.ray, out hit, 1 << 7))
         {
-           
+            
             if (hit.collider.name == "Kaito")
             {
                 return true;
