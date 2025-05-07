@@ -62,6 +62,6 @@ public class EnemyMove : EnemyState
 
     private bool IsPlayerClose()
     {
-        return Vector3.Distance(enemyAI.transform.position, enemyAI.player.transform.position) <= 7;
+        return Vector3.Distance(enemyAI.transform.position, enemyAI.player.transform.position) <= 5;
     }
 }
