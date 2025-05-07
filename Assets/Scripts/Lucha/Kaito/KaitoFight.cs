@@ -122,26 +122,29 @@ public class KaitoFight : FighterClass
     //Perder vida y activar animación de recibir golpe o muerte
     public override void GetHit(float damage)
     {
-        life -= damage;
-        lifeBar.value = life;
-
-        if (life <= 0)
+        if(!kaitoAnimator.GetBool("crouch"))
         {
-            StartCoroutine(Death());
+            life -= damage;
+            lifeBar.value = life;
 
-            foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+            if (life <= 0)
             {
-                HB.SetActive(false);
+                StartCoroutine(Death());
+
+                foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+                {
+                    HB.SetActive(false);
+                }
             }
-        }
-        else
-        {
-            if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
-            else kaitoAnimator.SetTrigger("damage2");
-
-            foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+            else
             {
-                HB.SetActive(false);
+                if (Random.Range(0, 2) == 0) kaitoAnimator.SetTrigger("damage1");
+                else kaitoAnimator.SetTrigger("damage2");
+
+                foreach (GameObject HB in GetComponentInChildren<KaitoFightExtra>().HBs)
+                {
+                    HB.SetActive(false);
+                }
             }
         }
     }
