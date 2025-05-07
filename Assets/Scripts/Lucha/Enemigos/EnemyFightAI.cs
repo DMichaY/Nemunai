@@ -15,6 +15,8 @@ public class EnemyFightAI : FighterClass
     //Estadísticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
 
+    public bool esPueblo;
+
     void Awake()
     {
         player = FindObjectOfType<KaitoFight>();
@@ -71,8 +73,19 @@ public class EnemyFightAI : FighterClass
         yield return new WaitForSeconds(.1f);
         animator.SetBool("hasDied", true);
 
-        //Sólo para el release 1
-        FindObjectOfType<CambiarEscena>().ForceLoadScene();
+        if (esPueblo)
+        {
+
+            FindObjectOfType<DesactivarPelea>().Desactiva();
+        }
+
+        else
+        {
+            //Sólo para el release 1
+            FindObjectOfType<CambiarEscena>().ForceLoadScene();
+        }
+
+        
     }
 
     private void OnCollisionExit(Collision collision)

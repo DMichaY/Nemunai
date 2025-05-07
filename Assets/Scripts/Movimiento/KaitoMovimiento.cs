@@ -9,7 +9,7 @@ public class KaitoMovimiento : MonoBehaviour
 
 
     private Animator animador;
-    private Vector3 movimiento;
+    public Vector3 movimiento;
     private bool puedeCorrer = false;
 
     public AudioClip andarTierra;
