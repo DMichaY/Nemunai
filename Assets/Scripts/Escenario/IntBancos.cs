@@ -20,15 +20,13 @@ public class IntBancos : Interactable
     {
         // En caso de que no haya ningún mensaje dispuesto en pantalla, se mostrara en pantalla
         // el mensaje de interacción
-        Debug.Log("AYUDA1!!");
-        
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje());
+            StartCoroutine(IntMensaje1());
         }
     }
 
-    IEnumerator IntMensaje()
+    IEnumerator IntMensaje1()
     {
         puertaEstacion.antiSpam = true;
 

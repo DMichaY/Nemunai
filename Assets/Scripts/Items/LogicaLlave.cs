@@ -5,16 +5,20 @@ using UnityEngine;
 public class LogicaLlave : Interactable
 {
     // Variables
+    Animator animacionAlfombra;
+    public GameObject alfombra;
     public LogicaVerjaEstacion puertaEstacion;
 
-    // public GameObject imagenLlave;
+    public GameObject imagenLlave;
     public GameObject brillitoLlave;
     GameObject llaveObtenidaUI;
 
+    int numInter = 0;
     bool antiSpam;
 
     void Start()
     {
+        animacionAlfombra = alfombra.GetComponent<Animator>();
         puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
         llaveObtenidaUI = GameObject.Find("LlaveObtenida");
 
@@ -27,34 +31,42 @@ public class LogicaLlave : Interactable
     public override void Interact()
     {
         // Al entrar en contacto con el trigger, si se pulsa E se obtendrá la llave, avisandose por la UI
-        if (!antiSpam)
+        if (numInter == 0 && !antiSpam)
+        {
+            StartCoroutine(MoviendoAlfombra());
+            numInter += 1;
+        }
+        else if (!antiSpam)
         {
             puertaEstacion.tieneLlave = true;
 
-            // imagenLlave.SetActive(true);
+            imagenLlave.SetActive(true);
             StartCoroutine(LlaveObtenida());
-            StartCoroutine(noSpamInteractuar());
         }
+    }
+
+    // Mueve la alfombra antes de cojer la llave
+    IEnumerator MoviendoAlfombra()
+    {
+        antiSpam = true;
+        animacionAlfombra.SetBool("MoverAlfombra", true);
+
+        yield return new WaitForSeconds(2f);
+        antiSpam = false;
     }
 
     // Muestra el mensaje de llave obtenida durante 3 segundos
     IEnumerator LlaveObtenida()
     {
+        antiSpam = true;
+
         llaveObtenidaUI.SetActive(true);
         Destroy(brillitoLlave);
 
         yield return new WaitForSeconds(3f);
         
         llaveObtenidaUI.SetActive(false);
-        Destroy(this.gameObject);
-    }
-
-    IEnumerator noSpamInteractuar()
-    {
-        antiSpam = true;
-
-        yield return new WaitForSeconds (3f);
-
         antiSpam = false;
+        Destroy(this.gameObject);
     }
 }
