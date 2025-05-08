@@ -38,7 +38,7 @@ public class PuzzleInvertido : MonoBehaviour
         {
             botones[1].GetComponent<TextMeshProUGUI>().color = Color.green;
 
-            boton1.GetComponent<Button>().interactable = false;
+            boton2.GetComponent<Button>().interactable = false;
 
             contador = 2;
         }
@@ -56,7 +56,7 @@ public class PuzzleInvertido : MonoBehaviour
         {
             botones[2].GetComponent<TextMeshProUGUI>().color = Color.green;
 
-            boton1.GetComponent<Button>().interactable = false;
+            boton3.GetComponent<Button>().interactable = false;
 
 
             if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
