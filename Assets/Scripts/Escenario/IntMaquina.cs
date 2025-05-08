@@ -22,11 +22,11 @@ public class IntMaquina : Interactable
         // el mensaje de interacción
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje());
+            StartCoroutine(IntMensaje3());
         }
     }
 
-    IEnumerator IntMensaje()
+    IEnumerator IntMensaje3()
     {
         puertaEstacion.antiSpam = true;
 

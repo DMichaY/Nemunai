@@ -22,11 +22,11 @@ public class IntCartNoticias : Interactable
         // el mensaje de interacción
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje());
+            StartCoroutine(IntMensaje2());
         }
     }
 
-    IEnumerator IntMensaje()
+    IEnumerator IntMensaje2()
     {
         puertaEstacion.antiSpam = true;
 
