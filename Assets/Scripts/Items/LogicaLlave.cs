@@ -7,7 +7,7 @@ public class LogicaLlave : Interactable
     // Variables
     public LogicaVerjaEstacion puertaEstacion;
 
-    public GameObject imagenLlave;
+    // public GameObject imagenLlave;
     public GameObject brillitoLlave;
     GameObject llaveObtenidaUI;
 
@@ -31,7 +31,7 @@ public class LogicaLlave : Interactable
         {
             puertaEstacion.tieneLlave = true;
 
-            imagenLlave.SetActive(true);
+            // imagenLlave.SetActive(true);
             StartCoroutine(LlaveObtenida());
             StartCoroutine(noSpamInteractuar());
         }

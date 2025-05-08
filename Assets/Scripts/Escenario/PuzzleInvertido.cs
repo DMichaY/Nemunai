@@ -14,7 +14,7 @@ public class PuzzleInvertido : MonoBehaviour
 
 
 
-    public void Start()
+    /*public void Start()
     {
         foreach (var item in collection)
         {
@@ -22,7 +22,7 @@ public class PuzzleInvertido : MonoBehaviour
         }
 
 
-    }
+    }*/
 
     public void Pulsar()
     {

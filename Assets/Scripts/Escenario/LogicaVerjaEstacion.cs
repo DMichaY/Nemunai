@@ -16,6 +16,8 @@ public class LogicaVerjaEstacion : Interactable
     public bool antiSpam;
 
     public GameObject imagenLlave;
+
+    // Texto
     GameObject recordarLlave;
 
     void Start()
