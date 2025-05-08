@@ -2,39 +2,101 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PuzzleInvertido : MonoBehaviour
 {
+    public GameObject boton1;
 
-    public Button button;
+    public GameObject boton2;
 
-    public Color newColor;
-
-    public GameObject botones;
-
+    public GameObject boton3;
 
 
-    /*public void Start()
+    public GameObject[] botones = new GameObject[7];
+
+    int contador = 0;
+
+    public Image pantallaNegra;
+
+    public GameObject libro;
+
+
+    public void Pulsar1()
     {
-        foreach (var item in collection)
-        {
 
+        botones[0].GetComponent<TextMeshProUGUI>().color = Color.green;
+
+        boton1.GetComponent<Button>().interactable = false;
+
+        contador = 1;
+    }
+
+    public void Pulsar2()
+    {
+        if (contador == 1)
+        {
+            botones[1].GetComponent<TextMeshProUGUI>().color = Color.green;
+
+            boton2.GetComponent<Button>().interactable = false;
+
+            contador = 2;
         }
 
+        else
+        {
+            PulsarMal();
+        }
+        
+    }
 
-    }*/
-
-    public void Pulsar()
+    public void Pulsar3()
     {
+        if (contador == 2)
+        {
+            botones[2].GetComponent<TextMeshProUGUI>().color = Color.green;
 
-        ColorBlock cb = button.colors;
+            boton3.GetComponent<Button>().interactable = false;
 
-        cb.normalColor = newColor;
 
-        cb.highlightedColor = newColor;
+            if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
+            else Debug.LogWarning("No hay pantalla negra!");
 
-        button.colors = cb;
+            libro.SetActive(false);
+        }
 
+        else
+        {
+            PulsarMal();
+        }
 
     }
+
+
+
+    public void PulsarMal()
+    {
+        foreach (var boton in botones)
+        {
+            boton.GetComponent<TextMeshProUGUI>().color = Color.black;
+
+
+        }
+        boton1.GetComponent<Button>().interactable = true;
+
+        boton2.GetComponent<Button>().interactable = true;
+
+        boton3.GetComponent<Button>().interactable = true;
+
+        contador = 0;
+
+    }
+
+
+
+
+
 }
+
+
+

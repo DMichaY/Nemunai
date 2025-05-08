@@ -62,6 +62,8 @@ public class PuzzleLibro : MonoBehaviour
 
             listaNotas[contador].SetActive(false);
 
+            sigBoton.SetActive(false);
+
 
         }
 

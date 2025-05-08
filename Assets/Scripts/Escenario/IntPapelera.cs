@@ -22,11 +22,11 @@ public class IntPapelera : Interactable
         // el mensaje de interacción
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje());
+            StartCoroutine(IntMensaje4());
         }
     }
 
-    IEnumerator IntMensaje()
+    IEnumerator IntMensaje4()
     {
         puertaEstacion.antiSpam = true;
 
