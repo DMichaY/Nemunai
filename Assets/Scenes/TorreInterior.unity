@@ -5503,6 +5503,11 @@ MonoBehaviour:
   sliderGeneral: {fileID: 1892204681}
   sliderMusica: {fileID: 474274277}
   sliderSFX: {fileID: 712523222}
+  sonidoHover: {fileID: 0}
+  sonidoClick: {fileID: 0}
+  mezcladorPrincipal: {fileID: 0}
+  grupoMusica: {fileID: 0}
+  grupoSFX: {fileID: 0}
   btnAtrasControles: {fileID: 1286956495}
   btnTeclado: {fileID: 414686647}
   btnMando: {fileID: 628815562}
@@ -19139,7 +19144,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -19216,7 +19221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 648692990}
-  distanciaMinima: 10
+  distanciaMinima: 15
   intensidadMaxima: 20
 --- !u!1 &1787427482
 GameObject:
