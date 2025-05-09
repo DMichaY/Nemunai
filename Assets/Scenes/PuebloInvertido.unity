@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0044894684, g: 0.0045080646, b: 0.0045258026, a: 1}
+  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: PulsarMal
         m_Mode: 1
@@ -5924,7 +5924,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: PulsarMal
         m_Mode: 1
@@ -23730,8 +23730,9 @@ GameObject:
   m_Component:
   - component: {fileID: 573653075}
   - component: {fileID: 573653074}
+  - component: {fileID: 573653076}
   m_Layer: 0
-  m_Name: GameManage
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23831,6 +23832,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573653076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573653073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab940e59f23be44594604689c715fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boton1: {fileID: 1279471472}
+  boton2: {fileID: 597059112}
+  boton3: {fileID: 683343556}
+  botones:
+  - {fileID: 863021828}
+  - {fileID: 1920974238}
+  - {fileID: 496357311}
+  - {fileID: 36613565}
+  - {fileID: 1823145354}
+  - {fileID: 1579321564}
+  - {fileID: 1569983397}
+  pantallaNegra: {fileID: 489432957}
+  libro: {fileID: 2036083745}
 --- !u!1 &575747492
 GameObject:
   m_ObjectHideFlags: 0
@@ -24266,7 +24292,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: PulsarMal
         m_Mode: 1
@@ -24630,7 +24656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: Pulsar2
         m_Mode: 1
@@ -25132,7 +25158,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: PulsarMal
         m_Mode: 1
@@ -27853,7 +27879,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: Pulsar3
         m_Mode: 1
@@ -46960,7 +46986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 573653076}
         m_TargetAssemblyTypeName: PuzzleInvertido, Assembly-CSharp
         m_MethodName: Pulsar1
         m_Mode: 1
@@ -52308,8 +52334,9 @@ MonoBehaviour:
     quienes se atrevan a mirar el centro del v\xF3rtice, podr\xE1n desatar lo que
     yace dormido en las entra\xF1as de Nemunai."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fefe5870091d25a4b9dfd6f28eebeee9, type: 2}
+  m_sharedMaterial: {fileID: -6554007515068810893, guid: fefe5870091d25a4b9dfd6f28eebeee9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -52333,7 +52360,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.65
+  m_fontSize: 22.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -57151,10 +57178,11 @@ MonoBehaviour:
     el patr\xF3n oculto en la espiral.\n\nPero cuidado, pues los que miran demasiado
     tiempo pueden quedar atrapados , con su alma fracturada entre las dimensiones.\n\nSolo
     aquellos que pronuncien las palabras correctas, aquellos capaces de contemplar
-    el rostro del v\xF3rtice sin miedo, pueden desatar el\r despertar final de Nemunai."
+    el rostro del v\xF3rtice sin miedo, pueden desatar el despertar final de Nemunai."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fefe5870091d25a4b9dfd6f28eebeee9, type: 2}
+  m_sharedMaterial: {fileID: -6554007515068810893, guid: fefe5870091d25a4b9dfd6f28eebeee9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -57178,7 +57206,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.45
+  m_fontSize: 23.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
