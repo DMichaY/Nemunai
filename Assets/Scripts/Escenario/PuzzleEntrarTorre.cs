@@ -8,24 +8,12 @@ public class PuzzleEntrarTorre : MonoBehaviour
 {
 
 
-    public GameObject[] columna1;
-
-    public RectTransform panelRectTransform;
-
-
-    public void Start()
-    {
-
-        
-
-    }
-
     public void Pulsar()
     {
 
+        transform.SetSiblingIndex(0);
+
         
-
-
     }
 
 

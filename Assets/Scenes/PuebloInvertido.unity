@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21551,7 +21551,6 @@ GameObject:
   - component: {fileID: 573653074}
   - component: {fileID: 573653076}
   - component: {fileID: 573653077}
-  - component: {fileID: 573653078}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21781,24 +21780,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &573653078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573653073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  columna1:
-  - {fileID: 1485278275}
-  - {fileID: 692898758}
-  - {fileID: 1806484728}
-  - {fileID: 1856918434}
-  panelRectTransform: {fileID: 0}
 --- !u!1 &575747492
 GameObject:
   m_ObjectHideFlags: 0
@@ -26166,6 +26147,7 @@ GameObject:
   - component: {fileID: 692898762}
   - component: {fileID: 692898761}
   - component: {fileID: 692898760}
+  - component: {fileID: 692898763}
   m_Layer: 5
   m_Name: RawOjo
   m_TagString: Untagged
@@ -26237,9 +26219,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573653078}
+      - m_Target: {fileID: 692898763}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Pulsar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26284,6 +26266,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692898758}
   m_CullTransparentMesh: 1
+--- !u!114 &692898763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692898758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &694510935
 GameObject:
   m_ObjectHideFlags: 0
@@ -33620,7 +33614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &939051077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34583,7 +34577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &964309303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48140,6 +48134,7 @@ GameObject:
   - component: {fileID: 1485278279}
   - component: {fileID: 1485278278}
   - component: {fileID: 1485278277}
+  - component: {fileID: 1485278280}
   m_Layer: 5
   m_Name: RawSimbolo
   m_TagString: Untagged
@@ -48211,9 +48206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573653078}
+      - m_Target: {fileID: 1485278280}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Pulsar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48258,6 +48253,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485278275}
   m_CullTransparentMesh: 1
+--- !u!114 &1485278280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485278275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1485456674
 GameObject:
   m_ObjectHideFlags: 0
@@ -52080,7 +52087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1631430139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57465,6 +57472,7 @@ GameObject:
   - component: {fileID: 1806484732}
   - component: {fileID: 1806484731}
   - component: {fileID: 1806484730}
+  - component: {fileID: 1806484733}
   m_Layer: 5
   m_Name: RawEspiral
   m_TagString: Untagged
@@ -57536,9 +57544,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573653078}
+      - m_Target: {fileID: 1806484733}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Pulsar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57583,6 +57591,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806484728}
   m_CullTransparentMesh: 1
+--- !u!114 &1806484733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806484728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807366166
 GameObject:
   m_ObjectHideFlags: 0
@@ -59809,6 +59829,7 @@ GameObject:
   - component: {fileID: 1856918437}
   - component: {fileID: 1856918436}
   - component: {fileID: 1856918435}
+  - component: {fileID: 1856918439}
   m_Layer: 5
   m_Name: RawCasa
   m_TagString: Untagged
@@ -59860,7 +59881,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573653078}
+      - m_Target: {fileID: 1856918439}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
         m_MethodName: Pulsar
         m_Mode: 1
@@ -59927,6 +59948,18 @@ RectTransform:
   m_AnchoredPosition: {x: 18.583252, y: -11.25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1856918439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856918434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1857611191
 GameObject:
   m_ObjectHideFlags: 0
