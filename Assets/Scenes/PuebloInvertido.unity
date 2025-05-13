@@ -1663,6 +1663,7 @@ GameObject:
   - component: {fileID: 33426039}
   - component: {fileID: 33426038}
   - component: {fileID: 33426037}
+  - component: {fileID: 33426040}
   m_Layer: 5
   m_Name: RawEspiral
   m_TagString: Untagged
@@ -1683,7 +1684,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 939051077}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1733,7 +1734,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 33426038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 33426040}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: SimboloMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &33426038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1794,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33426035}
   m_CullTransparentMesh: 1
+--- !u!114 &33426040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33426035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34571367
 GameObject:
   m_ObjectHideFlags: 0
@@ -17952,9 +17989,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1485278276}
+  - {fileID: 1856918438}
   - {fileID: 692898759}
   - {fileID: 1806484729}
-  - {fileID: 1856918438}
   m_Father: {fileID: 477727824}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20234,6 +20271,7 @@ GameObject:
   - component: {fileID: 502588086}
   - component: {fileID: 502588085}
   - component: {fileID: 502588087}
+  - component: {fileID: 502588088}
   m_Layer: 5
   m_Name: RawOjo
   m_TagString: Untagged
@@ -20254,7 +20292,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1631430139}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20339,7 +20377,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 502588085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 502588088}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: EspiralMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &502588088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502588083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &514318216
 GameObject:
   m_ObjectHideFlags: 0
@@ -21551,6 +21625,7 @@ GameObject:
   - component: {fileID: 573653074}
   - component: {fileID: 573653076}
   - component: {fileID: 573653077}
+  - component: {fileID: 573653078}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21780,6 +21855,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &573653078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573653073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429f8d84626c9e3439e2f9b7f9cc6e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575747492
 GameObject:
   m_ObjectHideFlags: 0
@@ -26168,7 +26255,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 443607128}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26222,6 +26309,18 @@ MonoBehaviour:
       - m_Target: {fileID: 692898763}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
         m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: Casa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30383,6 +30482,7 @@ GameObject:
   - component: {fileID: 817042904}
   - component: {fileID: 817042903}
   - component: {fileID: 817042905}
+  - component: {fileID: 817042906}
   m_Layer: 5
   m_Name: RawSimbolo
   m_TagString: Untagged
@@ -30403,7 +30503,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1631430139}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30488,7 +30588,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 817042903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 817042906}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: EspiralMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &817042906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817042901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &826436353
 GameObject:
   m_ObjectHideFlags: 0
@@ -33627,10 +33763,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2129921774}
   - {fileID: 1776642300}
   - {fileID: 33426036}
   - {fileID: 1593731968}
-  - {fileID: 2129921774}
   m_Father: {fileID: 477727824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34590,10 +34726,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2123603818}
   - {fileID: 1542493687}
   - {fileID: 1475274885}
   - {fileID: 1262588174}
-  - {fileID: 2123603818}
   m_Father: {fileID: 477727824}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38185,6 +38321,7 @@ GameObject:
   - component: {fileID: 1125839923}
   - component: {fileID: 1125839922}
   - component: {fileID: 1125839924}
+  - component: {fileID: 1125839925}
   m_Layer: 5
   m_Name: RawEspiral
   m_TagString: Untagged
@@ -38205,7 +38342,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1631430139}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38290,7 +38427,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1125839922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1125839925}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: EspiralMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1125839925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125839920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1128800716
 GameObject:
   m_ObjectHideFlags: 0
@@ -41425,6 +41598,7 @@ GameObject:
   - component: {fileID: 1262588177}
   - component: {fileID: 1262588176}
   - component: {fileID: 1262588175}
+  - component: {fileID: 1262588178}
   m_Layer: 5
   m_Name: RawCasa
   m_TagString: Untagged
@@ -41445,7 +41619,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 964309303}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41495,7 +41669,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1262588176}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1262588178}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: OjoMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1262588176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41531,6 +41729,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262588173}
   m_CullTransparentMesh: 1
+--- !u!114 &1262588178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262588173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264812093
 GameObject:
   m_ObjectHideFlags: 0
@@ -47788,6 +47998,7 @@ GameObject:
   - component: {fileID: 1475274888}
   - component: {fileID: 1475274887}
   - component: {fileID: 1475274886}
+  - component: {fileID: 1475274889}
   m_Layer: 5
   m_Name: RawEspiral
   m_TagString: Untagged
@@ -47808,7 +48019,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 964309303}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47858,7 +48069,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1475274887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1475274889}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: OjoMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1475274887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47894,6 +48129,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475274884}
   m_CullTransparentMesh: 1
+--- !u!114 &1475274889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475274884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1475368655
 GameObject:
   m_ObjectHideFlags: 0
@@ -48209,6 +48456,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1485278280}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
         m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: CasaMal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49749,6 +50008,7 @@ GameObject:
   - component: {fileID: 1542493690}
   - component: {fileID: 1542493689}
   - component: {fileID: 1542493688}
+  - component: {fileID: 1542493691}
   m_Layer: 5
   m_Name: RawSimbolo
   m_TagString: Untagged
@@ -49769,7 +50029,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 964309303}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -49819,7 +50079,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542493689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1542493691}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: Ojo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1542493689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49855,6 +50139,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542493686}
   m_CullTransparentMesh: 1
+--- !u!114 &1542493691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542493686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1542519606
 GameObject:
   m_ObjectHideFlags: 0
@@ -51197,6 +51493,7 @@ GameObject:
   - component: {fileID: 1593731971}
   - component: {fileID: 1593731970}
   - component: {fileID: 1593731969}
+  - component: {fileID: 1593731972}
   m_Layer: 5
   m_Name: RawOjo
   m_TagString: Untagged
@@ -51217,7 +51514,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 939051077}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -51267,7 +51564,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1593731970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1593731972}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: SimboloMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1593731970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51303,6 +51624,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593731967}
   m_CullTransparentMesh: 1
+--- !u!114 &1593731972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593731967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595357205
 GameObject:
   m_ObjectHideFlags: 0
@@ -52100,10 +52433,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1125839921}
   - {fileID: 1852415559}
   - {fileID: 502588084}
   - {fileID: 817042902}
-  - {fileID: 1125839921}
   m_Father: {fileID: 477727824}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56522,6 +56855,7 @@ GameObject:
   - component: {fileID: 1776642303}
   - component: {fileID: 1776642302}
   - component: {fileID: 1776642301}
+  - component: {fileID: 1776642304}
   m_Layer: 5
   m_Name: RawCasa
   m_TagString: Untagged
@@ -56542,7 +56876,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 939051077}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -56592,7 +56926,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1776642302}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1776642304}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: Simbolo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1776642302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56628,6 +56986,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776642299}
   m_CullTransparentMesh: 1
+--- !u!114 &1776642304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776642299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780077161
 GameObject:
   m_ObjectHideFlags: 0
@@ -57493,7 +57863,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 443607128}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -57547,6 +57917,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1806484733}
         m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
         m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: CasaMal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59635,6 +60017,7 @@ GameObject:
   - component: {fileID: 1852415561}
   - component: {fileID: 1852415560}
   - component: {fileID: 1852415562}
+  - component: {fileID: 1852415563}
   m_Layer: 5
   m_Name: RawCasa
   m_TagString: Untagged
@@ -59655,7 +60038,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1631430139}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -59740,7 +60123,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1852415560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1852415563}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: Espiral
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1852415563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852415558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856377664
 GameObject:
   m_ObjectHideFlags: 0
@@ -59893,6 +60312,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: CasaMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1856918436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59941,7 +60372,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 443607128}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -67341,6 +67772,7 @@ GameObject:
   - component: {fileID: 2123603821}
   - component: {fileID: 2123603820}
   - component: {fileID: 2123603819}
+  - component: {fileID: 2123603822}
   m_Layer: 5
   m_Name: RawOjo
   m_TagString: Untagged
@@ -67361,7 +67793,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 964309303}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -67411,7 +67843,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2123603820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2123603822}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: OjoMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2123603820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67447,6 +67903,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123603817}
   m_CullTransparentMesh: 1
+--- !u!114 &2123603822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123603817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2124932088
 GameObject:
   m_ObjectHideFlags: 0
@@ -67944,6 +68412,7 @@ GameObject:
   - component: {fileID: 2129921777}
   - component: {fileID: 2129921776}
   - component: {fileID: 2129921775}
+  - component: {fileID: 2129921778}
   m_Layer: 5
   m_Name: RawSimbolo
   m_TagString: Untagged
@@ -67964,7 +68433,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 939051077}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -68014,7 +68483,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2129921776}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129921778}
+        m_TargetAssemblyTypeName: PuzzleEntrarTorre, Assembly-CSharp
+        m_MethodName: Pulsar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 573653078}
+        m_TargetAssemblyTypeName: PuzzleCandado, Assembly-CSharp
+        m_MethodName: SimboloMal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2129921776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68050,6 +68543,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129921773}
   m_CullTransparentMesh: 1
+--- !u!114 &2129921778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129921773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062af06f6f37ff44799a05e76cb07de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143767847
 GameObject:
   m_ObjectHideFlags: 0
