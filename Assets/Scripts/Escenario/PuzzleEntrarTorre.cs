@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PuzzleEntrarTorre : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    public GameObject[] columna1;
+
+    public RectTransform panelRectTransform;
+
+
+    public void Start()
     {
+
         
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Pulsar()
     {
+
         
+
+
     }
+
+
 }
