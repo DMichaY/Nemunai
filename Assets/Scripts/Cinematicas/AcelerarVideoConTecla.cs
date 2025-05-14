@@ -1,35 +1,132 @@
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
+using System.Collections;
 
 public class AcelerarVideoConTecla : MonoBehaviour
 {
-    [Header("Asigna aquí el componente VideoPlayer")]
+    [Header("Video y configuraciÃ³n")]
     public VideoPlayer pantallaVideo;
-
-    [Header("Tecla para acelerar el vídeo")]
     public KeyCode tecla = KeyCode.E;
 
+    [Header("Textos")]
+    public CanvasGroup textoInicial;
+    public GameObject textoEActivo;
+
+    [Header("Ajustes de texto")]
+    public float tiempoVisibleTexto = 5f;
+    public float velocidadFade = 5f;
+
     private float tiempoPulsado = 0f;
+    private Coroutine fadeTextoInicial;
+    private Coroutine temporizadorOcultarTexto;
+    private bool videoTerminado = false;
+
+    void Start()
+    {
+        if (textoInicial != null) textoInicial.alpha = 0f;
+        if (textoEActivo != null) textoEActivo.SetActive(false);
+
+        MostrarTextoInicial();
+
+        if (pantallaVideo != null)
+            pantallaVideo.loopPointReached += OnVideoFinished;
+    }
 
     void Update()
     {
+        if (videoTerminado) return;
+
         if (Input.GetKey(tecla))
         {
             tiempoPulsado += Time.deltaTime;
 
-            if (tiempoPulsado >= 5f)
+            pantallaVideo.playbackSpeed = tiempoPulsado >= 5f ? 4f : 2f;
+
+            textoEActivo.SetActive(true);
+
+            if (textoInicial.gameObject.activeSelf)
             {
-                pantallaVideo.playbackSpeed = 4f;
+                textoInicial.gameObject.SetActive(false);
+                StopFade(ref fadeTextoInicial);
+                textoInicial.alpha = 0f;
             }
-            else
+
+            if (temporizadorOcultarTexto != null)
             {
-                pantallaVideo.playbackSpeed = 2f;
+                StopCoroutine(temporizadorOcultarTexto);
+                temporizadorOcultarTexto = null;
             }
         }
         else
         {
+            if (tiempoPulsado > 0f)
+            {
+                textoEActivo.SetActive(false);
+                textoInicial.gameObject.SetActive(true);
+                MostrarTextoInicial();
+            }
+
             tiempoPulsado = 0f;
             pantallaVideo.playbackSpeed = 1f;
         }
+    }
+
+    void MostrarTextoInicial()
+    {
+        StopFade(ref fadeTextoInicial);
+        fadeTextoInicial = StartCoroutine(FadeCanvasGroup(textoInicial, 1f));
+
+        if (temporizadorOcultarTexto != null)
+            StopCoroutine(temporizadorOcultarTexto);
+
+        temporizadorOcultarTexto = StartCoroutine(TemporizadorOcultarTexto());
+    }
+
+    IEnumerator TemporizadorOcultarTexto()
+    {
+        yield return new WaitForSeconds(tiempoVisibleTexto);
+
+        StopFade(ref fadeTextoInicial);
+        fadeTextoInicial = StartCoroutine(FadeCanvasGroup(textoInicial, 0f));
+    }
+
+    IEnumerator FadeCanvasGroup(CanvasGroup group, float targetAlpha)
+    {
+        if (group == null) yield break;
+
+        float t = 0f;
+        float startAlpha = group.alpha;
+
+        while (Mathf.Abs(group.alpha - targetAlpha) > 0.01f)
+        {
+            t += Time.deltaTime * velocidadFade;
+            group.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            yield return null;
+        }
+
+        group.alpha = targetAlpha;
+
+        if (targetAlpha == 0f)
+            group.gameObject.SetActive(false);
+    }
+
+    void StopFade(ref Coroutine fade)
+    {
+        if (fade != null)
+        {
+            StopCoroutine(fade);
+            fade = null;
+        }
+    }
+
+    void OnVideoFinished(VideoPlayer vp)
+    {
+        videoTerminado = true;
+
+        StopFade(ref fadeTextoInicial);
+        StartCoroutine(FadeCanvasGroup(textoInicial, 0f));
+
+        textoEActivo.SetActive(false);
     }
 }
