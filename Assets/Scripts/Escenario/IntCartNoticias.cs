@@ -1,41 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using TMPro;
 
 public class IntCartNoticias : Interactable
 {
-    // Booleano anti-spam
     LogicaVerjaEstacion puertaEstacion;
-
-    // Texto
-    public GameObject textoNoticias;
+    public TextMeshProUGUI textoNoticias;
+    private TypewriterEffect typewriter;
 
     void Start()
     {
         puertaEstacion = GameObject.Find("TriggerPuerta").GetComponent<LogicaVerjaEstacion>();
-        textoNoticias.SetActive(false);
+        typewriter = gameObject.AddComponent<TypewriterEffect>();
+        textoNoticias.gameObject.SetActive(false);
     }
 
     public override void Interact()
     {
-        // En caso de que no haya ningún mensaje dispuesto en pantalla, se mostrara en pantalla
-        // el mensaje de interacción
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje2());
+            puertaEstacion.antiSpam = true;
+            typewriter.MostrarTexto(textoNoticias);
+            StartCoroutine(ResetAntiSpam());
         }
     }
 
-    IEnumerator IntMensaje2()
+    private IEnumerator ResetAntiSpam()
     {
-        puertaEstacion.antiSpam = true;
-
-        textoNoticias.SetActive(true);
-
-        yield return new WaitForSeconds(3f);
-        
-        textoNoticias.SetActive(false);
-
+        yield return new WaitForSeconds(5f);
         puertaEstacion.antiSpam = false;
     }
 }

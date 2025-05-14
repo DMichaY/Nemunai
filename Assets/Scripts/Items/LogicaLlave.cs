@@ -63,7 +63,7 @@ public class LogicaLlave : Interactable
         llaveObtenidaUI.SetActive(true);
         Destroy(brillitoLlave);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         
         llaveObtenidaUI.SetActive(false);
         antiSpam = false;

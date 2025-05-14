@@ -41,7 +41,7 @@ public class KaitoMovimiento : MonoBehaviour
     //Interacción
     public void OnInteractuar()
     {
-        if(Physics.SphereCast(transform.position - transform.forward, 1, transform.forward, out RaycastHit hitData, 10f))
+        if(Physics.SphereCast(transform.position - transform.forward, 1, transform.forward, out RaycastHit hitData, 1f))
         {
             if (hitData.collider.CompareTag("Interactable"))
             {

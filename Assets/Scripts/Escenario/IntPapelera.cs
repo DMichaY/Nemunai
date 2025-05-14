@@ -1,41 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Collections;
+
 
 public class IntPapelera : Interactable
 {
-    // Booleano anti-spam
     LogicaVerjaEstacion puertaEstacion;
-
-    // Texto
-    public GameObject textoPapelera;
+    public TextMeshProUGUI textoPapelera;
+    private TypewriterEffect typewriter;
 
     void Start()
     {
         puertaEstacion = GameObject.Find("TriggerPuerta").GetComponent<LogicaVerjaEstacion>();
-        textoPapelera.SetActive(false);
+        typewriter = gameObject.AddComponent<TypewriterEffect>();
+        textoPapelera.gameObject.SetActive(false);
     }
 
     public override void Interact()
     {
-        // En caso de que no haya ningún mensaje dispuesto en pantalla, se mostrara en pantalla
-        // el mensaje de interacción
         if (!puertaEstacion.antiSpam)
         {
-            StartCoroutine(IntMensaje4());
+            puertaEstacion.antiSpam = true;
+            typewriter.MostrarTexto(textoPapelera);
+            StartCoroutine(ResetAntiSpam());
         }
     }
 
-    IEnumerator IntMensaje4()
+    private IEnumerator ResetAntiSpam()
     {
-        puertaEstacion.antiSpam = true;
-
-        textoPapelera.SetActive(true);
-
-        yield return new WaitForSeconds(3f);
-        
-        textoPapelera.SetActive(false);
-
+        yield return new WaitForSeconds(5f);
         puertaEstacion.antiSpam = false;
     }
 }

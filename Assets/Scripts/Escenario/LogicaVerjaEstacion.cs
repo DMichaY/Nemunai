@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; // Añadido para usar TextMeshPro
 
 public class LogicaVerjaEstacion : Interactable
 {
@@ -19,6 +20,8 @@ public class LogicaVerjaEstacion : Interactable
 
     // Texto
     GameObject recordarLlave;
+    public TextMeshProUGUI recordarLlaveTMP; // Añadido
+    private TypewriterEffect typewriter;     // Añadido
 
     void Start()
     {
@@ -32,13 +35,13 @@ public class LogicaVerjaEstacion : Interactable
         antiSpam = false;
 
         brillitoLlave.SetActive(false);
+
+        typewriter = gameObject.AddComponent<TypewriterEffect>(); // Añadido
+        recordarLlaveTMP.gameObject.SetActive(false);             // Añadido
     }
 
     public override void Interact()
     {
-        // Si se acerca Kaito a la puerta, al pulsar E interactuará con ella
-        // Sin llave: Aviso buscar llave (si se hace 3 veces se le mostrará un brillo guía)
-        // Con llave: Abre la puerta
         if (!llaveUsada && !antiSpam)
         {
             if (tieneLlave)
@@ -71,15 +74,12 @@ public class LogicaVerjaEstacion : Interactable
     {
         antiSpam = true;
 
-        recordarLlave.SetActive(true);
+        typewriter.MostrarTexto(recordarLlaveTMP); // Reemplaza el activar/desactivar
 
-        yield return new WaitForSeconds(3f);
-        
-        recordarLlave.SetActive(false);
+        yield return new WaitForSeconds(5f); // Ajustado ligeramente para que dé tiempo al texto
 
         brillitoLlave.SetActive(true);
 
         antiSpam = false;
     }
 }
-
