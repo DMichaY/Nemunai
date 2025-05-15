@@ -104,13 +104,7 @@ public class PatrulleroEstado
 
     }
 
-    protected void Disparar()
-    {
-        
-
-        Debug.Log("Disparando");
-    }
-
+    
        
   
 

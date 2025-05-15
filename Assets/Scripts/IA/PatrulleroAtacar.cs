@@ -28,12 +28,6 @@ public class PatrulleroAtacar : PatrulleroEstado
     {
 
 
-
-        
-
-        
-
-
         if (!PuedeVerJugador())
         {
             siguienteEstado = new PatrulleroVigilar();
