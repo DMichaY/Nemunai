@@ -3,19 +3,19 @@ using UnityEngine;
 [RequireComponent(typeof(Light))]
 public class LuzParpadeante : MonoBehaviour
 {
-    [Header("Configuraci髇 del parpadeo")]
-    [Tooltip("Duraci髇 que la luz permanece apagada (segundos)")]
+    [Header("Configuraci贸n del parpadeo")]
+    [Tooltip("Duraci贸n que la luz permanece apagada (segundos)")]
     public float tiempoApagada = 1.5f;
 
-    [Tooltip("Duraci髇 que tarda en encenderse (subida r醦ida)")]
+    [Tooltip("Duraci贸n que tarda en encenderse (subida r谩pida)")]
     public float duracionEncendido = 0.1f;
 
-    [Tooltip("Duraci髇 que tarda en apagarse (bajada lenta)")]
+    [Tooltip("Duraci贸n que tarda en apagarse (bajada lenta)")]
     public float duracionApagado = 0.5f;
 
-    [Tooltip("Intensidad m醲ima que alcanza la luz")]
+    [Tooltip("Intensidad m谩xima que alcanza la luz")]
     public float intensidadMaxima = 1.5f;
-uz
+
     private enum Estado { Apagada, Encendiendo, Apagando }
     private Estado estadoActual = Estado.Apagada;
 

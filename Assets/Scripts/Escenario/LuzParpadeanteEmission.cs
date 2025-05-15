@@ -1,24 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+[RequireComponent(typeof(Light))]
+public class LuzParpadeanteEmission : MonoBehaviour
 {
-    [Header("Configuración del parpadeo")]
+    [Header("ConfiguraciÃ³n del parpadeo")]
     public float tiempoApagada = 1.5f;
     public float duracionEncendido = 0.1f;
     public float duracionApagado = 0.5f;
     public float intensidadMaxima = 1.5f;
 
-    [Header("Configuración del Emission")]
-    public Renderer objetoConMaterial;
-    public int indiceMaterial = 0;
+    [Header("ConfiguraciÃ³n del Emission")]
+    public Material materialEmission;
     public Color colorEmission = Color.white;
     public float intensidadEmissionMaxima = 1.5f;
 
-    private Material materialEmission;
     private Light luz;
-
     private enum Estado { Apagada, Encendiendo, Apagando }
     private Estado estadoActual = Estado.Apagada;
     private float tiempoEstado = 0f;
@@ -28,22 +24,19 @@ public class NewBehaviourScript : MonoBehaviour
         luz = GetComponent<Light>();
         luz.intensity = 0f;
 
-        if (objetoConMaterial != null && indiceMaterial < objetoConMaterial.materials.Length)
+        if (materialEmission != null)
         {
-            // Importante: usamos materials (instancia) y no sharedMaterials (global)
-            materialEmission = objetoConMaterial.materials[indiceMaterial];
             materialEmission.EnableKeyword("_EMISSION");
         }
         else
         {
-            Debug.LogWarning("Material no asignado correctamente o índice fuera de rango.");
+            Debug.LogWarning("No se ha asignado ningÃºn material de Emission.");
         }
     }
 
     void Update()
     {
         tiempoEstado += Time.deltaTime;
-
         float intensidadActual = 0f;
 
         switch (estadoActual)
@@ -69,10 +62,10 @@ public class NewBehaviourScript : MonoBehaviour
                 break;
         }
 
-        // Actualizar la intensidad de la luz
+        // Aplicar intensidad a la luz
         luz.intensity = intensidadActual;
 
-        // Actualizar Emission del material (si se asignó)
+        // Aplicar intensidad al Emission
         if (materialEmission != null)
         {
             float intensidadEmission = intensidadActual / intensidadMaxima * intensidadEmissionMaxima;

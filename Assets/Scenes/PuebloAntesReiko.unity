@@ -111928,6 +111928,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5344545, y: 2.4991498, z: 0.5278062}
   m_Center: {x: 0.04846757, y: 0.41542488, z: 0.26346716}
+--- !u!23 &1676143105 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6716942401966285688, guid: 0559c57991671eb4989310ff822f61b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1896670451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676668169
 GameObject:
   m_ObjectHideFlags: 0
@@ -118374,6 +118380,7 @@ GameObject:
   - component: {fileID: 1773540509}
   - component: {fileID: 1773540510}
   - component: {fileID: 1773540511}
+  - component: {fileID: 1773540512}
   m_Layer: 0
   m_Name: Spot Light (15)
   m_TagString: Untagged
@@ -118474,6 +118481,26 @@ MonoBehaviour:
   duracionEncendido: 0.1
   duracionApagado: 0.5
   intensidadMaxima: 4
+--- !u!114 &1773540512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773540508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690e0f30f5c9d9a40bfccb55e3e2463a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoApagada: 1.5
+  duracionEncendido: 0.1
+  duracionApagado: 0.5
+  intensidadMaxima: 1.5
+  objetoConMaterial: {fileID: 1676143105}
+  indiceMaterial: 0
+  colorEmission: {r: 1, g: 1, b: 1, a: 1}
+  intensidadEmissionMaxima: 1.5
 --- !u!1 &1777879755
 GameObject:
   m_ObjectHideFlags: 0
