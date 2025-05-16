@@ -1,81 +1,79 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Light))]
 public class LuzParpadeanteEmission : MonoBehaviour
 {
-    [Header("Configuración del parpadeo")]
-    public float tiempoApagada = 1.5f;
-    public float duracionEncendido = 0.1f;
-    public float duracionApagado = 0.5f;
-    public float intensidadMaxima = 1.5f;
+    [Header("Referencias necesarias")]
+    [Tooltip("Luz que representa la bombilla/farola")]
+    public Light farolaLight;
 
-    [Header("Configuración del Emission")]
-    public Material materialEmission;
-    public Color colorEmission = Color.white;
-    public float intensidadEmissionMaxima = 1.5f;
+    [Tooltip("Material compartido que tiene emisión")]
+    public Material emissionMaterialBase;
 
-    private Light luz;
-    private enum Estado { Apagada, Encendiendo, Apagando }
-    private Estado estadoActual = Estado.Apagada;
-    private float tiempoEstado = 0f;
+    [Header("Control de Flicker")]
+    [Tooltip("Intervalo mínimo entre parpadeos")]
+    public float minFlickerInterval = 0.05f;
 
-    void Start()
+    [Tooltip("Intervalo máximo entre parpadeos")]
+    public float maxFlickerInterval = 0.3f;
+
+    [Tooltip("Intensidad máxima de la luz y emisión")]
+    public float maxIntensity = 2f;
+
+    [Tooltip("Color de emisión")]
+    public Color emissionColor = Color.white;
+
+    private Material instanceMaterial; // material instanciado por objeto
+    private Renderer rend;
+
+    private void Awake()
     {
-        luz = GetComponent<Light>();
-        luz.intensity = 0f;
+        rend = GetComponent<Renderer>();
 
-        if (materialEmission != null)
+        // Buscamos el índice del material base en el array de materiales
+        int index = System.Array.IndexOf(rend.sharedMaterials, emissionMaterialBase);
+        if (index == -1)
         {
-            materialEmission.EnableKeyword("_EMISSION");
+            Debug.LogWarning($"El material de emisión no se encuentra en {gameObject.name}", this);
+            return;
         }
-        else
+
+        // Instanciamos el material solo para esta rendición
+        Material[] materials = rend.materials;
+        instanceMaterial = new Material(emissionMaterialBase); // instancia nueva
+        materials[index] = instanceMaterial;
+        rend.materials = materials;
+    }
+
+    private void Start()
+    {
+        if (instanceMaterial != null && farolaLight != null)
         {
-            Debug.LogWarning("No se ha asignado ningún material de Emission.");
+            StartCoroutine(FlickerRoutine());
         }
     }
 
-    void Update()
+    IEnumerator FlickerRoutine()
     {
-        tiempoEstado += Time.deltaTime;
-        float intensidadActual = 0f;
-
-        switch (estadoActual)
+        while (true)
         {
-            case Estado.Apagada:
-                intensidadActual = 0f;
-                if (tiempoEstado >= tiempoApagada)
-                    CambiarEstado(Estado.Encendiendo);
-                break;
+            // Random entre 0 y 1 para decidir si "falla"
+            bool isFlickering = Random.value > 0.5f;
 
-            case Estado.Encendiendo:
-                float tEnc = tiempoEstado / duracionEncendido;
-                intensidadActual = Mathf.Lerp(0f, intensidadMaxima, tEnc);
-                if (tiempoEstado >= duracionEncendido)
-                    CambiarEstado(Estado.Apagando);
-                break;
+            float targetIntensity = isFlickering ? Random.Range(0f, maxIntensity) : maxIntensity;
 
-            case Estado.Apagando:
-                float tApag = tiempoEstado / duracionApagado;
-                intensidadActual = Mathf.Lerp(intensidadMaxima, 0f, tApag);
-                if (tiempoEstado >= duracionApagado)
-                    CambiarEstado(Estado.Apagada);
-                break;
+            // Aplicar a la luz
+            farolaLight.intensity = targetIntensity;
+
+            // Aplicar a la emisión del material (con _EMISSION activado)
+            Color finalEmission = emissionColor * targetIntensity;
+            instanceMaterial.SetColor("_EmissionColor", finalEmission);
+            DynamicGI.SetEmissive(rend, finalEmission); // Para iluminación global si se usa
+
+            // Espera aleatoria entre parpadeos
+            float waitTime = Random.Range(minFlickerInterval, maxFlickerInterval);
+            yield return new WaitForSeconds(waitTime);
         }
-
-        // Aplicar intensidad a la luz
-        luz.intensity = intensidadActual;
-
-        // Aplicar intensidad al Emission
-        if (materialEmission != null)
-        {
-            float intensidadEmission = intensidadActual / intensidadMaxima * intensidadEmissionMaxima;
-            materialEmission.SetColor("_EmissionColor", colorEmission * intensidadEmission);
-        }
-    }
-
-    void CambiarEstado(Estado nuevoEstado)
-    {
-        estadoActual = nuevoEstado;
-        tiempoEstado = 0f;
     }
 }

@@ -4150,7 +4150,7 @@ RectTransform:
   - {fileID: 2036107345}
   - {fileID: 968704965}
   m_Father: {fileID: 1304228354}
-  m_RootOrder: 20
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13247,7 +13247,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304228354}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15519,7 +15519,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304228354}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19929,7 +19929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 0}
+  m_AnchoredPosition: {x: 9, y: -424.42}
   m_SizeDelta: {x: 514.6, y: 62.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886986322
@@ -22774,7 +22774,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304228354}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27513,11 +27513,11 @@ RectTransform:
   - {fileID: 1235749054}
   - {fileID: 1399857365}
   - {fileID: 990591224}
-  - {fileID: 147623274}
   - {fileID: 2069752666}
   - {fileID: 1067896943}
   - {fileID: 542174279}
   - {fileID: 666507478}
+  - {fileID: 147623274}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36330,8 +36330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 612.8, y: 875.4}
+  m_AnchoredPosition: {x: 0, y: -3}
+  m_SizeDelta: {x: 612.8, y: 863.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818302933
 MonoBehaviour:
@@ -36353,8 +36353,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: KAITO ME PICAN LOS COJONES CHACHO, VEN PA MI CASA Y AYUDA A TU SUEGRO A
-    REPARAR EL COCHE PARA IRNOS A BARCELONA, MALDITOS GITANOS
+  m_text: "Kaito,\nhace tiempo que no te escribo. Supongo que despu\xE9s de todo
+    lo que pas\xF3, lo \xFAltimo que esperabas era o\xEDr de m\xED... y menos as\xED.
+    No s\xE9 c\xF3mo empezar esto sin sonar como una loca, as\xED que ir\xE9 al grano:
+    necesito que vengas a Nemunai.\nS\xE9 lo que est\xE1s pensando. Este lugar...
+    no s\xE9, todo est\xE1 siendo raro, ay\xFAdame a salir del pueblo, necesito mudarme
+    e irme de aqu\xED.\nNo te voy a mentir, algo extra\xF1o est\xE1 ocurriendo aqu\xED.
+    No sabr\xEDa explicarlo ni aunque lo intentara. No con palabras que tengan sentido.
+    Solo s\xE9 que pasar\xE1 algo.\nNo te pedir\xEDa esto si no fuera importante.
+    Si no fuera urgente. Si no fuera yo..\nVen solo si todav\xEDa conf\xEDas en m\xED.
+    Ven si a\xFAn recuerdas lo que prometimos aquella noche en el campo de luci\xE9rnagas.\nVen...
+    y no le digas a nadie que vienes.\nTe estar\xE9 esperando.\n\nReiko."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fefe5870091d25a4b9dfd6f28eebeee9, type: 2}
   m_sharedMaterial: {fileID: -6554007515068810893, guid: fefe5870091d25a4b9dfd6f28eebeee9,
@@ -36382,15 +36391,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -41687,7 +41696,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1304228354}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
