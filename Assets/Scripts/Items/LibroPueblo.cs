@@ -7,6 +7,8 @@ public class LibroPueblo : Interactable
 
     GameObject manager;
 
+    public GameObject jugador;
+
 
     void Start()
     {
@@ -19,12 +21,10 @@ public class LibroPueblo : Interactable
     public override void Interact()
     {
        
-        manager.GetComponent<PuzzleLibro>().LeerLibro(); 
-            
+        manager.GetComponent<PuzzleLibro>().LeerLibro();
 
-        //Pausar
-        Time.timeScale = 0f;
+        jugador.GetComponent<KaitoMovimiento>().enabled = false;
 
-        manager.GetComponent<MenuPausa>().pausado = true;
+
     }
 }

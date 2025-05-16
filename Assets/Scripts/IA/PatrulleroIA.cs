@@ -16,6 +16,7 @@ public class PatrulleroIA : MonoBehaviour
 
     public Ray ray;
 
+    public int contador = 0;
 
 
     void Start()

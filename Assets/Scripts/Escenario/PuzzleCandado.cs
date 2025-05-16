@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PuzzleCandado : MonoBehaviour
 {
@@ -14,10 +16,17 @@ bool ojo = false;
 bool espiral = false;
 
 
-// hay que ponerlos en el gameobject anterior 
-//ya que al clickar se mostrara el siguiente gameobject siendo visualmente el correcto
+    public Image pantallaNegra;
 
-public void Casa()
+    public string nombreEscena;
+
+
+
+
+    // hay que ponerlos en el gameobject anterior 
+    //ya que al clickar se mostrara el siguiente gameobject siendo visualmente el correcto
+
+    public void Casa()
 {
 
    casa = true;
@@ -93,15 +102,29 @@ public void EspiralMal()
 
 public void Superado()
 {
+        if (casa && simbolo && ojo && espiral)
+        {
 
-    if (casa && simbolo && ojo && espiral)
-    {
-        Debug.Log("superado");
-    }
+
+            StartCoroutine("SceneLoaderCoroutine");
+
+        }
 
 
 }
 
-    
+
+    private IEnumerator SceneLoaderCoroutine()
+    {
+        if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(1, 2, false);
+        else Debug.LogWarning("No hay pantalla negra!");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(nombreEscena);
+    }
+
+
+
+
+
 
 }
