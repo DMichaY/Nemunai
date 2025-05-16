@@ -21,6 +21,8 @@ public class PuzzleInvertido : MonoBehaviour
 
     public GameObject libro;
 
+    public GameObject jugador;
+
 
     public void Pulsar1()
     {
@@ -58,6 +60,8 @@ public class PuzzleInvertido : MonoBehaviour
 
             boton3.GetComponent<Button>().interactable = false;
 
+
+            jugador.GetComponent<KaitoMovimiento>().enabled = true;
 
             if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
             else Debug.LogWarning("No hay pantalla negra!");
