@@ -22,9 +22,6 @@ public class PatrulleroAtacar : PatrulleroEstado
         patrulleroIA.gameObject.GetComponent<NavMeshAgent>().isStopped = false;
 
 
-        Debug.Log("KAITO KAITO");
-        patrulleroIA.gameObject.GetComponent<NavMeshAgent>().SetDestination(patrulleroIA.jugador.transform.position);
-
         //velocidad del zombie
         patrulleroIA.gameObject.GetComponent<NavMeshAgent>().speed = 1.5f;
 
@@ -38,14 +35,16 @@ public class PatrulleroAtacar : PatrulleroEstado
 
     public override void Actualizar()
     {
-        patrulleroIA.contador++;
 
-        Debug.Log(patrulleroIA.contador);
+        patrulleroIA.gameObject.GetComponent<NavMeshAgent>().SetDestination(patrulleroIA.jugador.transform.position);
+    
+        patrulleroIA.timer += Time.deltaTime;
+    
         
-        if (!PuedeVerJugador() && patrulleroIA.contador >=3 )
+        if (!PuedeVerJugador() && patrulleroIA.timer > 5f)
         {
 
-            patrulleroIA.contador = 0;
+            patrulleroIA.timer = 0;
 
             //velocidad del zombie
             patrulleroIA.gameObject.GetComponent<NavMeshAgent>().speed = 0.5f;
@@ -62,9 +61,7 @@ public class PatrulleroAtacar : PatrulleroEstado
         }
 
         
-        
-
-
+    
 
     }
 
