@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -703,6 +703,11 @@ MonoBehaviour:
   sliderGeneral: {fileID: 367549556}
   sliderMusica: {fileID: 1956131323}
   sliderSFX: {fileID: 2080489909}
+  sonidoHover: {fileID: 0}
+  sonidoClick: {fileID: 0}
+  mezcladorPrincipal: {fileID: 0}
+  grupoMusica: {fileID: 0}
+  grupoSFX: {fileID: 0}
   btnAtrasControles: {fileID: 1496691354}
   btnTeclado: {fileID: 1864873030}
   btnMando: {fileID: 159049075}
@@ -21307,6 +21312,113 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 8300000, guid: 2e2585cd461b6f94e98e04ded2d5b0d6, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 892d26bf53514f044a76b5c85dc01564, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 4ca1f801d03da8442874f7107433d32c, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: 8f182e5b86bb56a41af920d43edcc13f, type: 3}
+  sonidoATQPos5: {fileID: 8300000, guid: b97b99f0891c3df47805e246a260f845, type: 3}
+  sonidoATQPos6: {fileID: 8300000, guid: 31b5b436da9714644add11fd123abdbd, type: 3}
+  sonidoATQPos7: {fileID: 8300000, guid: 4e263f1b69250b1478651108534a39e3, type: 3}
+  sonidoATQPos8: {fileID: 8300000, guid: b47776477bb4e74429784ecf8d769158, type: 3}
+  intervaloMin: 1
+  intervaloMax: 5
+--- !u!82 &2095549284
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095549280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2097714254
 GameObject:
   m_ObjectHideFlags: 0

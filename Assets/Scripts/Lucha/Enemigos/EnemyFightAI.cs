@@ -12,7 +12,7 @@ public class EnemyFightAI : FighterClass
     public Animator animator;
     public Rigidbody rb;
 
-    //Estadísticas
+    //Estadï¿½sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
 
     public bool esPueblo;
@@ -81,7 +81,7 @@ public class EnemyFightAI : FighterClass
 
         else
         {
-            //Sólo para el release 1
+            //Sï¿½lo para el release 1
             FindObjectOfType<CambiarEscena>().ForceLoadScene();
         }
 
