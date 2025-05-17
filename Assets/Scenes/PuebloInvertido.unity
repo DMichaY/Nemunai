@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8013,6 +8013,7 @@ MonoBehaviour:
   jugador: {fileID: 759415810}
   destino1: {fileID: 1972714696}
   destino2: {fileID: 249889198}
+  timer: 0
 --- !u!114 &146482245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8031,6 +8032,7 @@ MonoBehaviour:
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
   vecinoPueblo: {fileID: 146482240}
+  pantallaNegra: {fileID: 489432957}
 --- !u!136 &146482246
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12740,6 +12742,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
+  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
+  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
+  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
+  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
 --- !u!1 &247196417
 GameObject:
   m_ObjectHideFlags: 0
@@ -21024,6 +21034,7 @@ MonoBehaviour:
   camPelea: {fileID: 1352549931}
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
+  pantallaNegra: {fileID: 489432957}
 --- !u!1 &423086428
 GameObject:
   m_ObjectHideFlags: 0
@@ -21550,6 +21561,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
+  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
+  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
+  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
+  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
+  cuerpoRefAudio: {fileID: 1125655485}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -21971,6 +21991,7 @@ MonoBehaviour:
   camPelea: {fileID: 1205224130}
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
+  pantallaNegra: {fileID: 489432957}
 --- !u!1 &442569999
 GameObject:
   m_ObjectHideFlags: 0
@@ -22793,6 +22814,7 @@ MonoBehaviour:
   jugador: {fileID: 759415810}
   destino1: {fileID: 1606890129}
   destino2: {fileID: 1981088588}
+  timer: 0
 --- !u!114 &459195860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22811,6 +22833,7 @@ MonoBehaviour:
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
   vecinoPueblo: {fileID: 459195855}
+  pantallaNegra: {fileID: 489432957}
 --- !u!136 &459195861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26707,6 +26730,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
+  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
+  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
+  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
+  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+--- !u!82 &585672983
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585672980}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &585982279
 GameObject:
   m_ObjectHideFlags: 0
@@ -29101,6 +29229,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
+  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
+  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
+  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
+  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
+  cuerpoRefAudio: {fileID: 242571914}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -29497,6 +29634,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
+  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
+  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
+  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
+  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
+  cuerpoRefAudio: {fileID: 585672980}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -32941,6 +33087,15 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
+  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
+  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
+  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
+  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
+  cuerpoRefAudio: {fileID: 1389112340}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -33860,6 +34015,7 @@ MonoBehaviour:
   camPelea: {fileID: 119831400}
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
+  pantallaNegra: {fileID: 489432957}
 --- !u!1 &758731730
 GameObject:
   m_ObjectHideFlags: 0
@@ -37112,6 +37268,7 @@ MonoBehaviour:
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
   vecinoPueblo: {fileID: 837485991}
+  pantallaNegra: {fileID: 489432957}
 --- !u!114 &837485996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37127,6 +37284,7 @@ MonoBehaviour:
   jugador: {fileID: 759415810}
   destino1: {fileID: 1167953099}
   destino2: {fileID: 134956412}
+  timer: 0
 --- !u!136 &837485997
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46549,6 +46707,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
+  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
+  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
+  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
+  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+--- !u!82 &1125655487
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125655485}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1125839920
 GameObject:
   m_ObjectHideFlags: 0
@@ -57042,6 +57305,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
+  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
+  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
+  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
+  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+--- !u!82 &1389112343
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389112340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1389306272
 GameObject:
   m_ObjectHideFlags: 0
@@ -60030,6 +60398,7 @@ MonoBehaviour:
   camPelea: {fileID: 1217376778}
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
+  pantallaNegra: {fileID: 489432957}
 --- !u!1 &1500160983
 GameObject:
   m_ObjectHideFlags: 0
@@ -65507,6 +65876,7 @@ MonoBehaviour:
   camPueblo: {fileID: 1123605687}
   jugadorPueblo: {fileID: 759415810}
   vecinoPueblo: {fileID: 1667881003}
+  pantallaNegra: {fileID: 489432957}
 --- !u!114 &1667881005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65522,6 +65892,7 @@ MonoBehaviour:
   jugador: {fileID: 759415810}
   destino1: {fileID: 2047754727}
   destino2: {fileID: 1422248356}
+  timer: 0
 --- !u!195 &1667881006
 NavMeshAgent:
   m_ObjectHideFlags: 0
