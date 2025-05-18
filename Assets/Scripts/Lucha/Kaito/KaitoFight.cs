@@ -8,6 +8,8 @@ public class KaitoFight : FighterClass
     public float speed = 3.0f, startWaitTime = 0;
     public Slider lifeBar;
 
+    //public GameObject panelMuerte;
+
     private Animator kaitoAnimator;
     private PlayerInput input;
     private Vector2 movement;
@@ -155,5 +157,9 @@ public class KaitoFight : FighterClass
         yield return new WaitForSeconds(.1f);
         kaitoAnimator.SetBool("hasDied", true);
         GetComponent<PlayerInput>().DeactivateInput();
+
+        //panelMuerte.SetActive(true);
+
+
     }
 }
