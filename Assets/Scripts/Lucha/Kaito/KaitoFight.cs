@@ -8,7 +8,7 @@ public class KaitoFight : FighterClass
     public float speed = 3.0f, startWaitTime = 0;
     public Slider lifeBar;
 
-    //public GameObject panelMuerte;
+    public GameObject panelMuerte;
 
     private Animator kaitoAnimator;
     private PlayerInput input;
@@ -158,7 +158,7 @@ public class KaitoFight : FighterClass
         kaitoAnimator.SetBool("hasDied", true);
         GetComponent<PlayerInput>().DeactivateInput();
 
-        //panelMuerte.SetActive(true);
+        panelMuerte.SetActive(true);
 
 
     }
