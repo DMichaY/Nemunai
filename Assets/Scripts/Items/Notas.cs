@@ -22,11 +22,14 @@ public class Notas : Interactable
 
     public override void Interact()
     {
-       
-        manager.GetComponent<PuzzleCasa>().LeerNota(); 
-            
+
+        manager.GetComponent<PuzzleCasa>().LeerNota();
+
         Destroy(this.gameObject);
 
+
+        manager.GetComponent<PuzzleCasa>().Eventos(); 
+        
 
         //Pausar
         Time.timeScale = 0f;

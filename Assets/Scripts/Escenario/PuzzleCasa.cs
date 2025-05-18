@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class PuzzleCasa : MonoBehaviour
 {
 
-    public GameObject[]listaNotas = new GameObject[8];
+    public GameObject[] listaNotas = new GameObject[8];
+
+    public GameObject[] camaras = new GameObject[13];
 
     public GameObject libro;
 
@@ -47,6 +49,7 @@ public class PuzzleCasa : MonoBehaviour
 
                 leyendo = false;
 
+
             }
         }
 
@@ -59,9 +62,9 @@ public class PuzzleCasa : MonoBehaviour
         leyendo = true;
 
         libroInventario.SetActive(true);
-        
+
         //mostrar pista
-        
+
         libro.SetActive(true);
 
         mensajeESC.SetActive(true);
@@ -90,7 +93,7 @@ public class PuzzleCasa : MonoBehaviour
 
             mensajeESC.SetActive(false);
 
-            listaNotas[contador-1].SetActive(false);
+            listaNotas[contador - 1].SetActive(false);
 
             leyendo = false;
 
@@ -103,14 +106,39 @@ public class PuzzleCasa : MonoBehaviour
 
             mensajeESC.SetActive(true);
 
-            listaNotas[contador-1].SetActive(true);
+            listaNotas[contador - 1].SetActive(true);
 
             leyendo = true;
         }
 
 
+    }
 
 
+    public void Eventos()
+    {
+        for (int i = 0; i < camaras.Length; i++)
+        {
+
+            if (camaras[i].activeSelf)
+            {
+                //4 salon
+                //5 brasero
+                //6 vater
+                //7 baño
+                //8 sala naranja
+                //9 cocina
+                //12 dormitorio
+
+
+
+
+
+
+               
+            }
+            
+        }
 
     }
 

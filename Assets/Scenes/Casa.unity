@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2104,6 +2104,7 @@ MonoBehaviour:
   destino: {fileID: 2111610280}
   tagJugador: Player
   pantallaNegra: {fileID: 691540924}
+  jugador: {fileID: 590355354}
 --- !u!114 &112815125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35281,6 +35282,20 @@ MonoBehaviour:
   - {fileID: 638713714}
   - {fileID: 894449419}
   - {fileID: 1215156924}
+  camaras:
+  - {fileID: 499135744}
+  - {fileID: 153829451}
+  - {fileID: 860998860}
+  - {fileID: 1203788092}
+  - {fileID: 437664102}
+  - {fileID: 1898266748}
+  - {fileID: 72899957}
+  - {fileID: 418839110}
+  - {fileID: 44999139}
+  - {fileID: 1814816429}
+  - {fileID: 11996640}
+  - {fileID: 1669313537}
+  - {fileID: 563553434}
   libro: {fileID: 1007816812}
   libroInventario: {fileID: 1542213285}
   llave: {fileID: 1266627529}
@@ -39657,6 +39672,7 @@ MonoBehaviour:
   destino: {fileID: 682456796}
   tagJugador: Player
   pantallaNegra: {fileID: 691540924}
+  jugador: {fileID: 590355354}
 --- !u!114 &2015263270
 MonoBehaviour:
   m_ObjectHideFlags: 0

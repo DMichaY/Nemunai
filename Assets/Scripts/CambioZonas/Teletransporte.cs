@@ -10,6 +10,8 @@ public class Teletransporte : MonoBehaviour
 
     public Image pantallaNegra;
 
+    public GameObject jugador;
+
     private void OnTriggerEnter(Collider otro)
     {
         if (otro.CompareTag(tagJugador))
@@ -28,6 +30,7 @@ public class Teletransporte : MonoBehaviour
         IEnumerator CambioPiso()
         {
 
+            jugador.GetComponent<KaitoMovimiento>().enabled = false;
             if (pantallaNegra != null)
             {
                 pantallaNegra.CrossFadeAlpha(1, 2, false);
@@ -56,6 +59,8 @@ public class Teletransporte : MonoBehaviour
             {
                 Debug.LogWarning("No hay pantalla negra!");
             }
+
+            jugador.GetComponent<KaitoMovimiento>().enabled = true;
 
         }
 
