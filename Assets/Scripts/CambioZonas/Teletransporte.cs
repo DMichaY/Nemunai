@@ -31,6 +31,7 @@ public class Teletransporte : MonoBehaviour
         {
 
             jugador.GetComponent<KaitoMovimiento>().enabled = false;
+            
             if (pantallaNegra != null)
             {
                 pantallaNegra.CrossFadeAlpha(1, 2, false);
