@@ -33,7 +33,9 @@ public class MenuMuerte : MonoBehaviour
 
     private AudioSource fuenteSFX;
 
-  
+    public string nombreEscena;
+
+
 
     void Awake()
     {
@@ -75,8 +77,8 @@ public class MenuMuerte : MonoBehaviour
     void Continuar()
     {
 
-        //cargar escena
-        
+        SceneManager.LoadScene(nombreEscena);
+
     }
 
 
