@@ -17,6 +17,8 @@ public class KaitoFight : FighterClass
     private Rigidbody rb;
     private float life = 100;
 
+    public bool esPuebloInverso;
+
     void Start()
     {
         // Buscar los componentes
@@ -128,6 +130,11 @@ public class KaitoFight : FighterClass
         {
             life -= damage;
             lifeBar.value = life;
+
+            if (esPuebloInverso)
+            {
+                FindObjectOfType<GolpeInverso>().RecibirGolpeInverso();
+            }
 
             if (life <= 0)
             {
