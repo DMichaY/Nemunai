@@ -1,364 +1,238 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
     [Header("Cámara")]
-    public Transform camara;
-    public float velocidadMovimiento = 0.5f;
+    public Transform mainCamera;
+    public float cameraSpeed = 2f;
+    private Transform targetCameraPosition;
 
-    [System.Serializable]
-    public class BotonConfiguracion
-    {
-        public string nombre;
-        public Button boton;
-        public GameObject imagenADesactivar;
-        public TipoAccion accion;
-        public string datoAccion;
-        public Transform destinoCamara;
-    }
+    [Header("Puntos de Cámara")]
+    public Transform menuPosition;
+    public Transform opcionesPosition;
+    public Transform videoPosition;
+    public Transform sonidoPosition;
+    public Transform idiomasPosition;
+    public Transform controlesPosition;
+    public Transform creditosPosition;
 
-    [System.Serializable]
-    public class BotonSimpleConfiguracion
-    {
-        public Button boton;
-        public GameObject imagenADesactivar;
-    }
+    [Header("Botones principales")]
+    public Button jugarButton;
+    public Button salirButton;
+    public Button itchButton;
+    public Button creditosButton;
 
-    public enum TipoAccion
-    {
-        IrAEscena,
-        AbrirURL,
-        MoverCamara,
-        Salir
-    }
+    [Header("Video Opciones")]
+    public Button pantallaIzq;
+    public Button pantallaDer;
+    public GameObject textoPantallaCompleta;
+    public GameObject textoVentanaCompleta;
 
-    [Header("Botones del Menú Principal")]
-    public List<BotonConfiguracion> botonesMenu;
+    public Button brilloIzq;
+    public Button brilloDer;
+    public TMP_Text brilloTexto;
 
-    [Header("Botones del Menú Opciones")]
-    public List<BotonConfiguracion> botonesOpciones;
+    public Button graficosIzq;
+    public Button graficosDer;
+    public GameObject textoGraficosAlto;
+    public GameObject textoGraficosBajo;
 
-    [Header("Volver Atrás en Subapartados")]
-    public BotonConfiguracion botonVolverVideo;
-    public BotonConfiguracion botonVolverSonido;
-    public BotonConfiguracion botonVolverIdiomas;
-    public BotonConfiguracion botonVolverControles;
-    public BotonConfiguracion botonVolverCreditos;
-
-    [Header("Botones de Izquierda y Derecha con imagen a desactivar")]
-    public List<BotonSimpleConfiguracion> botonesSimples;
-
-    [Header("Pantalla")]
-    public Button botonPantallaIzquierda;
-    public Button botonPantallaDerecha;
-    public GameObject[] textosPantalla;
-    private int indexPantalla = 0;
-
-    [Header("Resolución")]
-    public Button botonResolucionIzquierda;
-    public Button botonResolucionDerecha;
-    public GameObject[] textosResolucion;
-    private int indexResolucion = 1;
-
-    [Header("Calidad Gráfica")]
-    public Button botonGraficaIzquierda;
-    public Button botonGraficaDerecha;
-    public GameObject[] textosGrafica;
-    private int indexGrafica = 2;
-
-    [Header("Sliders de Sonido")]
-    public Slider sliderGeneral;
-    public Slider sliderMusica;
-    public Slider sliderSFX;
-
-    [Header("Idiomas")]
-    public Button botonEspañol;
-    public Button botonRuso;
-    public Button botonIngles;
-    public Button botonJapones;
-    public GameObject imagenEspañol;
-    public GameObject imagenRuso;
-    public GameObject imagenIngles;
-    public GameObject imagenJapones;
-
-    [Header("Controles")]
-    public Button botonTeclado;
-    public Button botonMando;
-    public GameObject imagenTeclado;
-    public GameObject imagenMando;
+    [Header("Sonido")]
+    public Slider volumenGeneralSlider;
+    public Slider musicaSlider;
+    public Slider sfxSlider;
 
     [Header("Créditos")]
-    public TextMeshProUGUI textoCreditos;
-    public float duracionEscrituraCreditos = 0.05f;
-    private string textoCreditosCompleto = "Créditos del Juego: Desarrollador: [Nombre]. Música por: [Músico].";
+    public TMP_Text creditosTexto;
+    public float velocidadMaquina = 0.05f;
+    private string textoOriginalCreditos;
 
+    [Header("Brillo")]
+    public Image brilloOverlay;
+    [Range(0f, 1f)] public float brillo = 0.5f;
+
+    private int pantallaIndex = 0;
+    private int graficosIndex = 1;
 
     private void Start()
     {
-        ConfigurarBotones(botonesMenu);
-        ConfigurarBotones(botonesOpciones);
-        ConfigurarBoton(botonVolverVideo);
-        ConfigurarBoton(botonVolverSonido);
-        ConfigurarBoton(botonVolverIdiomas);
-        ConfigurarBoton(botonVolverControles);
-        ConfigurarBoton(botonVolverCreditos);
-        ConfigurarBotonesSimples(botonesSimples);
+        // Botones principales
+        jugarButton.onClick.AddListener(() => SceneManager.LoadScene("Estacion"));
+        salirButton.onClick.AddListener(() => Application.Quit());
+        itchButton.onClick.AddListener(() => Application.OpenURL("https://dmichay.itch.io"));
+        creditosButton.onClick.AddListener(() => MoverCamara(creditosPosition, true));
 
-        // Configurar botones de idioma
-        ConfigurarBotonIdioma(botonEspañol, imagenEspañol);
-        ConfigurarBotonIdioma(botonRuso, imagenRuso);
-        ConfigurarBotonIdioma(botonIngles, imagenIngles);
-        ConfigurarBotonIdioma(botonJapones, imagenJapones);
+        // Opciones de vídeo
+        pantallaIzq.onClick.AddListener(() => CambiarPantalla(-1));
+        pantallaDer.onClick.AddListener(() => CambiarPantalla(1));
 
-        botonPantallaIzquierda.onClick.AddListener(() => CambiarPantalla(-1));
-        botonPantallaDerecha.onClick.AddListener(() => CambiarPantalla(1));
-        botonResolucionIzquierda.onClick.AddListener(() => CambiarResolucion(-1));
-        botonResolucionDerecha.onClick.AddListener(() => CambiarResolucion(1));
-        botonGraficaIzquierda.onClick.AddListener(() => CambiarGrafica(-1));
-        botonGraficaDerecha.onClick.AddListener(() => CambiarGrafica(1));
+        brilloIzq.onClick.AddListener(() => CambiarBrillo(-1));
+        brilloDer.onClick.AddListener(() => CambiarBrillo(1));
 
+        graficosIzq.onClick.AddListener(() => CambiarGraficos(0));
+        graficosDer.onClick.AddListener(() => CambiarGraficos(1));
+
+        // Sliders sonido
+        volumenGeneralSlider.onValueChanged.AddListener((v) => GuardarVolumen("volumen_general", v));
+        musicaSlider.onValueChanged.AddListener((v) => GuardarVolumen("musica", v));
+        sfxSlider.onValueChanged.AddListener((v) => GuardarVolumen("sfx", v));
+
+        // Cargar preferencias
+        brillo = PlayerPrefs.GetFloat("brillo", 0.5f);
+        ActualizarBrillo();
+
+        pantallaIndex = PlayerPrefs.GetInt("pantalla", 0);
+        graficosIndex = PlayerPrefs.GetInt("graficos", 1);
         ActualizarPantalla();
-        ActualizarResolucion();
-        ActualizarGrafica();
+        ActualizarGraficos();
 
-        sliderGeneral.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("VolumenGeneral", v));
-        sliderMusica.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("VolumenMusica", v));
-        sliderSFX.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("VolumenSFX", v));
+        volumenGeneralSlider.value = PlayerPrefs.GetFloat("volumen_general", 1);
+        musicaSlider.value = PlayerPrefs.GetFloat("musica", 1);
+        sfxSlider.value = PlayerPrefs.GetFloat("sfx", 1);
 
-        sliderGeneral.value = PlayerPrefs.GetFloat("VolumenGeneral", 1);
-        sliderMusica.value = PlayerPrefs.GetFloat("VolumenMusica", 1);
-        sliderSFX.value = PlayerPrefs.GetFloat("VolumenSFX", 1);
-
-        botonTeclado.onClick.AddListener(() =>
+        // Créditos
+        if (creditosTexto != null)
         {
-            if (imagenTeclado != null) imagenTeclado.SetActive(true);
-            if (imagenMando != null) imagenMando.SetActive(false);
-        });
+            textoOriginalCreditos = creditosTexto.text;
+            creditosTexto.text = "";
+        }
 
-        botonMando.onClick.AddListener(() =>
+        // Posición inicial de la cámara
+        targetCameraPosition = menuPosition;
+
+        // Hover para desactivar imagen decorativa (hermana del botón)
+        foreach (Button b in FindObjectsOfType<Button>())
         {
-            if (imagenTeclado != null) imagenTeclado.SetActive(false);
-            if (imagenMando != null) imagenMando.SetActive(true);
-        });
-
-        // Opcional: Efecto de hover para desactivar temporalmente imagen asociada
-        ConfigurarHover(botonTeclado, imagenTeclado);
-        ConfigurarHover(botonMando, imagenMando);
-
-    }
-
-    void ConfigurarBoton(BotonConfiguracion config)
-    {
-        if (config.boton == null) return;
-
-        EventTrigger trigger = config.boton.GetComponent<EventTrigger>() ?? config.boton.gameObject.AddComponent<EventTrigger>();
-
-        var enter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-        enter.callback.AddListener((eventData) =>
-        {
-            if (config.imagenADesactivar != null)
-                config.imagenADesactivar.SetActive(false);
-        });
-        trigger.triggers.Add(enter);
-
-        var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-        exit.callback.AddListener((eventData) =>
-        {
-            if (config.imagenADesactivar != null)
-                config.imagenADesactivar.SetActive(true);
-        });
-        trigger.triggers.Add(exit);
-
-        config.boton.onClick.AddListener(() =>
-        {
-            EjecutarAccion(config);
-
-            if (config.nombre.ToLower().Contains("creditos"))
+            EventTriggerListener.Get(b.gameObject).onEnter = () =>
             {
-                StartCoroutine(AnimarTextoCreditos());
-            }
-        });
-    }
+                Transform parent = b.transform.parent;
+                foreach (Transform child in parent)
+                {
+                    if (child != b.transform && child.GetComponent<Image>())
+                        child.gameObject.SetActive(false);
+                }
+            };
 
-    void ConfigurarBotones(List<BotonConfiguracion> botones)
-    {
-        foreach (var config in botones)
-            ConfigurarBoton(config);
-    }
-
-    void ConfigurarBotonesSimples(List<BotonSimpleConfiguracion> botones)
-    {
-        foreach (var simple in botones)
-        {
-            if (simple.boton == null) continue;
-
-            EventTrigger trigger = simple.boton.GetComponent<EventTrigger>() ?? simple.boton.gameObject.AddComponent<EventTrigger>();
-
-            var enter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-            enter.callback.AddListener((eventData) =>
+            EventTriggerListener.Get(b.gameObject).onExit = () =>
             {
-                if (simple.imagenADesactivar != null)
-                    simple.imagenADesactivar.SetActive(false);
-            });
-            trigger.triggers.Add(enter);
-
-            var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-            exit.callback.AddListener((eventData) =>
-            {
-                if (simple.imagenADesactivar != null)
-                    simple.imagenADesactivar.SetActive(true);
-            });
-            trigger.triggers.Add(exit);
+                Transform parent = b.transform.parent;
+                foreach (Transform child in parent)
+                {
+                    if (child != b.transform && child.GetComponent<Image>())
+                        child.gameObject.SetActive(true);
+                }
+            };
         }
+
+        // Desactivar raycast en overlay para no bloquear botones
+        if (brilloOverlay != null)
+            brilloOverlay.raycastTarget = false;
     }
 
-    void ConfigurarBotonIdioma(Button boton, GameObject imagen)
+    private void Update()
     {
-        EventTrigger trigger = boton.GetComponent<EventTrigger>() ?? boton.gameObject.AddComponent<EventTrigger>();
-
-        var enter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-        enter.callback.AddListener((eventData) => { if (imagen != null) imagen.SetActive(false); });
-        trigger.triggers.Add(enter);
-
-        var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-        exit.callback.AddListener((eventData) => { if (imagen != null) imagen.SetActive(true); });
-        trigger.triggers.Add(exit);
-
-        boton.onClick.AddListener(() => CambiarIdioma(imagen));
-    }
-
-    void ConfigurarHover(Button boton, GameObject imagen)
-    {
-        if (boton == null || imagen == null) return;
-
-        EventTrigger trigger = boton.GetComponent<EventTrigger>() ?? boton.gameObject.AddComponent<EventTrigger>();
-
-        var enter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-        enter.callback.AddListener((eventData) => imagen.SetActive(false));
-        trigger.triggers.Add(enter);
-
-        var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-        exit.callback.AddListener((eventData) => imagen.SetActive(true));
-        trigger.triggers.Add(exit);
-    }
-
-
-    void CambiarIdioma(GameObject imagen)
-    {
-        if (imagen == null) return;
-
-        imagenEspañol.SetActive(imagenEspañol == imagen);
-        imagenRuso.SetActive(imagenRuso == imagen);
-        imagenIngles.SetActive(imagenIngles == imagen);
-        imagenJapones.SetActive(imagenJapones == imagen);
-    }
-
-    void EjecutarAccion(BotonConfiguracion config)
-    {
-        switch (config.accion)
+        if (mainCamera && targetCameraPosition)
         {
-            case TipoAccion.IrAEscena:
-                if (!string.IsNullOrEmpty(config.datoAccion))
-                    SceneManager.LoadScene(config.datoAccion);
-                break;
-            case TipoAccion.AbrirURL:
-                if (!string.IsNullOrEmpty(config.datoAccion))
-                    Application.OpenURL(config.datoAccion);
-                break;
-            case TipoAccion.MoverCamara:
-                if (config.destinoCamara != null)
-                    StartCoroutine(MoverCamara(config.destinoCamara.position));
-                break;
-            case TipoAccion.Salir:
-                Application.Quit();
-                break;
+            mainCamera.position = Vector3.Lerp(mainCamera.position, targetCameraPosition.position, Time.deltaTime * cameraSpeed);
+            mainCamera.rotation = Quaternion.Lerp(mainCamera.rotation, targetCameraPosition.rotation, Time.deltaTime * cameraSpeed);
         }
     }
 
-    IEnumerator MoverCamara(Vector3 destino)
+    public void MoverCamara(Transform destino, bool activarCreditos = false)
     {
-        Vector3 origen = camara.position;
-        float duracion = velocidadMovimiento;
-        float tiempo = 0f;
+        targetCameraPosition = destino;
+        if (activarCreditos)
+            StartCoroutine(MaquinaEscribirTexto());
+    }
 
-        while (tiempo < duracion)
+    IEnumerator MaquinaEscribirTexto()
+    {
+        creditosTexto.text = "";
+        foreach (char c in textoOriginalCreditos)
         {
-            tiempo += Time.deltaTime;
-            float t = tiempo / duracion;
-            t = Mathf.SmoothStep(0f, 1f, t); // aceleración–desaceleración suave
-            camara.position = Vector3.Lerp(origen, destino, t);
-            yield return null;
-        }
-
-        camara.position = destino;
-    }
-
-    IEnumerator AnimarTextoCreditos()
-    {
-        textoCreditos.text = "";
-        for (int i = 0; i <= textoCreditosCompleto.Length; i++)
-        {
-            textoCreditos.text = textoCreditosCompleto.Substring(0, i);
-            yield return new WaitForSeconds(duracionEscrituraCreditos);
+            creditosTexto.text += c;
+            yield return new WaitForSeconds(velocidadMaquina);
         }
     }
 
-    void CambiarPantalla(int direccion)
+    void CambiarPantalla(int dir)
     {
-        indexPantalla = (indexPantalla + direccion + textosPantalla.Length) % textosPantalla.Length;
+        pantallaIndex += dir;
+        pantallaIndex = Mathf.Clamp(pantallaIndex, 0, 1);
+        PlayerPrefs.SetInt("pantalla", pantallaIndex);
         ActualizarPantalla();
     }
 
     void ActualizarPantalla()
     {
-        for (int i = 0; i < textosPantalla.Length; i++)
-            textosPantalla[i].SetActive(i == indexPantalla);
+        textoPantallaCompleta.SetActive(pantallaIndex == 0);
+        textoVentanaCompleta.SetActive(pantallaIndex == 1);
+        Screen.fullScreenMode = (pantallaIndex == 0) ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.FullScreenWindow;
+    }
 
-        switch (indexPantalla)
+    void CambiarGraficos(int index)
+    {
+        graficosIndex = index;
+        PlayerPrefs.SetInt("graficos", graficosIndex);
+        ActualizarGraficos();
+    }
+
+    void ActualizarGraficos()
+    {
+        textoGraficosAlto.SetActive(graficosIndex == 1);
+        textoGraficosBajo.SetActive(graficosIndex == 0);
+        QualitySettings.SetQualityLevel(graficosIndex);
+    }
+
+    public void CambiarBrillo(int direccion)
+    {
+        brillo += direccion * 0.1f;
+        brillo = Mathf.Clamp01(brillo);
+        PlayerPrefs.SetFloat("brillo", brillo);
+        ActualizarBrillo();
+    }
+
+    void ActualizarBrillo()
+    {
+        Color color = Color.clear;
+        float alpha = 0f;
+
+        if (brillo < 0.5f)
         {
-            case 0: Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen; break;
-            case 1: Screen.fullScreenMode = FullScreenMode.Windowed; break;
-            case 2: Screen.fullScreenMode = FullScreenMode.FullScreenWindow; break;
+            float t = brillo / 0.5f; // 0 a 1
+            color = Color.black;
+            alpha = Mathf.Lerp(200f, 0f, t); // 200 a 0
         }
-    }
-
-    void CambiarResolucion(int direccion)
-    {
-        indexResolucion = (indexResolucion + direccion + textosResolucion.Length) % textosResolucion.Length;
-        ActualizarResolucion();
-    }
-
-    void ActualizarResolucion()
-    {
-        for (int i = 0; i < textosResolucion.Length; i++)
-            textosResolucion[i].SetActive(i == indexResolucion);
-
-        switch (indexResolucion)
+        else
         {
-            case 0: Screen.SetResolution(1280, 720, Screen.fullScreenMode); break;
-            case 1: Screen.SetResolution(1920, 1080, Screen.fullScreenMode); break;
-            case 2: Screen.SetResolution(2560, 1440, Screen.fullScreenMode); break;
-            case 3: Screen.SetResolution(3840, 2160, Screen.fullScreenMode); break;
+            float t = (brillo - 0.5f) / 0.5f; // 0 a 1
+            color = Color.white;
+            alpha = Mathf.Lerp(0f, 100f, t); // 0 a 100
         }
+
+        color.a = alpha / 255f;
+        brilloOverlay.color = color;
+
+        if (brilloTexto != null)
+            brilloTexto.text = Mathf.RoundToInt(brillo * 100f) + "%";
     }
 
-    void CambiarGrafica(int direccion)
+    void GuardarVolumen(string clave, float valor)
     {
-        indexGrafica = (indexGrafica + direccion + textosGrafica.Length) % textosGrafica.Length;
-        ActualizarGrafica();
+        PlayerPrefs.SetFloat(clave, valor);
+        // Si usas AudioMixer, aquí puedes aplicarlo con SetFloat
     }
 
-    void ActualizarGrafica()
-    {
-        for (int i = 0; i < textosGrafica.Length; i++)
-            textosGrafica[i].SetActive(i == indexGrafica);
-
-        QualitySettings.SetQualityLevel(indexGrafica);
-    }
+    // Funciones públicas para botones "volver atrás"
+    public void IrAMenu() => MoverCamara(menuPosition);
+    public void IrAOpciones() => MoverCamara(opcionesPosition);
+    public void IrAVideo() => MoverCamara(videoPosition);
+    public void IrASonido() => MoverCamara(sonidoPosition);
+    public void IrAIdiomas() => MoverCamara(idiomasPosition);
+    public void IrAControles() => MoverCamara(controlesPosition);
 }
