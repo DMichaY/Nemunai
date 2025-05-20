@@ -14,13 +14,16 @@ public class EnemyFightExtra : MonoBehaviour
     public AudioClip sonidoATQPos2;
     public AudioClip sonidoATQPos3;
     public AudioClip sonidoATQPos4;
-    public AudioClip sonidoATQPos5;
-    public AudioClip sonidoATQPos6;
-    public AudioClip sonidoATQPos7;
-    public AudioClip sonidoATQPos8;
+
+    public AudioClip sonidoMISSPos1;
+    public AudioClip sonidoMISSPos2;
+    public AudioClip sonidoMISSPos3;
+    public AudioClip sonidoMISSPos4;
+    
     AudioSource audioFuente;
 
-    private List<AudioClip> listaSonidosPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosATQPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSPos = new List<AudioClip>();
 
     private void Awake()
     {
@@ -36,14 +39,15 @@ public class EnemyFightExtra : MonoBehaviour
 
         // Audio
         // Llenar la lista de sonidos
-        listaSonidosPos.Add(sonidoATQPos1);
-        listaSonidosPos.Add(sonidoATQPos2);
-        listaSonidosPos.Add(sonidoATQPos3);
-        listaSonidosPos.Add(sonidoATQPos4);
-        listaSonidosPos.Add(sonidoATQPos5);
-        listaSonidosPos.Add(sonidoATQPos6);
-        listaSonidosPos.Add(sonidoATQPos7);
-        listaSonidosPos.Add(sonidoATQPos8);
+        listaSonidosATQPos.Add(sonidoATQPos1);
+        listaSonidosATQPos.Add(sonidoATQPos2);
+        listaSonidosATQPos.Add(sonidoATQPos3);
+        listaSonidosATQPos.Add(sonidoATQPos4);
+
+        listaSonidosMISSPos.Add(sonidoMISSPos1);
+        listaSonidosMISSPos.Add(sonidoMISSPos2);
+        listaSonidosMISSPos.Add(sonidoMISSPos3);
+        listaSonidosMISSPos.Add(sonidoMISSPos4);
 
         audioFuente = this.GetComponent<AudioSource>();
     }
@@ -52,7 +56,6 @@ public class EnemyFightExtra : MonoBehaviour
     {
         if (lastActivatedHB != hbName) HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage += 5;
         HBs[HBNames.IndexOf(hbName)].SetActive(true);
-        SonidoATQPosAleatorio();
     }
 
     public void DeactivateHurtbox(string hbName)
@@ -63,12 +66,23 @@ public class EnemyFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
-    // Corrutina que produce sonido aleatorio del enemigo atacando
+    // Corrutina que produce sonido aleatorio del enemigo atacando/fallando ataque
     public void SonidoATQPosAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosPos[indice];
+        int indice = Random.Range(0, listaSonidosATQPos.Count);
+        AudioClip sonidoSeleccionado = listaSonidosATQPos[indice];
+
+        // Reproducir el sonido
+        audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    // Corrutina que produce sonido aleatorio del enemigo fallando golpe
+    public void SonidoMISSPosAleatorio()
+    {
+        // Se escoge un sonido aleatorio de la lista
+        int indice = Random.Range(0, listaSonidosMISSPos.Count);
+        AudioClip sonidoSeleccionado = listaSonidosMISSPos[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);

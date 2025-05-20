@@ -16,15 +16,12 @@ public class EnemyFightAI : FighterClass
     public AudioClip sonidoHITPos2;
     public AudioClip sonidoHITPos3;
     public AudioClip sonidoHITPos4;
-    public AudioClip sonidoHITPos5;
-    public AudioClip sonidoHITPos6;
-    public AudioClip sonidoHITPos7;
-    public AudioClip sonidoHITPos8;
+
     AudioSource audioFuente;
 
     public GameObject cuerpoRefAudio;
 
-    private List<AudioClip> listaSonidosPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosHITPos = new List<AudioClip>();
 
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -45,14 +42,10 @@ public class EnemyFightAI : FighterClass
 
         // Audio
         // Llenar la lista de sonidos
-        listaSonidosPos.Add(sonidoHITPos1);
-        listaSonidosPos.Add(sonidoHITPos2);
-        listaSonidosPos.Add(sonidoHITPos3);
-        listaSonidosPos.Add(sonidoHITPos4);
-        listaSonidosPos.Add(sonidoHITPos5);
-        listaSonidosPos.Add(sonidoHITPos6);
-        listaSonidosPos.Add(sonidoHITPos7);
-        listaSonidosPos.Add(sonidoHITPos8);
+        listaSonidosHITPos.Add(sonidoHITPos1);
+        listaSonidosHITPos.Add(sonidoHITPos2);
+        listaSonidosHITPos.Add(sonidoHITPos3);
+        listaSonidosHITPos.Add(sonidoHITPos4);
 
         audioFuente = cuerpoRefAudio.GetComponent<AudioSource>();
     }
@@ -127,8 +120,8 @@ public class EnemyFightAI : FighterClass
     public void SonidoHITPosAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosPos[indice];
+        int indice = Random.Range(0, listaSonidosHITPos.Count);
+        AudioClip sonidoSeleccionado = listaSonidosHITPos[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);

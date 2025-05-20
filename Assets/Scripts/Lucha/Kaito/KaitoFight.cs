@@ -9,6 +9,7 @@ public class KaitoFight : FighterClass
     public Slider lifeBar;
 
     public GameObject panelMuerte;
+    public EnemyFightExtra sonidosEnemigoDemPos;
 
     private Animator kaitoAnimator;
     private PlayerInput input;
@@ -27,6 +28,8 @@ public class KaitoFight : FighterClass
         input = GetComponent<PlayerInput>();
         input.DeactivateInput();
         rb = GetComponent<Rigidbody>();
+
+        sonidosEnemigoDemPos = FindObjectOfType<EnemyFightExtra>();
 
 
         lifeBar.maxValue = life;
@@ -155,6 +158,12 @@ public class KaitoFight : FighterClass
                     HB.SetActive(false);
                 }
             }
+
+            sonidosEnemigoDemPos.SonidoATQPosAleatorio();
+        }
+        else
+        {
+            sonidosEnemigoDemPos.SonidoMISSPosAleatorio();
         }
     }
 
