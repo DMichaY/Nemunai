@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
+using TMPro;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -18,130 +19,131 @@ public class MenuPausa : MonoBehaviour
     public GameObject opcionesSonido;
     public GameObject opcionesControles;
 
-    [Header("Botones y sus imágenes a ocultar")]
+    [Header("Botones de navegación")]
     public Button btnContinuar, btnOpciones, btnVolverMenu, btnSalir;
     public Button btnMenuSi, btnMenuNo, btnSalirSi, btnSalirNo;
     public Button btnAtras, btnVideo, btnSonido, btnControles;
-    public GameObject imgBtnContinuar, imgBtnOpciones, imgBtnVolverMenu, imgBtnSalir;
-    public GameObject imgBtnMenuSi, imgBtnMenuNo, imgBtnSalirSi, imgBtnSalirNo;
-    public GameObject imgBtnAtras, imgBtnVideo, imgBtnSonido, imgBtnControles;
+    public Button btnAtrasVideo, btnAtrasSonido, btnAtrasControles;
+    public Button btnTeclado, btnMando;
 
-    [Header("Opciones Video - Botón atrás")]
-    public Button btnAtrasVideo;
-    public GameObject imgBtnAtrasVideo;
-
-    [Header("Opciones Video - Tipo de pantalla")]
+    [Header("Pantalla")]
     public Button btnPantallaIzq, btnPantallaDer;
-    public GameObject[] pantallas;
+    public TextMeshProUGUI txtPantallaCompleta, txtVentana;
 
-    [Header("Opciones Video - Resoluciones")]
-    public Button btnResolucionIzq, btnResolucionDer;
-    public GameObject[] resoluciones;
-
-    [Header("Opciones Video - Calidad gráfica")]
+    [Header("Resolución y calidad")]
     public Button btnCalidadIzq, btnCalidadDer;
-    public GameObject[] calidades;
+    public TextMeshProUGUI txtGraficosAltos, txtGraficosBajos;
 
-    private int pantallaIndex = 0;
-    private int resolucionIndex = 1;
-    private int calidadIndex = 2;
+    [Header("Brillo")]
+    public Button btnBrilloIzq, btnBrilloDer;
+    public TextMeshProUGUI txtBrillo;
+    public Image filtroBrillo;
+    private float brillo = 1f;
 
-    [Header("Opciones Sonido")]
-    public Button btnAtrasSonido;
-    public GameObject imgBtnAtrasSonido;
+    [Header("Sonido")]
     public Slider sliderGeneral, sliderMusica, sliderSFX;
 
-    [Header("Clips de audio")]
+    [Header("Audio")]
     public AudioClip sonidoHover;
     public AudioClip sonidoClick;
-
-    [Header("Mixer de audio y grupos")]
     public AudioMixer mezcladorPrincipal;
     public AudioMixerGroup grupoMusica;
     public AudioMixerGroup grupoSFX;
-
     private AudioSource fuenteSFX;
 
-    [Header("Opciones Controles")]
-    public Button btnAtrasControles, btnTeclado, btnMando;
-    public GameObject imgBtnAtrasControles, imgBtnTeclado, imgBtnMando;
+    [Header("Controles")]
     public GameObject imagenControlesTeclado, imagenControlesMando;
+
+    private int pantallaIndex; // 0 = Pantalla Completa, 1 = Ventana Sin Bordes
+    private int calidadIndex;  // 0 = Bajo, 1 = Alto
 
     void Awake()
     {
-        // Crear AudioSource efectos
-        GameObject objetoSFX = new GameObject("FuenteAudioSFX");
-        objetoSFX.transform.parent = this.transform;
-        fuenteSFX = objetoSFX.AddComponent<AudioSource>();
+        GameObject objSFX = new GameObject("FuenteAudioSFX");
+        objSFX.transform.parent = transform;
+        fuenteSFX = objSFX.AddComponent<AudioSource>();
         fuenteSFX.outputAudioMixerGroup = grupoSFX;
 
-        // Asignar eventos de audio a todos los botones en la escena
-        foreach (Button boton in FindObjectsOfType<Button>())
-        {
-            AsignarEventosAudio(boton);
-        }
+        foreach (Button b in FindObjectsOfType<Button>())
+            AsignarEventosAudio(b);
     }
 
     void Start()
     {
-        panelPausa.SetActive(false);
-        Time.timeScale = 1;
+        CargarConfiguraciones();
 
+        // Botones principales
         btnContinuar.onClick.AddListener(Continuar);
-        btnOpciones.onClick.AddListener(AbrirOpciones);
-        btnVolverMenu.onClick.AddListener(() => AlternarApartado(apartadoPausa, apartadoConfirmarVolver));
-        btnSalir.onClick.AddListener(() => AlternarApartado(apartadoPausa, apartadoConfirmarSalir));
+        btnOpciones.onClick.AddListener(() => CambiarApartado(apartadoPausa, apartadoOpciones));
+        btnVolverMenu.onClick.AddListener(() => CambiarApartado(apartadoPausa, apartadoConfirmarVolver));
+        btnSalir.onClick.AddListener(() => CambiarApartado(apartadoPausa, apartadoConfirmarSalir));
 
-        btnMenuSi.onClick.AddListener(VolverAlMenu);
-        btnMenuNo.onClick.AddListener(() => AlternarApartado(apartadoConfirmarVolver, apartadoPausa));
+        btnMenuSi.onClick.AddListener(() =>
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("MenuPrincipal");
+        });
+        btnMenuNo.onClick.AddListener(() => CambiarApartado(apartadoConfirmarVolver, apartadoPausa));
         btnSalirSi.onClick.AddListener(SalirDelJuego);
-        btnSalirNo.onClick.AddListener(() => AlternarApartado(apartadoConfirmarSalir, apartadoPausa));
+        btnSalirNo.onClick.AddListener(() => CambiarApartado(apartadoConfirmarSalir, apartadoPausa));
 
-        btnAtras.onClick.AddListener(() => AlternarApartado(apartadoOpciones, apartadoPausa));
-        btnVideo.onClick.AddListener(() => AlternarApartado(apartadoOpciones, opcionesVideo));
-        btnSonido.onClick.AddListener(() => AlternarApartado(apartadoOpciones, opcionesSonido));
-        btnControles.onClick.AddListener(() => AlternarApartado(apartadoOpciones, opcionesControles));
+        btnAtras.onClick.AddListener(() => CambiarApartado(apartadoOpciones, apartadoPausa));
+        btnVideo.onClick.AddListener(() => CambiarApartado(apartadoOpciones, opcionesVideo));
+        btnSonido.onClick.AddListener(() => CambiarApartado(apartadoOpciones, opcionesSonido));
+        btnControles.onClick.AddListener(() => CambiarApartado(apartadoOpciones, opcionesControles));
 
-        btnAtrasVideo.onClick.AddListener(() => AlternarApartado(opcionesVideo, apartadoOpciones));
-        btnAtrasSonido.onClick.AddListener(() => AlternarApartado(opcionesSonido, apartadoOpciones));
-        btnAtrasControles.onClick.AddListener(() => AlternarApartado(opcionesControles, apartadoOpciones));
+        btnAtrasVideo.onClick.AddListener(() => CambiarApartado(opcionesVideo, apartadoOpciones));
+        btnAtrasSonido.onClick.AddListener(() => CambiarApartado(opcionesSonido, apartadoOpciones));
+        btnAtrasControles.onClick.AddListener(() => CambiarApartado(opcionesControles, apartadoOpciones));
 
-        btnPantallaIzq.onClick.AddListener(() => CambiarIndice(ref pantallaIndex, -1, pantallas.Length, ActualizarPantalla));
-        btnPantallaDer.onClick.AddListener(() => CambiarIndice(ref pantallaIndex, 1, pantallas.Length, ActualizarPantalla));
-        btnResolucionIzq.onClick.AddListener(() => CambiarIndice(ref resolucionIndex, -1, resoluciones.Length, ActualizarResolucion));
-        btnResolucionDer.onClick.AddListener(() => CambiarIndice(ref resolucionIndex, 1, resoluciones.Length, ActualizarResolucion));
-        btnCalidadIzq.onClick.AddListener(() => CambiarIndice(ref calidadIndex, -1, calidades.Length, ActualizarCalidad));
-        btnCalidadDer.onClick.AddListener(() => CambiarIndice(ref calidadIndex, 1, calidades.Length, ActualizarCalidad));
+        // Video
+        btnPantallaIzq.onClick.AddListener(() => CambiarPantalla(-1));
+        btnPantallaDer.onClick.AddListener(() => CambiarPantalla(1));
+        btnCalidadIzq.onClick.AddListener(() => CambiarCalidad(-1));
+        btnCalidadDer.onClick.AddListener(() => CambiarCalidad(1));
+        btnBrilloIzq.onClick.AddListener(() => CambiarBrillo(-0.1f));
+        btnBrilloDer.onClick.AddListener(() => CambiarBrillo(0.1f));
 
-        sliderGeneral.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("SonidoGeneral", v));
-        sliderMusica.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("SonidoMusica", v));
-        sliderSFX.onValueChanged.AddListener((v) => PlayerPrefs.SetFloat("SonidoSFX", v));
+        // Sonido
+        sliderGeneral.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolGeneral", Mathf.Log10(v) * 20));
+        sliderMusica.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolMusica", Mathf.Log10(v) * 20));
+        sliderSFX.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolSFX", Mathf.Log10(v) * 20));
 
-        sliderGeneral.value = PlayerPrefs.GetFloat("SonidoGeneral", 1);
-        sliderMusica.value = PlayerPrefs.GetFloat("SonidoMusica", 1);
-        sliderSFX.value = PlayerPrefs.GetFloat("SonidoSFX", 1);
+        sliderGeneral.value = PlayerPrefs.GetFloat("SonidoGeneral", 1f);
+        sliderMusica.value = PlayerPrefs.GetFloat("SonidoMusica", 1f);
+        sliderSFX.value = PlayerPrefs.GetFloat("SonidoSFX", 1f);
 
+        // Controles
         btnTeclado.onClick.AddListener(() => SeleccionarControles(true));
         btnMando.onClick.AddListener(() => SeleccionarControles(false));
 
-        AsignarEventosHover();
+        panelPausa.SetActive(false);
+        Time.timeScale = 1;
+    }
 
-        SeleccionarControles(true);
-        ActualizarPantalla();
-        ActualizarResolucion();
-        ActualizarCalidad();
+    
+    void CargarConfiguraciones()
+    {
+        brillo = PlayerPrefs.GetFloat("Brillo", 0.5f); // 50% por defecto
+        ActualizarFiltroBrillo();
+
+        pantallaIndex = PlayerPrefs.GetInt("Pantalla", 0);
+        CambiarPantalla(0);
+
+        calidadIndex = PlayerPrefs.GetInt("Calidad", 1);
+        CambiarCalidad(0);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!pausado) PausarJuego();
-            else Continuar();
+            if (pausado) Continuar();
+            else Pausar();
         }
     }
 
-    void PausarJuego()
+    void Pausar()
     {
         pausado = true;
         Time.timeScale = 0;
@@ -156,12 +158,22 @@ public class MenuPausa : MonoBehaviour
         panelPausa.SetActive(false);
     }
 
-    void AbrirOpciones() => AlternarApartado(apartadoPausa, apartadoOpciones);
-
-    void VolverAlMenu()
+    void CambiarApartado(GameObject de, GameObject a)
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("MenuPrincipal");
+        de.SetActive(false);
+        a.SetActive(true);
+    }
+
+    void ActivarSoloEsteApartado(GameObject a)
+    {
+        apartadoPausa.SetActive(false);
+        apartadoOpciones.SetActive(false);
+        apartadoConfirmarVolver.SetActive(false);
+        apartadoConfirmarSalir.SetActive(false);
+        opcionesVideo.SetActive(false);
+        opcionesSonido.SetActive(false);
+        opcionesControles.SetActive(false);
+        a.SetActive(true);
     }
 
     void SalirDelJuego()
@@ -173,81 +185,56 @@ public class MenuPausa : MonoBehaviour
 #endif
     }
 
-    void AlternarApartado(GameObject de, GameObject a)
+    void CambiarPantalla(int cambio)
     {
-        de.SetActive(false);
-        a.SetActive(true);
+        pantallaIndex = (pantallaIndex + cambio + 2) % 2;
+        PlayerPrefs.SetInt("Pantalla", pantallaIndex);
+
+        txtPantallaCompleta.gameObject.SetActive(pantallaIndex == 0);
+        txtVentana.gameObject.SetActive(pantallaIndex == 1);
+
+        Screen.fullScreenMode = (pantallaIndex == 0) ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.FullScreenWindow;
     }
 
-    void ActivarSoloEsteApartado(GameObject apartado)
+    void CambiarCalidad(int cambio)
     {
-        apartadoPausa.SetActive(false);
-        apartadoOpciones.SetActive(false);
-        apartadoConfirmarVolver.SetActive(false);
-        apartadoConfirmarSalir.SetActive(false);
-        opcionesVideo.SetActive(false);
-        opcionesSonido.SetActive(false);
-        opcionesControles.SetActive(false);
-        apartado.SetActive(true);
+        calidadIndex = Mathf.Clamp(calidadIndex + cambio, 0, 1);
+        PlayerPrefs.SetInt("Calidad", calidadIndex);
+
+        int calidadUnity = (calidadIndex == 0) ? 0 : QualitySettings.names.Length - 1;
+        QualitySettings.SetQualityLevel(calidadUnity);
+
+        txtGraficosAltos.gameObject.SetActive(calidadIndex == 1);
+        txtGraficosBajos.gameObject.SetActive(calidadIndex == 0);
     }
 
-    void AsignarEventosHover()
+    void CambiarBrillo(float delta)
     {
-        AsignarHover(btnContinuar, imgBtnContinuar);
-        AsignarHover(btnOpciones, imgBtnOpciones);
-        AsignarHover(btnVolverMenu, imgBtnVolverMenu);
-        AsignarHover(btnSalir, imgBtnSalir);
-        AsignarHover(btnMenuSi, imgBtnMenuSi);
-        AsignarHover(btnMenuNo, imgBtnMenuNo);
-        AsignarHover(btnSalirSi, imgBtnSalirSi);
-        AsignarHover(btnSalirNo, imgBtnSalirNo);
-        AsignarHover(btnAtras, imgBtnAtras);
-        AsignarHover(btnVideo, imgBtnVideo);
-        AsignarHover(btnSonido, imgBtnSonido);
-        AsignarHover(btnControles, imgBtnControles);
-        AsignarHover(btnAtrasVideo, imgBtnAtrasVideo);
-        AsignarHover(btnAtrasSonido, imgBtnAtrasSonido);
-        AsignarHover(btnAtrasControles, imgBtnAtrasControles);
-        AsignarHover(btnTeclado, imgBtnTeclado);
-        AsignarHover(btnMando, imgBtnMando);
+        brillo = Mathf.Clamp01(brillo + delta);
+        PlayerPrefs.SetFloat("Brillo", brillo);
+        ActualizarFiltroBrillo();
     }
 
-    void AsignarHover(Button btn, GameObject imagen)
+    void ActualizarFiltroBrillo()
     {
-        if (btn == null || imagen == null) return;
-        EventTrigger trigger = btn.gameObject.GetComponent<EventTrigger>() ?? btn.gameObject.AddComponent<EventTrigger>();
+        Color finalColor;
+        float alpha;
 
-        EventTrigger.Entry entryEnter = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
-        entryEnter.callback.AddListener((e) => imagen.SetActive(false));
-        trigger.triggers.Add(entryEnter);
+        if (brillo < 0.5f)
+        {
+            // De negro con alpha 200 → alpha 0
+            alpha = Mathf.Lerp(200f / 255f, 0f, brillo / 0.5f);
+            finalColor = new Color(0f, 0f, 0f, alpha);
+        }
+        else
+        {
+            // De alpha 0 → blanco con alpha 100
+            alpha = Mathf.Lerp(0f, 100f / 255f, (brillo - 0.5f) / 0.5f);
+            finalColor = new Color(1f, 1f, 1f, alpha);
+        }
 
-        EventTrigger.Entry entryExit = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
-        entryExit.callback.AddListener((e) => imagen.SetActive(true));
-        trigger.triggers.Add(entryExit);
-    }
-
-    void CambiarIndice(ref int indice, int cambio, int max, System.Action actualizar)
-    {
-        indice = (indice + cambio + max) % max;
-        actualizar.Invoke();
-    }
-
-    void ActualizarPantalla()
-    {
-        for (int i = 0; i < pantallas.Length; i++)
-            pantallas[i].SetActive(i == pantallaIndex);
-    }
-
-    void ActualizarResolucion()
-    {
-        for (int i = 0; i < resoluciones.Length; i++)
-            resoluciones[i].SetActive(i == resolucionIndex);
-    }
-
-    void ActualizarCalidad()
-    {
-        for (int i = 0; i < calidades.Length; i++)
-            calidades[i].SetActive(i == calidadIndex);
+        filtroBrillo.color = finalColor;
+        txtBrillo.text = Mathf.RoundToInt(brillo * 100f) + "%";
     }
 
     void SeleccionarControles(bool teclado)
@@ -258,25 +245,18 @@ public class MenuPausa : MonoBehaviour
 
     void AsignarEventosAudio(Button boton)
     {
-        EventTrigger disparador = boton.gameObject.GetComponent<EventTrigger>();
-        if (disparador == null)
-            disparador = boton.gameObject.AddComponent<EventTrigger>();
+        EventTrigger trigger = boton.gameObject.GetComponent<EventTrigger>() ?? boton.gameObject.AddComponent<EventTrigger>();
 
-        // Evento al pasar el cursor (hover)
-        EventTrigger.Entry entradaHover = new EventTrigger.Entry();
-        entradaHover.eventID = EventTriggerType.PointerEnter;
-        entradaHover.callback.AddListener((eventData) => ReproducirSFX(sonidoHover));
-        disparador.triggers.Add(entradaHover);
+        EventTrigger.Entry hover = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
+        hover.callback.AddListener((e) => ReproducirSFX(sonidoHover));
+        trigger.triggers.Add(hover);
 
-        // Evento al hacer clic
         boton.onClick.AddListener(() => ReproducirSFX(sonidoClick));
     }
 
     void ReproducirSFX(AudioClip clip)
     {
         if (clip != null && fuenteSFX != null)
-        {
             fuenteSFX.PlayOneShot(clip);
-        }
     }
 }
