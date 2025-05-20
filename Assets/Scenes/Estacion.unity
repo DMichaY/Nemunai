@@ -13106,12 +13106,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5840337
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
@@ -13131,7 +13131,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5791118
+      value: -1.585
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
@@ -13176,12 +13176,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12852b88fe29faf4885e5c882120cf0e,
         type: 3}
       propertyPath: m_Name
       value: ModeloLlaveFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12852b88fe29faf4885e5c882120cf0e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12852b88fe29faf4885e5c882120cf0e, type: 3}
@@ -20933,7 +20938,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990591223}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 91fc9a99fa333a648a7a5189a29e32e1, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 20a6a6aeec1c6174391d40cc3ffb0bae, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -43385,6 +43390,7 @@ GameObject:
   - component: {fileID: 6617569949954811296}
   - component: {fileID: 6617569949954811299}
   - component: {fileID: 6617569949954811300}
+  - component: {fileID: 6617569949954811301}
   m_Layer: 3
   m_Name: PuertaVerja
   m_TagString: Untagged
@@ -43945,7 +43951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 2.2
+  activo: 1
 --- !u!4 &4976820350915178156
 Transform:
   m_ObjectHideFlags: 0
@@ -44056,7 +44063,9 @@ GameObject:
   - component: {fileID: 7101975454526096560}
   - component: {fileID: 3420800127860054986}
   - component: {fileID: 7101975454526096561}
-  m_Layer: 0
+  - component: {fileID: 7101975454526096564}
+  - component: {fileID: 7101975454526096563}
+  m_Layer: 3
   m_Name: Alfombra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44250,7 +44259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 2
+  activo: 1
 --- !u!33 &6340085069584079227
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44403,7 +44413,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 2.55
+  activo: 1
+--- !u!114 &6617569949954811301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844730328206582575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5000adeeebf0a4a937897f2ea6186c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetoADesbloquear: {fileID: 7101975454526096563}
+  jugador: {fileID: 1997331746}
+  distanciaParaActivar: 2.6
 --- !u!1 &6675424916839060267
 GameObject:
   m_ObjectHideFlags: 0
@@ -44512,6 +44538,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7101975454526096563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512228213415305832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaActivacion: 1.6
+  activo: 0
+--- !u!114 &7101975454526096564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512228213415305832}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &7139407448204664797
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44564,7 +44622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 1.8
+  activo: 1
 --- !u!33 &7190211968660042634
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44832,7 +44891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 1.8
+  activo: 1
 --- !u!1 &8230712260479685343
 GameObject:
   m_ObjectHideFlags: 0
@@ -44898,7 +44958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaActivacion: 3
+  distanciaActivacion: 3.35
+  activo: 1
 --- !u!4 &8480346017719263266
 Transform:
   m_ObjectHideFlags: 0

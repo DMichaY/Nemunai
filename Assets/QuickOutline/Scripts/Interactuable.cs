@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Interactuable : MonoBehaviour
 {
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     public float distanciaActivacion = 3f;
+    public bool activo = true; // << SOLO SE ACTIVA CUANDO SE PERMITA
 
     private Outline outline;
     private Transform jugador;
@@ -22,9 +23,14 @@ public class Interactuable : MonoBehaviour
 
     void Update()
     {
-        if (jugador == null || outline == null) return;
+        if (!activo || jugador == null || outline == null) return;
 
         float distancia = Vector3.Distance(transform.position, jugador.position);
         outline.enabled = distancia <= distanciaActivacion;
+    }
+
+    public void Activar()
+    {
+        activo = true;
     }
 }
