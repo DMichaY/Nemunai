@@ -8850,14 +8850,10 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 0}
-  sonidoHITPos2: {fileID: 0}
-  sonidoHITPos3: {fileID: 0}
-  sonidoHITPos4: {fileID: 0}
-  sonidoHITPos5: {fileID: 0}
-  sonidoHITPos6: {fileID: 0}
-  sonidoHITPos7: {fileID: 0}
-  sonidoHITPos8: {fileID: 0}
+  sonidoHITPos1: {fileID: 8300000, guid: 0d7abbb57a6eb26449fccdabc8eaf24f, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: b42bcbd837199a74cb392569f9d6f111, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: c0bd12bf6a934d944b494d6d5c3c73b8, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: b42bcbd837199a74cb392569f9d6f111, type: 3}
   cuerpoRefAudio: {fileID: 0}
   speed: 10
   waitTime: 2
@@ -15348,14 +15344,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoATQPos5: {fileID: 0}
-  sonidoATQPos6: {fileID: 0}
-  sonidoATQPos7: {fileID: 0}
-  sonidoATQPos8: {fileID: 0}
+  sonidoATQPos1: {fileID: 8300000, guid: 84d2407a5e823184d8bf60d272bf500c, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: fbf51014c240ebd4383b1f77f9b51221, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 1aec42adda990d542b8e29e62ed6dcee, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: fbf51014c240ebd4383b1f77f9b51221, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 50776f624abb82547806b75d392d56aa, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: d7447f286c79ce24f9e72b8477436187, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 7da84cfd5e917de44b800631061670dd, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: f8fd9794fb2fdfa4195891e19a291833, type: 3}
 --- !u!1 &1205389335
 GameObject:
   m_ObjectHideFlags: 0
@@ -17380,6 +17376,15 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1483567060}
   panelMuerte: {fileID: 650497276}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
+  esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:
   m_ObjectHideFlags: 0

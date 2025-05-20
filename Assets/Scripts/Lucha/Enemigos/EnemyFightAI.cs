@@ -12,17 +12,6 @@ public class EnemyFightAI : FighterClass
     public Animator animator;
     public Rigidbody rb;
 
-    public AudioClip sonidoHITPos1;
-    public AudioClip sonidoHITPos2;
-    public AudioClip sonidoHITPos3;
-    public AudioClip sonidoHITPos4;
-
-    AudioSource audioFuente;
-
-    public GameObject cuerpoRefAudio;
-
-    private List<AudioClip> listaSonidosHITPos = new List<AudioClip>();
-
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
 
@@ -38,16 +27,7 @@ public class EnemyFightAI : FighterClass
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
-        StartCoroutine(StartWait());
-
-        // Audio
-        // Llenar la lista de sonidos
-        listaSonidosHITPos.Add(sonidoHITPos1);
-        listaSonidosHITPos.Add(sonidoHITPos2);
-        listaSonidosHITPos.Add(sonidoHITPos3);
-        listaSonidosHITPos.Add(sonidoHITPos4);
-
-        audioFuente = cuerpoRefAudio.GetComponent<AudioSource>();
+        StartCoroutine(StartWait());    
     }
 
     private IEnumerator StartWait()
@@ -85,8 +65,6 @@ public class EnemyFightAI : FighterClass
                 HB.SetActive(false);
             }
         }
-
-        SonidoHITPosAleatorio();
     }
 
     private IEnumerator Death()
@@ -114,16 +92,5 @@ public class EnemyFightAI : FighterClass
     private void OnCollisionExit(Collision collision)
     {
         rb.velocity = Vector3.zero;
-    }
-
-    // Corrutina que produce sonido aleatorio del enemigo siendo golpeando
-    public void SonidoHITPosAleatorio()
-    {
-        // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosHITPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosHITPos[indice];
-
-        // Reproducir el sonido
-        audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 }

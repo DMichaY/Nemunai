@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -9,7 +10,11 @@ public class KaitoFight : FighterClass
     public Slider lifeBar;
 
     public GameObject panelMuerte;
-    public EnemyFightExtra sonidosEnemigoDemPos;
+
+    EnemyFightExtra sonidosEnemigoDemPos;
+    EnemyFightAI sonidosEnemigoDemPos2;
+    float vidaActualEnemigo;
+    bool esperarSonido;
 
     private Animator kaitoAnimator;
     private PlayerInput input;
@@ -17,6 +22,21 @@ public class KaitoFight : FighterClass
     private bool canMove = true;
     private Rigidbody rb;
     private float life = 100;
+
+    public AudioClip sonidoATQPos1;
+    public AudioClip sonidoATQPos2;
+    public AudioClip sonidoATQPos3;
+    public AudioClip sonidoATQPos4;
+
+    public AudioClip sonidoMISSPos1;
+    public AudioClip sonidoMISSPos2;
+    public AudioClip sonidoMISSPos3;
+    public AudioClip sonidoMISSPos4;
+    
+    AudioSource audioFuente;
+
+    private List<AudioClip> listaSonidosATQPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSPos = new List<AudioClip>();
 
     public bool esPuebloInverso;
 
@@ -30,6 +50,25 @@ public class KaitoFight : FighterClass
         rb = GetComponent<Rigidbody>();
 
         sonidosEnemigoDemPos = FindObjectOfType<EnemyFightExtra>();
+        sonidosEnemigoDemPos2 = FindObjectOfType<EnemyFightAI>();
+
+        esperarSonido = false;
+
+        vidaActualEnemigo = sonidosEnemigoDemPos2.life;
+
+        // Audio
+        // Llenar la lista de sonidos
+        listaSonidosATQPos.Add(sonidoATQPos1);
+        listaSonidosATQPos.Add(sonidoATQPos2);
+        listaSonidosATQPos.Add(sonidoATQPos3);
+        listaSonidosATQPos.Add(sonidoATQPos4);
+
+        listaSonidosMISSPos.Add(sonidoMISSPos1);
+        listaSonidosMISSPos.Add(sonidoMISSPos2);
+        listaSonidosMISSPos.Add(sonidoMISSPos3);
+        listaSonidosMISSPos.Add(sonidoMISSPos4);
+
+        audioFuente = this.GetComponent<AudioSource>();
 
 
         lifeBar.maxValue = life;
@@ -175,7 +214,33 @@ public class KaitoFight : FighterClass
         GetComponent<PlayerInput>().DeactivateInput();
 
         panelMuerte.SetActive(true);
+    }
 
+    // Corrutina que produce sonido aleatorio del enemigo atacando/fallando ataque
+    public void SonidoATQPosAleatorio()
+    {
+        if (!esperarSonido)
+        {
+            // Se escoge un sonido aleatorio de la lista
+            int indice = Random.Range(0, listaSonidosATQPos.Count);
+            AudioClip sonidoSeleccionado = listaSonidosATQPos[indice];
 
+            // Reproducir el sonido
+            audioFuente.PlayOneShot(sonidoSeleccionado);
+        }
+    }
+
+    // Corrutina que produce sonido aleatorio del enemigo fallando golpe
+    public void SonidoMISSPosAleatorio()
+    {
+        if (!esperarSonido)
+        {
+            // Se escoge un sonido aleatorio de la lista
+            int indice = Random.Range(0, listaSonidosMISSPos.Count);
+            AudioClip sonidoSeleccionado = listaSonidosMISSPos[indice];
+
+            // Reproducir el sonido
+            audioFuente.PlayOneShot(sonidoSeleccionado);
+        }
     }
 }
