@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3101,6 +3101,14 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1766028875}
   panelMuerte: {fileID: 1656610848}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &45820638
 GameObject:
@@ -7565,6 +7573,14 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1060837055}
   panelMuerte: {fileID: 1656610848}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &134956412
 GameObject:
@@ -13556,14 +13572,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
-  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
-  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
-  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
-  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
 --- !u!82 &242571918
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21270,6 +21291,14 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1194202436}
   panelMuerte: {fileID: 1656610848}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &412701015
 GameObject:
@@ -22805,15 +22834,6 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
-  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
-  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
-  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
-  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
-  cuerpoRefAudio: {fileID: 1125655485}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -28141,6 +28161,14 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1813808822}
   panelMuerte: {fileID: 1656610848}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &585672980 stripped
 GameObject:
@@ -28168,14 +28196,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
-  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
-  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
-  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
-  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
 --- !u!82 &585672983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30946,15 +30979,6 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
-  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
-  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
-  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
-  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
-  cuerpoRefAudio: {fileID: 242571914}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -31351,15 +31375,6 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
-  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
-  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
-  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
-  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
-  cuerpoRefAudio: {fileID: 585672980}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -34981,15 +34996,6 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
-  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
-  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
-  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
-  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
-  cuerpoRefAudio: {fileID: 1389112340}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -49735,14 +49741,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
-  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
-  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
-  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
-  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
 --- !u!82 &1125655487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61155,14 +61166,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
-  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
-  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
-  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
-  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
 --- !u!82 &1389112343
 AudioSource:
   m_ObjectHideFlags: 0
