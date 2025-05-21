@@ -14474,7 +14474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f6c4394fb16814aa2433c8df7349d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: Torre
+  nombreEscena: TorreInterior
   tagJugador: Player
   pantallaNegra: {fileID: 1342247443}
 --- !u!4 &826648998
@@ -19739,6 +19739,15 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 363069919}
   panelMuerte: {fileID: 445461498}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
+  esPuebloInverso: 0
 --- !u!4 &1391969230
 Transform:
   m_ObjectHideFlags: 0
@@ -25589,41 +25598,23 @@ MonoBehaviour:
   btnVideo: {fileID: 1318913921}
   btnSonido: {fileID: 89979828}
   btnControles: {fileID: 1401430624}
-  imgBtnContinuar: {fileID: 156080480}
-  imgBtnOpciones: {fileID: 1980255014}
-  imgBtnVolverMenu: {fileID: 1382506804}
-  imgBtnSalir: {fileID: 1796075712}
-  imgBtnMenuSi: {fileID: 349007585}
-  imgBtnMenuNo: {fileID: 307680165}
-  imgBtnSalirSi: {fileID: 1429053402}
-  imgBtnSalirNo: {fileID: 1080552203}
-  imgBtnAtras: {fileID: 1074315948}
-  imgBtnVideo: {fileID: 753756720}
-  imgBtnSonido: {fileID: 390087662}
-  imgBtnControles: {fileID: 1150852856}
   btnAtrasVideo: {fileID: 1430043088}
-  imgBtnAtrasVideo: {fileID: 677944373}
+  btnAtrasSonido: {fileID: 330599289}
+  btnAtrasControles: {fileID: 504294650}
+  btnTeclado: {fileID: 833229996}
+  btnMando: {fileID: 1213327006}
   btnPantallaIzq: {fileID: 213963392}
   btnPantallaDer: {fileID: 2040355264}
-  pantallas:
-  - {fileID: 1212048651}
-  - {fileID: 532256331}
-  - {fileID: 2047001563}
-  btnResolucionIzq: {fileID: 1630664367}
-  btnResolucionDer: {fileID: 772882357}
-  resoluciones:
-  - {fileID: 1774272255}
-  - {fileID: 1930729623}
-  - {fileID: 620246212}
-  - {fileID: 961888444}
+  txtPantallaCompleta: {fileID: 0}
+  txtVentana: {fileID: 0}
   btnCalidadIzq: {fileID: 265736076}
   btnCalidadDer: {fileID: 795933335}
-  calidades:
-  - {fileID: 447750141}
-  - {fileID: 1549888351}
-  - {fileID: 2146192273}
-  btnAtrasSonido: {fileID: 330599289}
-  imgBtnAtrasSonido: {fileID: 877851277}
+  txtGraficosAltos: {fileID: 0}
+  txtGraficosBajos: {fileID: 0}
+  btnBrilloIzq: {fileID: 0}
+  btnBrilloDer: {fileID: 0}
+  txtBrillo: {fileID: 0}
+  filtroBrillo: {fileID: 0}
   sliderGeneral: {fileID: 745956708}
   sliderMusica: {fileID: 1894970268}
   sliderSFX: {fileID: 488328943}
@@ -25632,12 +25623,6 @@ MonoBehaviour:
   mezcladorPrincipal: {fileID: 0}
   grupoMusica: {fileID: 0}
   grupoSFX: {fileID: 0}
-  btnAtrasControles: {fileID: 504294650}
-  btnTeclado: {fileID: 833229996}
-  btnMando: {fileID: 1213327006}
-  imgBtnAtrasControles: {fileID: 1750452310}
-  imgBtnTeclado: {fileID: 531075378}
-  imgBtnMando: {fileID: 1990703692}
   imagenControlesTeclado: {fileID: 217711677}
   imagenControlesMando: {fileID: 346503339}
 --- !u!4 &1943371989

@@ -627,41 +627,23 @@ MonoBehaviour:
   btnVideo: {fileID: 2035836558}
   btnSonido: {fileID: 1809888903}
   btnControles: {fileID: 1593959019}
-  imgBtnContinuar: {fileID: 1220394333}
-  imgBtnOpciones: {fileID: 2056418788}
-  imgBtnVolverMenu: {fileID: 1212984969}
-  imgBtnSalir: {fileID: 953999470}
-  imgBtnMenuSi: {fileID: 1946735281}
-  imgBtnMenuNo: {fileID: 1704656586}
-  imgBtnSalirSi: {fileID: 74351061}
-  imgBtnSalirNo: {fileID: 389768298}
-  imgBtnAtras: {fileID: 1927052267}
-  imgBtnVideo: {fileID: 1891777256}
-  imgBtnSonido: {fileID: 2089675129}
-  imgBtnControles: {fileID: 593025865}
   btnAtrasVideo: {fileID: 619029140}
-  imgBtnAtrasVideo: {fileID: 310510552}
+  btnAtrasSonido: {fileID: 13558379}
+  btnAtrasControles: {fileID: 1496691354}
+  btnTeclado: {fileID: 1864873030}
+  btnMando: {fileID: 159049075}
   btnPantallaIzq: {fileID: 1222321963}
   btnPantallaDer: {fileID: 2071612778}
-  pantallas:
-  - {fileID: 1946154895}
-  - {fileID: 925701367}
-  - {fileID: 283386336}
-  btnResolucionIzq: {fileID: 401388566}
-  btnResolucionDer: {fileID: 1280830437}
-  resoluciones:
-  - {fileID: 824837854}
-  - {fileID: 671974254}
-  - {fileID: 631261650}
-  - {fileID: 1792632533}
+  txtPantallaCompleta: {fileID: 0}
+  txtVentana: {fileID: 0}
   btnCalidadIzq: {fileID: 7930959}
   btnCalidadDer: {fileID: 143244855}
-  calidades:
-  - {fileID: 1326110367}
-  - {fileID: 869785318}
-  - {fileID: 1301300440}
-  btnAtrasSonido: {fileID: 13558379}
-  imgBtnAtrasSonido: {fileID: 1779040244}
+  txtGraficosAltos: {fileID: 0}
+  txtGraficosBajos: {fileID: 0}
+  btnBrilloIzq: {fileID: 0}
+  btnBrilloDer: {fileID: 0}
+  txtBrillo: {fileID: 0}
+  filtroBrillo: {fileID: 0}
   sliderGeneral: {fileID: 367549556}
   sliderMusica: {fileID: 1956131323}
   sliderSFX: {fileID: 2080489909}
@@ -670,12 +652,6 @@ MonoBehaviour:
   mezcladorPrincipal: {fileID: 0}
   grupoMusica: {fileID: 0}
   grupoSFX: {fileID: 0}
-  btnAtrasControles: {fileID: 1496691354}
-  btnTeclado: {fileID: 1864873030}
-  btnMando: {fileID: 159049075}
-  imgBtnAtrasControles: {fileID: 1045974828}
-  imgBtnTeclado: {fileID: 988322342}
-  imgBtnMando: {fileID: 1321017445}
   imagenControlesTeclado: {fileID: 1372633761}
   imagenControlesMando: {fileID: 773689593}
 --- !u!4 &87952780
@@ -850,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f6c4394fb16814aa2433c8df7349d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: 
+  nombreEscena: TorreInteriorFin
   tagJugador: Player
   pantallaNegra: {fileID: 963158094}
 --- !u!4 &115068185
@@ -5905,15 +5881,6 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  sonidoHITPos1: {fileID: 8300000, guid: e1bf3f0ad252ae34eb9db1571531b1f3, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: fc6be6abdb119844ca700ad61bc43be6, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 14754e71d45a6d34c8f8a8b6ac1727e1, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: ca4fbcaca3747af4ea4deca334215834, type: 3}
-  sonidoHITPos5: {fileID: 8300000, guid: 527da9f2b09f83746a2c55a94854a43b, type: 3}
-  sonidoHITPos6: {fileID: 8300000, guid: 334cf231901e6a844923dcf702d9c9da, type: 3}
-  sonidoHITPos7: {fileID: 8300000, guid: 1a06464a81c201a4dbece9bb6c472876, type: 3}
-  sonidoHITPos8: {fileID: 8300000, guid: b46d9b28a818c5b40ad3f6a02b9438a4, type: 3}
-  cuerpoRefAudio: {fileID: 2095549280}
   speed: 8
   waitTime: 2.5
   attackTime: 1
@@ -13776,6 +13743,15 @@ MonoBehaviour:
   startWaitTime: 5
   lifeBar: {fileID: 1483567060}
   panelMuerte: {fileID: 1796936846}
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
+  esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22037,14 +22013,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoTAUNTPos: {fileID: 0}
   sonidoATQPos1: {fileID: 8300000, guid: 6eea9a38802b0f240a990f493726d8fc, type: 3}
   sonidoATQPos2: {fileID: 8300000, guid: 109c49de08d22dc4781f08328e588736, type: 3}
   sonidoATQPos3: {fileID: 8300000, guid: a1a5b0f5ec55dcc439689756edcb4703, type: 3}
   sonidoATQPos4: {fileID: 8300000, guid: cb164dadb55accf47b90387902dc1311, type: 3}
-  sonidoATQPos5: {fileID: 8300000, guid: 1324f16612d9a6447b0352ff7c979b98, type: 3}
-  sonidoATQPos6: {fileID: 8300000, guid: 5d480ad538036a24a96d68292ec02a3d, type: 3}
-  sonidoATQPos7: {fileID: 8300000, guid: 81d1e7d7cb465e34baea8d3f3ee6c057, type: 3}
-  sonidoATQPos8: {fileID: 8300000, guid: b59a70536615d064cb89b20b9063f46e, type: 3}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
+  sonidoHITPos1: {fileID: 0}
+  sonidoHITPos2: {fileID: 0}
+  sonidoHITPos3: {fileID: 0}
+  sonidoHITPos4: {fileID: 0}
 --- !u!82 &2095549284
 AudioSource:
   m_ObjectHideFlags: 0
