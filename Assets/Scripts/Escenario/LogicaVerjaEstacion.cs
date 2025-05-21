@@ -76,7 +76,7 @@ public class LogicaVerjaEstacion : Interactable
 
     IEnumerator BorrarPuerta()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         Destroy(this.gameObject);
         Destroy(verja);
@@ -107,7 +107,7 @@ public class LogicaVerjaEstacion : Interactable
         // Banda superior (de fuera de la pantalla hacia la posición Y deseada)
         Vector2 posicionInicialArriba = bandaArriba.anchoredPosition;
         Vector2 posicionFinalArriba = new Vector2(0, yPosBandaArriba); // Posición final en Y para la banda superior
-        float tiempoTranscurrido = 0f;
+        float tiempoTranscurrido = 3f;
         while (tiempoTranscurrido < tiempoAnimacion)
         {
             bandaArriba.anchoredPosition = Vector2.Lerp(posicionInicialArriba, posicionFinalArriba, tiempoTranscurrido / tiempoAnimacion);
@@ -119,7 +119,7 @@ public class LogicaVerjaEstacion : Interactable
         // Banda inferior (de fuera de la pantalla hacia la posición Y deseada)
         Vector2 posicionInicialAbajo = bandaAbajo.anchoredPosition;
         Vector2 posicionFinalAbajo = new Vector2(0, yPosBandaAbajo); // Posición final en Y para la banda inferior
-        tiempoTranscurrido = 0f;
+        tiempoTranscurrido = 3f;
         while (tiempoTranscurrido < tiempoAnimacion)
         {
             bandaAbajo.anchoredPosition = Vector2.Lerp(posicionInicialAbajo, posicionFinalAbajo, tiempoTranscurrido / tiempoAnimacion);
@@ -129,11 +129,11 @@ public class LogicaVerjaEstacion : Interactable
         bandaAbajo.anchoredPosition = posicionFinalAbajo;
 
         // Ahora borramos la puerta
-        yield return new WaitForSeconds(1f);  // Tiempo para mantener las bandas antes de eliminar la puerta
+        yield return new WaitForSeconds(3f);  // Tiempo para mantener las bandas antes de eliminar la puerta
         StartCoroutine(BorrarPuerta());
 
         // Desactivar las bandas negras después de la animación
-        yield return new WaitForSeconds(1f); // Esperar después de la animación de la puerta
+        yield return new WaitForSeconds(2f); // Esperar después de la animación de la puerta
         bandaArriba.gameObject.SetActive(false);
         bandaAbajo.gameObject.SetActive(false);
     }

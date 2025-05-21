@@ -4,11 +4,24 @@ using TMPro;
 
 public class TMPManager : MonoBehaviour
 {
+    [Tooltip("Lista de TMPs gestionados. Solo uno podrá estar activo a la vez.")]
     public List<TextMeshProUGUI> tmpList = new List<TextMeshProUGUI>();
 
     private TextMeshProUGUI currentActiveTMP = null;
 
-    // Llama a esto desde fuera cuando actives un TMP
+    void Update()
+    {
+        // Revisión continua para detectar activaciones externas
+        foreach (var tmp in tmpList)
+        {
+            if (tmp.gameObject.activeSelf && tmp != currentActiveTMP)
+            {
+                ForceActivate(tmp);
+                break; // Solo permitimos uno activo, salimos del bucle
+            }
+        }
+    }
+
     public void ActivateTMP(TextMeshProUGUI tmpToActivate)
     {
         if (!tmpList.Contains(tmpToActivate))
@@ -17,18 +30,22 @@ public class TMPManager : MonoBehaviour
             return;
         }
 
-        // Si hay uno activo diferente, lo desactivamos
+        ForceActivate(tmpToActivate);
+    }
+
+    private void ForceActivate(TextMeshProUGUI tmpToActivate)
+    {
+        // Desactiva el anterior si es diferente
         if (currentActiveTMP != null && currentActiveTMP != tmpToActivate)
         {
             currentActiveTMP.gameObject.SetActive(false);
         }
 
-        // Activamos el nuevo
+        // Activa el nuevo
         tmpToActivate.gameObject.SetActive(true);
         currentActiveTMP = tmpToActivate;
     }
 
-    // Opcional: para desactivar el actual desde fuera
     public void DeactivateCurrent()
     {
         if (currentActiveTMP != null)

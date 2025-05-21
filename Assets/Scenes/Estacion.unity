@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2413,7 +2413,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 714440481}
   m_Father: {fileID: 147623274}
@@ -2421,7 +2421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -840, y: 402}
+  m_AnchoredPosition: {x: -2320, y: 1419}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90852718
@@ -4184,7 +4184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &153594275
@@ -4830,7 +4830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &181037231
@@ -8036,7 +8036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &294394259
@@ -12012,8 +12012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 1846106521}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &524694164
@@ -14674,8 +14674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 827343233}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &614424843
@@ -14895,8 +14895,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 454559124}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &642458284
@@ -16293,7 +16293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &714440481
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20126,7 +20126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &888012350
@@ -20930,7 +20930,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990591223}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 20a6a6aeec1c6174391d40cc3ffb0bae, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 4f7cb7b61c6c2964d945445db31a5bac, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -21674,8 +21674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 1095509961}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!1 &1023393614
@@ -28696,8 +28696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 40835891}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &1369729624
@@ -29209,8 +29209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 467508496}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &1389723839
@@ -30129,7 +30129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &1422744903
@@ -39973,7 +39973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadEscritura: 0
-  tiempoParaDesvanecer: 1
+  tiempoParaDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.001
   intensidadTemblor: 0.5
 --- !u!1 &2016697444
@@ -40024,8 +40024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoTMP: {fileID: 713413337}
-  velocidadEscritura: 0.05
-  tiempoEsperaAntesDesvanecer: 2
+  velocidadEscritura: 0
+  tiempoEsperaAntesDesvanecer: 5
   tiempoEntreDesvanecimientos: 0.02
   intensidadTemblor: 1
 --- !u!65 &2016697447
@@ -42327,8 +42327,6 @@ MonoBehaviour:
   btnPantallaDer: {fileID: 1613085695}
   txtPantallaCompleta: {fileID: 1281974947}
   txtVentana: {fileID: 250312677}
-  btnResolucionIzq: {fileID: 1670597178}
-  btnResolucionDer: {fileID: 1613085695}
   btnCalidadIzq: {fileID: 2054261539}
   btnCalidadDer: {fileID: 783285198}
   txtGraficosAltos: {fileID: 1533608759}
