@@ -11,6 +11,7 @@ public class EnemyFightExtra : MonoBehaviour
     private string lastActivatedHB;
 
     public AudioClip sonidoTAUNTPos;
+    public AudioClip sonidoDEADPos;
 
     public AudioClip sonidoATQPos1;
     public AudioClip sonidoATQPos2;
@@ -116,5 +117,11 @@ public class EnemyFightExtra : MonoBehaviour
     public void SonidoTAUNTPos()
     {
         audioFuente.PlayOneShot(sonidoTAUNTPos);
+    }
+
+    // Sonido inicio pelea
+    public void SonidoDEADPos()
+    {
+        audioFuente.PlayOneShot(sonidoDEADPos);
     }
 }

@@ -15,6 +15,7 @@ public class KaitoFight : FighterClass
 
     EnemyFightExtra sonidosEnemigoDemPos;
     EnemyFightAI sonidosEnemigoDemPos2;
+    KaitoFightExtra sonidosKaitoHerir;
 
     private Animator kaitoAnimator;
     private PlayerInput input;
@@ -36,6 +37,7 @@ public class KaitoFight : FighterClass
 
         sonidosEnemigoDemPos = FindObjectOfType<EnemyFightExtra>();
         sonidosEnemigoDemPos2 = FindObjectOfType<EnemyFightAI>();
+        sonidosKaitoHerir = FindObjectOfType<KaitoFightExtra>();
 
         lifeBar.maxValue = life;
         lifeBar.value = life;
@@ -167,6 +169,7 @@ public class KaitoFight : FighterClass
             Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
             sonidosEnemigoDemPos.SonidoATQPosAleatorio();
+            sonidosKaitoHerir.SonidoHITKaitoAleatorio();
         }
         else
         {
