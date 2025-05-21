@@ -8,6 +8,8 @@ public class KaitoFight : FighterClass
 {
     public float speed = 3.0f, startWaitTime = 0;
     public Slider lifeBar;
+    public GameObject hitEffect;
+    public GameObject blockEffect;
 
     public GameObject panelMuerte;
 
@@ -130,7 +132,7 @@ public class KaitoFight : FighterClass
     }
 
     //Perder vida y activar animación de recibir golpe o muerte
-    public override void GetHit(float damage)
+    public override void GetHit(float damage, Vector3 effectPos)
     {
         if(!kaitoAnimator.GetBool("crouch"))
         {
@@ -162,10 +164,14 @@ public class KaitoFight : FighterClass
                 }
             }
 
+            Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
+
             sonidosEnemigoDemPos.SonidoATQPosAleatorio();
         }
         else
         {
+            Destroy(Instantiate(blockEffect, effectPos, Quaternion.identity), 1);
+
             sonidosEnemigoDemPos.SonidoMISSPosAleatorio();
         }
     }

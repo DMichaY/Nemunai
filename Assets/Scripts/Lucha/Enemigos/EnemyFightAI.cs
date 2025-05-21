@@ -11,6 +11,7 @@ public class EnemyFightAI : FighterClass
     public EnemyState FSM;
     public Animator animator;
     public Rigidbody rb;
+    public GameObject hitEffect;
     EnemyFightExtra sonidoGolpeadoPos;
     KaitoFightExtra sonidoKaitoAtaque;
     public bool fueGolpeado = false;
@@ -49,7 +50,7 @@ public class EnemyFightAI : FighterClass
         FSM = FSM?.Process();
     }
 
-    public override void GetHit(float damage)
+    public override void GetHit(float damage, Vector3 effectPos)
     {
         life -= damage;
         lifeBar.value = life;
@@ -72,6 +73,8 @@ public class EnemyFightAI : FighterClass
                 HB.SetActive(false);
             }
         }
+
+        Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
         sonidoGolpeadoPos.SonidoHITPosAleatorio();
         sonidoKaitoAtaque.SonidoATQKaitoAleatorio();

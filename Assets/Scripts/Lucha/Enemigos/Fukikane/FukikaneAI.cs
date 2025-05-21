@@ -11,6 +11,7 @@ public class FukikaneAI : FighterClass
     public FukikaneState FSM;
     public Animator animator;
     public Rigidbody rb;
+    public GameObject hitEffect;
 
     public AudioClip sonidoHITPos1;
     public AudioClip sonidoHITPos2;
@@ -68,7 +69,7 @@ public class FukikaneAI : FighterClass
         FSM = FSM?.Process();
     }
 
-    public override void GetHit(float damage)
+    public override void GetHit(float damage, Vector3 effectPos)
     {
         life -= damage;
         lifeBar.value = life;
@@ -90,6 +91,8 @@ public class FukikaneAI : FighterClass
                 HB.SetActive(false);
             }
         }
+
+        Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
         SonidoHITPosAleatorio();
     }

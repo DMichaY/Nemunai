@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3179,15 +3179,11 @@ MonoBehaviour:
   speed: 6
   startWaitTime: 5
   lifeBar: {fileID: 1766028875}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+    type: 3}
   panelMuerte: {fileID: 1656610848}
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &45820638
 GameObject:
@@ -7569,15 +7565,11 @@ MonoBehaviour:
   speed: 6
   startWaitTime: 5
   lifeBar: {fileID: 1060837055}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+    type: 3}
   panelMuerte: {fileID: 1656610848}
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &134956412
 GameObject:
@@ -9399,6 +9391,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
 --- !u!1 &151539397
 GameObject:
   m_ObjectHideFlags: 0
@@ -12371,75 +12371,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222079724}
   m_Mesh: {fileID: -4282009400806741258, guid: 84ed5bdd1b8f1d94390213dfa221e22c, type: 3}
---- !u!1001 &222807836
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -51.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244409, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-        type: 3}
-      propertyPath: m_Name
-      value: HitEffect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 34d2ecad5b5fbc64980e4adfb8336865, type: 3}
 --- !u!1 &223206555
 GameObject:
   m_ObjectHideFlags: 0
@@ -20369,15 +20300,11 @@ MonoBehaviour:
   speed: 6
   startWaitTime: 5
   lifeBar: {fileID: 1194202436}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+    type: 3}
   panelMuerte: {fileID: 1656610848}
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &412701015
 GameObject:
@@ -21792,6 +21719,9 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -26917,15 +26847,11 @@ MonoBehaviour:
   speed: 6
   startWaitTime: 5
   lifeBar: {fileID: 1813808822}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+    type: 3}
   panelMuerte: {fileID: 1656610848}
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
   esPuebloInverso: 1
 --- !u!1 &585672980 stripped
 GameObject:
@@ -30027,6 +29953,9 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -30423,6 +30352,9 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -33624,6 +33556,9 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
+  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+    type: 3}
+  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -41717,6 +41652,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
 --- !u!1001 &924454860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56663,6 +56606,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
 --- !u!1 &1310254423
 GameObject:
   m_ObjectHideFlags: 0
@@ -84438,6 +84389,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  sonidoATQPos1: {fileID: 0}
+  sonidoATQPos2: {fileID: 0}
+  sonidoATQPos3: {fileID: 0}
+  sonidoATQPos4: {fileID: 0}
+  sonidoMISSPos1: {fileID: 0}
+  sonidoMISSPos2: {fileID: 0}
+  sonidoMISSPos3: {fileID: 0}
+  sonidoMISSPos4: {fileID: 0}
 --- !u!1001 &2016418664
 PrefabInstance:
   m_ObjectHideFlags: 0
