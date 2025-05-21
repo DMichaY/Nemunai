@@ -11,6 +11,9 @@ public class EnemyFightAI : FighterClass
     public EnemyState FSM;
     public Animator animator;
     public Rigidbody rb;
+    EnemyFightExtra sonidoGolpeadoPos;
+    KaitoFightExtra sonidoKaitoAtaque;
+    public bool fueGolpeado = false;
 
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -23,6 +26,9 @@ public class EnemyFightAI : FighterClass
         animator = GetComponentInChildren<Animator>();
         animator.StartPlayback();
         rb = GetComponent<Rigidbody>();
+
+        sonidoGolpeadoPos = FindObjectOfType<EnemyFightExtra>();
+        sonidoKaitoAtaque = FindObjectOfType<KaitoFightExtra>();
 
         lifeBar.maxValue = life;
         lifeBar.value = life;
@@ -47,6 +53,7 @@ public class EnemyFightAI : FighterClass
     {
         life -= damage;
         lifeBar.value = life;
+        fueGolpeado = true;
 
 
         if (life <= 0 && !animator.GetBool("death"))
@@ -65,6 +72,9 @@ public class EnemyFightAI : FighterClass
                 HB.SetActive(false);
             }
         }
+
+        sonidoGolpeadoPos.SonidoHITPosAleatorio();
+        sonidoKaitoAtaque.SonidoATQKaitoAleatorio();
     }
 
     private IEnumerator Death()
@@ -85,8 +95,6 @@ public class EnemyFightAI : FighterClass
             //S�lo para el release 1
             FindObjectOfType<CambiarEscena>().ForceLoadScene();
         }
-
-        
     }
 
     private void OnCollisionExit(Collision collision)

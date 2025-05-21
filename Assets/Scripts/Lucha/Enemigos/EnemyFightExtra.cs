@@ -79,7 +79,7 @@ public class EnemyFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
-    // Corrutina que produce sonido aleatorio del enemigo atacando/fallando ataque
+    // Corrutina que produce sonido aleatorio del enemigo atacando
     public void SonidoATQPosAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
