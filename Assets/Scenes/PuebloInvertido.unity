@@ -427,7 +427,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9391,14 +9391,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
+  sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
+  sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
+  sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
+  sonidoATQKaito3: {fileID: 8300000, guid: c5c593dcded59bc43b72d586f29ac19b, type: 3}
+  sonidoATQKaito4: {fileID: 8300000, guid: 5f65b4e4c2331374c96ccf34ac4735fe, type: 3}
+  sonidoMISSKaito1: {fileID: 8300000, guid: 50776f624abb82547806b75d392d56aa, type: 3}
+  sonidoMISSKaito2: {fileID: 8300000, guid: d7447f286c79ce24f9e72b8477436187, type: 3}
+  sonidoMISSKaito3: {fileID: 8300000, guid: 7da84cfd5e917de44b800631061670dd, type: 3}
+  sonidoMISSKaito4: {fileID: 8300000, guid: f8fd9794fb2fdfa4195891e19a291833, type: 3}
+  sonidoHITKaito1: {fileID: 8300000, guid: 3b522657866118d4cb87c8fe41cb4265, type: 3}
+  sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
+  sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
+  sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
 --- !u!1 &151539397
 GameObject:
   m_ObjectHideFlags: 0
@@ -13121,7 +13126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
   sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
   sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
   sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
@@ -13133,7 +13139,7 @@ MonoBehaviour:
   sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
   sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
   sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
 --- !u!82 &242571918
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13231,6 +13237,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!166 &242571919
+AudioChorusFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242571914}
+  m_Enabled: 1
+  m_DryMix: 0.5
+  m_WetMix1: 0.5
+  m_WetMix2: 0.5
+  m_WetMix3: 0.5
+  m_Delay: 40
+  m_Rate: 0.8
+  m_Depth: 0.03
+--- !u!164 &242571920
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242571914}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1339
+  m_RoomHF: 0
+  m_DecayTime: 8.6
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &247196417
 GameObject:
   m_ObjectHideFlags: 0
@@ -17201,7 +17245,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -19612,7 +19656,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -26879,7 +26923,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
   sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
   sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
   sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
@@ -26891,7 +26936,7 @@ MonoBehaviour:
   sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
   sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
   sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
 --- !u!82 &585672983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26989,6 +27034,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!166 &585672984
+AudioChorusFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585672980}
+  m_Enabled: 1
+  m_DryMix: 0.5
+  m_WetMix1: 0.5
+  m_WetMix2: 0.5
+  m_WetMix3: 0.5
+  m_Delay: 40
+  m_Rate: 0.8
+  m_Depth: 0.03
+--- !u!164 &585672985
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585672980}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1339
+  m_RoomHF: 0
+  m_DecayTime: 8.6
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &585982279
 GameObject:
   m_ObjectHideFlags: 0
@@ -29695,7 +29778,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -30665,7 +30748,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -31490,7 +31573,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -35590,7 +35673,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -41652,14 +41735,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
+  sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
+  sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
+  sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
+  sonidoATQKaito3: {fileID: 8300000, guid: c5c593dcded59bc43b72d586f29ac19b, type: 3}
+  sonidoATQKaito4: {fileID: 8300000, guid: 5f65b4e4c2331374c96ccf34ac4735fe, type: 3}
+  sonidoMISSKaito1: {fileID: 8300000, guid: 50776f624abb82547806b75d392d56aa, type: 3}
+  sonidoMISSKaito2: {fileID: 8300000, guid: d7447f286c79ce24f9e72b8477436187, type: 3}
+  sonidoMISSKaito3: {fileID: 8300000, guid: 7da84cfd5e917de44b800631061670dd, type: 3}
+  sonidoMISSKaito4: {fileID: 8300000, guid: f8fd9794fb2fdfa4195891e19a291833, type: 3}
+  sonidoHITKaito1: {fileID: 8300000, guid: 3b522657866118d4cb87c8fe41cb4265, type: 3}
+  sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
+  sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
+  sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
 --- !u!1001 &924454860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42578,7 +42666,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -48666,7 +48754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
   sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
   sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
   sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
@@ -48678,7 +48767,7 @@ MonoBehaviour:
   sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
   sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
   sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
 --- !u!82 &1125655487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48776,6 +48865,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!166 &1125655488
+AudioChorusFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125655485}
+  m_Enabled: 1
+  m_DryMix: 0.5
+  m_WetMix1: 0.5
+  m_WetMix2: 0.5
+  m_WetMix3: 0.5
+  m_Delay: 40
+  m_Rate: 0.8
+  m_Depth: 0.03
+--- !u!164 &1125655489
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125655485}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1339
+  m_RoomHF: 0
+  m_DecayTime: 8.6
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &1125839920
 GameObject:
   m_ObjectHideFlags: 0
@@ -54713,7 +54840,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -55260,7 +55387,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -56606,14 +56733,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
+  sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
+  sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
+  sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
+  sonidoATQKaito3: {fileID: 8300000, guid: c5c593dcded59bc43b72d586f29ac19b, type: 3}
+  sonidoATQKaito4: {fileID: 8300000, guid: 5f65b4e4c2331374c96ccf34ac4735fe, type: 3}
+  sonidoMISSKaito1: {fileID: 8300000, guid: 50776f624abb82547806b75d392d56aa, type: 3}
+  sonidoMISSKaito2: {fileID: 8300000, guid: d7447f286c79ce24f9e72b8477436187, type: 3}
+  sonidoMISSKaito3: {fileID: 8300000, guid: 7da84cfd5e917de44b800631061670dd, type: 3}
+  sonidoMISSKaito4: {fileID: 8300000, guid: f8fd9794fb2fdfa4195891e19a291833, type: 3}
+  sonidoHITKaito1: {fileID: 8300000, guid: 3b522657866118d4cb87c8fe41cb4265, type: 3}
+  sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
+  sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
+  sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
 --- !u!1 &1310254423
 GameObject:
   m_ObjectHideFlags: 0
@@ -59482,7 +59614,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -60277,7 +60409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: d8ee008de3bc2b54c8fef854c85990bf, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
   sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
   sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
   sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
@@ -60289,7 +60422,7 @@ MonoBehaviour:
   sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
   sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
   sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: b82f73fc5680bd849b0ca67f4abbe26d, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
 --- !u!82 &1389112343
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60387,6 +60520,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!166 &1389112344
+AudioChorusFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389112340}
+  m_Enabled: 1
+  m_DryMix: 0.5
+  m_WetMix1: 0.5
+  m_WetMix2: 0.5
+  m_WetMix3: 0.5
+  m_Delay: 40
+  m_Rate: 0.8
+  m_Depth: 0.03
+--- !u!164 &1389112345
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389112340}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1339
+  m_RoomHF: 0
+  m_DecayTime: 8.6
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &1389306272
 GameObject:
   m_ObjectHideFlags: 0
@@ -64414,7 +64585,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -71088,7 +71259,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -75672,7 +75843,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -80210,7 +80381,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -81855,7 +82026,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -82771,7 +82942,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -84389,14 +84560,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
+  sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
+  sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
+  sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
+  sonidoATQKaito3: {fileID: 8300000, guid: c5c593dcded59bc43b72d586f29ac19b, type: 3}
+  sonidoATQKaito4: {fileID: 8300000, guid: 5f65b4e4c2331374c96ccf34ac4735fe, type: 3}
+  sonidoMISSKaito1: {fileID: 8300000, guid: 50776f624abb82547806b75d392d56aa, type: 3}
+  sonidoMISSKaito2: {fileID: 8300000, guid: d7447f286c79ce24f9e72b8477436187, type: 3}
+  sonidoMISSKaito3: {fileID: 8300000, guid: 7da84cfd5e917de44b800631061670dd, type: 3}
+  sonidoMISSKaito4: {fileID: 8300000, guid: f8fd9794fb2fdfa4195891e19a291833, type: 3}
+  sonidoHITKaito1: {fileID: 8300000, guid: 3b522657866118d4cb87c8fe41cb4265, type: 3}
+  sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
+  sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
+  sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
 --- !u!1001 &2016418664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86375,7 +86551,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

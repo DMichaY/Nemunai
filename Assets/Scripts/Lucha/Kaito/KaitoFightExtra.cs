@@ -11,20 +11,28 @@ public class KaitoFightExtra : MonoBehaviour
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
 
-    public AudioClip sonidoATQPos1;
-    public AudioClip sonidoATQPos2;
-    public AudioClip sonidoATQPos3;
-    public AudioClip sonidoATQPos4;
+    public AudioClip sonidoDEADKaito;
 
-    public AudioClip sonidoMISSPos1;
-    public AudioClip sonidoMISSPos2;
-    public AudioClip sonidoMISSPos3;
-    public AudioClip sonidoMISSPos4;
+    public AudioClip sonidoATQKaito1;
+    public AudioClip sonidoATQKaito2;
+    public AudioClip sonidoATQKaito3;
+    public AudioClip sonidoATQKaito4;
+
+    public AudioClip sonidoMISSKaito1;
+    public AudioClip sonidoMISSKaito2;
+    public AudioClip sonidoMISSKaito3;
+    public AudioClip sonidoMISSKaito4;
+
+    public AudioClip sonidoHITKaito1;
+    public AudioClip sonidoHITKaito2;
+    public AudioClip sonidoHITKaito3;
+    public AudioClip sonidoHITKaito4;
     
     AudioSource audioFuente;
 
-    private List<AudioClip> listaSonidosATQPos = new List<AudioClip>();
-    private List<AudioClip> listaSonidosMISSPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosATQKaito = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSKaito = new List<AudioClip>();
+    private List<AudioClip> listaSonidosHITKaito = new List<AudioClip>();
 
     private string lastActivatedHB;
 
@@ -45,15 +53,20 @@ public class KaitoFightExtra : MonoBehaviour
 
         // Audio
         // Llenar la lista de sonidos
-        listaSonidosATQPos.Add(sonidoATQPos1);
-        listaSonidosATQPos.Add(sonidoATQPos2);
-        listaSonidosATQPos.Add(sonidoATQPos3);
-        listaSonidosATQPos.Add(sonidoATQPos4);
+        listaSonidosATQKaito.Add(sonidoATQKaito1);
+        listaSonidosATQKaito.Add(sonidoATQKaito2);
+        listaSonidosATQKaito.Add(sonidoATQKaito3);
+        listaSonidosATQKaito.Add(sonidoATQKaito4);
 
-        listaSonidosMISSPos.Add(sonidoMISSPos1);
-        listaSonidosMISSPos.Add(sonidoMISSPos2);
-        listaSonidosMISSPos.Add(sonidoMISSPos3);
-        listaSonidosMISSPos.Add(sonidoMISSPos4);
+        listaSonidosMISSKaito.Add(sonidoMISSKaito1);
+        listaSonidosMISSKaito.Add(sonidoMISSKaito2);
+        listaSonidosMISSKaito.Add(sonidoMISSKaito3);
+        listaSonidosMISSKaito.Add(sonidoMISSKaito4);
+
+        listaSonidosHITKaito.Add(sonidoHITKaito1);
+        listaSonidosHITKaito.Add(sonidoHITKaito2);
+        listaSonidosHITKaito.Add(sonidoHITKaito3);
+        listaSonidosHITKaito.Add(sonidoHITKaito4);
 
         audioFuente = this.GetComponent<AudioSource>();
     }
@@ -81,25 +94,41 @@ public class KaitoFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
-    // Corrutina que produce sonido aleatorio del enemigo atacando/fallando ataque
+    // Produce sonido aleatorio de Kaito atacando/fallando ataque
     public void SonidoATQKaitoAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosATQPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosATQPos[indice];
+        int indice = Random.Range(0, listaSonidosATQKaito.Count);
+        AudioClip sonidoSeleccionado = listaSonidosATQKaito[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 
-    // Corrutina que produce sonido aleatorio del enemigo fallando golpe
+    // Produce sonido aleatorio de Kaito fallando golpe
     public void SonidoMISSKaitoAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosMISSPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosMISSPos[indice];
+        int indice = Random.Range(0, listaSonidosMISSKaito.Count);
+        AudioClip sonidoSeleccionado = listaSonidosMISSKaito[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    // Produce sonido  aleatorio de Kaito siendo herido
+    public void SonidoHITKaitoAleatorio()
+    {
+        // Se escoge un sonido aleatorio de la lista
+        int indice = Random.Range(0, listaSonidosHITKaito.Count);
+        AudioClip sonidoSeleccionado = listaSonidosHITKaito[indice];
+
+        // Reproducir el sonido
+        audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    public void SonidoDEADKaito()
+    {
+        audioFuente.PlayOneShot(sonidoDEADKaito);
     }
 }
