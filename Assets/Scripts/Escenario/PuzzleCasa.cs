@@ -26,13 +26,14 @@ public class PuzzleCasa : MonoBehaviour
 
     public bool llaveRecogida = false;
 
+    public bool evento = false;
+
     public Image pantallaNegra;
 
 
-    // Start is called before the first frame update
     void Update()
     {
-
+        
         if (leyendo)
         {
 
@@ -52,7 +53,7 @@ public class PuzzleCasa : MonoBehaviour
 
             }
         }
-
+        
     }
 
     public void LeerNota()
@@ -60,6 +61,8 @@ public class PuzzleCasa : MonoBehaviour
         puertasAbren = true;
 
         leyendo = true;
+
+        Eventos();
 
         libroInventario.SetActive(true);
 
@@ -117,28 +120,41 @@ public class PuzzleCasa : MonoBehaviour
 
     public void Eventos()
     {
-        for (int i = 0; i < camaras.Length; i++)
+        if (evento == false)
         {
-
-            if (camaras[i].activeSelf)
+            for (int i = 0; i < camaras.Length; i++)
             {
-                //4 salon
-                //5 brasero
-                //6 vater
-                //7 baño
-                //8 sala naranja
-                //9 cocina
-                //12 dormitorio
+
+                if (camaras[i].activeSelf)
+                {
+                    //4 salon
+                    //5 brasero
+                    //6 vater
+                    //7 baño
+                    //8 sala naranja
+                    //9 cocina
+                    //12 dormitorio
+
+                    switch (i)
+                    {
+                        case 4:
+
+                            this.GetComponent<Anastasia>();
+
+                            evento = true;
 
 
+                            break;
 
+                        default:
+                            break;
+                    }
 
+                }
 
-
-               
             }
-            
         }
+        
 
     }
 
