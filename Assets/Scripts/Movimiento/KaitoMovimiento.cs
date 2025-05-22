@@ -52,6 +52,9 @@ public class KaitoMovimiento : MonoBehaviour
 
     void Update()
     {
+
+        Debug.DrawRay(this.transform.position, this.transform.forward * 15, Color.red);
+
         bool presionandoW = movimiento.z > 0;
         bool presionandoS = movimiento.z < 0;
         bool shiftPresionado = Input.GetKey(KeyCode.LeftShift);

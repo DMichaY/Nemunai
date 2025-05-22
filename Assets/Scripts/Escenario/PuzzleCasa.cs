@@ -77,7 +77,7 @@ public class PuzzleCasa : MonoBehaviour
         else
         {
 
-
+            Eventos();
 
         }
 
@@ -154,6 +154,8 @@ public class PuzzleCasa : MonoBehaviour
                         this.GetComponent<Anastasia>().Salon();
 
                         evento = true;
+
+                        diabolica = true;
 
                         break;
 
