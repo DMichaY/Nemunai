@@ -147,7 +147,10 @@ public class MenuManager : MonoBehaviour
     {
         targetCameraPosition = destino;
         if (activarCreditos)
-            StartCoroutine(MaquinaEscribirTexto());
+        {
+            StopCoroutine("MaquinaEscribirTexto"); // Detenemos la anterior
+            StartCoroutine(MaquinaEscribirTexto()); // Iniciamos una nueva
+        }
     }
 
     IEnumerator MaquinaEscribirTexto()
