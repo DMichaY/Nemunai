@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class Anastasia : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject anastasiaSalon;
+
+    public GameObject anastasiaBrasero;
+
+
+
+    public void Salon()
     {
-        
+
+        anastasiaSalon.SetActive(false);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    
+
+
+    public void Brasero()
     {
-        
+
+        anastasiaBrasero.SetActive(true);
+
+
     }
+
+
+    
+
+
+
+
+
 }
+
+
+

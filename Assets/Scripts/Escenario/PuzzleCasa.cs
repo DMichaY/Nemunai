@@ -26,7 +26,14 @@ public class PuzzleCasa : MonoBehaviour
 
     public bool llaveRecogida = false;
 
+    //eventos
     public bool evento = false;
+
+    public bool diabolica = false;
+
+    public bool cuadro = false;
+
+    public bool sangre = false;
 
     public Image pantallaNegra;
 
@@ -62,7 +69,17 @@ public class PuzzleCasa : MonoBehaviour
 
         leyendo = true;
 
-        Eventos();
+        if (evento == false)
+        {
+            InicarEvento();
+        }
+
+        else
+        {
+
+
+
+        }
 
         libroInventario.SetActive(true);
 
@@ -118,43 +135,153 @@ public class PuzzleCasa : MonoBehaviour
     }
 
 
+    //Iniciar diferente evento
+    public void InicarEvento()
+    {
+        for (int i = 0; i < camaras.Length; i++)
+        {
+
+            if (camaras[i].activeSelf)
+            {
+                //4 **Muñeca diabolica**
+                //8 **Cuadro poseido**
+                //9 **masa sangrienta**
+              
+                switch (i)
+                {
+                    case 4:
+                        
+                        this.GetComponent<Anastasia>().Salon();
+
+                        evento = true;
+
+                        break;
+
+                    case 8:
+
+                       
+
+                        evento = true;
+
+                        break;
+
+                    case 9:
+
+                        
+
+                        evento = true;
+
+                        break;
+
+
+
+                    default:
+                        break;
+                }
+            }
+        }
+
+    }
+
+
     public void Eventos()
     {
-        if (evento == false)
+        for (int i = 0; i < camaras.Length; i++)
         {
-            for (int i = 0; i < camaras.Length; i++)
+
+            if (camaras[i].activeSelf)
             {
 
-                if (camaras[i].activeSelf)
+                switch (i)
                 {
                     //4 salon
+                    case 4:
+
+                        if (cuadro)
+                        {
+
+                        }
+
+
+                        if (sangre)
+                        {
+
+                        }
+
+
+
+                        break;
+
                     //5 brasero
+                    case 5:
+
+                        if (cuadro)
+                        {
+
+                        }
+
+
+                        if (sangre)
+                        {
+
+                        }
+
+
+                        if (diabolica)
+                        {
+                            this.GetComponent<Anastasia>().Brasero();
+                        }
+
+
+
+                        break;
+
                     //6 vater
+                    case 6:
+
+
+
+                        break;
+
                     //7 baño
+                    case 7:
+
+
+
+                        break;
+
                     //8 sala naranja
+                    case 8:
+
+
+
+                        break;
+
                     //9 cocina
+                    case 9:
+
+
+
+                        break;
+
                     //12 dormitorio
-
-                    switch (i)
-                    {
-                        case 4:
-
-                            this.GetComponent<Anastasia>();
-
-                            evento = true;
+                    case 11:
 
 
-                            break;
 
-                        default:
-                            break;
-                    }
+                        break;
 
+
+
+
+                    default:
+                        break;
                 }
 
             }
+
         }
-        
+
 
     }
 
