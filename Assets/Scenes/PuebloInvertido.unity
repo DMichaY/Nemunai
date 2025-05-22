@@ -10303,6 +10303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171432933}
   - component: {fileID: 171432934}
+  - component: {fileID: 171432935}
   m_Layer: 5
   m_Name: Slider sonido general
   m_TagString: Untagged
@@ -10383,7 +10384,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 573653077}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 24300002, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &171432935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171432932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_Master
+  slider: {fileID: 171432934}
 --- !u!1 &171677312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13222,20 +13251,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
-  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
-  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
-  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
-  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
-  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
-  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
-  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 8ef075604cf45f44088fb3317b9157ce, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 36e2008ebcc6e88469140f9299a2ca12, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: 37370fd4f7d1b6b41988e811620fdcbd, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 17e6839f9505a974d8239fcc85e2fdb8, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 46d27e337e05acc40824dc98d4f2b849, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: 0eb187e2b234069458dd35b264c9d3a1, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 5517163232988a64da060c61cfe56676, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: 2243742b80e11464b84784b3e06059db, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 73f3f099293262a498ad815828b86689, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: 3273bd5ecb695e34aa24851d41dfa618, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 0fb3ad5a8fa6ef340bb38eb82a88e600, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: 38afb25220b1b51439a10b4f7e2906dc, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 3240d94a05b0d614fa2f9ddf4539fa33, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 7ec536bfdf5f4614086f39124a6e1edd, type: 3}
 --- !u!82 &242571918
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15294,7 +15323,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5629983628151771594, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 38b91b838b3c2ac448e0890fc9b4d102, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9e76bcb45cd711a4991b768274ca7ed5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -17361,6 +17390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352844595}
   - component: {fileID: 352844596}
+  - component: {fileID: 352844597}
   m_Layer: 5
   m_Name: Slider sfx
   m_TagString: Untagged
@@ -17441,7 +17471,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 573653077}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &352844597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352844594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_SFX
+  slider: {fileID: 352844596}
 --- !u!1 &356163879
 GameObject:
   m_ObjectHideFlags: 0
@@ -20567,6 +20625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412883354}
   - component: {fileID: 412883355}
+  - component: {fileID: 412883356}
   m_Layer: 5
   m_Name: Slider musica
   m_TagString: Untagged
@@ -20647,7 +20706,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 573653077}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -5629983628151771594, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &412883356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412883353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_Musica
+  slider: {fileID: 412883355}
 --- !u!1 &412934506
 GameObject:
   m_ObjectHideFlags: 0
@@ -27019,20 +27106,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
-  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
-  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
-  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
-  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
-  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
-  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
-  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 8ef075604cf45f44088fb3317b9157ce, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 36e2008ebcc6e88469140f9299a2ca12, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: 37370fd4f7d1b6b41988e811620fdcbd, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 17e6839f9505a974d8239fcc85e2fdb8, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 46d27e337e05acc40824dc98d4f2b849, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: 0eb187e2b234069458dd35b264c9d3a1, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 5517163232988a64da060c61cfe56676, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: 2243742b80e11464b84784b3e06059db, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 73f3f099293262a498ad815828b86689, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: 3273bd5ecb695e34aa24851d41dfa618, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 0fb3ad5a8fa6ef340bb38eb82a88e600, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: 38afb25220b1b51439a10b4f7e2906dc, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 3240d94a05b0d614fa2f9ddf4539fa33, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 7ec536bfdf5f4614086f39124a6e1edd, type: 3}
 --- !u!82 &585672983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48947,20 +49034,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
-  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
-  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
-  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
-  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
-  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
-  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
-  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 8ef075604cf45f44088fb3317b9157ce, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 36e2008ebcc6e88469140f9299a2ca12, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: 37370fd4f7d1b6b41988e811620fdcbd, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 17e6839f9505a974d8239fcc85e2fdb8, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 46d27e337e05acc40824dc98d4f2b849, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: 0eb187e2b234069458dd35b264c9d3a1, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 5517163232988a64da060c61cfe56676, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: 2243742b80e11464b84784b3e06059db, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 73f3f099293262a498ad815828b86689, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: 3273bd5ecb695e34aa24851d41dfa618, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 0fb3ad5a8fa6ef340bb38eb82a88e600, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: 38afb25220b1b51439a10b4f7e2906dc, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 3240d94a05b0d614fa2f9ddf4539fa33, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 7ec536bfdf5f4614086f39124a6e1edd, type: 3}
 --- !u!82 &1125655487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60698,20 +60785,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 8300000, guid: 6d7cdda08b13baa4ba31f68a9ec446cb, type: 3}
-  sonidoDEADPos: {fileID: 8300000, guid: 7084eccd8410f264f8dd5f62c87bbbb5, type: 3}
-  sonidoATQPos1: {fileID: 8300000, guid: b7194c96a35629842bb77855f27210ed, type: 3}
-  sonidoATQPos2: {fileID: 8300000, guid: ef0623edb14859a409c2b47254628110, type: 3}
-  sonidoATQPos3: {fileID: 8300000, guid: 2eaa1ff475bdda74484125287ea82a1e, type: 3}
-  sonidoATQPos4: {fileID: 8300000, guid: bb85ea1c131b4cc4c9c6cef8a9f28c61, type: 3}
-  sonidoMISSPos1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
-  sonidoMISSPos2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
-  sonidoMISSPos3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
-  sonidoMISSPos4: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
-  sonidoHITPos1: {fileID: 8300000, guid: 8f76859b34f2277408679415366d096d, type: 3}
-  sonidoHITPos2: {fileID: 8300000, guid: dd6f6911e866c674997de950448843aa, type: 3}
-  sonidoHITPos3: {fileID: 8300000, guid: 94238e7a7b685944ab85009d2acca3f8, type: 3}
-  sonidoHITPos4: {fileID: 8300000, guid: 2aa81323eee40624685a3fd5606943e6, type: 3}
+  sonidoTAUNTPos: {fileID: 8300000, guid: 8ef075604cf45f44088fb3317b9157ce, type: 3}
+  sonidoDEADPos: {fileID: 8300000, guid: 36e2008ebcc6e88469140f9299a2ca12, type: 3}
+  sonidoATQPos1: {fileID: 8300000, guid: 37370fd4f7d1b6b41988e811620fdcbd, type: 3}
+  sonidoATQPos2: {fileID: 8300000, guid: 17e6839f9505a974d8239fcc85e2fdb8, type: 3}
+  sonidoATQPos3: {fileID: 8300000, guid: 46d27e337e05acc40824dc98d4f2b849, type: 3}
+  sonidoATQPos4: {fileID: 8300000, guid: 0eb187e2b234069458dd35b264c9d3a1, type: 3}
+  sonidoMISSPos1: {fileID: 8300000, guid: 5517163232988a64da060c61cfe56676, type: 3}
+  sonidoMISSPos2: {fileID: 8300000, guid: 2243742b80e11464b84784b3e06059db, type: 3}
+  sonidoMISSPos3: {fileID: 8300000, guid: 73f3f099293262a498ad815828b86689, type: 3}
+  sonidoMISSPos4: {fileID: 8300000, guid: 3273bd5ecb695e34aa24851d41dfa618, type: 3}
+  sonidoHITPos1: {fileID: 8300000, guid: 0fb3ad5a8fa6ef340bb38eb82a88e600, type: 3}
+  sonidoHITPos2: {fileID: 8300000, guid: 38afb25220b1b51439a10b4f7e2906dc, type: 3}
+  sonidoHITPos3: {fileID: 8300000, guid: 3240d94a05b0d614fa2f9ddf4539fa33, type: 3}
+  sonidoHITPos4: {fileID: 8300000, guid: 7ec536bfdf5f4614086f39124a6e1edd, type: 3}
 --- !u!82 &1389112343
 AudioSource:
   m_ObjectHideFlags: 0
