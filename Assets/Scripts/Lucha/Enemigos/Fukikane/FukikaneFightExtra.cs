@@ -40,6 +40,26 @@ public class FukikaneFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
+    public void ExplosionStart()
+    {
+        StartCoroutine("Explosion");
+    }
+
+    private IEnumerator Explosion()
+    {
+        float size = 0;
+        HBs[HBNames.IndexOf("HB_Boom")].SetActive(true);
+        while (size < 10)
+        {
+            size += Time.deltaTime * 30;
+            HBs[HBNames.IndexOf("HB_Boom")].transform.localScale = new Vector3(1, 1, 1) * size;
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.3f);
+        HBs[HBNames.IndexOf("HB_Boom")].transform.localScale = Vector3.zero;
+        HBs[HBNames.IndexOf("HB_Boom")].SetActive(false);
+    }
+
     public void PlayBeam()
     {
         beam.Play();
