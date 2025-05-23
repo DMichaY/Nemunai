@@ -23,6 +23,9 @@ public class KaitoMovimiento : MonoBehaviour
     private string sueloActualTag = null;
     private bool enContactoConSuelo = false;
 
+
+    public bool verObjeto = false;
+
     void Start()
     {
         animador = GetComponent<Animator>();
@@ -37,24 +40,22 @@ public class KaitoMovimiento : MonoBehaviour
     {
         movimiento = new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y);
     }
-
+    
     //Interacción
     public void OnInteractuar()
     {
         if(Physics.SphereCast(transform.position - transform.forward, 1, transform.forward, out RaycastHit hitData, 1f))
         {
+            
             if (hitData.collider.CompareTag("Interactable"))
             {
                 hitData.collider.GetComponent<Interactable>().Interact();
             }
         }
     }
-
+    
     void Update()
     {
-
-        Debug.DrawRay(this.transform.position, this.transform.forward * 15, Color.red);
-
         bool presionandoW = movimiento.z > 0;
         bool presionandoS = movimiento.z < 0;
         bool shiftPresionado = Input.GetKey(KeyCode.LeftShift);

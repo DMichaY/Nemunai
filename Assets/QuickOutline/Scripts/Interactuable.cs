@@ -9,6 +9,7 @@ public class Interactuable : MonoBehaviour
     private Outline outline;
     private Transform jugador;
 
+
     void Awake()
     {
         outline = GetComponent<Outline>();
@@ -25,12 +26,18 @@ public class Interactuable : MonoBehaviour
     {
         if (!activo || jugador == null || outline == null) return;
 
-        float distancia = Vector3.Distance(transform.position, jugador.position);
-        outline.enabled = distancia <= distanciaActivacion;
+        
+            float distancia = Vector3.Distance(transform.position, jugador.position);
+            outline.enabled = distancia <= distanciaActivacion;
+        
+        
     }
 
+    
     public void Activar()
     {
         activo = true;
     }
+
+    
 }

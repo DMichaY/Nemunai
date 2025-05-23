@@ -98,6 +98,12 @@ public class PuzzleCasa : MonoBehaviour
         if (contador == 8)
         {
             llave.SetActive(true);
+
+            if (diabolica)
+            {
+
+
+            }
         }
 
 
@@ -149,9 +155,9 @@ public class PuzzleCasa : MonoBehaviour
               
                 switch (i)
                 {
-                    case 4:
+                    case 11:
                         
-                        this.GetComponent<Anastasia>().Salon();
+                        this.GetComponent<Anastasia>().Dormitorio();
 
                         evento = true;
 
@@ -210,6 +216,11 @@ public class PuzzleCasa : MonoBehaviour
 
                         }
 
+                        if (diabolica)
+                        {
+                            this.GetComponent<Anastasia>().Salon();
+                        }
+
 
 
                         break;
@@ -261,6 +272,12 @@ public class PuzzleCasa : MonoBehaviour
 
                     //9 cocina
                     case 9:
+
+
+                        if (diabolica)
+                        {
+                            this.GetComponent<Anastasia>().Cocina();
+                        }
 
 
 
