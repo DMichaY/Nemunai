@@ -10,7 +10,7 @@ public class IntCartNoticias : Interactable
 
     void Start()
     {
-        puertaEstacion = GameObject.Find("TriggerPuerta").GetComponent<LogicaVerjaEstacion>();
+        puertaEstacion = GameObject.Find("PuertaVerja").GetComponent<LogicaVerjaEstacion>();
         typewriter = gameObject.AddComponent<TypewriterEffect>();
         textoNoticias.gameObject.SetActive(false);
     }
