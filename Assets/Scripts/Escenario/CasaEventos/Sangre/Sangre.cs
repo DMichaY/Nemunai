@@ -19,17 +19,27 @@ public class Sangre : MonoBehaviour
 
     public GameObject brasero;
 
+    public GameObject puertabrasero1;
+
+    public GameObject puertabrasero2;
+
     //nevera moviendose
     public GameObject neveraSangre;
+
+    public GameObject sangreEmpieza;
+
+    public GameObject sangreBanyo;
 
     public GameObject sangreNaranja;
 
     public GameObject sangreBrasero;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         neveraSangre.SetActive(false);
+
+        sangreEmpieza.SetActive(false);
 
         sangreNaranja.SetActive(false);
 
@@ -46,21 +56,21 @@ public class Sangre : MonoBehaviour
 
         neveraSangre.SetActive(true);
 
-
     }
 
     public void Naranja()
     {
         neveraSangre.SetActive(false);
 
-        sangreNaranja.SetActive(true);
-
-
         armario.SetActive(false);
 
         armario1.SetActive(false);
 
         armario2.SetActive(false);
+
+        sangreNaranja.SetActive(true);
+
+        sangreEmpieza.SetActive(true);
 
     }
 
@@ -70,12 +80,26 @@ public class Sangre : MonoBehaviour
 
         brasero.SetActive(false);
 
+        puertabrasero1.SetActive(false);
+
+        puertabrasero2.SetActive(false);
+
         sangreBrasero.SetActive(true);
 
+        sangreEmpieza.SetActive(true);
 
     }
 
+    public void Banyo()
+    {
+        neveraSangre.SetActive(false);
+         
 
+        sangreBanyo.SetActive(true);
+
+        sangreEmpieza.SetActive(true);
+
+    }
 
 
 }
