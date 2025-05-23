@@ -175,9 +175,11 @@ public class PuzzleCasa : MonoBehaviour
 
                     case 9:
 
-                        
+                        this.GetComponent<Sangre>().Cocina();
 
                         evento = true;
+
+                        sangre = true;
 
                         break;
 
@@ -205,16 +207,7 @@ public class PuzzleCasa : MonoBehaviour
                     //4 salon
                     case 4:
 
-                        if (cuadro)
-                        {
-
-                        }
-
-
-                        if (sangre)
-                        {
-
-                        }
+                        
 
                         if (diabolica)
                         {
@@ -228,22 +221,18 @@ public class PuzzleCasa : MonoBehaviour
                     //5 brasero
                     case 5:
 
-                        if (cuadro)
-                        {
+                       
 
-                        }
-
-
-                        if (sangre)
-                        {
-
-                        }
+                    if (sangre)
+                    {
+                        this.GetComponent<Sangre>().Brasero();
+                    }
 
 
-                        if (diabolica)
-                        {
-                            this.GetComponent<Anastasia>().Brasero();
-                        }
+                    if (diabolica)
+                    {
+                        this.GetComponent<Anastasia>().Brasero();
+                    }
 
 
 
@@ -266,6 +255,11 @@ public class PuzzleCasa : MonoBehaviour
                     //8 sala naranja
                     case 8:
 
+                    if (sangre)
+                    {
+                        this.GetComponent<Sangre>().Naranja();
+                    }
+
 
 
                         break;
@@ -278,6 +272,8 @@ public class PuzzleCasa : MonoBehaviour
                         {
                             this.GetComponent<Anastasia>().Cocina();
                         }
+
+                        
 
 
 

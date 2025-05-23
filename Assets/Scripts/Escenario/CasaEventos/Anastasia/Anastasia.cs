@@ -15,7 +15,12 @@ public class Anastasia : MonoBehaviour
 
     public GameObject anastasiaFinal;
 
+    public void Start()
+    {
+        anastasiaBrasero.SetActive(false);
 
+
+    }
     public void Dormitorio()
     {
         anastasiaDormitorio.SetActive(false);

@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-public class AnastasiaTexto : Interactable
+public class TextosCasa : Interactable
 {
 
     public TextMeshProUGUI texto;
@@ -38,7 +38,7 @@ public class AnastasiaTexto : Interactable
 
     private IEnumerator ResetAntiSpam()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(3f);
         spam = false;
     }
 }
