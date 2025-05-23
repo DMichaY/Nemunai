@@ -7,6 +7,7 @@ public class EnemyFightExtra : MonoBehaviour
     // Referencias
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
+    KaitoFight golpearKaito;
 
     private string lastActivatedHB;
 
@@ -36,6 +37,8 @@ public class EnemyFightExtra : MonoBehaviour
 
     private void Awake()
     {
+        golpearKaito = FindObjectOfType<KaitoFight>();
+
         foreach (Collider HB in transform.GetComponentsInChildren<Collider>())
         {
             if(HB.tag == "HurtBox")
@@ -100,6 +103,18 @@ public class EnemyFightExtra : MonoBehaviour
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    public void DetectarGolpe()
+    {
+        if (golpearKaito.isHit)
+        {
+            SonidoATQPosAleatorio();
+        }
+        else
+        {
+            SonidoMISSPosAleatorio();
+        }
     }
 
     // Corrutina que produce sonido aleatorio del enemigo siendo golpeando

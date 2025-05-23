@@ -13,9 +13,9 @@ public class KaitoFight : FighterClass
 
     public GameObject panelMuerte;
 
-    EnemyFightExtra sonidosEnemigoDemPos;
-    EnemyFightAI sonidosEnemigoDemPos2;
     KaitoFightExtra sonidosKaitoHerir;
+    GameObject enemigoActSonido;
+    public bool isHit = false;
 
     private Animator kaitoAnimator;
     private PlayerInput input;
@@ -35,9 +35,8 @@ public class KaitoFight : FighterClass
         input.DeactivateInput();
         rb = GetComponent<Rigidbody>();
 
-        sonidosEnemigoDemPos = FindObjectOfType<EnemyFightExtra>();
-        sonidosEnemigoDemPos2 = FindObjectOfType<EnemyFightAI>();
         sonidosKaitoHerir = FindObjectOfType<KaitoFightExtra>();
+        enemigoActSonido = GameObject.FindGameObjectWithTag("Enemy");
 
         lifeBar.maxValue = life;
         lifeBar.value = life;
@@ -164,19 +163,20 @@ public class KaitoFight : FighterClass
                 {
                     HB.SetActive(false);
                 }
+
+                isHit = true;
+                sonidosKaitoHerir.SonidoHITKaitoAleatorio();
             }
 
-            Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
-
-            sonidosEnemigoDemPos.SonidoATQPosAleatorio();
-            sonidosKaitoHerir.SonidoHITKaitoAleatorio();
+            Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1); 
         }
         else
         {
             Destroy(Instantiate(blockEffect, effectPos, Quaternion.identity), 1);
-
-            sonidosEnemigoDemPos.SonidoMISSPosAleatorio();
         }
+
+        enemigoActSonido?.SendMessage("DetectarGolpe", SendMessageOptions.DontRequireReceiver);
+        isHit = false;
     }
 
     private IEnumerator Death()

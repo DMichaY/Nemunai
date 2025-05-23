@@ -14,7 +14,6 @@ public class EnemyFightAI : FighterClass
     public GameObject hitEffect;
     EnemyFightExtra sonidoGolpeadoPos;
     KaitoFightExtra sonidoKaitoAtaque;
-    public bool fueGolpeado = false;
 
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -54,8 +53,6 @@ public class EnemyFightAI : FighterClass
     {
         life -= damage;
         lifeBar.value = life;
-        fueGolpeado = true;
-
 
         if (life <= 0 && !animator.GetBool("death"))
         {

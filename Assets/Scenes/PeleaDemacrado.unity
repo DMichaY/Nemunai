@@ -5347,6 +5347,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hombre Demacrado
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 13df410c52b947243b0c816b9aeb3d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 13df410c52b947243b0c816b9aeb3d57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6364,7 +6369,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 8
   waitTime: 2.5
   attackTime: 1
@@ -15290,6 +15294,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1796936846}
+  isHit: 0
   esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:
