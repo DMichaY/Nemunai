@@ -13,6 +13,8 @@ public class Anastasia : MonoBehaviour
 
     public GameObject anastasiaCocina;
 
+    public GameObject anastasiaFinal;
+
 
     public void Dormitorio()
     {
@@ -61,8 +63,9 @@ public class Anastasia : MonoBehaviour
 
     public void Final()
     {
-        anastasiaCocina.SetActive(false);
 
+
+        anastasiaCocina.SetActive(false);
 
         anastasiaBrasero.SetActive(false);
 
