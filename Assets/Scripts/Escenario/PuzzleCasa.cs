@@ -101,7 +101,7 @@ public class PuzzleCasa : MonoBehaviour
 
             if (diabolica)
             {
-
+                this.GetComponent<Anastasia>().Final();
 
             }
         }
