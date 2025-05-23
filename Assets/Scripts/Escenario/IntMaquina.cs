@@ -11,7 +11,7 @@ public class IntMaquina : Interactable
 
     void Start()
     {
-        puertaEstacion = GameObject.Find("TriggerPuerta").GetComponent<LogicaVerjaEstacion>();
+        puertaEstacion = GameObject.Find("PuertaVerja").GetComponent<LogicaVerjaEstacion>();
         typewriter = gameObject.AddComponent<TypewriterEffect>();
         textoMaquina.gameObject.SetActive(false);
     }

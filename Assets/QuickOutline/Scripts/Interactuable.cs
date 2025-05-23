@@ -9,6 +9,8 @@ public class Interactuable : MonoBehaviour
     private Outline outline;
     private Transform jugador;
 
+    private bool puedeInteractuar;
+
 
     void Awake()
     {
@@ -27,8 +29,19 @@ public class Interactuable : MonoBehaviour
         if (!activo || jugador == null || outline == null) return;
 
         
-            float distancia = Vector3.Distance(transform.position, jugador.position);
-            outline.enabled = distancia <= distanciaActivacion;
+        float distancia = Vector3.Distance(transform.position, jugador.position);
+        outline.enabled = distancia <= distanciaActivacion;
+
+        if (distancia <= distanciaActivacion && !puedeInteractuar)
+        {
+            puedeInteractuar = true;
+            jugador.GetComponent<KaitoMovimiento>().ChangeInteractable(gameObject);
+        }
+        else if (puedeInteractuar)
+        {
+            puedeInteractuar = false;
+            jugador.GetComponent<KaitoMovimiento>().ChangeInteractable(null);
+        }
         
         
     }

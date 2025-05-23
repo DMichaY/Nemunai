@@ -23,8 +23,9 @@ public class KaitoMovimiento : MonoBehaviour
     private string sueloActualTag = null;
     private bool enContactoConSuelo = false;
 
-
     public bool verObjeto = false;
+
+    private GameObject interactableObject;
 
     void Start()
     {
@@ -44,13 +45,9 @@ public class KaitoMovimiento : MonoBehaviour
     //Interacción
     public void OnInteractuar()
     {
-        if(Physics.SphereCast(transform.position - transform.forward, 1, transform.forward, out RaycastHit hitData, 1f))
+        if(interactableObject != null)
         {
-            
-            if (hitData.collider.CompareTag("Interactable"))
-            {
-                hitData.collider.GetComponent<Interactable>().Interact();
-            }
+            interactableObject.GetComponent<Interactable>().Interact();
         }
     }
     
@@ -132,6 +129,11 @@ public class KaitoMovimiento : MonoBehaviour
         }
 
         SonidosPisadas(presionandoW || presionandoS);
+    }
+
+    public void ChangeInteractable(GameObject target)
+    {
+        interactableObject = target;
     }
 
     // LÓGICA AUDIO PISADAS

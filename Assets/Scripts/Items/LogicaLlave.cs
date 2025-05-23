@@ -6,7 +6,6 @@ public class LogicaLlave : Interactable
 {
     // Variables
     Animator animacionAlfombra;
-    public GameObject alfombra;
     public LogicaVerjaEstacion puertaEstacion;
 
     public GameObject imagenLlave;
@@ -18,13 +17,13 @@ public class LogicaLlave : Interactable
 
     void Start()
     {
-        animacionAlfombra = alfombra.GetComponent<Animator>();
+        animacionAlfombra = GetComponent<Animator>();
         puertaEstacion = puertaEstacion.GetComponent<LogicaVerjaEstacion>();
         llaveObtenidaUI = GameObject.Find("LlaveObtenida");
 
         antiSpam = false;
 
-        gameObject.SetActive(false);
+        brillitoLlave.SetActive(false);
         llaveObtenidaUI.SetActive(false);
     }
 
@@ -52,6 +51,7 @@ public class LogicaLlave : Interactable
         animacionAlfombra.SetBool("MoverAlfombra", true);
 
         yield return new WaitForSeconds(2f);
+        brillitoLlave.SetActive(true);
         antiSpam = false;
     }
 
