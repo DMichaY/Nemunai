@@ -12,6 +12,8 @@ public class LlaveReiko : Interactable
     {
 
         manager = GameObject.Find("GameManager");
+
+        
  
 
     }
@@ -23,6 +25,19 @@ public class LlaveReiko : Interactable
         manager.GetComponent<PuzzleCasa>().llaveRecogida = true; 
 
         llaveInventario.SetActive(true);
+
+        if (manager.GetComponent<PuzzleCasa>().diabolica)
+        {
+            manager.GetComponent<Anastasia>().Final();
+
+        }
+
+        if (manager.GetComponent<PuzzleCasa>().sangre)
+        {
+            manager.GetComponent<Sangre>().Final();
+
+        }
+
             
         Destroy(this.gameObject);
     }

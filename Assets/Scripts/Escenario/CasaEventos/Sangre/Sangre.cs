@@ -19,6 +19,12 @@ public class Sangre : MonoBehaviour
 
     public GameObject brasero;
 
+    public GameObject madera;
+
+
+    public GameObject comentario;
+
+
     public GameObject puertabrasero1;
 
     public GameObject puertabrasero2;
@@ -84,6 +90,8 @@ public class Sangre : MonoBehaviour
 
         puertabrasero2.SetActive(false);
 
+        madera.SetActive(false);
+
         sangreBrasero.SetActive(true);
 
         sangreEmpieza.SetActive(true);
@@ -93,11 +101,31 @@ public class Sangre : MonoBehaviour
     public void Banyo()
     {
         neveraSangre.SetActive(false);
-         
+
 
         sangreBanyo.SetActive(true);
 
         sangreEmpieza.SetActive(true);
+
+    }
+
+
+    public void Final()
+    {
+
+        neveraSangre.SetActive(false);
+
+        sangreEmpieza.SetActive(false);
+
+        sangreBanyo.SetActive(false);
+
+        sangreBrasero.SetActive(false);
+
+        sangreNaranja.SetActive(false);
+
+        comentario.SetActive(true);
+
+
 
     }
 

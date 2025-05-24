@@ -38,6 +38,12 @@ public class PuzzleCasa : MonoBehaviour
 
     public Image pantallaNegra;
 
+    public void Start()
+    {
+        llave.SetActive(false);
+
+    }
+
 
     void Update()
     {
@@ -59,6 +65,20 @@ public class PuzzleCasa : MonoBehaviour
                 leyendo = false;
 
 
+                if (evento == false)
+                {
+                    InicarEvento();
+                }
+
+                else
+                {
+
+                    Eventos();
+
+                }
+        
+
+
             }
         }
         
@@ -70,17 +90,7 @@ public class PuzzleCasa : MonoBehaviour
 
         leyendo = true;
 
-        if (evento == false)
-        {
-            InicarEvento();
-        }
-
-        else
-        {
-
-            Eventos();
-
-        }
+        
 
         libroInventario.SetActive(true);
 
@@ -100,11 +110,7 @@ public class PuzzleCasa : MonoBehaviour
         {
             llave.SetActive(true);
 
-            if (diabolica)
-            {
-                this.GetComponent<Anastasia>().Final();
-
-            }
+            
         }
 
 
@@ -156,10 +162,10 @@ public class PuzzleCasa : MonoBehaviour
               
                 switch (i)
                 {
-                    //dormitorio
-                    case 11:
-                        
-                        this.GetComponent<Anastasia>().Dormitorio();
+                    //4 salon
+                    case 4:
+
+                        this.GetComponent<Anastasia>().Salon();
 
                         evento = true;
 
@@ -167,10 +173,36 @@ public class PuzzleCasa : MonoBehaviour
 
                         break;
 
-                    //habitacion naranja
+                       
+                    //5 brasero
+                    case 5:
+
+                        EventoRandom(i);
+
+                        
+                        break;
+
+                    //6 vater
+                    case 6:
+
+                        EventoRandom(i);
+
+
+
+                        break;
+
+                    //7 baño
+                    case 7:
+
+                        EventoRandom(i);
+
+
+                        break;
+
+                    //8 sala naranja
                     case 8:
 
-                       this.GetComponent<Cuadro>().Naranja();
+                        this.GetComponent<Cuadro>().Naranja();
 
                         evento = true;
 
@@ -178,7 +210,7 @@ public class PuzzleCasa : MonoBehaviour
 
                         break;
 
-                    //cocina
+                    //9 cocina
                     case 9:
 
                         this.GetComponent<Sangre>().Cocina();
@@ -187,29 +219,14 @@ public class PuzzleCasa : MonoBehaviour
 
                         sangre = true;
 
+                        
                         break;
 
+                    //11 dormitorio
+                    case 11:
 
-                    //4 salon
-                    case 4:
-
-                        EventoRandom();
-
-                        break;
-
-                    //5 brasero
-                    case 5:
-
-                        EventoRandom();
-
-
-                        break;
-
-                    //7 baño
-                    case 7:
-
-                        EventoRandom();
-
+                        EventoRandom(i);
+                        
                         break;
 
                     default:
@@ -220,31 +237,50 @@ public class PuzzleCasa : MonoBehaviour
 
     }
 
-    public void EventoRandom()
+    public void EventoRandom(int numCamara)
     {
 
         int numero = Random.Range(1, 4);
-        
-     
+
+
         if (numero == 1)
         {
-            this.GetComponent<Anastasia>().Dormitorio();
-
             evento = true;
 
             diabolica = true;
+
+            if (numCamara == 11)
+            {
+                this.GetComponent<Anastasia>().Dormitorio();
+            }
+
+            if (numCamara == 5)
+            {
+                this.GetComponent<Anastasia>().Brasero();
+            }
+
+
         }
 
         else if (numero == 2)
         {
-            this.GetComponent<Cuadro>().Naranja();
 
             evento = true;
 
             cuadro = true;
+            
+            if (numCamara == 11)
+            {
+                this.GetComponent<Cuadro>().Dormitorio();
+            }
+
+            if (numCamara == 5)
+            {
+                this.GetComponent<Cuadro>().Brasero();
+            }
         }
 
-        else
+        else if (numero == 3)
         {
             this.GetComponent<Sangre>().Cocina();
 
@@ -270,11 +306,6 @@ public class PuzzleCasa : MonoBehaviour
                     //4 salon
                     case 4:
 
-                        if (diabolica)
-                        {
-                            this.GetComponent<Anastasia>().Salon();
-                        }
-
                         if (sangre)
                         {
                             this.GetComponent<Sangre>().Banyo();
@@ -283,6 +314,11 @@ public class PuzzleCasa : MonoBehaviour
                         if (cuadro)
                         {
                             this.GetComponent<Cuadro>().Salon();
+                        }
+
+                        if (diabolica)
+                        {
+                            this.GetComponent<Anastasia>().Salon();
                         }
 
                         break;
@@ -311,20 +347,6 @@ public class PuzzleCasa : MonoBehaviour
 
                         break;
 
-                    //6 vater
-                    case 6:
-
-
-
-                        break;
-
-                    //7 baño
-                    case 7:
-
-
-
-                        break;
-
                     //8 sala naranja
                     case 8:
 
@@ -333,7 +355,11 @@ public class PuzzleCasa : MonoBehaviour
                             this.GetComponent<Sangre>().Naranja();
                         }
 
-                        
+                        if (cuadro)
+                        {
+                            this.GetComponent<Cuadro>().Naranja();
+                        }
+ 
                         break;
 
                     //9 cocina
@@ -350,12 +376,17 @@ public class PuzzleCasa : MonoBehaviour
                     //11 dormitorio
                     case 11:
 
+                        if (diabolica)
+                        {
+                            this.GetComponent<Anastasia>().Dormitorio();
+                        }
+
                         if (cuadro)
                         {
                             this.GetComponent<Cuadro>().Dormitorio();
                         }
 
-
+                        
                         break;
 
                     default:
