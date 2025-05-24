@@ -9584,7 +9584,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -16279,7 +16278,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18333,6 +18332,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 650497276}
+  isHit: 0
   esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:

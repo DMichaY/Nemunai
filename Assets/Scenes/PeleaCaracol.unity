@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 87952780}
   - component: {fileID: 87952779}
   - component: {fileID: 87952781}
+  - component: {fileID: 87952782}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -650,6 +651,102 @@ MonoBehaviour:
   grupoSFX: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
     type: 2}
   nombreEscena: PeleaDemacrado
+--- !u!82 &87952782
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87952778}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &96528159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,6 +3290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 367549555}
   - component: {fileID: 367549556}
+  - component: {fileID: 367549557}
   m_Layer: 5
   m_Name: Slider sonido general
   m_TagString: Untagged
@@ -3273,7 +3371,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 87952782}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 24300002, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &367549557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367549554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_Master
+  slider: {fileID: 367549556}
 --- !u!1 &382945629
 GameObject:
   m_ObjectHideFlags: 0
@@ -10199,20 +10325,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
-  sonidoTAUNTPos: {fileID: 0}
-  sonidoDEADPos: {fileID: 0}
-  sonidoATQPos1: {fileID: 0}
-  sonidoATQPos2: {fileID: 0}
-  sonidoATQPos3: {fileID: 0}
-  sonidoATQPos4: {fileID: 0}
-  sonidoMISSPos1: {fileID: 0}
-  sonidoMISSPos2: {fileID: 0}
-  sonidoMISSPos3: {fileID: 0}
-  sonidoMISSPos4: {fileID: 0}
-  sonidoHITPos1: {fileID: 0}
-  sonidoHITPos2: {fileID: 0}
-  sonidoHITPos3: {fileID: 0}
-  sonidoHITPos4: {fileID: 0}
+  sonidoDEADKat: {fileID: 8300000, guid: 0aa3172da29d77c428452af704b4c251, type: 3}
+  sonidoJUMPKat: {fileID: 8300000, guid: ad3b33bda84bb1e43a0169a28c25d28a, type: 3}
+  sonidoSPLASHKat: {fileID: 8300000, guid: b9c4fc66ff3e55d49a78ffc955eb8561, type: 3}
+  sonidoBLQKat: {fileID: 8300000, guid: e82dc88775333274da74fa8890382fd1, type: 3}
+  sonidoATQKat1: {fileID: 8300000, guid: 8ae94749c7c6ec5479811d3e8e2a09bc, type: 3}
+  sonidoATQKat2: {fileID: 8300000, guid: 2c5a3bc15a87cd64d9350dfbd98e8d92, type: 3}
+  sonidoVOZKat1: {fileID: 8300000, guid: 01eb36b5d7732ec44b46b725100793b4, type: 3}
+  sonidoVOZKat2: {fileID: 8300000, guid: dec723626b7b8324980816c8b05c140f, type: 3}
+  sonidoMISSKat1: {fileID: 8300000, guid: 0a82aa64970f528448dff70676fdb1dc, type: 3}
+  sonidoMISSKat2: {fileID: 8300000, guid: f452a62f89dec3646a2422ffc5c4c7b3, type: 3}
+  sonidoMISSKat3: {fileID: 8300000, guid: 3a22ae6ea198d9445be6a633052ac8c6, type: 3}
+  sonidoHITKat1: {fileID: 8300000, guid: 2d2bc4a13bdb5e746b8e7b0dad7002b8, type: 3}
+  sonidoHITKat2: {fileID: 8300000, guid: 3863e26b96c17514abef2969214d0cc8, type: 3}
+  sonidoHITKat3: {fileID: 8300000, guid: a76badfda2e1a804fb29b2a5bfcad6de, type: 3}
 --- !u!1 &975714092
 GameObject:
   m_ObjectHideFlags: 0
@@ -12421,7 +12547,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13574,6 +13700,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1796936846}
+  isHit: 0
   esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:
@@ -15610,17 +15737,17 @@ PrefabInstance:
     - target: {fileID: -9042537993447216014, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 18.26769
+      value: -12.025143
       objectReference: {fileID: 0}
     - target: {fileID: -9042537993447216014, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -3.2472908e-10
+      value: -2.4300646e-12
       objectReference: {fileID: 0}
     - target: {fileID: -9042537993447216014, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.0000000021585211
+      value: 1.0090702e-14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15700,32 +15827,32 @@ PrefabInstance:
     - target: {fileID: -5928348689661693997, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 41.05012
+      value: 24.581919
       objectReference: {fileID: 0}
     - target: {fileID: -5928348689661693997, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.000017908826
+      value: -0.000015021849
       objectReference: {fileID: 0}
     - target: {fileID: -5928348689661693997, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.000009617866
+      value: -0.000006248996
       objectReference: {fileID: 0}
     - target: {fileID: -2530531700740428741, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 14.799274
+      value: -1.3680339
       objectReference: {fileID: 0}
     - target: {fileID: -2530531700740428741, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.000013794863
+      value: -0.000013664275
       objectReference: {fileID: 0}
     - target: {fileID: -2530531700740428741, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.0000012439851
+      value: 0.00000032622663
       objectReference: {fileID: 0}
     - target: {fileID: -1435920665824055197, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15745,17 +15872,17 @@ PrefabInstance:
     - target: {fileID: 296469338984652263, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 17.602674
+      value: 5.782392
       objectReference: {fileID: 0}
     - target: {fileID: 296469338984652263, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.00000044852052
+      value: -0.00000006986366
       objectReference: {fileID: 0}
     - target: {fileID: 296469338984652263, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.000003479665
+      value: -0.0000013833293
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15765,17 +15892,17 @@ PrefabInstance:
     - target: {fileID: 2895587453369508441, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 19.991413
+      value: -15.022022
       objectReference: {fileID: 0}
     - target: {fileID: 2895587453369508441, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.000013660669
+      value: 0.000013660386
       objectReference: {fileID: 0}
     - target: {fileID: 2895587453369508441, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.13996815e-11
+      value: -6.322736e-13
       objectReference: {fileID: 0}
     - target: {fileID: 3638425468704358047, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15785,7 +15912,7 @@ PrefabInstance:
     - target: {fileID: 3638425468704358047, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.000013199215
+      value: -0.000013660382
       objectReference: {fileID: 0}
     - target: {fileID: 3666810687377774624, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15805,22 +15932,22 @@ PrefabInstance:
     - target: {fileID: 4413259763190733237, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 20.585686
+      value: 18.41307
       objectReference: {fileID: 0}
     - target: {fileID: 4413259763190733237, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.0000008980623
+      value: -0.00000073709333
       objectReference: {fileID: 0}
     - target: {fileID: 4413259763190733237, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.0000047568847
+      value: -0.000004547664
       objectReference: {fileID: 0}
     - target: {fileID: 5746564759562468899, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.6392796e-14
+      value: -1.272222e-14
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15830,7 +15957,7 @@ PrefabInstance:
     - target: {fileID: 5936130822973847747, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 86.22353
+      value: 86.223526
       objectReference: {fileID: 0}
     - target: {fileID: 5936130822973847747, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -15850,12 +15977,12 @@ PrefabInstance:
     - target: {fileID: 6310602733788317063, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 6.0546355e-12
+      value: 7.722748e-12
       objectReference: {fileID: 0}
     - target: {fileID: 6310602733788317063, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 6.0647242e-12
+      value: 7.735616e-12
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 3c9309241c32c9a448a0082d93e5f2c5,
         type: 3}
@@ -20639,6 +20766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956131322}
   - component: {fileID: 1956131323}
+  - component: {fileID: 1956131324}
   m_Layer: 5
   m_Name: Slider musica
   m_TagString: Untagged
@@ -20719,7 +20847,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 87952782}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -5629983628151771594, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1956131324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956131321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_Musica
+  slider: {fileID: 1956131323}
 --- !u!1 &1979462184
 GameObject:
   m_ObjectHideFlags: 0
@@ -22266,6 +22422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080489908}
   - component: {fileID: 2080489909}
+  - component: {fileID: 2080489910}
   m_Layer: 5
   m_Name: Slider sfx
   m_TagString: Untagged
@@ -22346,7 +22503,35 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 87952782}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_outputAudioMixerGroup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Audio.AudioMixerGroup, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2080489910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080489907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a1add63cd038f4a9ea1b1f91c272c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mezclador: {fileID: 24100000, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5, type: 2}
+  nombreParametro: Volume_SFX
+  slider: {fileID: 0}
 --- !u!1 &2089675129
 GameObject:
   m_ObjectHideFlags: 0

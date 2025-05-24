@@ -3184,6 +3184,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  isHit: 0
   esPuebloInverso: 1
 --- !u!1 &45820638
 GameObject:
@@ -7570,6 +7571,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  isHit: 0
   esPuebloInverso: 1
 --- !u!1 &134956412
 GameObject:
@@ -9413,10 +9415,11 @@ AudioSource:
   m_GameObject: {fileID: 151463999}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20503,6 +20506,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  isHit: 0
   esPuebloInverso: 1
 --- !u!1 &412701015
 GameObject:
@@ -21948,7 +21952,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -27079,6 +27082,7 @@ MonoBehaviour:
   blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  isHit: 0
   esPuebloInverso: 1
 --- !u!1 &585672980 stripped
 GameObject:
@@ -30221,7 +30225,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -30620,7 +30623,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -33824,7 +33826,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
     type: 3}
-  fueGolpeado: 0
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -41944,7 +41945,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -52350,6 +52351,7 @@ MonoBehaviour:
   correrPiedra: {fileID: 8300000, guid: 610993510bf455b4d881fd4dbf6bdf22, type: 3}
   correrMadera: {fileID: 0}
   audioFuente: {fileID: 0}
+  verObjeto: 0
 --- !u!54 &1185810970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57035,10 +57037,11 @@ AudioSource:
   m_GameObject: {fileID: 1304089394}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -84963,10 +84966,11 @@ AudioSource:
   m_GameObject: {fileID: 2010688388}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

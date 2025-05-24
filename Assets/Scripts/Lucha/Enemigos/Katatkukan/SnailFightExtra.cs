@@ -10,29 +10,30 @@ public class SnailFightExtra : MonoBehaviour
 
     private string lastActivatedHB;
 
-    public AudioClip sonidoTAUNTPos;
-    public AudioClip sonidoDEADPos;
+    public AudioClip sonidoDEADKat;
+    public AudioClip sonidoJUMPKat;
+    public AudioClip sonidoSPLASHKat;
+    public AudioClip sonidoBLQKat;
 
-    public AudioClip sonidoATQPos1;
-    public AudioClip sonidoATQPos2;
-    public AudioClip sonidoATQPos3;
-    public AudioClip sonidoATQPos4;
+    public AudioClip sonidoATQKat1;
+    public AudioClip sonidoATQKat2;
 
-    public AudioClip sonidoMISSPos1;
-    public AudioClip sonidoMISSPos2;
-    public AudioClip sonidoMISSPos3;
-    public AudioClip sonidoMISSPos4;
+    public AudioClip sonidoVOZKat1;
+    public AudioClip sonidoVOZKat2;
 
-    public AudioClip sonidoHITPos1;
-    public AudioClip sonidoHITPos2;
-    public AudioClip sonidoHITPos3;
-    public AudioClip sonidoHITPos4;
+    public AudioClip sonidoMISSKat1;
+    public AudioClip sonidoMISSKat2;
+    public AudioClip sonidoMISSKat3;
+
+    public AudioClip sonidoHITKat1;
+    public AudioClip sonidoHITKat2;
+    public AudioClip sonidoHITKat3;
     
     AudioSource audioFuente;
 
-    private List<AudioClip> listaSonidosATQPos = new List<AudioClip>();
-    private List<AudioClip> listaSonidosMISSPos = new List<AudioClip>();
-    private List<AudioClip> listaSonidosHITPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosATQKat = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSKat = new List<AudioClip>();
+    private List<AudioClip> listaSonidosHITKat = new List<AudioClip>();
 
     private void Awake()
     {
@@ -48,20 +49,16 @@ public class SnailFightExtra : MonoBehaviour
 
         // Audio
         // Llenar la lista de sonidos
-        listaSonidosATQPos.Add(sonidoATQPos1);
-        listaSonidosATQPos.Add(sonidoATQPos2);
-        listaSonidosATQPos.Add(sonidoATQPos3);
-        listaSonidosATQPos.Add(sonidoATQPos4);
+        listaSonidosATQKat.Add(sonidoATQKat1);
+        listaSonidosATQKat.Add(sonidoATQKat2);
 
-        listaSonidosMISSPos.Add(sonidoMISSPos1);
-        listaSonidosMISSPos.Add(sonidoMISSPos2);
-        listaSonidosMISSPos.Add(sonidoMISSPos3);
-        listaSonidosMISSPos.Add(sonidoMISSPos4);
+        listaSonidosMISSKat.Add(sonidoMISSKat1);
+        listaSonidosMISSKat.Add(sonidoMISSKat2);
+        listaSonidosMISSKat.Add(sonidoMISSKat3);
 
-        listaSonidosHITPos.Add(sonidoHITPos1);
-        listaSonidosHITPos.Add(sonidoHITPos2);
-        listaSonidosHITPos.Add(sonidoHITPos3);
-        listaSonidosHITPos.Add(sonidoHITPos4);
+        listaSonidosHITKat.Add(sonidoHITKat1);
+        listaSonidosHITKat.Add(sonidoHITKat2);
+        listaSonidosHITKat.Add(sonidoHITKat3);
 
         audioFuente = this.GetComponent<AudioSource>();
     }
@@ -90,47 +87,70 @@ public class SnailFightExtra : MonoBehaviour
     }
 
     // Corrutina que produce sonido aleatorio del enemigo atacando
-    public void SonidoATQPosAleatorio()
+    public void SonidoATQKatAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosATQPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosATQPos[indice];
+        int indice = Random.Range(0, listaSonidosATQKat.Count);
+        AudioClip sonidoSeleccionado = listaSonidosATQKat[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 
     // Corrutina que produce sonido aleatorio del enemigo fallando golpe
-    public void SonidoMISSPosAleatorio()
+    public void SonidoMISSKatAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosMISSPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosMISSPos[indice];
+        int indice = Random.Range(0, listaSonidosMISSKat.Count);
+        AudioClip sonidoSeleccionado = listaSonidosMISSKat[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 
     // Corrutina que produce sonido aleatorio del enemigo siendo golpeando
-    public void SonidoHITPosAleatorio()
+    public void SonidoHITKatAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosHITPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosHITPos[indice];
+        int indice = Random.Range(0, listaSonidosHITKat.Count);
+        AudioClip sonidoSeleccionado = listaSonidosHITKat[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
-    
-    // Sonido inicio pelea
-    public void SonidoTAUNTPos()
+
+    // Sonidos voces ataque caracol
+    public void SonidoVOZKat1()
     {
-        audioFuente.PlayOneShot(sonidoTAUNTPos);
+        audioFuente.PlayOneShot(sonidoVOZKat1);
     }
 
-    // Sonido inicio pelea
-    public void SonidoDEADPos()
+    public void SonidoVOZKat2()
     {
-        audioFuente.PlayOneShot(sonidoDEADPos);
+        audioFuente.PlayOneShot(sonidoVOZKat2);
+    }
+
+    // Sonido salto caracol
+    public void SonidoJUMPKat()
+    {
+        audioFuente.PlayOneShot(sonidoJUMPKat);
+    }
+    
+    // Sonido caida caracol
+    public void SonidoSPLASHKat()
+    {
+        audioFuente.PlayOneShot(sonidoSPLASHKat);
+    }
+
+    // Sonidos bloqueo caracol
+    public void SonidoBLQKat()
+    {
+        audioFuente.PlayOneShot(sonidoBLQKat);
+    }
+
+    // Sonido muerte
+    public void SonidoDEADKat()
+    {
+        audioFuente.PlayOneShot(sonidoDEADKat);
     }
 }

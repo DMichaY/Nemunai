@@ -12,9 +12,11 @@ public class SnailFightAI : FighterClass
     public  Animator animator;
     public Rigidbody rb;
     public GameObject hitEffect, blockEffect;
-    SnailFightExtra sonidoGolpeadoPos;
-    KaitoFightExtra sonidoKaitoAtaque;
+    
     public bool isBlocking;
+
+    SnailFightExtra sonidoGolpeadoKat;
+    KaitoFightExtra sonidoKaitoAtaque;
 
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -28,7 +30,7 @@ public class SnailFightAI : FighterClass
         animator.StartPlayback();
         rb = GetComponent<Rigidbody>();
 
-        sonidoGolpeadoPos = FindObjectOfType<SnailFightExtra>();
+        sonidoGolpeadoKat = FindObjectOfType<SnailFightExtra>();
         sonidoKaitoAtaque = FindObjectOfType<KaitoFightExtra>();
 
         lifeBar.maxValue = life;
@@ -78,7 +80,7 @@ public class SnailFightAI : FighterClass
 
             Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
-            sonidoGolpeadoPos.SonidoHITPosAleatorio();
+            sonidoGolpeadoKat.SonidoHITKatAleatorio();
             sonidoKaitoAtaque.SonidoATQKaitoAleatorio();
         }
         else
