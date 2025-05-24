@@ -30,6 +30,7 @@ public class SnailFightExtra : MonoBehaviour
     public AudioClip sonidoHITKat3;
     
     AudioSource audioFuente;
+    bool BLQReverso = false;
 
     private List<AudioClip> listaSonidosATQKat = new List<AudioClip>();
     private List<AudioClip> listaSonidosMISSKat = new List<AudioClip>();
@@ -127,25 +128,65 @@ public class SnailFightExtra : MonoBehaviour
 
     public void SonidoVOZKat2()
     {
-        audioFuente.PlayOneShot(sonidoVOZKat2);
+            audioFuente.PlayOneShot(sonidoVOZKat2);
+            BLQReverso = true;
     }
 
     // Sonido salto caracol
     public void SonidoJUMPKat()
     {
-        audioFuente.PlayOneShot(sonidoJUMPKat);
+        if (!BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoJUMPKat);
+            BLQReverso = true;
+        }
+    }
+
+    public void SonidoJUMPKatReverso()
+    {
+        if (BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoJUMPKat);
+            BLQReverso = false;
+        }
     }
     
     // Sonido caida caracol
     public void SonidoSPLASHKat()
     {
-        audioFuente.PlayOneShot(sonidoSPLASHKat);
+        if (!BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoSPLASHKat);
+            BLQReverso = true;
+        }
+    }
+
+    public void SonidoSPLASHKatReverso()
+    {
+        if (BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoSPLASHKat);
+            BLQReverso = false;
+        }
     }
 
     // Sonidos bloqueo caracol
     public void SonidoBLQKat()
     {
-        audioFuente.PlayOneShot(sonidoBLQKat);
+        if (!BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoBLQKat);
+            BLQReverso = true;
+        }
+    }
+
+    public void SonidoBLQKatReverso()
+    {
+        if (BLQReverso)
+        {
+            audioFuente.PlayOneShot(sonidoBLQKat);
+            BLQReverso = false;
+        }
     }
 
     // Sonido muerte
