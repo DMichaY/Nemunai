@@ -13,19 +13,8 @@ public class FukikaneAI : FighterClass
     public Rigidbody rb;
     public GameObject hitEffect;
 
-    public AudioClip sonidoHITPos1;
-    public AudioClip sonidoHITPos2;
-    public AudioClip sonidoHITPos3;
-    public AudioClip sonidoHITPos4;
-    public AudioClip sonidoHITPos5;
-    public AudioClip sonidoHITPos6;
-    public AudioClip sonidoHITPos7;
-    public AudioClip sonidoHITPos8;
-    AudioSource audioFuente;
-
-    public GameObject cuerpoRefAudio;
-
-    private List<AudioClip> listaSonidosPos = new List<AudioClip>();
+    FukikaneFightExtra sonidoGolpeadoFuk;
+    KaitoFightExtra sonidoKaitoAtaque;
 
     //Estadísticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -37,23 +26,13 @@ public class FukikaneAI : FighterClass
         animator.StartPlayback();
         rb = GetComponent<Rigidbody>();
 
+        sonidoGolpeadoFuk = FindObjectOfType<FukikaneFightExtra>();
+        sonidoKaitoAtaque = FindObjectOfType<KaitoFightExtra>();
+
         lifeBar.maxValue = life;
         lifeBar.value = life;
 
         StartCoroutine(StartWait());
-
-        // Audio
-        // Llenar la lista de sonidos
-        listaSonidosPos.Add(sonidoHITPos1);
-        listaSonidosPos.Add(sonidoHITPos2);
-        listaSonidosPos.Add(sonidoHITPos3);
-        listaSonidosPos.Add(sonidoHITPos4);
-        listaSonidosPos.Add(sonidoHITPos5);
-        listaSonidosPos.Add(sonidoHITPos6);
-        listaSonidosPos.Add(sonidoHITPos7);
-        listaSonidosPos.Add(sonidoHITPos8);
-
-        audioFuente = cuerpoRefAudio.GetComponent<AudioSource>();
     }
 
     private IEnumerator StartWait()
@@ -79,14 +58,14 @@ public class FukikaneAI : FighterClass
         {
             StartCoroutine("Death");
 
-            foreach (GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            foreach (GameObject HB in GetComponentInChildren<FukikaneFightExtra>().HBs)
             {
                 HB.SetActive(false);
             }
         }
         else
         {
-            foreach (GameObject HB in GetComponentInChildren<EnemyFightExtra>().HBs)
+            foreach (GameObject HB in GetComponentInChildren<FukikaneFightExtra>().HBs)
             {
                 HB.SetActive(false);
             }
@@ -94,7 +73,8 @@ public class FukikaneAI : FighterClass
 
         Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
-        SonidoHITPosAleatorio();
+        sonidoGolpeadoFuk.SonidoHITFukAleatorio();
+        sonidoKaitoAtaque.SonidoATQKaitoAleatorio();
     }
 
     private IEnumerator Death()
@@ -110,16 +90,5 @@ public class FukikaneAI : FighterClass
     private void OnCollisionExit(Collision collision)
     {
         rb.velocity = Vector3.zero;
-    }
-
-    // Corrutina que produce sonido aleatorio del enemigo siendo golpeando
-    public void SonidoHITPosAleatorio()
-    {
-        // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosPos[indice];
-
-        // Reproducir el sonido
-        audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 }

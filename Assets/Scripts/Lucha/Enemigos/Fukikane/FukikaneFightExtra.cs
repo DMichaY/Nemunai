@@ -8,11 +8,34 @@ public class FukikaneFightExtra : MonoBehaviour
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
     private ParticleSystem beam;
+    KaitoFight golpearKaito;
 
     private string lastActivatedHB;
 
+    public AudioClip sonidoATQFuk1;
+    public AudioClip sonidoATQFuk2;
+    public AudioClip sonidoATQFuk3;
+    public AudioClip sonidoATQFukAlmas;
+    public AudioClip sonidoATQFukSalto;
+
+    public AudioClip sonidoMISSFuks1;
+    public AudioClip sonidoMISSFuk2;
+    public AudioClip sonidoMISSFuk3;
+
+    public AudioClip sonidoHITFuk1;
+    public AudioClip sonidoHITFuk2;
+    public AudioClip sonidoHITFuk3;
+    
+    AudioSource audioFuente;
+
+    private List<AudioClip> listaSonidosATQFuk = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSFuk = new List<AudioClip>();
+    private List<AudioClip> listaSonidosHITFuk = new List<AudioClip>();
+
     private void Awake()
     {
+        golpearKaito = FindObjectOfType<KaitoFight>();
+
         foreach (Collider HB in transform.GetComponentsInChildren<Collider>())
         {
             if (HB.tag == "HurtBox")
@@ -24,6 +47,20 @@ public class FukikaneFightExtra : MonoBehaviour
         }
         beam = GetComponentInChildren<ParticleSystem>();
         beam.Pause();
+
+        // Audio
+        // Llenar la lista de sonidos
+        listaSonidosATQFuk.Add(sonidoATQFuk1);
+        listaSonidosATQFuk.Add(sonidoATQFuk2);
+        listaSonidosATQFuk.Add(sonidoATQFuk3);
+        listaSonidosMISSFuk.Add(sonidoMISSFuks1);
+        listaSonidosMISSFuk.Add(sonidoMISSFuk2);
+        listaSonidosMISSFuk.Add(sonidoMISSFuk3);
+        listaSonidosHITFuk.Add(sonidoHITFuk1);
+        listaSonidosHITFuk.Add(sonidoHITFuk2);
+        listaSonidosHITFuk.Add(sonidoHITFuk3);
+
+        audioFuente = this.GetComponent<AudioSource>();
     }
 
     public void ActivateHurtbox(string hbName)
@@ -68,5 +105,62 @@ public class FukikaneFightExtra : MonoBehaviour
     public void StopBeam()
     {
         beam.Stop();
+    }
+
+    // Corrutina que produce sonido aleatorio del enemigo atacando
+    public void SonidoATQFukAleatorio()
+    {
+        // Se escoge un sonido aleatorio de la lista
+        int indice = Random.Range(0, listaSonidosATQFuk.Count);
+        AudioClip sonidoSeleccionado = listaSonidosATQFuk[indice];
+
+        // Reproducir el sonido
+        audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    // Ataques especiales
+    public void SonidoAtaqueSaltoFuk()
+    {
+        audioFuente.PlayOneShot(sonidoATQFukSalto);
+    }
+
+    public void SonidoAtaqueAlmasFuk()
+    {
+        audioFuente.PlayOneShot(sonidoATQFukAlmas);
+    }
+
+    // Corrutina que produce sonido aleatorio del enemigo fallando golpe
+    public void SonidoMISSFukAleatorio()
+    {
+        // Se escoge un sonido aleatorio de la lista
+        int indice = Random.Range(0, listaSonidosMISSFuk.Count);
+        AudioClip sonidoSeleccionado = listaSonidosMISSFuk[indice];
+
+        // Reproducir el sonido
+        audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    public void DetectarGolpe()
+    {
+        if (golpearKaito.isHit)
+        {
+            SonidoMISSFukAleatorio();
+            SonidoATQFukAleatorio();
+        }
+        else
+        {
+            SonidoMISSFukAleatorio();
+        }
+    }
+
+    // Corrutina que produce sonido aleatorio del enemigo siendo golpeando
+    public void SonidoHITFukAleatorio()
+    {
+        // Se escoge un sonido aleatorio de la lista
+        int indice = Random.Range(0, listaSonidosHITFuk.Count);
+        AudioClip sonidoSeleccionado = listaSonidosHITFuk[indice];
+
+        // Reproducir el sonido
+        audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 }
