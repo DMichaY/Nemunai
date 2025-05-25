@@ -62,7 +62,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         // Botones principales
-        jugarButton.onClick.AddListener(() => SceneManager.LoadScene("Estacion"));
+        jugarButton.onClick.AddListener(() => SceneManager.LoadScene("1Estacion"));
         salirButton.onClick.AddListener(() => Application.Quit());
         itchButton.onClick.AddListener(() => Application.OpenURL("https://dmichay.itch.io"));
         creditosButton.onClick.AddListener(() => MoverCamara(creditosPosition, true));
