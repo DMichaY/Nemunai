@@ -84,6 +84,7 @@ public class FukikaneAI : FighterClass
         yield return new WaitForSeconds(.1f);
         animator.SetBool("hasDied", true);
 
+        yield return new WaitForSeconds(1.5f);
         FindObjectOfType<CambiarEscena>().ForceLoadScene();
     }
 
