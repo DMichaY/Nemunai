@@ -11,6 +11,8 @@ public class KaitoFightExtra : MonoBehaviour
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
 
+    // Pelear
+
     public AudioClip sonidoDEADKaito;
 
     public AudioClip sonidoATQKaito1;
@@ -27,6 +29,15 @@ public class KaitoFightExtra : MonoBehaviour
     public AudioClip sonidoHITKaito2;
     public AudioClip sonidoHITKaito3;
     public AudioClip sonidoHITKaito4;
+
+    // Moverse
+
+    public AudioClip andarTierra;
+    public AudioClip andarPiedra;
+    public AudioClip andarMadera;
+
+    private string sueloActualTag = null;
+    private bool enContactoConSuelo = false;
     
     AudioSource audioFuente;
 
@@ -131,4 +142,48 @@ public class KaitoFightExtra : MonoBehaviour
     {
         audioFuente.PlayOneShot(sonidoDEADKaito);
     }
+
+    // Sonidos Kaito Moviendose Por Escena
+    /* public void SonidosPisadas(bool enMovimiento)
+    {
+        // Si no está en contacto con el suelo o no hay audioFuente, detenemos cualquier sonido
+        if (!enContactoConSuelo || audioFuente == null)
+        {
+            if (audioFuente != null)
+                audioFuente.Stop();
+            return;
+        }
+
+        AudioClip clipActual = null;
+
+        if (sueloActualTag == "Tierra")
+        {
+            clipActual = andarTierra;
+        }
+        else if (sueloActualTag == "Piedra")
+        {
+            clipActual = andarPiedra;
+        }
+        else if (sueloActualTag == "Madera")
+        {
+            clipActual = andarMadera;
+        }
+
+        if (enMovimiento)
+        {
+            if (audioFuente.clip != clipActual)
+            {
+                audioFuente.clip = clipActual;
+                audioFuente.Play();
+            }
+            else if (!audioFuente.isPlaying)
+            {
+                audioFuente.Play();
+            }
+        }
+        else
+        {
+            audioFuente.Stop();
+        }
+    }*/
 }

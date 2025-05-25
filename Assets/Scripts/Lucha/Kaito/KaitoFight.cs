@@ -13,7 +13,7 @@ public class KaitoFight : FighterClass
 
     public GameObject panelMuerte;
 
-    KaitoFightExtra sonidosKaitoHerir;
+    KaitoFightExtra sonidosKaito;
     GameObject enemigoActSonido;
     public bool isHit = false;
 
@@ -35,7 +35,7 @@ public class KaitoFight : FighterClass
         input.DeactivateInput();
         rb = GetComponent<Rigidbody>();
 
-        sonidosKaitoHerir = FindObjectOfType<KaitoFightExtra>();
+        sonidosKaito = FindObjectOfType<KaitoFightExtra>();
         enemigoActSonido = GameObject.FindGameObjectWithTag("Enemy");
 
         lifeBar.maxValue = life;
@@ -74,6 +74,8 @@ public class KaitoFight : FighterClass
         else kaitoAnimator.SetBool("goLeft", false);
         if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
         else kaitoAnimator.SetBool("crouch", false);
+
+        // sonidosKaito.SonidosPisadas(movement.x > 0 || movement.y < 0);
     }
 
     //Animaciones de ataque
@@ -165,7 +167,7 @@ public class KaitoFight : FighterClass
                 }
 
                 isHit = true;
-                sonidosKaitoHerir.SonidoHITKaitoAleatorio();
+                sonidosKaito.SonidoHITKaitoAleatorio();
             }
 
             Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1); 
