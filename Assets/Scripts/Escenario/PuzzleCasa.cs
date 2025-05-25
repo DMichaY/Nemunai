@@ -19,6 +19,10 @@ public class PuzzleCasa : MonoBehaviour
 
     public GameObject mensajeESC;
 
+    public GameObject jugador;
+
+    public GameObject comentarioRuido;
+
     public int contador = 0;
 
     public bool puertasAbren = false;
@@ -85,6 +89,8 @@ public class PuzzleCasa : MonoBehaviour
                     Eventos();
 
                 }
+
+                 
         
 
 
@@ -277,7 +283,7 @@ public class PuzzleCasa : MonoBehaviour
             evento = true;
 
             cuadro = true;
-            
+
             if (numCamara == 11)
             {
                 this.GetComponent<Cuadro>().Dormitorio();
@@ -296,6 +302,11 @@ public class PuzzleCasa : MonoBehaviour
             evento = true;
 
             sangre = true;
+
+
+            comentarioRuido.transform.position = jugador.transform.position;
+
+            comentarioRuido.SetActive(true);
         }
 
         

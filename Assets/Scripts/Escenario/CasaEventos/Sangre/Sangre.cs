@@ -40,6 +40,8 @@ public class Sangre : MonoBehaviour
 
     public GameObject sangreBrasero;
 
+    
+
 
     void Start()
     {
@@ -61,6 +63,8 @@ public class Sangre : MonoBehaviour
         puerta2.SetActive(false);
 
         neveraSangre.SetActive(true);
+
+        
 
     }
 
