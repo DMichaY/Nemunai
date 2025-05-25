@@ -82,14 +82,14 @@ public class KaitoFightExtra : MonoBehaviour
         audioFuente = this.GetComponent<AudioSource>();
     }
 
-    public void ActivateMovement()
+    public void AttackStart()
     {
-        kaitoScript.ActivateMovement();
+        kaitoScript.kaitoAnimator.SetBool("isAttacking", true);
     }
 
-    public void DeactivateMovement()
+    public void BlockStart()
     {
-        kaitoScript.DeactivateMovement();
+        kaitoScript.isBlocking = true;
     }
 
     public void ActivateHurtbox (string hbName)
@@ -103,6 +103,16 @@ public class KaitoFightExtra : MonoBehaviour
         HBs[HBNames.IndexOf(hbName)].SetActive(false);
         if (lastActivatedHB != hbName) HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage -= 5;
         lastActivatedHB = hbName;
+    }
+
+    public void ClearBools()
+    {
+        kaitoScript.kaitoAnimator.SetBool("isAttacking", false);
+    }
+
+    public void ClearHBs()
+    {
+        foreach (GameObject hb in HBs) hb.SetActive(false);
     }
 
     // Produce sonido aleatorio de Kaito atacando/fallando ataque

@@ -17,10 +17,10 @@ public class KaitoFight : FighterClass
     GameObject enemigoActSonido;
     public bool isHit = false;
 
-    private Animator kaitoAnimator;
+    public Animator kaitoAnimator;
     private PlayerInput input;
     private Vector2 movement;
-    private bool canMove = true;
+    public bool isBlocking;
     private Rigidbody rb;
     private float life = 100;
 
@@ -59,21 +59,33 @@ public class KaitoFight : FighterClass
     //Movimiento por rigidbody
     void Update()
     {
-        if (!kaitoAnimator.GetBool("crouch") && canMove) rb.velocity = new Vector3(0, 0, movement.x * speed);
+        kaitoAnimator.SetBool("goRight", false);
+        kaitoAnimator.SetBool("goLeft", false);
+        if (movement.x != 0 && !kaitoAnimator.GetBool("isAttacking"))
+        {
+            if (movement.x > 0) kaitoAnimator.SetBool("goRight", true);
+            else if (movement.x < 0) kaitoAnimator.SetBool("goLeft", true);
+            if (!kaitoAnimator.GetBool("crouch")) rb.velocity = new Vector3(0, 0, movement.x * speed);
+            else rb.velocity = Vector3.zero;
+        }
         else rb.velocity = Vector3.zero;
+
     }
 
-    //Animaciones y dirección de movimiento
+    //Control de animaciones y dirección de movimiento
     public void OnMovimiento(InputValue value)
     {
+        //Bloquear
         movement = value.Get<Vector2>();
-
-        if (movement.x > 0) kaitoAnimator.SetBool("goRight", true);
-        else kaitoAnimator.SetBool("goRight", false);
-        if (movement.x < 0) kaitoAnimator.SetBool("goLeft", true);
-        else kaitoAnimator.SetBool("goLeft", false);
-        if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
-        else kaitoAnimator.SetBool("crouch", false);
+        if (movement.y < 0)
+        {
+            kaitoAnimator.SetBool("crouch", true);
+        }
+        else
+        {
+            kaitoAnimator.SetBool("crouch", false);
+            isBlocking = false;
+        }
 
         // sonidosKaito.SonidosPisadas(movement.x > 0 || movement.y < 0);
     }
@@ -82,6 +94,7 @@ public class KaitoFight : FighterClass
     public void OnAtacar(InputValue value)
     {
         Vector2 vectorAtaque = value.Get<Vector2>();
+        isBlocking = false;
 
         if (vectorAtaque.x > 0)
         {
@@ -113,31 +126,10 @@ public class KaitoFight : FighterClass
         }
     }
 
-    //Activar movimiento después de atacar
-    public void ActivateMovement()
-    {
-        canMove = true;
-        if (movement.x > 0) kaitoAnimator.SetBool("goRight", true);
-        else kaitoAnimator.SetBool("goRight", false);
-        if (movement.x < 0) kaitoAnimator.SetBool("goLeft", true);
-        else kaitoAnimator.SetBool("goLeft", false);
-        if (movement.y < 0) kaitoAnimator.SetBool("crouch", true);
-        else kaitoAnimator.SetBool("crouch", false);
-    }
-
-    //Desactivar movimiento durante ataques
-    public void DeactivateMovement()
-    {
-        canMove = false;
-        kaitoAnimator.SetBool("goRight", false);
-        kaitoAnimator.SetBool("goLeft", false);
-        kaitoAnimator.SetBool("crouch", false);
-    }
-
     //Perder vida y activar animación de recibir golpe o muerte
     public override void GetHit(float damage, Vector3 effectPos)
     {
-        if(!kaitoAnimator.GetBool("crouch"))
+        if(!isBlocking)
         {
             life -= damage;
             lifeBar.value = life;
