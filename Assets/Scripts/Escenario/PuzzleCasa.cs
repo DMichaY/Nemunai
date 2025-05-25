@@ -38,9 +38,18 @@ public class PuzzleCasa : MonoBehaviour
 
     public Image pantallaNegra;
 
+
+    public AudioClip sonidoLibro;
+
+    AudioSource audioFuente;
+
+
+
     public void Start()
     {
         llave.SetActive(false);
+
+        audioFuente = this.GetComponent<AudioSource>();
 
     }
 
@@ -90,7 +99,7 @@ public class PuzzleCasa : MonoBehaviour
 
         leyendo = true;
 
-        
+        audioFuente.PlayOneShot(sonidoLibro);     
 
         libroInventario.SetActive(true);
 
