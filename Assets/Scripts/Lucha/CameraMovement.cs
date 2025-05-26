@@ -9,6 +9,8 @@ public class CameraMovement : MonoBehaviour
     GameObject player;
     public GameObject playerHealth, enemyHealth;
 
+    public float startWaitTime = 0f;
+
     void Start()
     {
         player = FindObjectOfType<KaitoFight>().gameObject;
@@ -17,9 +19,10 @@ public class CameraMovement : MonoBehaviour
     }
 
     private IEnumerator CinematicCamera()
-    {
+    { 
         playerHealth.SetActive(false);
         enemyHealth.SetActive(false);
+        yield return new WaitForSeconds(startWaitTime);
         float t = 0;
         while(t < 1)
         {

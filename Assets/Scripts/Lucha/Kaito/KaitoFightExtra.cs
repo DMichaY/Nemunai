@@ -10,6 +10,7 @@ public class KaitoFightExtra : MonoBehaviour
 
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
+    public List<float> HBNums = new List<float>();
 
     // Pelear
 
@@ -56,9 +57,10 @@ public class KaitoFightExtra : MonoBehaviour
         {
             if(HB.tag == "HurtBox")
             {
-            HBs.Add(HB.gameObject);
-            HBNames.Add(HB.gameObject.name);
-            HB.gameObject.SetActive(false);
+                HBs.Add(HB.gameObject);
+                HBNames.Add(HB.gameObject.name);
+                HBNums.Add(HB.GetComponent<AttackScript>().damage);
+                HB.gameObject.SetActive(false);
             }
         }
 
@@ -94,6 +96,7 @@ public class KaitoFightExtra : MonoBehaviour
 
     public void ActivateHurtbox (string hbName)
     {
+        HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage = HBNums[HBNames.IndexOf(hbName)];
         if (lastActivatedHB != hbName) HBs[HBNames.IndexOf(hbName)].GetComponent<AttackScript>().damage += 5;
         HBs[HBNames.IndexOf(hbName)].SetActive(true);
     }
