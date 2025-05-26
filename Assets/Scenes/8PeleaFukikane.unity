@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0023936073, g: 0.0023936073, b: 0.0023936073, a: 1}
+  m_IndirectSpecularColor: {r: 0.03355351, g: 0.034817666, b: 0.036744863, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13913,6 +13913,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &726680846
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20361,6 +20364,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 445461498}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 0
 --- !u!4 &1391969230
 Transform:
@@ -26389,7 +26394,7 @@ MonoBehaviour:
     type: 2}
   grupoSFX: {fileID: 2555452568234500218, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
     type: 2}
-  nombreEscena: PeleaFukikane
+  nombreEscena: 8PeleaFukikane
 --- !u!82 &1943371991
 AudioSource:
   m_ObjectHideFlags: 0

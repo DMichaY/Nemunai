@@ -79,8 +79,8 @@ public class EnemyFightAI : FighterClass
 
     private IEnumerator Death()
     {
-        animator.SetBool("death", true);
         FSM = null;
+        animator.SetBool("death", true);
         yield return new WaitForSeconds(.1f);
         animator.SetBool("hasDied", true);
 
@@ -92,7 +92,6 @@ public class EnemyFightAI : FighterClass
 
         else
         {
-            //S�lo para el release 1
             FindObjectOfType<CambiarEscena>().ForceLoadScene();
         }
     }
