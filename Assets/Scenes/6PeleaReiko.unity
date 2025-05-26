@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16383,6 +16383,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &1210828778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18451,6 +18454,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 650497276}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 0
 --- !u!114 &1351131441
 MonoBehaviour:
@@ -23801,7 +23806,7 @@ MonoBehaviour:
     type: 2}
   grupoSFX: {fileID: 8852078804982786110, guid: ce0ed4f1f0bdd124197d054ffe0c8fb5,
     type: 2}
-  nombreEscena: PeleaReiko
+  nombreEscena: 6PeleaReiko
 --- !u!114 &1830673452
 MonoBehaviour:
   m_ObjectHideFlags: 0
