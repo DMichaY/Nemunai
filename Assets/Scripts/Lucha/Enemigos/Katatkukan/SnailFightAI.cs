@@ -91,8 +91,8 @@ public class SnailFightAI : FighterClass
 
     private IEnumerator Death()
     {
-        animator.SetBool("death", true);
         FSM = null;
+        animator.SetBool("death", true);
         yield return new WaitForSeconds(.1f);
         animator.SetBool("hasDied", true);
 
