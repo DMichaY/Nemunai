@@ -32,6 +32,8 @@ public class Sangre : MonoBehaviour
     //nevera moviendose
     public GameObject neveraSangre;
 
+    public GameObject armarioSangre;
+
     public GameObject sangreEmpieza;
 
     public GameObject sangreBanyo;
@@ -87,6 +89,8 @@ public class Sangre : MonoBehaviour
         sangreNaranja.SetActive(true);
 
         sangreEmpieza.SetActive(true);
+
+        armarioSangre.GetComponent<AudioSource>().Play();
 
     }
 

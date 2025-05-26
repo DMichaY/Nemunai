@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Interactable, Water, UI, Inventario
 - Active game object:
-  - Name: GameManager
-  - Tag: Untagged
+  - Name: TriggerPuzzle
+  - Tag: Interactable
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

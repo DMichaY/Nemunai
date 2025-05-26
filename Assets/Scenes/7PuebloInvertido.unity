@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1634,7 +1634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &21218222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6710,6 +6710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1813808821}
   enemyHealth: {fileID: 1038169817}
+  startWaitTime: 0
 --- !u!114 &119831403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8969,6 +8970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  HBNums: []
   sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
   sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
   sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
@@ -11705,7 +11707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &212828064
 Transform:
   m_ObjectHideFlags: 0
@@ -11729,11 +11731,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212828063}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.37485188}
-  m_Center: {x: 0, y: 0, z: -0.3125741}
+  m_Size: {x: 1, y: 1, z: 0.74935025}
+  m_Center: {x: 0, y: 0, z: -0.12532489}
 --- !u!114 &212828066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11748,7 +11750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jugador: {fileID: 759415810}
   puzzle: {fileID: 1115481622}
-  blackScreen: {fileID: 0}
+  blackScreen: {fileID: 21218221}
 --- !u!1 &215076349
 GameObject:
   m_ObjectHideFlags: 0
@@ -26106,6 +26108,7 @@ MonoBehaviour:
   juegoCompleto: {fileID: 215076349}
   camaraReferencia: {fileID: 1813539858}
   segundosAntesDeActivarGameplay: 0.5
+  pantallaNegra: {fileID: 21218222}
 --- !u!1 &575747492
 GameObject:
   m_ObjectHideFlags: 0
@@ -40607,6 +40610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  HBNums: []
   sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
   sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
   sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
@@ -51995,6 +51999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1060837054}
   enemyHealth: {fileID: 924454861}
+  startWaitTime: 0
 --- !u!114 &1205224133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52571,6 +52576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1194202435}
   enemyHealth: {fileID: 549941530}
+  startWaitTime: 0
 --- !u!114 &1217376781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55494,6 +55500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  HBNums: []
   sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
   sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
   sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}
@@ -57317,6 +57324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1766028874}
   enemyHealth: {fileID: 1278015333}
+  startWaitTime: 0
 --- !u!114 &1352549934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71418,53 +71426,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6327319962397886626, guid: 29a0b411508180c4485d2036af9c3122, type: 3}
---- !u!114 &1730613518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730613513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed419a3ea533f6f43b0a035b14635a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanciaActivacion: 3
-  activo: 1
---- !u!114 &1730613519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730613513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &1730613520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730613513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef456292b565abb4d86a029fd603e40a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador: {fileID: 759415810}
-  puzzle: {fileID: 1115481622}
-  blackScreen: {fileID: 0}
 --- !u!1001 &1731430534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73351,6 +73312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7527829951939351314, guid: 84ed5bdd1b8f1d94390213dfa221e22c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6559379403277206404, guid: 84ed5bdd1b8f1d94390213dfa221e22c,
         type: 3}
@@ -82950,6 +82916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HBs: []
   HBNames: []
+  HBNums: []
   sonidoDEADKaito: {fileID: 8300000, guid: 2c622fbe3d3db4143b8a7852ba4abf35, type: 3}
   sonidoATQKaito1: {fileID: 8300000, guid: f06089fcbd10f7a4da8f01b2d5c6bcf4, type: 3}
   sonidoATQKaito2: {fileID: 8300000, guid: 56d14d9858558b64a891241a22111073, type: 3}

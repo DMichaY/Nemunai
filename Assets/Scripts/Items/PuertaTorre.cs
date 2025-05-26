@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PuertaTorre : Interactable
+public class PuertaTorre : MonoBehaviour
 {
 
     public GameObject jugador;
@@ -11,16 +12,40 @@ public class PuertaTorre : Interactable
 
     public GameObject blackScreen;
 
-   
-    public override void Interact()
+
+    private void OnTriggerEnter(Collider other)
     {
-        puzzle.SetActive(true);
 
-        blackScreen.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+            puzzle.SetActive(true);
+
+            blackScreen.SetActive(true);
 
 
-        jugador.GetComponent<KaitoMovimiento>().enabled = false;
+
+            if (blackScreen != null)
+            {
+                blackScreen.GetComponent<Image>().CrossFadeAlpha(1, 2, false);
+
+            }
+            else
+            {
+                Debug.LogWarning("No hay pantalla negra!");
+
+            }
+                
+
+
+            jugador.GetComponent<KaitoMovimiento>().enabled = false;
+        }
+
+
+        
+
 
 
     }
+
+   
 }
