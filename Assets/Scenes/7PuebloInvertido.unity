@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
+  m_IndirectSpecularColor: {r: 0.0010704491, g: 0.0011704864, b: 0.0012467396, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2905,6 +2905,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 1
 --- !u!1 &45820638
 GameObject:
@@ -7144,6 +7146,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 1
 --- !u!1 &134956412
 GameObject:
@@ -8978,6 +8982,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &151464001
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20113,6 +20120,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 1
 --- !u!1 &412701015
 GameObject:
@@ -26488,6 +26497,8 @@ MonoBehaviour:
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
+  kaitoAnimator: {fileID: 0}
+  isBlocking: 0
   esPuebloInverso: 1
 --- !u!1 &585672980 stripped
 GameObject:
@@ -40610,6 +40621,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &923804489
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50966,8 +50980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c681f8039d39c42a60a43c249660f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadCaminata: 2
-  velocidadCarrera: 4
+  velocidadCaminata: 3
+  velocidadCarrera: 4.5
   velocidadRotacion: 120
   movimiento: {x: 0, y: 0, z: 0}
   andarTierra: {fileID: 8300000, guid: 5dc7bff4d66d38b46acbdfc3db544d26, type: 3}
@@ -55506,6 +55520,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &1304089397
 AudioSource:
   m_ObjectHideFlags: 0
@@ -82983,6 +83000,9 @@ MonoBehaviour:
   sonidoHITKaito2: {fileID: 8300000, guid: 33725283ec0274549af71c0c1082298d, type: 3}
   sonidoHITKaito3: {fileID: 8300000, guid: 62f1a7747c0838149bde649d29808559, type: 3}
   sonidoHITKaito4: {fileID: 8300000, guid: e140f1a6aa3397e42a95be12ec99d731, type: 3}
+  andarTierra: {fileID: 0}
+  andarPiedra: {fileID: 0}
+  andarMadera: {fileID: 0}
 --- !u!82 &2010688390
 AudioSource:
   m_ObjectHideFlags: 0
