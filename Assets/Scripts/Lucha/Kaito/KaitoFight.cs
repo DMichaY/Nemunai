@@ -70,6 +70,7 @@ public class KaitoFight : FighterClass
         }
         else rb.velocity = Vector3.zero;
 
+        sonidosKaito.SonidosPisadas(movement.x > 0 || movement.x < 0);
     }
 
     //Control de animaciones y dirección de movimiento
@@ -86,8 +87,6 @@ public class KaitoFight : FighterClass
             kaitoAnimator.SetBool("crouch", false);
             isBlocking = false;
         }
-
-        // sonidosKaito.SonidosPisadas(movement.x > 0 || movement.y < 0);
     }
 
     //Animaciones de ataque

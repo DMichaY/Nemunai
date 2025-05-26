@@ -33,14 +33,15 @@ public class KaitoFightExtra : MonoBehaviour
 
     // Moverse
 
-    public AudioClip andarTierra;
-    public AudioClip andarPiedra;
-    public AudioClip andarMadera;
+    public AudioClip correrTierra;
+    public AudioClip correrPiedra;
+    public AudioClip correrMadera;
 
     private string sueloActualTag = null;
     private bool enContactoConSuelo = false;
     
     AudioSource audioFuente;
+    public AudioSource audioFuentePisadas;
 
     private List<AudioClip> listaSonidosATQKaito = new List<AudioClip>();
     private List<AudioClip> listaSonidosMISSKaito = new List<AudioClip>();
@@ -157,13 +158,13 @@ public class KaitoFightExtra : MonoBehaviour
     }
 
     // Sonidos Kaito Moviendose Por Escena
-    /* public void SonidosPisadas(bool enMovimiento)
+    public void SonidosPisadas(bool enMovimiento)
     {
         // Si no está en contacto con el suelo o no hay audioFuente, detenemos cualquier sonido
-        if (!enContactoConSuelo || audioFuente == null)
+        if (!enContactoConSuelo || audioFuentePisadas == null)
         {
-            if (audioFuente != null)
-                audioFuente.Stop();
+            if (audioFuentePisadas != null)
+                audioFuentePisadas.Stop();
             return;
         }
 
@@ -171,32 +172,52 @@ public class KaitoFightExtra : MonoBehaviour
 
         if (sueloActualTag == "Tierra")
         {
-            clipActual = andarTierra;
+            clipActual = correrTierra;
         }
         else if (sueloActualTag == "Piedra")
         {
-            clipActual = andarPiedra;
+            clipActual = correrPiedra;
         }
         else if (sueloActualTag == "Madera")
         {
-            clipActual = andarMadera;
+            clipActual = correrMadera;
         }
 
         if (enMovimiento)
         {
-            if (audioFuente.clip != clipActual)
+            if (audioFuentePisadas.clip != clipActual)
             {
-                audioFuente.clip = clipActual;
-                audioFuente.Play();
+                audioFuentePisadas.clip = clipActual;
+                audioFuentePisadas.volume = 40.0f;
+                audioFuentePisadas.Play();
             }
-            else if (!audioFuente.isPlaying)
+            else if (!audioFuentePisadas.isPlaying)
             {
-                audioFuente.Play();
+                audioFuentePisadas.volume = 40.0f;
+                audioFuentePisadas.Play();
             }
         }
         else
         {
-            audioFuente.Stop();
+            audioFuentePisadas.Stop();
         }
-    }*/
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.GetComponent<Collider>().CompareTag("Tierra") || collision.GetComponent<Collider>().CompareTag("Piedra") || collision.GetComponent<Collider>().CompareTag("Madera"))
+        {
+            sueloActualTag = collision.GetComponent<Collider>().tag;
+            enContactoConSuelo = true;
+        }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        if (collision.GetComponent<Collider>().tag == sueloActualTag)
+        {
+            sueloActualTag = null;
+            enContactoConSuelo = false;
+        }
+    }
 }
