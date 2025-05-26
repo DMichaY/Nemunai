@@ -176,7 +176,7 @@ public class KaitoFight : FighterClass
     private IEnumerator Death()
     {
         kaitoAnimator.SetBool("death", true);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         kaitoAnimator.SetBool("hasDied", true);
         GetComponent<PlayerInput>().DeactivateInput();
 

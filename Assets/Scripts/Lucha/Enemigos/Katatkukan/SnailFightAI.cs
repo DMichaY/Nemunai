@@ -93,7 +93,7 @@ public class SnailFightAI : FighterClass
     {
         FSM = null;
         animator.SetBool("death", true);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         animator.SetBool("hasDied", true);
 
         if (esPueblo)

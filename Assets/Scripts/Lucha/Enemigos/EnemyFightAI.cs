@@ -81,7 +81,7 @@ public class EnemyFightAI : FighterClass
     {
         FSM = null;
         animator.SetBool("death", true);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.3f);
         animator.SetBool("hasDied", true);
 
         if (esPueblo)
