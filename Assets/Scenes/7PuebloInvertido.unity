@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
+  m_IndirectSpecularColor: {r: 0.0010704491, g: 0.0011704864, b: 0.0012467396, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2898,10 +2898,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   startWaitTime: 5
-  lifeBar: {fileID: 1766028875}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  lifeBar: {fileID: 1194202436}
+  hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
-  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+  blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
@@ -7139,10 +7139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   startWaitTime: 5
-  lifeBar: {fileID: 1060837055}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  lifeBar: {fileID: 1194202436}
+  hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
-  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+  blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
@@ -20114,9 +20114,9 @@ MonoBehaviour:
   speed: 6
   startWaitTime: 5
   lifeBar: {fileID: 1194202436}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
-  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+  blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
@@ -21565,8 +21565,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
-    type: 3}
+  hitEffect: {fileID: 644000252}
   speed: 10
   waitTime: 2
   attackTime: 1
@@ -26490,10 +26489,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   startWaitTime: 5
-  lifeBar: {fileID: 1813808822}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  lifeBar: {fileID: 1194202436}
+  hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
-  blockEffect: {fileID: 7898943843256890773, guid: da621eacbcdaa5f46b6aa71bab7e065e,
+  blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
   isHit: 0
@@ -29195,7 +29194,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  hitEffect: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6,
     type: 3}
   speed: 10
   waitTime: 2
@@ -29593,7 +29592,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  hitEffect: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6,
     type: 3}
   speed: 10
   waitTime: 2
@@ -32648,7 +32647,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 0}
-  hitEffect: {fileID: 2107033436680244410, guid: 34d2ecad5b5fbc64980e4adfb8336865,
+  hitEffect: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6,
     type: 3}
   speed: 10
   waitTime: 2
@@ -45223,18 +45222,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1060837053}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1060837055 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3249024165694502301, guid: f18003d858ea5f04aa43e238a2138d14,
-    type: 3}
-  m_PrefabInstance: {fileID: 1060837053}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060837054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1060837056 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 378488039247192619, guid: f18003d858ea5f04aa43e238a2138d14,
@@ -72189,18 +72176,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 981779800}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1766028875 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3249024165694502301, guid: f18003d858ea5f04aa43e238a2138d14,
-    type: 3}
-  m_PrefabInstance: {fileID: 981779800}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766028874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1766028876 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 378488039247192619, guid: f18003d858ea5f04aa43e238a2138d14,
@@ -74705,18 +74680,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1813808820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1813808822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3249024165694502301, guid: f18003d858ea5f04aa43e238a2138d14,
-    type: 3}
-  m_PrefabInstance: {fileID: 1813808820}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813808821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1813808823 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 378488039247192619, guid: f18003d858ea5f04aa43e238a2138d14,
