@@ -22,7 +22,7 @@ public class EvilAttack : EvilState
     {
         if (actionTimer >= enemyAI.waitTime && !enemyAI.animator.GetBool("isAttacking"))
         {
-            enemyAI.animator.ResetTrigger("punchleft");
+            enemyAI.animator.ResetTrigger("punchLeft");
             enemyAI.animator.ResetTrigger("punchRight");
             enemyAI.animator.ResetTrigger("kickLeft");
             enemyAI.animator.ResetTrigger("kickRight");

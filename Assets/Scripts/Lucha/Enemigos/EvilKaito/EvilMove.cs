@@ -37,7 +37,7 @@ public class EvilMove : EvilState
             }
             else
             {
-                enemyAI.animator.SetBool("goleft", true);
+                enemyAI.animator.SetBool("goLeft", true);
                 enemyAI.rb.velocity = new Vector3(0, 0, enemyAI.speed);
             }
         }

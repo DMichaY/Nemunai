@@ -77,6 +77,11 @@ public class SnailFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
+    public void ClearHBs()
+    {
+        foreach (GameObject hb in HBs) hb.SetActive(false);
+    }
+
     public void StartBlocking()
     {
         GetComponentInParent<SnailFightAI>().isBlocking = true;

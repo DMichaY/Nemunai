@@ -82,10 +82,6 @@ public class EvilFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
-    //Eventos vac�os para eliminar conflictos entre Kaito jugador y enemigo
-    public void BlockStart() { }
-    public void ClearBools() { }
-
     public void ClearHBs()
     {
         foreach (GameObject hb in HBs) hb.SetActive(false);

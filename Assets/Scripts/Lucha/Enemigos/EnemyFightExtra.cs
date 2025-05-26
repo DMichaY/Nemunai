@@ -83,6 +83,11 @@ public class EnemyFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
+    public void ClearHBs()
+    {
+        foreach (GameObject hb in HBs) hb.SetActive(false);
+    }
+
     // Corrutina que produce sonido aleatorio del enemigo atacando
     public void SonidoATQPosAleatorio()
     {

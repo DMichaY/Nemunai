@@ -105,9 +105,9 @@ public class MenuPausa : MonoBehaviour
         btnBrilloDer.onClick.AddListener(() => CambiarBrillo(0.1f));
 
         // Sonido
-        sliderGeneral.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolGeneral", Mathf.Log10(v) * 20));
-        sliderMusica.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolMusica", Mathf.Log10(v) * 20));
-        sliderSFX.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("VolSFX", Mathf.Log10(v) * 20));
+        sliderGeneral.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_Master", Mathf.Log10(v) * 20));
+        sliderMusica.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_Musica", Mathf.Log10(v) * 20));
+        sliderSFX.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_SFX", Mathf.Log10(v) * 20));
 
         sliderGeneral.value = PlayerPrefs.GetFloat("SonidoGeneral", 1f);
         sliderMusica.value = PlayerPrefs.GetFloat("SonidoMusica", 1f);
