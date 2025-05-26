@@ -8,11 +8,18 @@ public class CambiarEscena : MonoBehaviour
     public string nombreEscena;
     public string tagJugador = "Player";
     public Image pantallaNegra;
+    public float startWaitTime = 0;
 
     private void Start()
     {
-        if (pantallaNegra != null) pantallaNegra.CrossFadeAlpha(0, 2, false);
+        if (pantallaNegra != null) StartCoroutine("StartWait");
         else Debug.LogWarning("No hay pantalla negra!");
+    }
+
+    public IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(startWaitTime);
+        pantallaNegra.CrossFadeAlpha(0, 2, false);
     }
 
     private void OnTriggerEnter(Collider otro)
