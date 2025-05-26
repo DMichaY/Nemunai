@@ -973,6 +973,7 @@ MonoBehaviour:
   nombreEscena: 7Puzzle
   tagJugador: Player
   pantallaNegra: {fileID: 963158094}
+  startWaitTime: 22
 --- !u!4 &115068185
 Transform:
   m_ObjectHideFlags: 0
@@ -9706,7 +9707,7 @@ MonoBehaviour:
   waitTime: 2
   attackTime: 1
   life: 100
-  startWaitTime: 23
+  startWaitTime: 22
   esPueblo: 0
 --- !u!1 &742560491
 GameObject:
@@ -18446,7 +18447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 22
   lifeBar: {fileID: 1483567060}
   hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
@@ -23842,6 +23843,7 @@ MonoBehaviour:
   juegoCompleto: {fileID: 1399513608}
   camaraReferencia: {fileID: 2135664750}
   segundosAntesDeActivarGameplay: 0.5
+  pantallaNegra: {fileID: 963158094}
 --- !u!1 &1836539375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2605430288642301618, guid: f18003d858ea5f04aa43e238a2138d14,
@@ -26612,6 +26614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 250639657}
   enemyHealth: {fileID: 1836539375}
+  startWaitTime: 22
 --- !u!1 &2147450796
 GameObject:
   m_ObjectHideFlags: 0

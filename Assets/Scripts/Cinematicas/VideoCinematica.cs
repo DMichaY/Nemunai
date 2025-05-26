@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class VideoCinematica : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class VideoCinematica : MonoBehaviour
     public float segundosAntesDeActivarGameplay = 1f;
 
     private bool videoPausado = false;
+
+
+    public Image pantallaNegra;
 
     void Start()
     {
@@ -54,6 +58,7 @@ public class VideoCinematica : MonoBehaviour
 
         // Activar juego completo
         juegoCompleto.SetActive(true);
+        
     }
 
     IEnumerator ActivarJuegoAntesDeFin()
@@ -66,6 +71,12 @@ public class VideoCinematica : MonoBehaviour
         }
 
         juegoCompleto.SetActive(true);
+
+        if (pantallaNegra != null)
+
+            pantallaNegra.CrossFadeAlpha(0, 2, false);
+        else
+            Debug.LogWarning("No hay pantalla negra!");
     }
 
     void AlTerminarVideo(VideoPlayer vp)

@@ -25,7 +25,9 @@ public class Cuadro : MonoBehaviour
     public GameObject dor2;
 
 
+    
 
+  
     public void Naranja()
     {
         naranja.SetActive(true);

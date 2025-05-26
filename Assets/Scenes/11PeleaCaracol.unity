@@ -784,6 +784,7 @@ MonoBehaviour:
   juegoCompleto: {fileID: 170395112}
   camaraReferencia: {fileID: 2135664750}
   segundosAntesDeActivarGameplay: 0.5
+  pantallaNegra: {fileID: 963158094}
 --- !u!1 &96528159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   nombreEscena: 12TorreInterior3
   tagJugador: Player
   pantallaNegra: {fileID: 963158094}
+  startWaitTime: 11
 --- !u!4 &115068185
 Transform:
   m_ObjectHideFlags: 0
@@ -5789,7 +5791,7 @@ MonoBehaviour:
   waitTime: 5
   attackTime: 1
   life: 100
-  startWaitTime: 12
+  startWaitTime: 16
   esPueblo: 0
 --- !u!65 &639190765
 BoxCollider:
@@ -13882,7 +13884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 16
   lifeBar: {fileID: 1483567060}
   hitEffect: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
     type: 3}
@@ -23865,6 +23867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 250639657}
   enemyHealth: {fileID: 1836539375}
+  startWaitTime: 11
 --- !u!1 &2146448507
 GameObject:
   m_ObjectHideFlags: 0

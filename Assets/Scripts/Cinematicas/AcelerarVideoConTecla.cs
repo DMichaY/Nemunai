@@ -39,9 +39,10 @@ public class AcelerarVideoConTecla : MonoBehaviour
 
         if (Input.GetKey(tecla))
         {
-            tiempoPulsado += Time.deltaTime;
+            tiempoPulsado += Time.unscaledDeltaTime;
 
             pantallaVideo.playbackSpeed = tiempoPulsado >= 5f ? 4f : 2f;
+            Time.timeScale = tiempoPulsado >= 5f ? 4f : 2f;
 
             textoEActivo.SetActive(true);
 
@@ -69,6 +70,7 @@ public class AcelerarVideoConTecla : MonoBehaviour
 
             tiempoPulsado = 0f;
             pantallaVideo.playbackSpeed = 1f;
+            Time.timeScale = 1;
         }
     }
 
@@ -100,7 +102,7 @@ public class AcelerarVideoConTecla : MonoBehaviour
 
         while (Mathf.Abs(group.alpha - targetAlpha) > 0.01f)
         {
-            t += Time.deltaTime * velocidadFade;
+            t += Time.unscaledDeltaTime * velocidadFade;
             group.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
             yield return null;
         }
@@ -123,6 +125,7 @@ public class AcelerarVideoConTecla : MonoBehaviour
     void OnVideoFinished(VideoPlayer vp)
     {
         videoTerminado = true;
+        Time.timeScale = 1;
 
         StopFade(ref fadeTextoInicial);
         StartCoroutine(FadeCanvasGroup(textoInicial, 0f));
