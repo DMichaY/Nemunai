@@ -12,7 +12,7 @@ public class EvilFightAI : FighterClass
     public Animator animator;
     public Rigidbody rb;
     public GameObject hitEffect, blockEffect;
-    EvilFightExtra sonidoGolpeadoPos;
+    EvilFightExtra sonidoGolpeadoKaitoO;
     KaitoFightExtra sonidoKaitoAtaque;
     public bool isBlocking;
 
@@ -28,7 +28,7 @@ public class EvilFightAI : FighterClass
         animator.StartPlayback();
         rb = GetComponent<Rigidbody>();
 
-        sonidoGolpeadoPos = FindObjectOfType<EvilFightExtra>();
+        sonidoGolpeadoKaitoO = FindObjectOfType<EvilFightExtra>();
         sonidoKaitoAtaque = FindObjectOfType<KaitoFightExtra>();
 
         lifeBar.maxValue = life;
@@ -77,7 +77,7 @@ public class EvilFightAI : FighterClass
 
             Destroy(Instantiate(hitEffect, effectPos, Quaternion.identity), 1);
 
-            sonidoGolpeadoPos.SonidoHITPosAleatorio();
+            sonidoGolpeadoKaitoO.SonidoHITKaitoOAleatorio();
             sonidoKaitoAtaque.SonidoATQKaitoAleatorio();
         }
         else

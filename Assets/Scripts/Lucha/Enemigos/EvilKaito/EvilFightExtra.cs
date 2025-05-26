@@ -7,35 +7,37 @@ public class EvilFightExtra : MonoBehaviour
     // Referencias
     public List<GameObject> HBs = new List<GameObject>();
     public List<string> HBNames = new List<string>();
+    KaitoFight golpearKaito;
 
     private string lastActivatedHB;
 
-    public AudioClip sonidoTAUNTPos;
-    public AudioClip sonidoDEADPos;
+    public AudioClip sonidoDEADKaitoO;
 
-    public AudioClip sonidoATQPos1;
-    public AudioClip sonidoATQPos2;
-    public AudioClip sonidoATQPos3;
-    public AudioClip sonidoATQPos4;
+    public AudioClip sonidoATQKaitoO1;
+    public AudioClip sonidoATQKaitoO2;
+    public AudioClip sonidoATQKaitoO3;
+    public AudioClip sonidoATQKaitoO4;
 
-    public AudioClip sonidoMISSPos1;
-    public AudioClip sonidoMISSPos2;
-    public AudioClip sonidoMISSPos3;
-    public AudioClip sonidoMISSPos4;
+    public AudioClip sonidoMISSKaitoO1;
+    public AudioClip sonidoMISSKaitoO2;
+    public AudioClip sonidoMISSKaitoO3;
+    public AudioClip sonidoMISSKaitoO4;
 
-    public AudioClip sonidoHITPos1;
-    public AudioClip sonidoHITPos2;
-    public AudioClip sonidoHITPos3;
-    public AudioClip sonidoHITPos4;
+    public AudioClip sonidoHITKaitoO1;
+    public AudioClip sonidoHITKaitoO2;
+    public AudioClip sonidoHITKaitoO3;
+    public AudioClip sonidoHITKaitoO4;
     
     AudioSource audioFuente;
 
-    private List<AudioClip> listaSonidosATQPos = new List<AudioClip>();
-    private List<AudioClip> listaSonidosMISSPos = new List<AudioClip>();
-    private List<AudioClip> listaSonidosHITPos = new List<AudioClip>();
+    private List<AudioClip> listaSonidosATQKaitoO = new List<AudioClip>();
+    private List<AudioClip> listaSonidosMISSKaitoO = new List<AudioClip>();
+    private List<AudioClip> listaSonidosHITKaitoO = new List<AudioClip>();
 
     private void Awake()
     {
+        golpearKaito = FindObjectOfType<KaitoFight>();
+
         foreach (Collider HB in transform.GetComponentsInChildren<Collider>())
         {
             if(HB.tag == "HurtBox")
@@ -48,20 +50,20 @@ public class EvilFightExtra : MonoBehaviour
 
         // Audio
         // Llenar la lista de sonidos
-        listaSonidosATQPos.Add(sonidoATQPos1);
-        listaSonidosATQPos.Add(sonidoATQPos2);
-        listaSonidosATQPos.Add(sonidoATQPos3);
-        listaSonidosATQPos.Add(sonidoATQPos4);
+        listaSonidosATQKaitoO.Add(sonidoATQKaitoO1);
+        listaSonidosATQKaitoO.Add(sonidoATQKaitoO2);
+        listaSonidosATQKaitoO.Add(sonidoATQKaitoO3);
+        listaSonidosATQKaitoO.Add(sonidoATQKaitoO4);
 
-        listaSonidosMISSPos.Add(sonidoMISSPos1);
-        listaSonidosMISSPos.Add(sonidoMISSPos2);
-        listaSonidosMISSPos.Add(sonidoMISSPos3);
-        listaSonidosMISSPos.Add(sonidoMISSPos4);
+        listaSonidosMISSKaitoO.Add(sonidoMISSKaitoO1);
+        listaSonidosMISSKaitoO.Add(sonidoMISSKaitoO2);
+        listaSonidosMISSKaitoO.Add(sonidoMISSKaitoO3);
+        listaSonidosMISSKaitoO.Add(sonidoMISSKaitoO4);
 
-        listaSonidosHITPos.Add(sonidoHITPos1);
-        listaSonidosHITPos.Add(sonidoHITPos2);
-        listaSonidosHITPos.Add(sonidoHITPos3);
-        listaSonidosHITPos.Add(sonidoHITPos4);
+        listaSonidosHITKaitoO.Add(sonidoHITKaitoO1);
+        listaSonidosHITKaitoO.Add(sonidoHITKaitoO2);
+        listaSonidosHITKaitoO.Add(sonidoHITKaitoO3);
+        listaSonidosHITKaitoO.Add(sonidoHITKaitoO4);
 
         audioFuente = this.GetComponent<AudioSource>();
     }
@@ -80,7 +82,7 @@ public class EvilFightExtra : MonoBehaviour
         lastActivatedHB = hbName;
     }
 
-    //Eventos vacíos para eliminar conflictos entre Kaito jugador y enemigo
+    //Eventos vacï¿½os para eliminar conflictos entre Kaito jugador y enemigo
     public void BlockStart() { }
     public void ClearBools() { }
 
@@ -90,47 +92,53 @@ public class EvilFightExtra : MonoBehaviour
     }
 
     // Corrutina que produce sonido aleatorio del enemigo atacando
-    public void SonidoATQPosAleatorio()
+    public void SonidoATQKaitoOAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosATQPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosATQPos[indice];
+        int indice = Random.Range(0, listaSonidosATQKaitoO.Count);
+        AudioClip sonidoSeleccionado = listaSonidosATQKaitoO[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
 
     // Corrutina que produce sonido aleatorio del enemigo fallando golpe
-    public void SonidoMISSPosAleatorio()
+    public void SonidoMISSKaitoOAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosMISSPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosMISSPos[indice];
+        int indice = Random.Range(0, listaSonidosMISSKaitoO.Count);
+        AudioClip sonidoSeleccionado = listaSonidosMISSKaitoO[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
+    }
+
+    public void DetectarGolpe()
+    {
+        if (golpearKaito.isHit)
+        {
+            SonidoATQKaitoOAleatorio();
+        }
+        else
+        {
+            SonidoMISSKaitoOAleatorio();
+        }
     }
 
     // Corrutina que produce sonido aleatorio del enemigo siendo golpeando
-    public void SonidoHITPosAleatorio()
+    public void SonidoHITKaitoOAleatorio()
     {
         // Se escoge un sonido aleatorio de la lista
-        int indice = Random.Range(0, listaSonidosHITPos.Count);
-        AudioClip sonidoSeleccionado = listaSonidosHITPos[indice];
+        int indice = Random.Range(0, listaSonidosHITKaitoO.Count);
+        AudioClip sonidoSeleccionado = listaSonidosHITKaitoO[indice];
 
         // Reproducir el sonido
         audioFuente.PlayOneShot(sonidoSeleccionado);
     }
-    
-    // Sonido inicio pelea
-    public void SonidoTAUNTPos()
-    {
-        audioFuente.PlayOneShot(sonidoTAUNTPos);
-    }
 
     // Sonido inicio pelea
-    public void SonidoDEADPos()
+    public void SonidoDEADKaitoO()
     {
-        audioFuente.PlayOneShot(sonidoDEADPos);
+        audioFuente.PlayOneShot(sonidoDEADKaitoO);
     }
 }
