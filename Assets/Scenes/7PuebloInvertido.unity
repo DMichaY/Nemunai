@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.0050022798, g: 0.0051308475, b: 0.0052539967, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1634,7 +1638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &21218222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26107,6 +26111,7 @@ MonoBehaviour:
   juegoCompleto: {fileID: 215076349}
   camaraReferencia: {fileID: 1813539858}
   segundosAntesDeActivarGameplay: 0.5
+  pantallaNegra: {fileID: 21218222}
 --- !u!1 &575747492
 GameObject:
   m_ObjectHideFlags: 0

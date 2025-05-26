@@ -40,7 +40,9 @@ public class Sangre : MonoBehaviour
 
     public GameObject sangreBrasero;
 
-    
+   
+
+
 
 
     void Start()
@@ -64,7 +66,11 @@ public class Sangre : MonoBehaviour
 
         neveraSangre.SetActive(true);
 
-        
+
+        neveraSangre.GetComponent<AudioSource>().Play();
+
+
+
 
     }
 
