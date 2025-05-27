@@ -7,7 +7,7 @@ public class KaitoMovimiento : MonoBehaviour
     public float velocidadCarrera = 5f;
     public float velocidadRotacion = 5f;
 
-    public GameObject manager;
+    GameObject manager;
     MenuPausa pausador;
 
     private Animator animador;
@@ -31,6 +31,7 @@ public class KaitoMovimiento : MonoBehaviour
 
     void Start()
     {
+        manager = GameObject.Find("GameManager");
         animador = GetComponent<Animator>();
         pausador = manager.GetComponent<MenuPausa>();
 
