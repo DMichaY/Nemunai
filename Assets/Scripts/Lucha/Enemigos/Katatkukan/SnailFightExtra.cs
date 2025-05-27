@@ -36,6 +36,10 @@ public class SnailFightExtra : MonoBehaviour
     private List<AudioClip> listaSonidosMISSKat = new List<AudioClip>();
     private List<AudioClip> listaSonidosHITKat = new List<AudioClip>();
 
+    public AudioClip arrastrarseCaracol;
+
+    public AudioSource audioFuenteArrastrarse;
+
     private void Awake()
     {
         foreach (Collider HB in transform.GetComponentsInChildren<Collider>())
@@ -198,5 +202,10 @@ public class SnailFightExtra : MonoBehaviour
     public void SonidoDEADKat()
     {
         audioFuente.PlayOneShot(sonidoDEADKat);
+    }
+
+    public void SonidoArrastrarse()
+    {
+        audioFuenteArrastrarse.PlayOneShot(arrastrarseCaracol);
     }
 }
