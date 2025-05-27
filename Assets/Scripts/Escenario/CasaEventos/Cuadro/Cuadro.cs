@@ -17,7 +17,17 @@ public class Cuadro : MonoBehaviour
     public GameObject dormitorio;
 
 
+    public GameObject comentarioFinal;
+
+
     public GameObject armarioNegro;
+
+    public GameObject braseroCama;
+
+
+    public GameObject braseroSalon;
+
+
 
 
     public GameObject armario;
@@ -35,6 +45,10 @@ public class Cuadro : MonoBehaviour
 
         naranja.SetActive(false);
 
+        dormitorio.SetActive(false);
+
+        salon.SetActive(false);
+
     }
 
 
@@ -48,7 +62,7 @@ public class Cuadro : MonoBehaviour
         armarioPuerta1.SetActive(false);
 
         armarioPuerta2.SetActive(false);
-        
+
         armarioNegro.GetComponent<AudioSource>().Play();
 
 
@@ -60,15 +74,17 @@ public class Cuadro : MonoBehaviour
     {
         brasero.SetActive(true);
 
-     
 
-        
+
+
     }
 
 
     public void Salon()
     {
         salon.SetActive(true);
+
+        braseroSalon.GetComponent<AudioSource>().Play();
 
     }
 
@@ -77,12 +93,25 @@ public class Cuadro : MonoBehaviour
     {
 
         dormitorio.SetActive(true);
-        
+
+        braseroCama.GetComponent<AudioSource>().Play();
 
 
-        
+    }
 
-        
+    public void Final()
+    {
+        dormitorio.SetActive(false);
+
+        salon.SetActive(false);
+
+        brasero.SetActive(false);
+
+        naranja.SetActive(false);
+
+
+        comentarioFinal.SetActive(true);
+
     }
 
 

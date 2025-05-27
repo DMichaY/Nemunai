@@ -8,6 +8,8 @@ public class LlaveReiko : Interactable
 
         public GameObject llaveInventario;
 
+        public GameObject Musica;
+
     void Start()
     {
 
@@ -37,6 +39,16 @@ public class LlaveReiko : Interactable
             manager.GetComponent<Sangre>().Final();
 
         }
+
+
+        if (manager.GetComponent<PuzzleCasa>().cuadro)
+        {
+            manager.GetComponent<Cuadro>().Final();
+
+        }
+
+
+        Musica.GetComponent<AudioSource>().Stop();
 
             
         Destroy(this.gameObject);
