@@ -7,6 +7,8 @@ public class KaitoMovimiento : MonoBehaviour
     public float velocidadCarrera = 5f;
     public float velocidadRotacion = 5f;
 
+    public GameObject manager;
+    MenuPausa pausador;
 
     private Animator animador;
     public Vector3 movimiento;
@@ -30,6 +32,7 @@ public class KaitoMovimiento : MonoBehaviour
     void Start()
     {
         animador = GetComponent<Animator>();
+        pausador = manager.GetComponent<MenuPausa>();
 
         // IMPORTANTE: Validamos que haya AudioSource antes de acceder a él
         if (audioFuente != null)
@@ -45,7 +48,7 @@ public class KaitoMovimiento : MonoBehaviour
     //Interacción
     public void OnInteractuar()
     {
-        if(interactableObject != null)
+        if(interactableObject != null && !pausador.pausado)
         {
             interactableObject.GetComponent<Interactable>().Interact();
         }
@@ -53,7 +56,9 @@ public class KaitoMovimiento : MonoBehaviour
     
     void Update()
     {
-        bool presionandoW = movimiento.z > 0;
+        if (!pausador.pausado)
+        {
+            bool presionandoW = movimiento.z > 0;
         bool presionandoS = movimiento.z < 0;
         bool shiftPresionado = Input.GetKey(KeyCode.LeftShift);
 
@@ -129,6 +134,7 @@ public class KaitoMovimiento : MonoBehaviour
         }
 
         SonidosPisadas(presionandoW || presionandoS);
+        }
     }
 
     public void ChangeInteractable(GameObject target)
