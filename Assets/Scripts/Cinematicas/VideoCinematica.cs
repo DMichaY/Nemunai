@@ -16,6 +16,7 @@ public class VideoCinematica : MonoBehaviour
 
     private bool videoPausado = false;
 
+    GameObject manager;
     MenuPausa pausador;
 
     public Image pantallaNegra;
@@ -25,6 +26,7 @@ public class VideoCinematica : MonoBehaviour
         juegoCompleto.SetActive(false);
         videoPlayer.loopPointReached += AlTerminarVideo;
         videoPlayer.Play();
+        manager = GameObject.Find("GameManager");
         pausador = manager.GetComponent<MenuPausa>();
 
         StartCoroutine(ActivarJuegoAntesDeFin());
