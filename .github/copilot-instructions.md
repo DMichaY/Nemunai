@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Interactable, Water, UI, Inventario
 - Active game object:
-  - Name: PuertaSala1-4
-  - Tag: Untagged
-  - Layer: Default
+  - Name: PuertaDormitorio2-1
+  - Tag: Interactable
+  - Layer: Interactable
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

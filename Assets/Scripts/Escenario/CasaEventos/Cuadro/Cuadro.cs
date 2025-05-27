@@ -17,22 +17,39 @@ public class Cuadro : MonoBehaviour
     public GameObject dormitorio;
 
 
-
-    public GameObject bras;
-
-    public GameObject tabla;
+    public GameObject armarioNegro;
 
 
-    public GameObject mesa; 
+    public GameObject armario;
+
+    public GameObject armarioPuerta1;
+
+
+    public GameObject armarioPuerta2;
 
 
 
+
+    public void Start()
+    {
+
+        naranja.SetActive(false);
+
+    }
 
 
 
     public void Naranja()
     {
         naranja.SetActive(true);
+
+        armario.SetActive(false);
+
+        armarioPuerta1.SetActive(false);
+
+        armarioPuerta2.SetActive(false);
+        
+        armarioNegro.GetComponent<AudioSource>().Play();
 
 
 
