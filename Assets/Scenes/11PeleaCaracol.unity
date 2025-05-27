@@ -10527,6 +10527,29 @@ MonoBehaviour:
   sonidoHITKat1: {fileID: 8300000, guid: 2d2bc4a13bdb5e746b8e7b0dad7002b8, type: 3}
   sonidoHITKat2: {fileID: 8300000, guid: 3863e26b96c17514abef2969214d0cc8, type: 3}
   sonidoHITKat3: {fileID: 8300000, guid: a76badfda2e1a804fb29b2a5bfcad6de, type: 3}
+--- !u!164 &972418308
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972418303}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: 0
+  m_RoomHF: 0
+  m_DecayTime: 1
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &975714092
 GameObject:
   m_ObjectHideFlags: 0
@@ -17317,6 +17340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179068995096757228, guid: 62399f91e4bb4f045957708a71bf91b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Piedra
       objectReference: {fileID: 0}
     - target: {fileID: 4909011286105087735, guid: 62399f91e4bb4f045957708a71bf91b8,
         type: 3}

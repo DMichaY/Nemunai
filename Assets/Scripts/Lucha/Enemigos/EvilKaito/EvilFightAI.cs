@@ -48,6 +48,11 @@ public class EvilFightAI : FighterClass
     void Update()
     {
         FSM = FSM?.Process();
+
+        // Actualizamos la posición en escena del enemigo y ejecutamos el sonido de pisadas correspondiente
+        bool seMueve = rb.velocity.magnitude > 0.1f;
+        
+        sonidoGolpeadoKaitoO.SonidosPisadas(seMueve);
     }
 
     public override void GetHit(float damage, Vector3 effectPos)
