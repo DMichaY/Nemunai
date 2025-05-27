@@ -25,6 +25,8 @@ public class TextosCasa : Interactable
 
             spam = true;
 
+            GetComponent<SonidosCasa>()?.Interact();
+
             typewriter.MostrarTexto(texto);
 
             StartCoroutine(ResetAntiSpam());
