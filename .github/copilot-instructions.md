@@ -8,11 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Interactable, Water, UI, Inventario
 - Active game object:
-<<<<<<< Updated upstream
-  - Name: Kaito
-=======
   - Name: GameManager
->>>>>>> Stashed changes
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
