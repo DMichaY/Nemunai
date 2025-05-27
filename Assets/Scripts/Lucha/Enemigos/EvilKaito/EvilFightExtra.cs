@@ -34,6 +34,17 @@ public class EvilFightExtra : MonoBehaviour
     private List<AudioClip> listaSonidosMISSKaitoO = new List<AudioClip>();
     private List<AudioClip> listaSonidosHITKaitoO = new List<AudioClip>();
 
+    // Moverse
+
+    public AudioClip correrTierra;
+    public AudioClip correrPiedra;
+    public AudioClip correrMadera;
+
+    private string sueloActualTag = null;
+    public bool enContactoConSuelo = false;
+
+    public AudioSource audioFuentePisadas;
+
     private void Awake()
     {
         golpearKaito = FindObjectOfType<KaitoFight>();
@@ -136,5 +147,71 @@ public class EvilFightExtra : MonoBehaviour
     public void SonidoDEADKaitoO()
     {
         audioFuente.PlayOneShot(sonidoDEADKaitoO);
+    }
+
+    // Sonidos Kaito Oscuro Moviendose Por Escena
+    public void SonidosPisadas(bool enMovimiento)
+    {
+        // Si no está en contacto con el suelo o no hay audioFuente, detenemos cualquier sonido
+        if (!enContactoConSuelo || audioFuentePisadas == null)
+        {
+            if (audioFuentePisadas != null)
+                audioFuentePisadas.Stop();
+            return;
+        }
+
+        AudioClip clipActual = null;
+
+        if (sueloActualTag == "Tierra")
+        {
+            clipActual = correrTierra;
+        }
+        else if (sueloActualTag == "Piedra")
+        {
+            clipActual = correrPiedra;
+        }
+        else if (sueloActualTag == "Madera")
+        {
+            clipActual = correrMadera;
+        }
+
+        if (enMovimiento)
+        {
+            if (audioFuentePisadas.clip != clipActual)
+            {
+                audioFuentePisadas.clip = clipActual;
+                audioFuentePisadas.pitch = 0.5f;
+                audioFuentePisadas.volume = 40.0f;
+                audioFuentePisadas.Play();
+            }
+            else if (!audioFuentePisadas.isPlaying)
+            {
+                audioFuentePisadas.pitch = 0.5f;
+                audioFuentePisadas.volume = 40.0f;
+                audioFuentePisadas.Play();
+            }
+        }
+        else
+        {
+            audioFuentePisadas.Stop();
+        }
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.GetComponent<Collider>().CompareTag("Tierra") || collision.GetComponent<Collider>().CompareTag("Piedra") || collision.GetComponent<Collider>().CompareTag("Madera"))
+        {
+            sueloActualTag = collision.GetComponent<Collider>().tag;
+            enContactoConSuelo = true;
+        }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        if (collision.GetComponent<Collider>().tag == sueloActualTag)
+        {
+            sueloActualTag = null;
+            enContactoConSuelo = false;
+        }
     }
 }
