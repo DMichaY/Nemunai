@@ -90,8 +90,8 @@ public class PuzzleCasa : MonoBehaviour
 
                 }
 
-                 
-        
+
+
 
 
             }
@@ -119,6 +119,8 @@ public class PuzzleCasa : MonoBehaviour
 
         //aumenta el contador para mostrar la siguiente pista la proxima vez
         contador++;
+
+        
 
         //todas las pistas recogidas
         if (contador == 8)

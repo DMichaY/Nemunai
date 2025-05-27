@@ -8,48 +8,41 @@ public class Cuadro : MonoBehaviour
 
     public GameObject sombra;
 
-    public GameObject brasero1;
+    public GameObject brasero;
 
-    public GameObject brasero2;
-
-    public GameObject sala1;
-
-    public GameObject sala2;
-
-    public GameObject sala3;
+    public GameObject salon;
 
     public GameObject naranja;
 
-    public GameObject dor1;
-
-    public GameObject dor2;
+    public GameObject dormitorio;
 
 
-    
+
+
 
   
     public void Naranja()
     {
         naranja.SetActive(true);
 
+
+        
     }
 
 
     public void Brasero()
     {
-        brasero1.SetActive(true);
+        brasero.SetActive(true);
 
-        brasero2.SetActive(true);
+     
+
+        
     }
 
 
     public void Salon()
     {
-        sala1.SetActive(true);
-
-        sala2.SetActive(true);
-
-        sala3.SetActive(true);
+        salon.SetActive(true);
 
     }
 
@@ -57,9 +50,11 @@ public class Cuadro : MonoBehaviour
     public void Dormitorio()
     {
 
-        dor1.SetActive(true);
+        dormitorio.SetActive(true);
         
-        dor2.SetActive(true);
+
+
+        
 
         
     }
