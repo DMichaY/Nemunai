@@ -18,15 +18,24 @@ public class Cuadro : MonoBehaviour
 
 
 
+    public GameObject bras;
+
+    public GameObject tabla;
 
 
-  
+    public GameObject mesa; 
+
+
+
+
+
+
     public void Naranja()
     {
         naranja.SetActive(true);
 
 
-        
+
     }
 
 

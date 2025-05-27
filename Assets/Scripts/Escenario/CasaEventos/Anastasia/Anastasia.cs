@@ -76,6 +76,8 @@ public class Anastasia : MonoBehaviour
 
         anastasiaSalon.SetActive(false);
 
+        anastasiaFinal.SetActive(true);
+
     }
 
 
