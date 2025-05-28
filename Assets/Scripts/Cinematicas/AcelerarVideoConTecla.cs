@@ -22,8 +22,14 @@ public class AcelerarVideoConTecla : MonoBehaviour
     private Coroutine temporizadorOcultarTexto;
     private bool videoTerminado = false;
 
+    GameObject manager;
+    MenuPausa pausador;
+
     void Start()
     {
+        manager = GameObject.Find("GameManager");
+        pausador = manager.GetComponent<MenuPausa>();
+
         if (textoInicial != null) textoInicial.alpha = 0f;
         if (textoEActivo != null) textoEActivo.SetActive(false);
 
@@ -36,41 +42,43 @@ public class AcelerarVideoConTecla : MonoBehaviour
     void Update()
     {
         if (videoTerminado) return;
-
-        if (Input.GetKey(tecla))
+        if (!pausador.pausado)
         {
-            tiempoPulsado += Time.unscaledDeltaTime;
-
-            pantallaVideo.playbackSpeed = tiempoPulsado >= 5f ? 4f : 2f;
-            Time.timeScale = tiempoPulsado >= 5f ? 4f : 2f;
-
-            textoEActivo.SetActive(true);
-
-            if (textoInicial.gameObject.activeSelf)
+            if (Input.GetKey(tecla))
             {
-                textoInicial.gameObject.SetActive(false);
-                StopFade(ref fadeTextoInicial);
-                textoInicial.alpha = 0f;
-            }
+                tiempoPulsado += Time.unscaledDeltaTime;
 
-            if (temporizadorOcultarTexto != null)
-            {
-                StopCoroutine(temporizadorOcultarTexto);
-                temporizadorOcultarTexto = null;
-            }
-        }
-        else
-        {
-            if (tiempoPulsado > 0f)
-            {
-                textoEActivo.SetActive(false);
-                textoInicial.gameObject.SetActive(true);
-                MostrarTextoInicial();
-            }
+                pantallaVideo.playbackSpeed = tiempoPulsado >= 5f ? 4f : 2f;
+                Time.timeScale = tiempoPulsado >= 5f ? 4f : 2f;
 
-            tiempoPulsado = 0f;
-            pantallaVideo.playbackSpeed = 1f;
-            Time.timeScale = 1;
+                textoEActivo.SetActive(true);
+
+                if (textoInicial.gameObject.activeSelf)
+                {
+                    textoInicial.gameObject.SetActive(false);
+                    StopFade(ref fadeTextoInicial);
+                    textoInicial.alpha = 0f;
+                }
+
+                if (temporizadorOcultarTexto != null)
+                {
+                    StopCoroutine(temporizadorOcultarTexto);
+                    temporizadorOcultarTexto = null;
+                }
+            }
+            else
+            {
+                if (tiempoPulsado > 0f)
+                {
+                    textoEActivo.SetActive(false);
+                    textoInicial.gameObject.SetActive(true);
+                    MostrarTextoInicial();
+                }
+
+                tiempoPulsado = 0f;
+                pantallaVideo.playbackSpeed = 1f;
+                Time.timeScale = 1;
+            }
         }
     }
 

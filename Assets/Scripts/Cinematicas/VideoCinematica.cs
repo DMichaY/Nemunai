@@ -16,9 +16,6 @@ public class VideoCinematica : MonoBehaviour
 
     private bool videoPausado = false;
 
-    GameObject manager;
-    MenuPausa pausador;
-
     public Image pantallaNegra;
 
     void Start()
@@ -26,26 +23,21 @@ public class VideoCinematica : MonoBehaviour
         juegoCompleto.SetActive(false);
         videoPlayer.loopPointReached += AlTerminarVideo;
         videoPlayer.Play();
-        manager = GameObject.Find("GameManager");
-        pausador = manager.GetComponent<MenuPausa>();
 
         StartCoroutine(ActivarJuegoAntesDeFin());
     }
 
     void Update()
     {
-        if (!pausador.pausado)
+        if (videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Escape))
-            {
-                videoPlayer.Pause();
-                videoPausado = true;
-            }
-            else if (videoPausado && Input.GetKeyDown(KeyCode.Escape))
-            {
-                videoPlayer.Play();
-                videoPausado = false;
-            }
+            videoPlayer.Pause();
+            videoPausado = true;
+        }
+        else if (videoPausado && Input.GetKeyDown(KeyCode.Escape))
+        {
+            videoPlayer.Play();
+            videoPausado = false;
         }
     }
 
