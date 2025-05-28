@@ -14,6 +14,7 @@ public class EnemyFightAI : FighterClass
     public GameObject hitEffect;
     EnemyFightExtra sonidoGolpeadoPos;
     KaitoFightExtra sonidoKaitoAtaque;
+    private Vector2 movement;
 
     //Estad�sticas
     public float speed = 6, waitTime = 3, attackTime = 1, life = 100, startWaitTime = 0;
@@ -47,6 +48,11 @@ public class EnemyFightAI : FighterClass
     void Update()
     {
         FSM = FSM?.Process();
+        
+        // Actualizamos la posición en escena del enemigo y ejecutamos el sonido de pisadas correspondiente
+        bool seMueve = rb.velocity.magnitude > 0.1f;
+        
+        sonidoGolpeadoPos.SonidosPisadas(seMueve);
     }
 
     public override void GetHit(float damage, Vector3 effectPos)

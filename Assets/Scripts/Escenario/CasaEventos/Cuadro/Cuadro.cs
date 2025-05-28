@@ -8,48 +8,83 @@ public class Cuadro : MonoBehaviour
 
     public GameObject sombra;
 
-    public GameObject brasero1;
+    public GameObject brasero;
 
-    public GameObject brasero2;
-
-    public GameObject sala1;
-
-    public GameObject sala2;
-
-    public GameObject sala3;
+    public GameObject salon;
 
     public GameObject naranja;
 
-    public GameObject dor1;
-
-    public GameObject dor2;
+    public GameObject dormitorio;
 
 
-    
+    public GameObject comentarioFinal;
 
-  
+
+    public GameObject armarioNegro;
+
+    public GameObject braseroCama;
+
+
+    public GameObject braseroSalon;
+
+
+
+
+    public GameObject armario;
+
+    public GameObject armarioPuerta1;
+
+
+    public GameObject armarioPuerta2;
+
+
+
+
+    public void Start()
+    {
+
+        naranja.SetActive(false);
+
+        dormitorio.SetActive(false);
+
+        salon.SetActive(false);
+
+    }
+
+
+
     public void Naranja()
     {
         naranja.SetActive(true);
+
+        armario.SetActive(false);
+
+        armarioPuerta1.SetActive(false);
+
+        armarioPuerta2.SetActive(false);
+
+        armarioNegro.GetComponent<AudioSource>().Play();
+
+
 
     }
 
 
     public void Brasero()
     {
-        brasero1.SetActive(true);
+        brasero.SetActive(true);
 
-        brasero2.SetActive(true);
+
+
+
     }
 
 
     public void Salon()
     {
-        sala1.SetActive(true);
+        salon.SetActive(true);
 
-        sala2.SetActive(true);
-
-        sala3.SetActive(true);
+        braseroSalon.GetComponent<AudioSource>().Play();
 
     }
 
@@ -57,11 +92,26 @@ public class Cuadro : MonoBehaviour
     public void Dormitorio()
     {
 
-        dor1.SetActive(true);
-        
-        dor2.SetActive(true);
+        dormitorio.SetActive(true);
 
-        
+        braseroCama.GetComponent<AudioSource>().Play();
+
+
+    }
+
+    public void Final()
+    {
+        dormitorio.SetActive(false);
+
+        salon.SetActive(false);
+
+        brasero.SetActive(false);
+
+        naranja.SetActive(false);
+
+
+        comentarioFinal.SetActive(true);
+
     }
 
 

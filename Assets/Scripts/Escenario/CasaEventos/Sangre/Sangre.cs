@@ -42,7 +42,9 @@ public class Sangre : MonoBehaviour
 
     public GameObject sangreBrasero;
 
-   
+    public GameObject sangreBraseroSonido;
+
+
 
 
 
@@ -54,6 +56,8 @@ public class Sangre : MonoBehaviour
         sangreEmpieza.SetActive(false);
 
         sangreNaranja.SetActive(false);
+        
+        sangreBrasero.SetActive(false);
 
     }
 
@@ -109,6 +113,8 @@ public class Sangre : MonoBehaviour
         sangreBrasero.SetActive(true);
 
         sangreEmpieza.SetActive(true);
+
+        sangreBraseroSonido.GetComponent<AudioSource>().Play();
 
     }
 

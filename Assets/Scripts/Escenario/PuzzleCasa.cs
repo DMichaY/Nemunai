@@ -22,6 +22,14 @@ public class PuzzleCasa : MonoBehaviour
 
     public GameObject comentarioRuido;
 
+    public GameObject comentarioCuadroMitad;
+
+    public GameObject comentarioCuadroInicio;
+
+    public GameObject comentarioPista;
+
+    public GameObject Musica;
+
     public int contador = 0;
 
     public bool puertasAbren = false;
@@ -89,8 +97,36 @@ public class PuzzleCasa : MonoBehaviour
 
                 }
 
-                 
-        
+
+
+                if (cuadro && contador == 5)
+                {
+                    comentarioCuadroMitad.transform.position = jugador.transform.position;
+
+                    comentarioCuadroMitad.SetActive(true);
+
+                }
+
+
+                if (contador % 2 == 0)
+                {
+                    Musica.GetComponent<AudioSource>().pitch = Musica.GetComponent<AudioSource>().pitch + 0.1f;
+                }
+
+
+                if (contador == 1)
+                {
+                    comentarioPista.transform.position = jugador.transform.position;
+
+                    comentarioPista.SetActive(true);
+                    
+                }
+
+
+                
+
+
+
 
 
             }
@@ -118,6 +154,8 @@ public class PuzzleCasa : MonoBehaviour
 
         //aumenta el contador para mostrar la siguiente pista la proxima vez
         contador++;
+
+        
 
         //todas las pistas recogidas
         if (contador == 8)
@@ -222,6 +260,10 @@ public class PuzzleCasa : MonoBehaviour
 
                         cuadro = true;
 
+                        comentarioCuadroInicio.transform.position = jugador.transform.position;
+
+                        comentarioCuadroInicio.SetActive(true);
+
                         break;
 
                     //9 cocina
@@ -286,11 +328,19 @@ public class PuzzleCasa : MonoBehaviour
             if (numCamara == 11)
             {
                 this.GetComponent<Cuadro>().Dormitorio();
+
+                comentarioCuadroInicio.transform.position = jugador.transform.position;
+
+                comentarioCuadroInicio.SetActive(true);
             }
 
             if (numCamara == 5)
             {
                 this.GetComponent<Cuadro>().Brasero();
+
+                comentarioCuadroInicio.transform.position = jugador.transform.position;
+
+                comentarioCuadroInicio.SetActive(true);
             }
         }
 
