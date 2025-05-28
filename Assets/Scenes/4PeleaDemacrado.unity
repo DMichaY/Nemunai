@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11201,6 +11201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a7d57bd1c15dc49a3c4c1856eea359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeUntilDestruction: 7
 --- !u!1 &963158092
 GameObject:
   m_ObjectHideFlags: 0
@@ -15836,7 +15837,7 @@ MonoBehaviour:
   lifeBar: {fileID: 1483567060}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
-  blockEffect: {fileID: 7177991128484655659, guid: 59a35ab9f68edff40b6e5332bed330f5,
+  blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1796936846}
   isHit: 0
