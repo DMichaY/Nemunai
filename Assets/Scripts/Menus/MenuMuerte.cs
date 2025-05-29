@@ -84,7 +84,7 @@ public class MenuMuerte : MonoBehaviour
     void VolverAlMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MenuPrincipal");
+        SceneManager.LoadScene("0MenuPrincipal");
     }
 
     void SalirDelJuego()
