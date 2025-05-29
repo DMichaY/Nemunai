@@ -80,5 +80,6 @@ public class VideoCinematica : MonoBehaviour
     void AlTerminarVideo(VideoPlayer vp)
     {
         pantallaVideo.SetActive(false);
+
     }
 }
