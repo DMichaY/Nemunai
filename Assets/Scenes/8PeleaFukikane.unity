@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0017878055, g: 0.0017878055, b: 0.0017878055, a: 1}
+  m_IndirectSpecularColor: {r: 0.000031384618, g: 0.000031384618, b: 0.000031384618,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10790,7 +10791,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 29a0b411508180c4485d2036af9c3122,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a0b411508180c4485d2036af9c3122,
         type: 3}
@@ -12883,6 +12884,7 @@ Transform:
   m_Children:
   - {fileID: 1153974248}
   - {fileID: 1391969230}
+  - {fileID: 826648998}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14905,13 +14907,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826648996}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 104.81315, y: -5.685217, z: -2.162671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 660533661}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833229992
 GameObject:
@@ -15198,7 +15200,7 @@ RectTransform:
   - {fileID: 483653051}
   - {fileID: 724974655}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18078,7 +18080,6 @@ GameObject:
   - component: {fileID: 1153974245}
   - component: {fileID: 1153974244}
   - component: {fileID: 1153974243}
-  - component: {fileID: 1153974242}
   - component: {fileID: 1153974241}
   m_Layer: 0
   m_Name: Camera
@@ -18101,20 +18102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 363069917}
   enemyHealth: {fileID: 11652302}
-  startWaitTime: 0
---- !u!114 &1153974242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153974240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694b85b5c32050443acfbb10f64ee8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetivo: {fileID: 0}
 --- !u!114 &1153974243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19859,7 +19846,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3d61446546ac09948b8f7e2d07fbc5c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d61446546ac09948b8f7e2d07fbc5c5,
         type: 3}
@@ -20069,7 +20056,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1153974247}
   m_PlaneDistance: 17.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -20472,7 +20459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 7
   lifeBar: {fileID: 363069919}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -23716,7 +23703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747754592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.6886783}
+  m_LocalPosition: {x: 0, y: 0, z: -6.688678}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -23776,7 +23763,7 @@ MonoBehaviour:
   waitTime: 3
   attackTime: 1
   life: 450
-  startWaitTime: 23
+  startWaitTime: 27
 --- !u!1 &1750193659
 GameObject:
   m_ObjectHideFlags: 0
@@ -26471,7 +26458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1943371990
 MonoBehaviour:
@@ -27399,7 +27386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 363069917}
   enemyHealth: {fileID: 11652302}
-  startWaitTime: 0
 --- !u!114 &1995752669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27592,7 +27578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &1996391036
 GameObject:

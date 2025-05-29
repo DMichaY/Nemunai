@@ -28,7 +28,7 @@ public class KaitoFight : FighterClass
 
     public bool esPuebloInverso;
 
-    void Start()
+    void OnEnable()
     {
         // Buscar los componentes
         kaitoAnimator = GetComponentInChildren<Animator>();

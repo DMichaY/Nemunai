@@ -612,7 +612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &87952781
 MonoBehaviour:
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   nombreEscena: 12TorreInterior3
   tagJugador: Player
   pantallaNegra: {fileID: 963158094}
-  startWaitTime: 11
+  startWaitTime: 0
 --- !u!4 &115068185
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,13 +1026,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115068183}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 104.81315, y: -5.685217, z: -2.162671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 170395113}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159049071
 GameObject:
@@ -1197,6 +1197,7 @@ Transform:
   m_Children:
   - {fileID: 2135664751}
   - {fileID: 1351131439}
+  - {fileID: 115068185}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2680,7 +2681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312282710
 GameObject:
@@ -14121,7 +14122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 16
+  startWaitTime: 7
   lifeBar: {fileID: 1483567060}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -17346,7 +17347,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 62399f91e4bb4f045957708a71bf91b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62399f91e4bb4f045957708a71bf91b8,
         type: 3}
@@ -19671,7 +19672,7 @@ RectTransform:
   - {fileID: 1081648591}
   - {fileID: 251468982}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21385,7 +21386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 250639657}
   enemyHealth: {fileID: 1836539375}
-  startWaitTime: 11
 --- !u!114 &1947370695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21578,7 +21578,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &1948241944
 GameObject:
@@ -23111,7 +23111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047911590
 GameObject:
@@ -24342,7 +24342,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 250639657}
   enemyHealth: {fileID: 1836539375}
-  startWaitTime: 0
 --- !u!1 &2146448507
 GameObject:
   m_ObjectHideFlags: 0

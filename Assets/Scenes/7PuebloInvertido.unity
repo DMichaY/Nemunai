@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2897,7 +2897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 7
   lifeBar: {fileID: 1194202436}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -6711,7 +6711,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1813808821}
   enemyHealth: {fileID: 1038169817}
-  startWaitTime: 0
 --- !u!114 &119831403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7140,7 +7139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 7
   lifeBar: {fileID: 1194202436}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -20436,7 +20435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 7
   lifeBar: {fileID: 1194202436}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -26814,7 +26813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  startWaitTime: 5
+  startWaitTime: 7
   lifeBar: {fileID: 1813808824}
   hitEffect: {fileID: 6823200998282874702, guid: 8f8fe12323625f5499b2853dd2ad3e58,
     type: 3}
@@ -52750,7 +52749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1060837054}
   enemyHealth: {fileID: 924454861}
-  startWaitTime: 0
 --- !u!114 &1205224133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53327,7 +53325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1194202435}
   enemyHealth: {fileID: 549941530}
-  startWaitTime: 0
 --- !u!114 &1217376781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57872,7 +57869,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1766028874}
   enemyHealth: {fileID: 1278015333}
-  startWaitTime: 0
 --- !u!114 &1352549934
 MonoBehaviour:
   m_ObjectHideFlags: 0
