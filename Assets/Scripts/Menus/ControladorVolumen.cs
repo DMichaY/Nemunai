@@ -16,8 +16,9 @@ public class ControladorVolumen : MonoBehaviour
     private void Start()
     {
         // Asegúrate de que el slider esté vinculado
-        if (slider == null)
-            slider = GetComponent<Slider>();
+        if (slider == null) slider = GetComponent<Slider>();
+        // Asigna evento
+        slider.onValueChanged.AddListener(CambiarVolumen);
 
         // Carga valor guardado (opcional)
         if (PlayerPrefs.HasKey(nombreParametro))
@@ -26,17 +27,15 @@ public class ControladorVolumen : MonoBehaviour
             slider.value = valorGuardado;
             CambiarVolumen(valorGuardado);
         }
-
-        // Asigna evento
-        slider.onValueChanged.AddListener(CambiarVolumen);
+        else PlayerPrefs.SetFloat(nombreParametro, slider.value);
     }
+
 
     public void CambiarVolumen(float valor)
     {
         // Convierte valor de 0-1 a decibelios (-80 a 0)
         float dB = Mathf.Log10(Mathf.Clamp(valor, 0.0001f, 1f)) * 20;
         mezclador.SetFloat(nombreParametro, dB);
-
         // Guarda el valor (opcional)
         PlayerPrefs.SetFloat(nombreParametro, valor);
     }

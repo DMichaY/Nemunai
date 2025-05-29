@@ -15,7 +15,6 @@ public class TriggerTextoUnaVez : MonoBehaviour
     private Coroutine escribirCoroutine;
     private Coroutine desvanecerCoroutine;
 
-    private bool estaEscribiendo = false;
     private bool fueInterrumpido = false;
     private static TriggerTextoUnaVez textoActivo;
 
@@ -45,7 +44,6 @@ public class TriggerTextoUnaVez : MonoBehaviour
 
     private IEnumerator EscribirConEfecto(TextMeshProUGUI textoUI)
     {
-        estaEscribiendo = true;
         fueInterrumpido = false;
 
         string textoCompleto = textoUI.text;
@@ -81,8 +79,6 @@ public class TriggerTextoUnaVez : MonoBehaviour
 
             yield return new WaitForSeconds(velocidadEscritura);
         }
-
-        estaEscribiendo = false;
 
         if (!fueInterrumpido)
         {
@@ -124,7 +120,6 @@ public class TriggerTextoUnaVez : MonoBehaviour
             StopCoroutine(escribirCoroutine);
             escribirCoroutine = null;
             fueInterrumpido = true;
-            estaEscribiendo = false;
         }
 
         if (desvanecerCoroutine != null)

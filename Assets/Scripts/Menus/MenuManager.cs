@@ -77,11 +77,6 @@ public class MenuManager : MonoBehaviour
         graficosIzq.onClick.AddListener(() => CambiarGraficos(0));
         graficosDer.onClick.AddListener(() => CambiarGraficos(1));
 
-        // Sliders sonido
-        volumenGeneralSlider.onValueChanged.AddListener((v) => GuardarVolumen("volumen_general", v));
-        musicaSlider.onValueChanged.AddListener((v) => GuardarVolumen("musica", v));
-        sfxSlider.onValueChanged.AddListener((v) => GuardarVolumen("sfx", v));
-
         // Cargar preferencias
         brillo = PlayerPrefs.GetFloat("brillo", 0.5f);
         ActualizarBrillo();
@@ -90,10 +85,6 @@ public class MenuManager : MonoBehaviour
         graficosIndex = PlayerPrefs.GetInt("graficos", 1);
         ActualizarPantalla();
         ActualizarGraficos();
-
-        volumenGeneralSlider.value = PlayerPrefs.GetFloat("volumen_general", 1);
-        musicaSlider.value = PlayerPrefs.GetFloat("musica", 1);
-        sfxSlider.value = PlayerPrefs.GetFloat("sfx", 1);
 
         // Créditos
         if (creditosTexto != null)
@@ -110,17 +101,21 @@ public class MenuManager : MonoBehaviour
         {
             EventTriggerListener.Get(b.gameObject).onEnter = () =>
             {
-                Transform parent = b.transform.parent;
-                foreach (Transform child in parent)
-                {
-                    if (child != b.transform && child.GetComponent<Image>())
-                        child.gameObject.SetActive(false);
-                }
+                Transform parent;
+                if (!b.CompareTag("ButtonLeftRight")) parent = b.transform.parent;
+                else parent = b.transform;
+                    foreach (Transform child in parent)
+                    {
+                        if (child != b.transform && child.GetComponent<Image>())
+                            child.gameObject.SetActive(false);
+                    }
             };
 
             EventTriggerListener.Get(b.gameObject).onExit = () =>
             {
-                Transform parent = b.transform.parent;
+                Transform parent;
+                if (!b.CompareTag("ButtonLeftRight")) parent = b.transform.parent;
+                else parent = b.transform;
                 foreach (Transform child in parent)
                 {
                     if (child != b.transform && child.GetComponent<Image>())

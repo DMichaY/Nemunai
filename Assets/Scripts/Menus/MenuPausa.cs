@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using TMPro;
+using System.Collections;
 
 public class MenuPausa : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class MenuPausa : MonoBehaviour
         btnMenuSi.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("MenuPrincipal");
+            SceneManager.LoadScene("0MenuPrincipal");
         });
         btnMenuNo.onClick.AddListener(() => CambiarApartado(apartadoConfirmarVolver, apartadoPausa));
         btnSalirSi.onClick.AddListener(SalirDelJuego);
@@ -104,15 +105,6 @@ public class MenuPausa : MonoBehaviour
         btnBrilloIzq.onClick.AddListener(() => CambiarBrillo(-0.1f));
         btnBrilloDer.onClick.AddListener(() => CambiarBrillo(0.1f));
 
-        // Sonido
-        sliderGeneral.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_Master", Mathf.Log10(v) * 20));
-        sliderMusica.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_Musica", Mathf.Log10(v) * 20));
-        sliderSFX.onValueChanged.AddListener(v => mezcladorPrincipal.SetFloat("Volume_SFX", Mathf.Log10(v) * 20));
-
-        sliderGeneral.value = PlayerPrefs.GetFloat("SonidoGeneral", 1f);
-        sliderMusica.value = PlayerPrefs.GetFloat("SonidoMusica", 1f);
-        sliderSFX.value = PlayerPrefs.GetFloat("SonidoSFX", 1f);
-
         // Controles
         btnTeclado.onClick.AddListener(() => SeleccionarControles(true));
         btnMando.onClick.AddListener(() => SeleccionarControles(false));
@@ -121,17 +113,23 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
     void CargarConfiguraciones()
     {
-        brillo = PlayerPrefs.GetFloat("Brillo", 0.5f); // 50% por defecto
+        brillo = PlayerPrefs.GetFloat("brillo", 0.5f); // 50% por defecto
         ActualizarFiltroBrillo();
 
-        pantallaIndex = PlayerPrefs.GetInt("Pantalla", 0);
+        pantallaIndex = PlayerPrefs.GetInt("pantalla", 0);
         CambiarPantalla(0);
 
-        calidadIndex = PlayerPrefs.GetInt("Calidad", 1);
+        calidadIndex = PlayerPrefs.GetInt("graficos", 1);
         CambiarCalidad(0);
+
+        sliderGeneral.value = PlayerPrefs.GetFloat("Volume_Master");
+        sliderGeneral.GetComponent<ControladorVolumen>().CambiarVolumen(sliderGeneral.value);
+        sliderMusica.value = PlayerPrefs.GetFloat("Volume_Musica");
+        sliderMusica.GetComponent<ControladorVolumen>().CambiarVolumen(sliderMusica.value);
+        sliderSFX.value = PlayerPrefs.GetFloat("Volume_SFX");
+        sliderSFX.GetComponent<ControladorVolumen>().CambiarVolumen(sliderSFX.value);
     }
 
     void Update()
@@ -190,7 +188,7 @@ public class MenuPausa : MonoBehaviour
     void CambiarPantalla(int cambio)
     {
         pantallaIndex = (pantallaIndex + cambio + 2) % 2;
-        PlayerPrefs.SetInt("Pantalla", pantallaIndex);
+        PlayerPrefs.SetInt("pantalla", pantallaIndex);
 
         txtPantallaCompleta.gameObject.SetActive(pantallaIndex == 0);
         txtVentana.gameObject.SetActive(pantallaIndex == 1);
@@ -201,7 +199,7 @@ public class MenuPausa : MonoBehaviour
     void CambiarCalidad(int cambio)
     {
         calidadIndex = Mathf.Clamp(calidadIndex + cambio, 0, 1);
-        PlayerPrefs.SetInt("Calidad", calidadIndex);
+        PlayerPrefs.SetInt("graficos", calidadIndex);
 
         int calidadUnity = (calidadIndex == 0) ? 0 : QualitySettings.names.Length - 1;
         QualitySettings.SetQualityLevel(calidadUnity);
@@ -213,7 +211,7 @@ public class MenuPausa : MonoBehaviour
     void CambiarBrillo(float delta)
     {
         brillo = Mathf.Clamp01(brillo + delta);
-        PlayerPrefs.SetFloat("Brillo", brillo);
+        PlayerPrefs.SetFloat("brillo", brillo);
         ActualizarFiltroBrillo();
     }
 
