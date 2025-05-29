@@ -2,7 +2,7 @@
 - Project name: Nemunai
 - Unity version: Unity 2021.3.20f1
 - Active scene:
-  - Name: 8PeleaFukikane
+  - Name: 13PeleaKaito
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, HurtBox, Fighter, Tierra, Piedra, Madera, Interactable, Libro, Enemy, FxTemporaire
   - Layers:
