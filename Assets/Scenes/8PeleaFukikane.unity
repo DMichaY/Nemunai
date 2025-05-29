@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0023936073, g: 0.0023936073, b: 0.0023936073, a: 1}
+  m_IndirectSpecularColor: {r: 0.0017878055, g: 0.0017878055, b: 0.0017878055, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20477,6 +20477,7 @@ MonoBehaviour:
   blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 445461498}
+  gameManager: {fileID: 1943371987}
   isHit: 0
   kaitoAnimator: {fileID: 0}
   isBlocking: 0
@@ -26482,7 +26483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7499d7c7126d0854fa000693f3a046ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausado: 0
   panelPausa: {fileID: 445461498}
   apartadoPausa: {fileID: 1685358888}
   apartadoConfirmarVolver: {fileID: 1585328003}

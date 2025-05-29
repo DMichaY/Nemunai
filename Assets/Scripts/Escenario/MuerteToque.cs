@@ -8,6 +8,8 @@ public class MuerteToque : MonoBehaviour
     public GameObject panelMuerte;
 
     public GameObject jugador;
+    
+    public GameObject gameManager;
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,10 +18,10 @@ public class MuerteToque : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-
             panelMuerte.SetActive(true);
 
-            
+
+            gameManager.GetComponent<MenuPausa>().enabled = false;
 
 
         }
