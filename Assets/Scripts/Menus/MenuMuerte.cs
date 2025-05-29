@@ -5,8 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 public class MenuMuerte : MonoBehaviour
 {
-        public bool pausado = false;
-
+        
     [Header("Paneles principales")]
     public GameObject panelPausa;
     public GameObject apartadoPausa;

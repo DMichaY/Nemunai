@@ -140,6 +140,8 @@ public class MenuPausa : MonoBehaviour
         {
             if (pausado) Continuar();
             else Pausar();
+
+            
         }
     }
 

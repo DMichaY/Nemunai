@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0044894684, g: 0.0045080646, b: 0.0045258026, a: 1}
+  m_IndirectSpecularColor: {r: 0.0043991916, g: 0.004409807, b: 0.0044185584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2904,6 +2904,7 @@ MonoBehaviour:
   blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  gameManager: {fileID: 0}
   isHit: 0
   kaitoAnimator: {fileID: 0}
   isBlocking: 0
@@ -7146,6 +7147,7 @@ MonoBehaviour:
   blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  gameManager: {fileID: 0}
   isHit: 0
   kaitoAnimator: {fileID: 0}
   isBlocking: 0
@@ -16912,7 +16914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &349634569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20441,6 +20443,7 @@ MonoBehaviour:
   blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  gameManager: {fileID: 0}
   isHit: 0
   kaitoAnimator: {fileID: 0}
   isBlocking: 0
@@ -26351,7 +26354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7499d7c7126d0854fa000693f3a046ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausado: 0
   panelPausa: {fileID: 1656610848}
   apartadoPausa: {fileID: 784803772}
   apartadoConfirmarVolver: {fileID: 1568946650}
@@ -26819,6 +26821,7 @@ MonoBehaviour:
   blockEffect: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0,
     type: 3}
   panelMuerte: {fileID: 1656610848}
+  gameManager: {fileID: 0}
   isHit: 0
   kaitoAnimator: {fileID: 0}
   isBlocking: 0

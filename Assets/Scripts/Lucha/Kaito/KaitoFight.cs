@@ -13,6 +13,8 @@ public class KaitoFight : FighterClass
 
     public GameObject panelMuerte;
 
+    public GameObject gameManager;
+
     KaitoFightExtra sonidosKaito;
     GameObject enemigoActSonido;
     public bool isHit = false;
@@ -180,5 +182,11 @@ public class KaitoFight : FighterClass
         GetComponent<PlayerInput>().DeactivateInput();
 
         panelMuerte.SetActive(true);
+
+        gameManager.GetComponent<MenuPausa>().enabled = false;
+        
+
+    
+
     }
 }
